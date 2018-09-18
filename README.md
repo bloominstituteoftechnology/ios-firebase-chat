@@ -17,13 +17,13 @@ As you will be using Firebase's SDK as a library in your app, you will gain the 
 - https://firebase.google.com/docs/database/ios/structure-data. 
 - https://firebase.google.com/docs/database/ios/read-and-write.
 
-For explanations of different objects, refer to the iOS section of their reference guide [here](https://firebase.google.com/docs/reference/swift/firebasecore/api/reference/Classes). Firebase has many different parts. The only ones you will need to interact with are Firebase Core and Firebase Database. The documentation for the classes, enums, etc. of each section are on the left hand side of that page.
+For explanations of different objects, refer to the iOS section of their reference guide [here](https://firebase.google.com/docs/reference/swift/firebasecore/api/reference/Classes). Firebase has many different parts, though the only ones you will need to interact with are Firebase Core and Firebase Database. The documentation for the classes, enums, etc. of each section are on the left hand side of that page.
 
 ### Part 2 - Adding the frameworks
 
-1. Refer to [this page](https://firebase.google.com/docs/ios/setup). It will help you add the Firebase framework to your application. Pay attention to step 5 of the "Add the SDK" section, as you must add a `plist` to your project. This isn't something that you always have to do, but it is a requirement for Firebase.
+1. Refer to [this page](https://firebase.google.com/docs/ios/setup). It will help you add the Firebase framework to your application. Pay attention to step 5 of the "Add the SDK" section, as you must add a `plist` to your project. This isn't something that you always have to do, but it is a requirement for Firebase. You will need to add the `pod 'Firebase/Core'` and `pod 'Firebase/Database'` pods to your Podfile.
 
-2. Add [MessageKit](https://github.com/MessageKit/MessageKit) to your project using Carthage, CocoaPods or as a submodule.
+2. Add [MessageKit](https://github.com/MessageKit/MessageKit) to your project using Carthage, CocoaPods, or as a submodule.
 
 ### Part 3 - Storyboard Setup
 
