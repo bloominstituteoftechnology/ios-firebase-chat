@@ -1,5 +1,5 @@
 //
-//  ChatroomTableViewController.swift
+//  ChatRoomTableViewController.swift
 //  FirebaseChat
 //
 //  Created by Carolyn Lea on 9/18/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatroomTableViewController: UITableViewController {
+class ChatRoomTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
