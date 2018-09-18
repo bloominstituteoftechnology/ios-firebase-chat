@@ -8,4 +8,5 @@ target 'Firebase Chat' do
   # Pods for Firebase Chat
 pod 'Firebase/Core'
 pod 'MessageKit'
+pod 'Firebase/Database'
 end
