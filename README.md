@@ -21,7 +21,7 @@ For explanations of different objects, refer to the iOS section of their referen
 
 ### Part 2 - Adding the frameworks
 
-1. Refer to [this page](https://firebase.google.com/docs/database/ios/start). It will help you add the Firebase framework to your application. Pay attention to step 5, as you must add a `plist` to your project. This isn't something that you always have to do, but it is a requirement for Firebase.
+1. Refer to [this page](https://firebase.google.com/docs/ios/setup). It will help you add the Firebase framework to your application. Pay attention to step 5 of the "Add the SDK" section, as you must add a `plist` to your project. This isn't something that you always have to do, but it is a requirement for Firebase.
 
 2. Add [MessageKit](https://github.com/MessageKit/MessageKit) to your project using Carthage, CocoaPods or as a submodule.
 
