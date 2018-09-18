@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		0D3AFC6E999C5C5010E15A1F /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AF6A25746E699B9689EE3B /* Pods_Firebase_Chat.framework */; };
 		FF1306B32151889700C6DA5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306B22151889700C6DA5B /* AppDelegate.swift */; };
-		FF1306B52151889700C6DA5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306B42151889700C6DA5B /* ViewController.swift */; };
 		FF1306B82151889700C6DA5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1306B62151889700C6DA5B /* Main.storyboard */; };
 		FF1306BA2151889800C6DA5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1306B92151889800C6DA5B /* Assets.xcassets */; };
 		FF1306BD2151889800C6DA5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1306BB2151889800C6DA5B /* LaunchScreen.storyboard */; };
 		FF1306CA2151954F00C6DA5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF1306C92151954F00C6DA5B /* GoogleService-Info.plist */; };
+		FF1306CC21519E4F00C6DA5B /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306CB21519E4F00C6DA5B /* ChatRoomTableViewController.swift */; };
+		FF1306CE21519EC100C6DA5B /* MessagesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306CD21519EC100C6DA5B /* MessagesDetailViewController.swift */; };
+		FF1306D021519F1D00C6DA5B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306CF21519F1D00C6DA5B /* Message.swift */; };
+		FF1306D221519F2E00C6DA5B /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306D121519F2E00C6DA5B /* ChatRoom.swift */; };
+		FF1306D421519FDC00C6DA5B /* FirebaseChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1306D321519FDC00C6DA5B /* FirebaseChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +26,16 @@
 		F4E9043FA7CC0D9771A2F323 /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		FF1306AF2151889700C6DA5B /* Firebase Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1306B22151889700C6DA5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FF1306B42151889700C6DA5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF1306B72151889700C6DA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1306B92151889800C6DA5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF1306BC2151889800C6DA5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF1306BE2151889800C6DA5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1306C92151954F00C6DA5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FF1306CB21519E4F00C6DA5B /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
+		FF1306CD21519EC100C6DA5B /* MessagesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDetailViewController.swift; sourceTree = "<group>"; };
+		FF1306CF21519F1D00C6DA5B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		FF1306D121519F2E00C6DA5B /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		FF1306D321519FDC00C6DA5B /* FirebaseChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +103,8 @@
 		FF1306C4215188A900C6DA5B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FF1306B42151889700C6DA5B /* ViewController.swift */,
+				FF1306CB21519E4F00C6DA5B /* ChatRoomTableViewController.swift */,
+				FF1306CD21519EC100C6DA5B /* MessagesDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -112,6 +121,8 @@
 		FF1306C72151890500C6DA5B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FF1306CF21519F1D00C6DA5B /* Message.swift */,
+				FF1306D121519F2E00C6DA5B /* ChatRoom.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +130,7 @@
 		FF1306C82151890D00C6DA5B /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF1306D321519FDC00C6DA5B /* FirebaseChatController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -198,8 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -207,8 +217,6 @@
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
@@ -224,15 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Firebase Chat-checkManifestLockResult.txt",
 			);
@@ -248,7 +252,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1306B52151889700C6DA5B /* ViewController.swift in Sources */,
+				FF1306CC21519E4F00C6DA5B /* ChatRoomTableViewController.swift in Sources */,
+				FF1306D021519F1D00C6DA5B /* Message.swift in Sources */,
+				FF1306D421519FDC00C6DA5B /* FirebaseChatController.swift in Sources */,
+				FF1306CE21519EC100C6DA5B /* MessagesDetailViewController.swift in Sources */,
+				FF1306D221519F2E00C6DA5B /* ChatRoom.swift in Sources */,
 				FF1306B32151889700C6DA5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
