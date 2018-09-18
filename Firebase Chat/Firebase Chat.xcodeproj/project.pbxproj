@@ -13,6 +13,7 @@
 		3919C7AB21519648002E1476 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3919C7AA21519648002E1476 /* Assets.xcassets */; };
 		3919C7AE21519648002E1476 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3919C7AC21519648002E1476 /* LaunchScreen.storyboard */; };
 		3919C7B92151A3BA002E1476 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3919C7B82151A3BA002E1476 /* GoogleService-Info.plist */; };
+		3919C7BC2151B304002E1476 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3919C7BB2151B303002E1476 /* MessageKit.framework */; };
 		F48A7F027E976B5DBA2D6A86 /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54FD7AF808CA4EAD0F4819A2 /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		3919C7AD21519648002E1476 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3919C7AF21519648002E1476 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3919C7B82151A3BA002E1476 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3919C7BB2151B303002E1476 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		54FD7AF808CA4EAD0F4819A2 /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF0C15B22868C848E2558631 /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F48A7F027E976B5DBA2D6A86 /* Pods_Firebase_Chat.framework in Frameworks */,
+				3919C7BC2151B304002E1476 /* MessageKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +113,7 @@
 		93779EFF0EFD44EFFB9FB337 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3919C7BB2151B303002E1476 /* MessageKit.framework */,
 				54FD7AF808CA4EAD0F4819A2 /* Pods_Firebase_Chat.framework */,
 			);
 			name = Frameworks;
@@ -127,6 +131,7 @@
 				3919C79D21519647002E1476 /* Frameworks */,
 				3919C79E21519647002E1476 /* Resources */,
 				A6625F81197D16B8FF237CCB /* [CP] Embed Pods Frameworks */,
+				3919C7BD2151B358002E1476 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -185,6 +190,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3919C7BD2151B358002E1476 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MessageKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/MessageKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
 		81B791DF1E046DD4E0DC1AE6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -390,6 +414,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39ZVY2XGME;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Firebase Chat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,6 +437,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 39ZVY2XGME;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Firebase Chat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
