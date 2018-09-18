@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MessageDetailViewController.swift
 //  Firebase Chat
 //
 //  Created by Linh Bouniol on 9/18/18.
@@ -7,14 +7,14 @@
 //
 
 import UIKit
+import MessageKit
 
-class ViewController: UIViewController {
+class MessageDetailViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
-
-
+    
 }
-
