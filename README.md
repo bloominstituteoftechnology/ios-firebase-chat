@@ -14,8 +14,8 @@ Please fork and clone this repository. There is no starter project, so go ahead 
 
 As you will be using Firebase's SDK as a library in your app, you will gain the full functionality of Firebase as opposed to simply using it as a REST API. In order to come up with a good plan of how to structure your data, refer to Firebase's documentation. A few good places to start are:
 
-- https://firebase.google.com/docs/database/ios/structure-data
-- https://firebase.google.com/docs/database/ios/read-and-write
+- https://firebase.google.com/docs/database/ios/structure-data. 
+- https://firebase.google.com/docs/database/ios/read-and-write.
 
 For explanations of different objects, refer to the iOS section of their reference guide [here](https://firebase.google.com/docs/reference/swift/firebasecore/api/reference/Classes). Firebase has many different parts. The only ones you will need to interact with are Firebase Core and Firebase Database. The documentation for the classes, enums, etc. of each section are on the left hand side of that page.
 
@@ -34,7 +34,7 @@ For explanations of different objects, refer to the iOS section of their referen
 ### Part 4 - Model Setup
 
 1. Create a model object to represent a message, and one for a chat room. Give them the appropriate values as you see fit.
-    - Think about how you can use your model objects and send them to Firebase, as you won't be able to directly use instances of your model objects with the Firebase SDK.
+    - Remember that the data in Firebase is stored as JSON, but note that the SDK's methods to save and load the data ([here](https://firebase.google.com/docs/database/ios/read-and-write), for example) to/from Firebase use dictionaries. Because of this, you will need to write code to convert your model objects to and from a dictionary in order for you to use these methods.
 2. Create a model controller. Again referring to the Firebase guides and documentation, add the following functionality:
     - Create a chat room in Firebase
     - Fetch chat rooms from Firebase
