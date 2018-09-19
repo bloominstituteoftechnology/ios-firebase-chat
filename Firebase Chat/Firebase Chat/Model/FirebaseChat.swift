@@ -10,7 +10,7 @@ import Foundation
 import FirebaseDatabase
 import MessageKit
 
-struct ChatRoom: Equatable {
+class ChatRoom: Equatable {
     let chatRoom: String
     let id: String
     var messages: [ChatRoom.Message]
@@ -33,6 +33,12 @@ struct ChatRoom: Equatable {
         self.chatRoom = chatRoom
         self.id = id
         self.messages = messages
+    }
+    
+    static func ==(lhs: ChatRoom, rhs: ChatRoom) -> Bool {
+        return lhs.chatRoom == rhs.chatRoom &&
+            lhs.id == rhs.id &&
+            lhs.messages == rhs.messages
     }
     
     struct Message: Equatable, MessageType {

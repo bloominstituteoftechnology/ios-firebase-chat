@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Chat Rooms-->
         <scene sceneID="OVg-ib-CPZ">
             <objects>
                 <tableViewController id="OZt-Yw-TA9" customClass="ChatRoomTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                             <outlet property="delegate" destination="OZt-Yw-TA9" id="uOL-un-8XN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="HRL-6U-0aQ"/>
+                    <navigationItem key="navigationItem" title="Chat Rooms" id="HRL-6U-0aQ"/>
                     <connections>
                         <outlet property="chatRoomTextField" destination="uV9-rk-Bjd" id="qu9-vO-vmP"/>
                     </connections>
