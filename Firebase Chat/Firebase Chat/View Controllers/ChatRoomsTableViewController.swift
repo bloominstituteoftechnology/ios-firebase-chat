@@ -51,13 +51,13 @@ class ChatRoomsTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let detailVC = segue.destination as? MessageDetailViewController {
-//            detailVC.messageController = messageController
-//
-//            if segue.identifier == "ViewMessageDetail" {
-//                guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//                detailVC.message = messageController.messages[indexPath.row]
-//            }
-//        }
+        if let detailVC = segue.destination as? MessageDetailViewController {
+            detailVC.chatRoomController = chatRoomController
+
+            if segue.identifier == "ViewMessageDetail" {
+                guard let indexPath = tableView.indexPathForSelectedRow else { return }
+                detailVC.chatRoom = chatRoomController?.chatRooms[indexPath.row]
+            }
+        }
     }
 }

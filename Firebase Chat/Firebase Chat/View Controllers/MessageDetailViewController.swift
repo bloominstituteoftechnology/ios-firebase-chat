@@ -10,6 +10,9 @@ import UIKit
 import MessageKit
 
 class MessageDetailViewController: MessagesViewController {
+    
+    var chatRoomController: ChatRoomController?
+    var chatRoom: ChatRoom?
 
     override func viewDidLoad() {
         super.viewDidLoad()
