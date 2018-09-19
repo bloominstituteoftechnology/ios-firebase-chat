@@ -22,15 +22,6 @@ class FirebaseChatController {
         chatRooms.append(chatRoom)
     }
     
-    func fetchChatRoom(completion: @escaping () -> Void) {
-        ref.child("chatRoom").observeSingleEvent(of: .value) { (snapshot) in
-            guard let value = snapshot.value as? [String: [String: Any]] else { return }
-            let chatRooms = value.values.map { chatRoomDictionary in ChatRoom(chatRoom: chatRoomDictionary)}
-            self.chatRooms = chatRooms
-            completion()
-        }
-    }
-    
     func createMessage(chatRoom: ChatRoom, username: String, text: String, messageId: String, timestamp: Date) {
         guard let index = chatRooms.index(of: chatRoom) else { return }
 
@@ -42,6 +33,15 @@ class FirebaseChatController {
         self.ref.child("chatRoom").child(scratchChat.id).setValue(scratchChat.toDictionary())
         
         chatRooms[index] = scratchChat
+    }
+    
+    func fetchChatRoom(completion: @escaping () -> Void) {
+        ref.child("chatRoom").observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            let chatRooms = value.values.map { chatRoomDictionary in ChatRoom(chatRoom: chatRoomDictionary)}
+            self.chatRooms = chatRooms
+            completion()
+        }
     }
     
     var chatRooms = [ChatRoom]()

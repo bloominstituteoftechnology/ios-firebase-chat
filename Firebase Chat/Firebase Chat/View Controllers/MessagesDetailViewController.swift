@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import MessageKit
 
 class MessagesDetailViewController: UIViewController {
 
@@ -16,4 +18,6 @@ class MessagesDetailViewController: UIViewController {
         
     }
 
+    var firebaseChatController: FirebaseChatController?
+    var chatRoom: ChatRoom?
 }

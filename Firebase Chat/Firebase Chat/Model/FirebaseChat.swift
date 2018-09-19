@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseDatabase
 import MessageKit
 
 struct ChatRoom: Equatable {
