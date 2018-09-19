@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import MessageKit
 
 class ChatRoomTableViewController: UITableViewController {
 
@@ -19,8 +20,35 @@ class ChatRoomTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
         }
+        
+        let alert = UIAlertController(title: "Set a username", message: nil, preferredStyle: .alert)
+        var nameTextField: UITextField?
+        alert.addTextField { (textField) in
+            textField.placeholder = "Username"
+            nameTextField = textField
+        }
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+            let user = Sender(id: UUID().uuidString, displayName: nameTextField?.text ?? "User")
+            self.firebaseChatController.currentUser = user
+        }
+        alert.addAction(submitAction)
+        
+        present(alert, animated: true, completion: nil)
     }
 
+    @IBAction func createChatRoom(_ sender: Any) {
+        chatRoomTextField.resignFirstResponder()
+        
+        guard let chatTitle = chatRoomTextField.text else { return }
+        
+        chatRoomTextField.text = ""
+        
+        firebaseChatController.createChatRoom(chatRoom: chatTitle)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,5 +76,6 @@ class ChatRoomTableViewController: UITableViewController {
         }
     }
 
+    @IBOutlet weak var chatRoomTextField: UITextField!
     let firebaseChatController = FirebaseChatController(ref: Database.database().reference())
 }

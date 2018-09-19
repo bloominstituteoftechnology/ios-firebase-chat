@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import Firebase
 import FirebaseDatabase
+import MessageKit
 
 class FirebaseChatController {
     
@@ -22,7 +22,7 @@ class FirebaseChatController {
         chatRooms.append(chatRoom)
     }
     
-    func createMessage(chatRoom: ChatRoom, username: String, text: String, messageId: String, timestamp: Date) {
+    func createMessage(chatRoom: ChatRoom, username: String, text: String, messageId: String = UUID().uuidString, timestamp: Date = Date()) {
         guard let index = chatRooms.index(of: chatRoom) else { return }
 
         let message = ChatRoom.Message(username: username, timestamp: timestamp, messageId: messageId, text: text)
@@ -46,4 +46,5 @@ class FirebaseChatController {
     
     var chatRooms = [ChatRoom]()
     var ref: DatabaseReference!
+    var currentUser: Sender?
 }

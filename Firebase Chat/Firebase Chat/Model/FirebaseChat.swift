@@ -35,7 +35,9 @@ struct ChatRoom: Equatable {
         self.messages = messages
     }
     
-    struct Message: Equatable {
+    struct Message: Equatable, MessageType {
+        
+        
         let username: String
         let timestamp: Date
         let messageId: String
@@ -63,6 +65,13 @@ struct ChatRoom: Equatable {
             self.messageId = messageId
             self.text = text
         }
+        
+        // MARK: - MessageType
+        var sender: Sender {
+            return Sender(id: username, displayName: username)
+        }
+        var sentDate: Date { return timestamp }
+        var kind: MessageKind { return .text(text)}
     }
 }
 
