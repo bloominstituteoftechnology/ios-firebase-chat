@@ -10,25 +10,40 @@ import UIKit
 
 class ChatRoomsTableViewController: UITableViewController {
 
+    var chatRoomController: ChatRoomController?
+    
+    @IBAction func createChatRoom(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+        
+        chatRoomController?.createChatRoom(name: text) { (error) in
+            self.tableView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        chatRoomController = ChatRoomController()
+        chatRoomController?.fetchChatRoomsFromFirebase(completion: { (error) in
+            self.tableView.reloadData()
+        })
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return chatRoomController?.chatRooms.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
 
-        // Configure the cell...
+        let chatRoom = chatRoomController?.chatRooms[indexPath.row]
+        cell.textLabel?.text = chatRoom?.name
 
         return cell
     }
@@ -36,5 +51,13 @@ class ChatRoomsTableViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let detailVC = segue.destination as? MessageDetailViewController {
+//            detailVC.messageController = messageController
+//
+//            if segue.identifier == "ViewMessageDetail" {
+//                guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//                detailVC.message = messageController.messages[indexPath.row]
+//            }
+//        }
     }
 }

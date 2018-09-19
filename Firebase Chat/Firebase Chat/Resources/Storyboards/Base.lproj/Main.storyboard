@@ -9,38 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="UcU-vt-zeC">
-            <objects>
-                <tableViewController id="Au7-ql-AAC" customClass="ChatRoomsTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SMv-6U-2UG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zm5-TP-7tR">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zm5-TP-7tR" id="a4I-r5-cAE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="X9w-xL-9Ii" kind="show" identifier="ViewMessageDetail" id="zQs-Cn-aKo"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Au7-ql-AAC" id="DQO-m9-MT3"/>
-                            <outlet property="delegate" destination="Au7-ql-AAC" id="9Qi-YK-B5K"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="hyk-6r-noh"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EWm-N7-rsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="306" y="151"/>
-        </scene>
         <!--Message View Controller-->
         <scene sceneID="f6N-9e-S0B">
             <objects>
@@ -65,12 +33,75 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Au7-ql-AAC" kind="relationship" relationship="rootViewController" id="jsf-WR-OgG"/>
+                        <segue destination="mZz-Tx-oq0" kind="relationship" relationship="rootViewController" id="GJg-fs-OSs"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="11k-du-QOL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-454" y="151"/>
+        </scene>
+        <!--Chat Rooms Table View Controller-->
+        <scene sceneID="qVL-DA-zrE">
+            <objects>
+                <tableViewController id="mZz-Tx-oq0" customClass="ChatRoomsTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="s0z-Wp-ZaV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="j8h-Mi-tYg">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a new chat room:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZC-Xw-eju">
+                                    <rect key="frame" x="8" y="7" width="359" height="30"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="createChatRoom:" destination="mZz-Tx-oq0" eventType="editingDidEndOnExit" id="McZ-ny-hiY"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.86550761009999999" green="0.86550761009999999" blue="0.86550761009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="CZC-Xw-eju" firstAttribute="top" secondItem="j8h-Mi-tYg" secondAttribute="top" constant="7" id="95a-JZ-sOx"/>
+                                <constraint firstAttribute="trailing" secondItem="CZC-Xw-eju" secondAttribute="trailing" constant="8" id="MwU-pq-EnF"/>
+                                <constraint firstItem="CZC-Xw-eju" firstAttribute="leading" secondItem="j8h-Mi-tYg" secondAttribute="leading" constant="8" id="RWw-l9-rkr"/>
+                                <constraint firstAttribute="bottom" secondItem="CZC-Xw-eju" secondAttribute="bottom" constant="7" id="bNx-lp-jdg"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" textLabel="dcC-Ia-gYd" style="IBUITableViewCellStyleDefault" id="xx1-Ew-Lel">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xx1-Ew-Lel" id="Y9s-IW-FCJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dcC-Ia-gYd">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="X9w-xL-9Ii" kind="show" identifier="ViewMessageDetail" id="f01-yu-raR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mZz-Tx-oq0" id="UcL-6w-M9x"/>
+                            <outlet property="delegate" destination="mZz-Tx-oq0" id="nwm-U3-N62"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="qmm-Tj-n0C"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NNO-Am-XHp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="326" y="153"/>
         </scene>
     </scenes>
 </document>
