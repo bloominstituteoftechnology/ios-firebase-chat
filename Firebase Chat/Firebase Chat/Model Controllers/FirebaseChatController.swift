@@ -16,21 +16,32 @@ class FirebaseChatController {
         self.ref = ref
     }
     
-    func createChatRoom(chatRoom: String, completion: @escaping () -> Void) {
+    func createChatRoom(chatRoom: String) {
         let chatRoom = ChatRoom(chatRoom: chatRoom)
-        
+        self.ref.child("chatRoom").child(chatRoom.id).setValue(chatRoom.toDictionary())
+        chatRooms.append(chatRoom)
     }
     
     func fetchChatRoom(completion: @escaping () -> Void) {
-        
+        ref.child("chatRoom").observeSingleEvent(of: .value) { (snapshot) in
+            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            let chatRooms = value.values.map { chatRoomDictionary in ChatRoom(chatRoom: chatRoomDictionary)}
+            self.chatRooms = chatRooms
+            completion()
+        }
     }
     
-    func createMessage(username: String, text: String, messageId: UUID, timestamp: Date, completion: @escaping () -> Void) {
+    func createMessage(chatRoom: ChatRoom, username: String, text: String, messageId: String, timestamp: Date) {
+        guard let index = chatRooms.index(of: chatRoom) else { return }
+
         let message = ChatRoom.Message(username: username, timestamp: timestamp, messageId: messageId, text: text)
-    }
-    
-    func fetchMessage(completion: @escaping () -> Void) {
         
+        var scratchChat = chatRoom
+        scratchChat.messages.append(message)
+        
+        self.ref.child("chatRoom").child(scratchChat.id).setValue(scratchChat.toDictionary())
+        
+        chatRooms[index] = scratchChat
     }
     
     var chatRooms = [ChatRoom]()
