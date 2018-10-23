@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>940798411246-peiujhj5nuj3mdkche4l8falcrb92ifr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.940798411246-peiujhj5nuj3mdkche4l8falcrb92ifr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAzsfQ82uRHEDfVoXATP1DjjwR3iJpXPW4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>940798411246</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.dillonmcelhinney.iOS-Firebase-Chat</string>
+	<key>PROJECT_ID</key>
+	<string>lambda-ios-chat</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lambda-ios-chat.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:940798411246:ios:f50c64b27c4ffed3</string>
+	<key>DATABASE_URL</key>
+	<string>https://lambda-ios-chat.firebaseio.com</string>
+</dict>
+</plist>
