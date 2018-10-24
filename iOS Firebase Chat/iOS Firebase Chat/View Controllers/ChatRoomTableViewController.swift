@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 class ChatRoomTableViewController: UITableViewController {
     
+    // MARK: - Properties
     var ref: DatabaseReference!
     var chatrooms: [ChatRoom] = [] {
         didSet {
@@ -20,6 +21,7 @@ class ChatRoomTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +36,12 @@ class ChatRoomTableViewController: UITableViewController {
             }
         }
     }
+    
+    // MARK: - UI Actions
+    @IBAction func addChatRoom(_ sender: Any) {
+        presentAddChatRoomAlert()
+    }
+    
 
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,5 +67,39 @@ class ChatRoomTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Utility Methods
+    private func presentAddChatRoomAlert() {
+        let alert = UIAlertController(title: "Add Chatroom?", message: nil, preferredStyle: .alert)
+        
+        var titleTextField: UITextField?
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Your Cool New Chatroom"
+            
+            titleTextField = textField
+        }
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+            self.makeNewChatRoom(with: titleTextField?.text ?? "New Chatroom")
+        }
+        alert.addAction(submitAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true)
+        
+    }
+    
+    private func makeNewChatRoom(with title: String) {
+        let identifier = UUID().uuidString
+        let chatroom = [
+            "title": title,
+            "identifier": identifier
+        ]
+        
+        ref.child("/chatrooms/\(identifier)").setValue(chatroom)
+    }
 
 }

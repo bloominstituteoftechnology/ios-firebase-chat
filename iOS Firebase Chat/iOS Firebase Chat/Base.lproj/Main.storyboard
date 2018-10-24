@@ -35,7 +35,13 @@
                             <outlet property="delegate" destination="Rb9-JB-GTD" id="1Nx-pi-Xbe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Chatrooms" id="jcQ-nR-4Zq"/>
+                    <navigationItem key="navigationItem" title="Chatrooms" id="jcQ-nR-4Zq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EBp-e0-3gR">
+                            <connections>
+                                <action selector="addChatRoom:" destination="Rb9-JB-GTD" id="A8O-K0-JC2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GLa-AF-Mqv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
