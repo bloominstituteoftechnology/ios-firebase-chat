@@ -12,7 +12,7 @@ import MessageInputBar
 
 class MessageViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate, MessageInputBarDelegate {
 
-    // MARK
+    // MARK: - Properties
     var firebaseController: FirebaseContoller!
     var chatroom: Chatroom!
     

@@ -11,6 +11,7 @@ import MessageKit
 
 struct Message: Codable, Equatable, MessageType {
     
+    // MARK: - Properties
     let sender: Sender
     let text: String
     let messageId: String
@@ -22,6 +23,7 @@ struct Message: Codable, Equatable, MessageType {
         case timestamp
     }
     
+    // MARK: - Initializers
     init(sender: Sender, text: String, messageId: String = UUID().uuidString, timestamp: Date = Date()) {
         self.sender = sender
         self.text = text
@@ -40,13 +42,13 @@ struct Message: Codable, Equatable, MessageType {
         self.init(sender: sender, text: text, timestamp: timestamp)
     }
 
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-
-        try container.encode(sender, forKey: .sender)
-        try container.encode(ISO8601DateFormatter().string(from: timestamp), forKey: .timestamp)
-        try container.encode(text, forKey: .text)
-    }
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: CodingKeys.self)
+//
+//        try container.encode(sender, forKey: .sender)
+//        try container.encode(ISO8601DateFormatter().string(from: timestamp), forKey: .timestamp)
+//        try container.encode(text, forKey: .text)
+//    }
     
     // MARK: - MessageType
     var sentDate: Date { return timestamp }
@@ -54,6 +56,7 @@ struct Message: Codable, Equatable, MessageType {
 
 }
 
+// Make Sender Codable to make things easier
 extension Sender: Codable {
     enum CodingKeys: String, CodingKey {
         case displayName
