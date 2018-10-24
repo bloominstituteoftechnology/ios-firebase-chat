@@ -25,44 +25,48 @@
 import UIKit
 
 /**
- A UIView thats intrinsicContentSize is overrided so an exact height can be specified
+ A UIStackView that's intended for holding `InputItem`s
  
  ## Important Notes ##
- 1. Default height is 1.0
- 2. Default backgroundColor is UIColor.lightGray
- 3. Intended to be used in an `InputStackView`
+ 1. Default alignment is .fill
+ 2. Default distribution is .fill
+ 3. The distribution property needs to be based on its arranged subviews intrinsicContentSize so it is not recommended to change it
  */
-open class SeparatorLine: UIView {
+open class InputStackView: UIStackView {
     
-    // MARK: - Properties
-    
-    /// The height of the line
-    open var height: CGFloat = 1.0 {
-        didSet {
-            invalidateIntrinsicContentSize()
-        }
+    /// The stack view position in the MessageInputBar
+    ///
+    /// - left: Left Stack View
+    /// - right: Bottom Stack View
+    /// - bottom: Left Stack View
+    /// - top: Top Stack View
+    public enum Position {
+        case left, right, bottom, top
     }
     
-    open override var intrinsicContentSize: CGSize {
-        return CGSize(width: super.intrinsicContentSize.width, height: height)
-    }
+    // MARK: Initialization
     
-    // MARK: - Initialization
+    public convenience init(axis: NSLayoutConstraint.Axis, spacing: CGFloat) {
+        self.init(frame: .zero)
+        self.axis = axis
+        self.spacing = spacing
+    }
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
+    required public init(coder: NSCoder) {
+        super.init(coder: coder)
     }
+    
+    // MARK: - Setup
     
     /// Sets up the default properties
     open func setup() {
-        backgroundColor = .lightGray
         translatesAutoresizingMaskIntoConstraints = false
-        setContentHuggingPriority(.defaultHigh, for: .vertical)
+        distribution = .fill
+        alignment = .bottom
     }
 }
