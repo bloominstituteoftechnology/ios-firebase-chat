@@ -34,8 +34,9 @@ struct Message: Codable, Equatable, MessageType {
 
         let text = try container.decode(String.self, forKey: .text)
         let sender = try container.decode(Sender.self, forKey: .sender)
-        let timestamp = try container.decode(Date.self, forKey: .timestamp)
+        let timestampString = try container.decode(String.self, forKey: .timestamp)
 
+        let timestamp = ISO8601DateFormatter().date(from: timestampString) ?? Date()
         self.init(sender: sender, text: text, timestamp: timestamp)
     }
 
@@ -43,7 +44,7 @@ struct Message: Codable, Equatable, MessageType {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         try container.encode(sender, forKey: .sender)
-        try container.encode(timestamp, forKey: .timestamp)
+        try container.encode(ISO8601DateFormatter().string(from: timestamp), forKey: .timestamp)
         try container.encode(text, forKey: .text)
     }
     

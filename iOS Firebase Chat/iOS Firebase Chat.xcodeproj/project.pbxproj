@@ -16,6 +16,9 @@
 		34AACBCC217FC0BF001C7555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34AACBCB217FC0BF001C7555 /* Assets.xcassets */; };
 		34AACBCF217FC0BF001C7555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34AACBCD217FC0BF001C7555 /* LaunchScreen.storyboard */; };
 		34AACBD7217FC11B001C7555 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 34AACBD6217FC11B001C7555 /* GoogleService-Info.plist */; };
+		34B190DB217FFB64007EA01C /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B190DA217FFB64007EA01C /* FirebaseController.swift */; };
+		34B190DD2180061F007EA01C /* NetworkHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B190DC2180061F007EA01C /* NetworkHelpers.swift */; };
+		34B190DF218032F5007EA01C /* UIColor+CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B190DE218032F5007EA01C /* UIColor+CustomColors.swift */; };
 		4E87E2B630BC5F87E38317FC /* Pods_iOS_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD8237ACFBEFE10D3311FBF /* Pods_iOS_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +35,9 @@
 		34AACBCE217FC0BF001C7555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34AACBD0217FC0BF001C7555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34AACBD6217FC11B001C7555 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		34B190DA217FFB64007EA01C /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
+		34B190DC2180061F007EA01C /* NetworkHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelpers.swift; sourceTree = "<group>"; };
+		34B190DE218032F5007EA01C /* UIColor+CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+CustomColors.swift"; sourceTree = "<group>"; };
 		4DD8237ACFBEFE10D3311FBF /* Pods_iOS_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9F265BB2AAC70CB0BEADAA2 /* Pods-iOS Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Firebase Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Firebase Chat/Pods-iOS Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +69,8 @@
 				34AACBCD217FC0BF001C7555 /* LaunchScreen.storyboard */,
 				34AACBD0217FC0BF001C7555 /* Info.plist */,
 				34AACBD6217FC11B001C7555 /* GoogleService-Info.plist */,
+				34B190DC2180061F007EA01C /* NetworkHelpers.swift */,
+				34B190DE218032F5007EA01C /* UIColor+CustomColors.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -109,6 +117,7 @@
 				34AACBC4217FC0BE001C7555 /* AppDelegate.swift */,
 				34A73547217FCF4200A17459 /* Models */,
 				34AACBC8217FC0BE001C7555 /* Main.storyboard */,
+				34B190DA217FFB64007EA01C /* FirebaseController.swift */,
 				34A73542217FCD6500A17459 /* View Controllers */,
 				34A7353F217FCCEB00A17459 /* Resources */,
 			);
@@ -253,6 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34B190DB217FFB64007EA01C /* FirebaseController.swift in Sources */,
+				34B190DD2180061F007EA01C /* NetworkHelpers.swift in Sources */,
+				34B190DF218032F5007EA01C /* UIColor+CustomColors.swift in Sources */,
 				34A73541217FCD2100A17459 /* ChatRoomTableViewController.swift in Sources */,
 				34A73546217FCF3D00A17459 /* Message.swift in Sources */,
 				34A73544217FCD9400A17459 /* MessageViewController.swift in Sources */,

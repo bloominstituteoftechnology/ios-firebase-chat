@@ -8,31 +8,42 @@
 
 import UIKit
 import FirebaseDatabase
+import MessageKit
 
 class ChatRoomTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var ref: DatabaseReference!
-    var chatrooms: [ChatRoom] = [] {
+    var chatrooms: [Chatroom] = [] {
         didSet {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
+    lazy var firebaseController: FirebaseContoller! = {
+        return FirebaseContoller()
+    }()
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        ref = Database.database().reference()
         
-        ref.child("/chatrooms").observe(DataEventType.value) { (snapshot) in
-            guard let snapshotDict = snapshot.value as? NSDictionary else { return }
+        if UserDefaults.standard.string(forKey: "Username") == nil {
             
-            if let data = try? JSONSerialization.data(withJSONObject: snapshotDict, options: []),
-                let tempChatrooms = try? JSONDecoder().decode([String: ChatRoom].self, from: data).map() { $0.value } {
-                self.chatrooms = tempChatrooms
+            presentNameAlert()
+        } else {
+            guard let displayName = UserDefaults.standard.string(forKey: "Username"),
+                let id = UserDefaults.standard.string(forKey: "UserID") else { return }
+            firebaseController.currentSender = Sender(id: id, displayName: displayName)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        firebaseController.loadChatrooms { (_) in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
         }
     }
@@ -45,28 +56,30 @@ class ChatRoomTableViewController: UITableViewController {
 
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatrooms.count
+        return firebaseController.chatrooms.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
-        let chatroom = chatrooms[indexPath.row]
+        let chatroom = firebaseController.chatrooms[indexPath.row]
 
         cell.textLabel?.text = chatroom.title
         
         return cell
     }
 
-
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowChatRoomSegue" {
+            let destinationVC = segue.destination as! MessageViewController
+            guard let indexPath = tableView.indexPathForSelectedRow else { return }
+            let chatroom = firebaseController.chatrooms[indexPath.row]
+            
+            destinationVC.firebaseController = firebaseController
+            destinationVC.chatroom = chatroom
+            firebaseController.closeChatrooms()
+        }
     }
-    */
     
     // MARK: - Utility Methods
     private func presentAddChatRoomAlert() {
@@ -81,7 +94,7 @@ class ChatRoomTableViewController: UITableViewController {
         }
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
-            self.makeNewChatRoom(with: titleTextField?.text ?? "New Chatroom")
+            self.firebaseController.makeNewChatRoom(with: titleTextField?.text ?? "New Chatroom")
         }
         alert.addAction(submitAction)
         
@@ -92,14 +105,28 @@ class ChatRoomTableViewController: UITableViewController {
         
     }
     
-    private func makeNewChatRoom(with title: String) {
-        let identifier = UUID().uuidString
-        let chatroom = [
-            "title": title,
-            "identifier": identifier
-        ]
+    private func presentNameAlert() {
+        let alert = UIAlertController(title: "What Is Your Name?", message: nil, preferredStyle: .alert)
         
-        ref.child("/chatrooms/\(identifier)").setValue(chatroom)
+        var nameTextField: UITextField?
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Your Name"
+            
+            nameTextField = textField
+        }
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+            let name = nameTextField?.text ?? "Some Person"
+            let id = UUID().uuidString
+            UserDefaults.standard.set(name, forKey: "Username")
+            UserDefaults.standard.set(id, forKey: "UserID")
+            
+            self.firebaseController.currentSender = Sender(id: id, displayName: name)
+        }
+        alert.addAction(submitAction)
+        
+        present(alert, animated: true)
     }
 
 }
