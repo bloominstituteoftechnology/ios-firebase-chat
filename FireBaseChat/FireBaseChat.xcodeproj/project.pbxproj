@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47408F5521E645B6007E350E /* FBChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47408F5421E645B6007E350E /* FBChatTableViewController.swift */; };
+		47408F5A21E64774007E350E /* FBChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47408F5921E64774007E350E /* FBChatViewController.swift */; };
 		47AEEF4421E567ED0043D248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AEEF4321E567ED0043D248 /* AppDelegate.swift */; };
-		47AEEF4621E567ED0043D248 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47AEEF4521E567ED0043D248 /* ViewController.swift */; };
 		47AEEF4921E567ED0043D248 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AEEF4721E567ED0043D248 /* Main.storyboard */; };
 		47AEEF4B21E567EF0043D248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47AEEF4A21E567EF0043D248 /* Assets.xcassets */; };
 		47AEEF4E21E567EF0043D248 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47AEEF4C21E567EF0043D248 /* LaunchScreen.storyboard */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		47408F5421E645B6007E350E /* FBChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChatTableViewController.swift; sourceTree = "<group>"; };
+		47408F5921E64774007E350E /* FBChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChatViewController.swift; sourceTree = "<group>"; };
 		47AEEF4021E567ED0043D248 /* FireBaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireBaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47AEEF4321E567ED0043D248 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		47AEEF4521E567ED0043D248 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		47AEEF4821E567ED0043D248 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		47AEEF4A21E567EF0043D248 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47AEEF4D21E567EF0043D248 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47408F5621E645C3007E350E /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				47408F5421E645B6007E350E /* FBChatTableViewController.swift */,
+				47408F5921E64774007E350E /* FBChatViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
 		47AEEF3721E567ED0043D248 = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				47AEEF4321E567ED0043D248 /* AppDelegate.swift */,
-				47AEEF4521E567ED0043D248 /* ViewController.swift */,
 				47AEEF4721E567ED0043D248 /* Main.storyboard */,
+				47408F5621E645C3007E350E /* View Controller */,
 				47AEEF4A21E567EF0043D248 /* Assets.xcassets */,
 				47AEEF4C21E567EF0043D248 /* LaunchScreen.storyboard */,
 				47AEEF4F21E567EF0043D248 /* Info.plist */,
@@ -287,7 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47AEEF4621E567ED0043D248 /* ViewController.swift in Sources */,
+				47408F5A21E64774007E350E /* FBChatViewController.swift in Sources */,
+				47408F5521E645B6007E350E /* FBChatTableViewController.swift in Sources */,
 				47AEEF4421E567ED0043D248 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
