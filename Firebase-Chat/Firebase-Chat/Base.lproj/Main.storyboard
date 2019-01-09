@@ -13,13 +13,13 @@
         <!--Chat Table View Controller-->
         <scene sceneID="CpL-yi-fnf">
             <objects>
-                <tableViewController id="SR0-tK-5o9" customClass="ChatTableViewController" sceneMemberID="viewController">
+                <tableViewController id="SR0-tK-5o9" customClass="ChatTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VGh-LE-liQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="qj9-dh-LRx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="qj9-dh-LRx">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qj9-dh-LRx" id="02x-oU-x42">
@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="SR0-tK-5o9" id="flb-AH-uTA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="LqT-p2-srR"/>
+                    <navigationItem key="navigationItem" id="LqT-p2-srR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ELs-vi-7gJ">
+                            <connections>
+                                <action selector="addButton:" destination="SR0-tK-5o9" id="zrs-p1-hGI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="8yA-Ks-utH" kind="show" id="mcA-ca-AEb"/>
                     </connections>
@@ -42,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="1093.5999999999999" y="137.18140929535232"/>
         </scene>
-        <!--Messages View Controller-->
+        <!--Chat Detail View Controller-->
         <scene sceneID="U2l-gT-IY7">
             <objects>
-                <viewController id="8yA-Ks-utH" customClass="MessagesViewController" sceneMemberID="viewController">
+                <viewController id="8yA-Ks-utH" customClass="ChatDetailViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ph5-Tt-TcX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

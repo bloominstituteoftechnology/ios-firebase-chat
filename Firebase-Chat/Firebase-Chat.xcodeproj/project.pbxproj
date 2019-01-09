@@ -13,8 +13,12 @@
 		4472875E21E53FCA00083329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4472875D21E53FCA00083329 /* Assets.xcassets */; };
 		4472876121E53FCA00083329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472875F21E53FCA00083329 /* LaunchScreen.storyboard */; };
 		4472876B21E5436400083329 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4472876A21E5436400083329 /* GoogleService-Info.plist */; };
-		4472876F21E5504B00083329 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472876E21E5504B00083329 /* ChatTableViewController.swift */; };
-		4472877121E550AB00083329 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877021E550AB00083329 /* ChatTableViewController.swift */; };
+		4472877421E555FA00083329 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877321E555FA00083329 /* Chat.swift */; };
+		4472877621E55D0700083329 /* MessageChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877521E55D0700083329 /* MessageChat.swift */; };
+		4472877821E5621A00083329 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877721E5621A00083329 /* ChatController.swift */; };
+		4472877A21E56CC600083329 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877921E56CC600083329 /* MessageController.swift */; };
+		4472877C21E56E4600083329 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877B21E56E4600083329 /* ChatDetailViewController.swift */; };
+		4472877E21E592B600083329 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4472877D21E592B600083329 /* ChatTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +29,12 @@
 		4472876021E53FCA00083329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4472876221E53FCA00083329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4472876A21E5436400083329 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4472876E21E5504B00083329 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatTableViewController.swift; path = "/Users/yzhukovs/development/ios-firebase-chat/Firebase-Chat/Firebase-Chat/ChatTableViewController.swift"; sourceTree = "<absolute>"; };
-		4472877021E550AB00083329 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		4472877321E555FA00083329 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		4472877521E55D0700083329 /* MessageChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageChat.swift; sourceTree = "<group>"; };
+		4472877721E5621A00083329 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		4472877921E56CC600083329 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		4472877B21E56E4600083329 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		4472877D21E592B600083329 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		95193CBF95BFFA7FA2538974 /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB0458A673E770AD40C63BE /* Pods-Firebase-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Firebase-Chat/Pods-Firebase-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		F27BF46DB6B82E04FA27CAFA /* Pods-Firebase-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Firebase-Chat/Pods-Firebase-Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -47,6 +55,7 @@
 		4472874A21E53FC800083329 = {
 			isa = PBXGroup;
 			children = (
+				4472877221E5552500083329 /* Model */,
 				4472875521E53FC800083329 /* Firebase-Chat */,
 				4472875421E53FC800083329 /* Products */,
 				531B8FC46BF12D67D3348591 /* Pods */,
@@ -65,16 +74,27 @@
 		4472875521E53FC800083329 /* Firebase-Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4472877D21E592B600083329 /* ChatTableViewController.swift */,
 				4472875621E53FC800083329 /* AppDelegate.swift */,
-				4472876E21E5504B00083329 /* ChatTableViewController.swift */,
-				4472877021E550AB00083329 /* ChatTableViewController.swift */,
 				4472875A21E53FC800083329 /* Main.storyboard */,
 				4472875D21E53FCA00083329 /* Assets.xcassets */,
 				4472875F21E53FCA00083329 /* LaunchScreen.storyboard */,
 				4472876221E53FCA00083329 /* Info.plist */,
 				4472876A21E5436400083329 /* GoogleService-Info.plist */,
+				4472877B21E56E4600083329 /* ChatDetailViewController.swift */,
 			);
 			path = "Firebase-Chat";
+			sourceTree = "<group>";
+		};
+		4472877221E5552500083329 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4472877321E555FA00083329 /* Chat.swift */,
+				4472877521E55D0700083329 /* MessageChat.swift */,
+				4472877721E5621A00083329 /* ChatController.swift */,
+				4472877921E56CC600083329 /* MessageController.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		531B8FC46BF12D67D3348591 /* Pods */ = {
@@ -176,6 +196,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -185,6 +206,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,8 +244,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4472875721E53FC800083329 /* AppDelegate.swift in Sources */,
-				4472876F21E5504B00083329 /* ChatTableViewController.swift in Sources */,
-				4472877121E550AB00083329 /* ChatTableViewController.swift in Sources */,
+				4472877A21E56CC600083329 /* MessageController.swift in Sources */,
+				4472877C21E56E4600083329 /* ChatDetailViewController.swift in Sources */,
+				4472877421E555FA00083329 /* Chat.swift in Sources */,
+				4472877621E55D0700083329 /* MessageChat.swift in Sources */,
+				4472877821E5621A00083329 /* ChatController.swift in Sources */,
+				4472877E21E592B600083329 /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
