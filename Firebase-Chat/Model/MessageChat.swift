@@ -16,19 +16,29 @@ struct Message: MessageType {
     var sentDate: Date
     let timestamp: NSNumber?
     let text: String?
-    let senderName: String?
     let senderId: String?
     
     init(dictionary: [String: Any])
     {
         self.kind = .text(dictionary["text"] as! String)
         self.text = dictionary["text"] as? String
-        self.senderName = dictionary["senderName"] as? String
         self.timestamp = dictionary["timestamp"] as? NSNumber
         self.senderId = dictionary["senderId"] as? String
-        self.sender = Sender(id: senderId!, displayName: senderName!)
+        self.sender = Sender(id: senderId!, displayName: senderId!)
         self.messageId = UUID().uuidString
         self.sentDate = Date(timeIntervalSinceNow:(timestamp?.doubleValue)!)
 }
 
+}
+
+struct User {
+   var name: String?
+    var id: String?
+
+
+    init(dict: [String: Any])
+{
+    self.name = dict["name"] as? String
+    self.id = dict["id"] as? String
+}
 }
