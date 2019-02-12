@@ -14,6 +14,8 @@
 		D13997EE2213724B00EEC786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13997ED2213724B00EEC786 /* Assets.xcassets */; };
 		D13997F12213724B00EEC786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13997EF2213724B00EEC786 /* LaunchScreen.storyboard */; };
 		D13997F9221372A600EEC786 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13997F8221372A600EEC786 /* GoogleService-Info.plist */; };
+		D13997FB2213796C00EEC786 /* MessageInputBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13997FA2213796C00EEC786 /* MessageInputBar.framework */; };
+		D13997FD2213797E00EEC786 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D13997FC2213797E00EEC786 /* MessageKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		D13997F02213724B00EEC786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13997F22213724B00EEC786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D13997F8221372A600EEC786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D13997FA2213796C00EEC786 /* MessageInputBar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageInputBar.framework; path = Carthage/Build/iOS/MessageInputBar.framework; sourceTree = "<group>"; };
+		D13997FC2213797E00EEC786 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		E791E1FC694A21941E6EB8F9 /* Pods-ios-firebase-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-firebase-chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-firebase-chat/Pods-ios-firebase-chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +40,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3459DA9DCC0A5A7CB7ADA013 /* Pods_ios_firebase_chat.framework in Frameworks */,
+				D13997FB2213796C00EEC786 /* MessageInputBar.framework in Frameworks */,
+				D13997FD2213797E00EEC786 /* MessageKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +60,8 @@
 		164C10E0A46FCE8EAFB6A713 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D13997FC2213797E00EEC786 /* MessageKit.framework */,
+				D13997FA2213796C00EEC786 /* MessageInputBar.framework */,
 				184996A2116DC713E30A6F91 /* Pods_ios_firebase_chat.framework */,
 			);
 			name = Frameworks;
@@ -103,6 +111,7 @@
 				D13997E02213724900EEC786 /* Frameworks */,
 				D13997E12213724900EEC786 /* Resources */,
 				0A4FD1CA7E9E541E5DAB5995 /* [CP] Embed Pods Frameworks */,
+				D13997FE2213798900EEC786 /* Carthage Build Script */,
 			);
 			buildRules = (
 			);
@@ -206,6 +215,28 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D13997FE2213798900EEC786 /* Carthage Build Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MessageKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MessageInputBar.framework",
+			);
+			name = "Carthage Build Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/MessageKit.framework",
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/MessageInputBar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -364,6 +395,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5U94G8XN2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ios-firebase-chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +418,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S5U94G8XN2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "ios-firebase-chat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

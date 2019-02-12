@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "0.4.0",
+  "iOS" : [
+    {
+      "name" : "MessageInputBar",
+      "hash" : "ab83b54a8f65ed1a73bad7c4399ee61373299adadd87b485ad27fe8d506b4165"
+    }
+  ]
+}
