@@ -1,0 +1,11 @@
+framework module MessageInputBar {
+  umbrella header "MessageInputBar.h"
+
+  export *
+  module * { export * }
+}
+
+module MessageInputBar.Swift {
+    header "MessageInputBar-Swift.h"
+    requires objc
+}
