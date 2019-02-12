@@ -12,6 +12,7 @@
 		D13997EC2213724900EEC786 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13997EA2213724900EEC786 /* Main.storyboard */; };
 		D13997EE2213724B00EEC786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13997ED2213724B00EEC786 /* Assets.xcassets */; };
 		D13997F12213724B00EEC786 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13997EF2213724B00EEC786 /* LaunchScreen.storyboard */; };
+		D13997F9221372A600EEC786 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13997F8221372A600EEC786 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D13997ED2213724B00EEC786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D13997F02213724B00EEC786 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13997F22213724B00EEC786 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D13997F8221372A600EEC786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				D13997ED2213724B00EEC786 /* Assets.xcassets */,
 				D13997EF2213724B00EEC786 /* LaunchScreen.storyboard */,
 				D13997F22213724B00EEC786 /* Info.plist */,
+				D13997F8221372A600EEC786 /* GoogleService-Info.plist */,
 			);
 			path = "ios-firebase-chat";
 			sourceTree = "<group>";
@@ -123,6 +126,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D13997F12213724B00EEC786 /* LaunchScreen.storyboard in Resources */,
+				D13997F9221372A600EEC786 /* GoogleService-Info.plist in Resources */,
 				D13997EE2213724B00EEC786 /* Assets.xcassets in Resources */,
 				D13997EC2213724900EEC786 /* Main.storyboard in Resources */,
 			);
