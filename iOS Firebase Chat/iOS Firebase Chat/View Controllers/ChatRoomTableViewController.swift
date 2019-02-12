@@ -13,13 +13,6 @@ import MessageKit
 class ChatRoomTableViewController: UITableViewController {
     
     // MARK: - Properties
-    var chatrooms: [Chatroom] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
     lazy var firebaseController: FirebaseContoller! = {
         return FirebaseContoller()
     }()
@@ -66,6 +59,12 @@ class ChatRoomTableViewController: UITableViewController {
         cell.textLabel?.text = chatroom.title
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            firebaseController.deleteChatroom(with: indexPath)
+        }
     }
 
     // MARK: - Navigation

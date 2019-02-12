@@ -60,6 +60,11 @@ class FirebaseContoller {
         ref.child("/chatrooms/\(identifier)").setValue(chatroom)
     }
     
+    func deleteChatroom(with indexPath: IndexPath) {
+        let chatroom = chatrooms[indexPath.row]
+        ref.child("/chatrooms/\(chatroom.identifier)").removeValue()
+    }
+    
     // MARK: - Message Methods
     func loadMessages(for chatroom: Chatroom, completion: @escaping CompletionHandler = { _ in }) {
         observeMessagesHandle = ref.child("/messages/\(chatroom.identifier)").observe(DataEventType.value) { (snapshot) in
