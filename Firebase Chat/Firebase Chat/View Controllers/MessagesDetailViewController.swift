@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import MessageKit
+import MessageInputBar
 
 class MessagesDetailViewController: MessagesViewController, MessagesDataSource, MessagesDisplayDelegate, MessagesLayoutDelegate, MessageInputBarDelegate {
     
@@ -47,13 +48,13 @@ class MessagesDetailViewController: MessagesViewController, MessagesDataSource, 
     
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let name = message.sender.displayName
-        let attrs = [NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: .caption1)]
+        let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption1)]
         return NSAttributedString(string: name, attributes: attrs)
     }
     
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let dateString = formatter.string(from: message.sentDate)
-        let attrs = [NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: .caption1)]
+        let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption1)]
         return NSAttributedString(string: dateString, attributes: attrs)
     }
     
