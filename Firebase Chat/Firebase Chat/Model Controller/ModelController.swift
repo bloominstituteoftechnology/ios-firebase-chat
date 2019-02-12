@@ -46,6 +46,54 @@ class ModelController {
     
     func fetchChatRooms(completion: @escaping () -> Void) {
         
+        let requestURL = ModelController.baseURL.appendingPathExtension("json")
+        
+        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
+            
+            if let error = error {
+                NSLog("Error fetching message threads: \(error)")
+                completion()
+                return
+            }
+            
+            guard let data = data else { NSLog("No data returned from data task");
+                completion(); return }
+            
+            do {
+                self.chatRooms = try JSONDecoder().decode([String: ChatRoom].self, from: data).map({ $0.value })
+            } catch let jsonError as DecodingError {
+                let ctx: DecodingError.Context
+                switch jsonError {
+                    
+                case .typeMismatch(let type, let context):
+                    print("Mismatched type: \(type)")
+                    ctx = context
+                case .valueNotFound(let type, let context):
+                    print("Missing vlue of type \(type)")
+                case .keyNotFound(let key, let context):
+                    print("Unknown key: \(key.stringValue)")
+                    ctx = context
+                case .dataCorrupted(let context):
+                    print("Corrupted data")
+                    ctx = context
+                }
+                
+                let path = ctx.codingPath.map { p -> String in
+                    return p.intValue != nil ? "[\(p.intValue!)]" : "."+p.stringValue
+                    }.joined()
+                
+                print("path: [root]\(path)")
+                
+                self.chatRooms = []
+                NSLog("Error decoding message threads from JSON data: \(error)")
+            } catch {
+                self.chatRooms = []
+                NSLog("Unknown error decoding message threads from JSON data: \(error)")
+            }
+            completion()
+        }.resume()
+        
+        
     }
     
     func createMessage(in chatRoom: ChatRoom, withText text: String, sender: String, completion: @escaping () -> Void) {
