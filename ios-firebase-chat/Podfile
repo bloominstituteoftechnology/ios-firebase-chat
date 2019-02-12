@@ -7,4 +7,5 @@ target 'ios-firebase-chat' do
 
   # Pods for ios-firebase-chat
 pod 'Firebase/Core'
+pod 'Firebase/Database'
 end
