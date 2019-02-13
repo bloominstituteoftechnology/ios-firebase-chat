@@ -1,15 +1,42 @@
 import UIKit
+import MessageKit
+import Firebase
+import Foundation
+import FirebaseDatabase
 
 class ChatRoomListTableViewController: UITableViewController {
 
+    let chatRoomController = ChatRoomController()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        chatRoomController.fetchChatRooms {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let userNameAlert = UIAlertController(title: "Please enter your username:", message: nil, preferredStyle: .actionSheet)
+        var userNameTextField: UITextField?
+        userNameAlert.addTextField { (textField) in
+            textField.placeholder = "Username:"
+            userNameTextField = textField
+        }
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+            let name = userNameTextField?.text ?? "Anonymous"
+            let user = Sender(id: name, displayName: name)
+            self.chatRoomController.currentUser = user
+        }
+        
+        userNameAlert.addAction(submitAction)
+        present(userNameAlert, animated: true, completion: nil)
+  
     }
 
     // MARK: - Table view data source
