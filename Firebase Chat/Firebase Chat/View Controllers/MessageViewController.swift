@@ -17,6 +17,9 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
         messagesCollectionView.messagesDisplayDelegate = self
     }
     
+    // MARK: - MessagesDataSource
+    
+    // Who is sending the messages
     func currentSender() -> Sender {
         guard let sender = modelController?.currentUser else {
             return Sender(id: "", displayName: "User")
@@ -28,6 +31,7 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
         return message.sender == currentSender()
     }
     
+    // Returns a MessageType according to indexPath
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
         guard let message = chatRoom?.messages[indexPath.row] else {
             fatalError("Messages not available")
@@ -43,10 +47,33 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
         return chatRoom?.messages.count ?? 0
     }
     
+    // Shows above the messages
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let name = message.sender.displayName
         let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption1)]
         return NSAttributedString(string: name, attributes: attrs)
     }
+    
+    // Shows below the messages
+    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let dateString = formatter.string(from: message.sentDate)
+        let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption2)]
+        return NSAttributedString(string: dateString, attributes: attrs)
+    }
+    
+    // MARK: - MessagesLayoutDelegate
+    
+    
+    
+    
+    
+    
+    
+    private lazy var formatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateStyle = .medium
+        result.timeStyle = .medium
+        return result
+    }()
     
 }
