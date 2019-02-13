@@ -19,6 +19,8 @@
 		D13998062213841700EEC786 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13998052213841700EEC786 /* Message.swift */; };
 		D13998082213842500EEC786 /* Thread.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13998072213842500EEC786 /* Thread.swift */; };
 		D139980A2213846B00EEC786 /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13998092213846A00EEC786 /* ThreadsTableViewController.swift */; };
+		D139980C221386CF00EEC786 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D139980B221386CF00EEC786 /* Model.swift */; };
+		D139980F22138A4500EEC786 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D139980E22138A4500EEC786 /* ModelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		D13998052213841700EEC786 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		D13998072213842500EEC786 /* Thread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thread.swift; sourceTree = "<group>"; };
 		D13998092213846A00EEC786 /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
+		D139980B221386CF00EEC786 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		D139980E22138A4500EEC786 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		E791E1FC694A21941E6EB8F9 /* Pods-ios-firebase-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-firebase-chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-firebase-chat/Pods-ios-firebase-chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +98,7 @@
 		D13997E52213724900EEC786 /* ios-firebase-chat */ = {
 			isa = PBXGroup;
 			children = (
+				D139980D22138A3A00EEC786 /* Model Controller */,
 				D1399804221383F200EEC786 /* Model */,
 				D13998012213834D00EEC786 /* ViewControllers */,
 				D13997E62213724900EEC786 /* AppDelegate.swift */,
@@ -120,8 +125,17 @@
 			children = (
 				D13998052213841700EEC786 /* Message.swift */,
 				D13998072213842500EEC786 /* Thread.swift */,
+				D139980B221386CF00EEC786 /* Model.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D139980D22138A3A00EEC786 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D139980E22138A4500EEC786 /* ModelController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,7 +288,9 @@
 			files = (
 				D13998002213834800EEC786 /* DetailViewController.swift in Sources */,
 				D13998082213842500EEC786 /* Thread.swift in Sources */,
+				D139980F22138A4500EEC786 /* ModelController.swift in Sources */,
 				D13998062213841700EEC786 /* Message.swift in Sources */,
+				D139980C221386CF00EEC786 /* Model.swift in Sources */,
 				D139980A2213846B00EEC786 /* ThreadsTableViewController.swift in Sources */,
 				D13997E72213724900EEC786 /* AppDelegate.swift in Sources */,
 			);

@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Model {
+    
+    static let shared = Model()
+    
+    init(){}
+    
+    var dictionary: NSDictionary?
+    
+}

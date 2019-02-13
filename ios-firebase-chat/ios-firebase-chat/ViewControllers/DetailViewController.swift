@@ -10,19 +10,19 @@ import UIKit
 import MessageKit
 import MessageInputBar
 
-class DetailViewController: MessagesViewController, MessagesDataSource, MessageInputBarDelegate, MessagesDisplayDelegate, MessagesLayoutDelegate {
+class DetailViewController: MessagesViewController/*, MessagesDataSource, MessageInputBarDelegate, MessagesDisplayDelegate, MessagesLayoutDelegate*/ {
     
-    func currentSender() -> Sender {
-        <#code#>
-    }
-    
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        <#code#>
-    }
-    
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        <#code#>
-    }
+//    func currentSender() -> Sender {
+//
+//    }
+//    
+//    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+//
+//    }
+//
+//    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+//        return 1
+//    }
     
 
     override func viewDidLoad() {

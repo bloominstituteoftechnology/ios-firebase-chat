@@ -9,7 +9,9 @@
 import Foundation
 
 struct Message {
-    let title: String?
-    let body: String?
-    let timestamp: Date = Date()
+    let title: NSString?
+    let body: NSString?
+    let timestamp: NSNumber = NSNumber(floatLiteral: Date().timeIntervalSince1970)
+    let messageID: NSString = UUID().uuidString as NSString
+    
 }

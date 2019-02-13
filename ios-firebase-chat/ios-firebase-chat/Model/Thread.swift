@@ -9,8 +9,9 @@
 import Foundation
 
 struct Thread {
-    let title: String
-    let messages: [Message?] = []
+    var title: String
+    var messages: [Message] = []
+    var threadID: String = UUID().uuidString
     
     init(title: String) {
         self.title = title
