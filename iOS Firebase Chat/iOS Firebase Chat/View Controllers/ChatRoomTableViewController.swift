@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseDatabase
 import MessageKit
 
@@ -16,23 +17,26 @@ class ChatRoomTableViewController: UITableViewController {
     lazy var firebaseController: FirebaseContoller! = {
         return FirebaseContoller()
     }()
+    
+    var authHandle: AuthStateDidChangeListenerHandle!
 
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if UserDefaults.standard.string(forKey: "Username") == nil {
-            
-            presentNameAlert()
-        } else {
-            guard let displayName = UserDefaults.standard.string(forKey: "Username"),
-                let id = UserDefaults.standard.string(forKey: "UserID") else { return }
-            firebaseController.currentSender = Sender(id: id, displayName: displayName)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        authHandle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                print("\(user.displayName ?? "no name") - \(user.email ?? "no email") is logged in.")
+                self.firebaseController.currentSender = Sender(id: user.uid, displayName: user.displayName ?? user.email ?? "Some person")
+            } else {
+                self.dismiss(animated: true)
+            }
+        }
         
         firebaseController.loadChatrooms { (_) in
             DispatchQueue.main.async {
@@ -41,12 +45,23 @@ class ChatRoomTableViewController: UITableViewController {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(authHandle!)
+    }
+    
     // MARK: - UI Actions
     @IBAction func addChatRoom(_ sender: Any) {
         presentAddChatRoomAlert()
     }
     
-
+    @IBAction func logoutUser(_ sender: Any) {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            NSLog("Error logging out: \(error)")
+        }
+    }
+    
     // MARK: - Table View Data Source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return firebaseController.chatrooms.count
@@ -104,24 +119,39 @@ class ChatRoomTableViewController: UITableViewController {
         
     }
     
-    private func presentNameAlert() {
-        let alert = UIAlertController(title: "What Is Your Name?", message: nil, preferredStyle: .alert)
+    private func presentSignupAlert() {
+        let alert = UIAlertController(title: "Please Login", message: nil, preferredStyle: .alert)
         
-        var nameTextField: UITextField?
+        var emailTextField: UITextField!
+        var passwordTextField: UITextField!
         
         alert.addTextField { (textField) in
-            textField.placeholder = "Your Name"
+            textField.placeholder = "Email"
             
-            nameTextField = textField
+            emailTextField = textField
+        }
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Password"
+            textField.isSecureTextEntry = true
+            
+            passwordTextField = textField
         }
         
         let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
-            let name = nameTextField?.text ?? "Some Person"
-            let id = UUID().uuidString
-            UserDefaults.standard.set(name, forKey: "Username")
-            UserDefaults.standard.set(id, forKey: "UserID")
+            guard let email = emailTextField.text, let password = passwordTextField.text else { self.presentSignupAlert(); return }
             
-            self.firebaseController.currentSender = Sender(id: id, displayName: name)
+            Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
+                if let error = error { print("Error signing up: \(error)") }
+            })
+            
+            //let id = UUID().uuidString
+            
+            
+            
+            //UserDefaults.standard.set(id, forKey: "UserID")
+            
+//            self.firebaseController.currentSender = Sender(id: id, displayName: name)
         }
         alert.addAction(submitAction)
         
