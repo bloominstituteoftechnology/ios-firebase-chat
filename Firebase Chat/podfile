@@ -1,0 +1,12 @@
+
+target 'Firebase Chat' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for iOS Firebase Chat
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'MessageKit', '2.0.0-beta.1'
+  pod 'MessageInputBar'
+end
+

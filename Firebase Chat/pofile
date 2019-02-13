@@ -1,0 +1,3 @@
+target 'Firebase Chat' do
+pod 'Firebase/Core'
+end
