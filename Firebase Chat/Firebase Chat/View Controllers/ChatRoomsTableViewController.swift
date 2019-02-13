@@ -69,6 +69,7 @@ class ChatRoomsTableViewController: UITableViewController {
             
             destinationVC.modelController = modelController
             destinationVC.chatRoom = modelController.chatRooms[indexPath.row]
+            destinationVC.navigationItem.title = modelController.chatRooms[indexPath.row].title
         }
     }
 

@@ -71,10 +71,41 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
         return 16
     }
     
+    // MARK: - MessagesDisplayDelegate
     
+    func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? .white : .smokeyBlack
+    }
     
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? UIColor.awesomePink : .lemonGlacier
+    }
     
+    // Add tails onto messages
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+        
+        return .bubbleTail(corner, .curved)
+    }
     
+    // Set sender's first initial in the avatar circle view
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        let initials = String(message.sender.displayName.first ?? Character(""))
+        let avatar = Avatar(image: nil, initials: initials)
+        avatarView.backgroundColor = .turquoise
+        avatarView.set(avatar: avatar)
+    }
+    
+    // MARK: - MessagesInputBarDelegate
+    
+    func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        
+        modelController?.createMessage(in: chatRoom!, withText: text, sender: currentSender().displayName) {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+            }
+        }
+    }
     
     
     

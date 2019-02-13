@@ -18,6 +18,7 @@
 		84852B9022138D8A004761E1 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84852B8F22138D8A004761E1 /* ModelController.swift */; };
 		84852B922213AB45004761E1 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84852B912213AB45004761E1 /* ChatRoomsTableViewController.swift */; };
 		84852B962213ABF4004761E1 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84852B952213ABF4004761E1 /* MessageViewController.swift */; };
+		84852B982214676F004761E1 /* UIColor + CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84852B972214676F004761E1 /* UIColor + CustomColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		84852B8F22138D8A004761E1 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		84852B912213AB45004761E1 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		84852B952213ABF4004761E1 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		84852B972214676F004761E1 /* UIColor + CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + CustomColors.swift"; sourceTree = "<group>"; };
 		E81B9DD9A6D17B6816831C48 /* Pods-Firebase Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.release.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				84852B6B22137523004761E1 /* AppDelegate.swift */,
+				84852B972214676F004761E1 /* UIColor + CustomColors.swift */,
 				84852B7222137524004761E1 /* Assets.xcassets */,
 				84852B7722137524004761E1 /* Info.plist */,
 				84852B8B221389E9004761E1 /* GoogleService-Info.plist */,
@@ -273,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84852B982214676F004761E1 /* UIColor + CustomColors.swift in Sources */,
 				84852B88221380AC004761E1 /* Message.swift in Sources */,
 				84852B9022138D8A004761E1 /* ModelController.swift in Sources */,
 				84852B922213AB45004761E1 /* ChatRoomsTableViewController.swift in Sources */,
