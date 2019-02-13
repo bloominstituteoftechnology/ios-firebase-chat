@@ -20,12 +20,16 @@ class ModelController {
         
     }
     
-    func fetchThreadsFromFirebase(on ref: DatabaseReference){
+    func fetchThreadsFromFirebase(on ref: DatabaseReference, completion: @escaping () -> Void) -> [Thread]{
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             
-            let values = snapshot.value as? NSDictionary
-            Model.shared.dictionary = values
+            guard let snapshotDict = snapshot.value as? NSDictionary else { return }
+            
+            if let data = try? JSONSerialization.data(withJSONObject: snapshotDict, options: []),
+                let tempThreads = try? JSONDecoder().decode([String: Thread].self, from: data).map() { $0.value } {
+                return tempThreads
+            }
         
         }) { (error) in
             print(error.localizedDescription)
@@ -39,4 +43,7 @@ class ModelController {
     func fetchMessagesInThreadFromFirebase(){
         
     }
+    
+    
+    // MARK: - Properties
 }

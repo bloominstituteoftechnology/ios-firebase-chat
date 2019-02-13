@@ -16,14 +16,21 @@ class ThreadsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        modelController.fetchThreadsFromFirebase(on: ref)
-        dict = Model.shared.dictionary
+        modelController.fetchThreadsFromFirebase(on: ref){
+            DispatchQueue.main.async {
+                self.dict = Model.shared.dictionary
+                self.tableView.reloadData()
+            }
+            
+        }
+        
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print(dict)
         return dict?.count ?? 0
     }
 
@@ -79,5 +86,11 @@ class ThreadsTableViewController: UITableViewController {
     
     // MARK: - Properties
     var modelController: ModelController = ModelController()
-    var dict = Model.shared.dictionary
+    var threads: [Thread] = [] {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }

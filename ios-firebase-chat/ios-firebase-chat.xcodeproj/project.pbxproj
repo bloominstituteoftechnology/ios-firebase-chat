@@ -114,8 +114,8 @@
 		D13998012213834D00EEC786 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D13997FF2213834800EEC786 /* DetailViewController.swift */,
 				D13998092213846A00EEC786 /* ThreadsTableViewController.swift */,
+				D13997FF2213834800EEC786 /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
