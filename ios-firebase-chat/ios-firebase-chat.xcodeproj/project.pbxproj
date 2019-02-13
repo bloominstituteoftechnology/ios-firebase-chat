@@ -17,6 +17,7 @@
 		AB3A0E4D2213733100BE8432 /* ChatRoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A0E4C2213733100BE8432 /* ChatRoomListTableViewController.swift */; };
 		AB3A0E502213741B00BE8432 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A0E4F2213741B00BE8432 /* ChatRoom.swift */; };
 		AB3A0E55221374C500BE8432 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A0E54221374C500BE8432 /* ChatRoomController.swift */; };
+		AB3A0E58221408DE00BE8432 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3A0E57221408DE00BE8432 /* ChatRoomViewController.swift */; };
 		B70DDA570A6E9B042482B7A1 /* Pods_ios_firebase_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B9A193CC2E621DD838F071 /* Pods_ios_firebase_chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		AB3A0E4C2213733100BE8432 /* ChatRoomListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomListTableViewController.swift; sourceTree = "<group>"; };
 		AB3A0E4F2213741B00BE8432 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		AB3A0E54221374C500BE8432 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		AB3A0E57221408DE00BE8432 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		D7B9A193CC2E621DD838F071 /* Pods_ios_firebase_chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_firebase_chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				AB3A0E4C2213733100BE8432 /* ChatRoomListTableViewController.swift */,
+				AB3A0E57221408DE00BE8432 /* ChatRoomViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			files = (
 				AB3A0E502213741B00BE8432 /* ChatRoom.swift in Sources */,
 				AB3A0E4D2213733100BE8432 /* ChatRoomListTableViewController.swift in Sources */,
+				AB3A0E58221408DE00BE8432 /* ChatRoomViewController.swift in Sources */,
 				AB3A0E2F221360D900BE8432 /* AppDelegate.swift in Sources */,
 				AB3A0E55221374C500BE8432 /* ChatRoomController.swift in Sources */,
 			);
