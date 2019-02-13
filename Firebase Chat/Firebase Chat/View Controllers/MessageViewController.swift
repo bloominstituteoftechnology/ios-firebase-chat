@@ -63,6 +63,16 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
     
     // MARK: - MessagesLayoutDelegate
     
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+    
+    
+    
     
     
     
