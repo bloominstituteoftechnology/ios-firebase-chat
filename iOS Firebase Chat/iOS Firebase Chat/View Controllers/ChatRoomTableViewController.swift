@@ -118,44 +118,4 @@ class ChatRoomTableViewController: UITableViewController {
         present(alert, animated: true)
         
     }
-    
-    private func presentSignupAlert() {
-        let alert = UIAlertController(title: "Please Login", message: nil, preferredStyle: .alert)
-        
-        var emailTextField: UITextField!
-        var passwordTextField: UITextField!
-        
-        alert.addTextField { (textField) in
-            textField.placeholder = "Email"
-            
-            emailTextField = textField
-        }
-        
-        alert.addTextField { (textField) in
-            textField.placeholder = "Password"
-            textField.isSecureTextEntry = true
-            
-            passwordTextField = textField
-        }
-        
-        let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
-            guard let email = emailTextField.text, let password = passwordTextField.text else { self.presentSignupAlert(); return }
-            
-            Auth.auth().createUser(withEmail: email, password: password, completion: { (result, error) in
-                if let error = error { print("Error signing up: \(error)") }
-            })
-            
-            //let id = UUID().uuidString
-            
-            
-            
-            //UserDefaults.standard.set(id, forKey: "UserID")
-            
-//            self.firebaseController.currentSender = Sender(id: id, displayName: name)
-        }
-        alert.addAction(submitAction)
-        
-        present(alert, animated: true)
-    }
-
 }

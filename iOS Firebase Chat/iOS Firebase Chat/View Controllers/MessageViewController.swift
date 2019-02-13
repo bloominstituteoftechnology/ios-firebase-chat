@@ -18,8 +18,8 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
+        formatter.dateStyle = .short
+        formatter.timeStyle = .short
         
         return formatter
     }()
@@ -110,7 +110,7 @@ class MessageViewController: MessagesViewController, MessagesDataSource, Message
     }
     
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let name = message.sender.displayName
+        let name = message.sender.displayName.capitalized
         let names = name.components(separatedBy: .whitespaces)
         let firstInitial = String(names.first?.first ?? "?")
         var lastInitial = ""

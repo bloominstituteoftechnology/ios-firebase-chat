@@ -27,33 +27,6 @@ class FirebaseContoller {
         ref = Database.database().reference()
     }
     
-    // MARK: - User Methods
-    func createNewUser(name: String) {
-        let displayName = name.lowercased()
-        let id = UUID().uuidString
-        let newUser = Sender(id: id, displayName: displayName)
-        
-        UserDefaults.standard.set(displayName, forKey: "Username")
-        currentSender = newUser
-        let sender = [
-            "displayName": newUser.displayName,
-            "id": newUser.id
-        ]
-        
-        ref.child("/users/\(newUser.id)").setValue(sender)
-    }
-    
-    func getUserWith(name: String) {
-        let userDict = ref.child("/users").queryEqual(toValue: name, childKey: "displayName")
-        
-        
-        if let data = try? JSONSerialization.data(withJSONObject: userDict, options: [.prettyPrinted]) {
-            print(data)
-        }
-        
-        
-    }
-    
     // MARK: - Chatroom Methods
     func loadChatrooms(completion: @escaping CompletionHandler = { _ in }) {
         observeChatroomsHandle = ref.child("/chatrooms").observe(DataEventType.value) { (snapshot) in
