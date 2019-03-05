@@ -73,6 +73,12 @@ class ChatsTableViewController: UITableViewController {
         if segue.identifier == "toAddChat" {
             let destinationVC = segue.destination as? AddChatViewController
             destinationVC?.chatsController = chatsController
+        } else if segue.identifier == "toChatVC" {
+            let destinationVC = segue.destination as? ChatsViewController
+            destinationVC?.chatsController = chatsController
+            guard let index = tableView.indexPathForSelectedRow else {return}
+            let chats = chatsController.chatrooms[index.row]
+            destinationVC?.chats = chats
         }
     }
    

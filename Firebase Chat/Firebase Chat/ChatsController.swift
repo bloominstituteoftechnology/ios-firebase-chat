@@ -8,12 +8,18 @@
 
 import Foundation
 import Firebase
+import MessageKit
 
 class ChatsController {
     
     var chatrooms: [Chats] = []
+    var messages: [Message] = []
+    
+    var currentUser: Sender?
     
     var chatsRef = Database.database().reference().child("chats")
+    var messagesRef = Database.database().reference().child("messages")
+    var messagesPostRef = Database.database().reference().child("my-messages")
     var chatsPostRef = Database.database().reference().child("chat-rooms")
     var refMyChats = Database.database().reference().child("myChats")
     
@@ -82,6 +88,41 @@ class ChatsController {
     }
     
   
+    
+    func sendMessageToDatabase(chat: Chats?, id: String, text: String, onSuccess: @escaping ()->Void){
+        
+        let newChatId = messagesRef.childByAutoId().key
+        let newChatReference = messagesPostRef.child(newChatId!)
+        
+      //  var chat = Chats()
+      //  let messages = Message(chats: chat, text: text, displayName: (chat?.uid)!, senderID: (chat?.uid!)!, messageId: newChatId!)
+        
+        
+      //  chat?.timeStamp = Date().timeIntervalSince1970 as NSNumber
+        let timeStamp = Date().timeIntervalSince1970 as NSNumber
+        
+        guard let currentUser = Auth.auth().currentUser else {return}
+        
+        let currentUserId = currentUser.uid
+        //push to database
+        newChatReference.setValue(["uid": currentUserId, "text": text, "timeStamp": timeStamp]) { (error, ref) in
+            if error != nil {
+                print("Error posting to database: \(error!.localizedDescription)")
+                return
+            }
+            
+            onSuccess()
+        }
+    }
+    
+    
+    func uploadMessagesToServer(chat: Chats?, id: String, text: String, onSuccess: @escaping () -> Void){
+        
+        sendMessageToDatabase(chat: chat, id: id, text: text) {
+            onSuccess()
+        }
+        
+    }
     
     
 }

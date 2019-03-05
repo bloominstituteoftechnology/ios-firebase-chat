@@ -19,6 +19,7 @@
 		7A20180E222EC2D3004089D8 /* AddChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A20180D222EC2D3004089D8 /* AddChatViewController.swift */; };
 		7A201810222EC32D004089D8 /* Chats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A20180F222EC32D004089D8 /* Chats.swift */; };
 		7A201812222EC419004089D8 /* ChatsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A201811222EC419004089D8 /* ChatsController.swift */; };
+		7A20181E222F08D9004089D8 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A20181D222F08D9004089D8 /* ChatsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		7A20180D222EC2D3004089D8 /* AddChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatViewController.swift; sourceTree = "<group>"; };
 		7A20180F222EC32D004089D8 /* Chats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chats.swift; sourceTree = "<group>"; };
 		7A201811222EC419004089D8 /* ChatsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsController.swift; sourceTree = "<group>"; };
+		7A20181D222F08D9004089D8 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		7F08ECC721EB11AE78C53626 /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A53E55CFC4177FBDF8FEA54A /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				7A2017F7222EB667004089D8 /* WelcomeViewController.swift */,
 				7A20180B222EC2B8004089D8 /* ChatsTableViewController.swift */,
 				7A20180D222EC2D3004089D8 /* AddChatViewController.swift */,
+				7A20181D222F08D9004089D8 /* ChatsViewController.swift */,
 				7A2017F9222EB667004089D8 /* Main.storyboard */,
 				7A2017FC222EB669004089D8 /* Assets.xcassets */,
 				7A2017FE222EB669004089D8 /* LaunchScreen.storyboard */,
@@ -243,6 +246,7 @@
 				7A20180A222EBBA6004089D8 /* AuthService.swift in Sources */,
 				7A201812222EC419004089D8 /* ChatsController.swift in Sources */,
 				7A20180C222EC2B8004089D8 /* ChatsTableViewController.swift in Sources */,
+				7A20181E222F08D9004089D8 /* ChatsViewController.swift in Sources */,
 				7A201810222EC32D004089D8 /* Chats.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

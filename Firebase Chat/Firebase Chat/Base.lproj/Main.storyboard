@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Rb5-AX-b3x" kind="show" identifier="toChatDetail" id="qS1-x3-dqt"/>
+                                    <segue destination="ugi-rs-PfG" kind="show" identifier="toChatVC" id="2Kw-PV-1ul"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -91,33 +91,20 @@
             </objects>
             <point key="canvasLocation" x="-103.2" y="124.58770614692655"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="kwX-9q-umk">
+        <!--Chats View Controller-->
+        <scene sceneID="iY0-vh-OPx">
             <objects>
-                <tableViewController id="Rb5-AX-b3x" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rPd-qu-bGG">
+                <viewController id="ugi-rs-PfG" customClass="ChatsViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yoi-UG-u0P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="99N-kr-CFo">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="99N-kr-CFo" id="5Ve-gB-fMI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Rb5-AX-b3x" id="xBc-wc-qh7"/>
-                            <outlet property="delegate" destination="Rb5-AX-b3x" id="jV1-ze-QRE"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mXr-rC-S0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="mYT-ow-dey"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qnf-d3-qOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590" y="130"/>
+            <point key="canvasLocation" x="583" y="132"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0q4-Ta-Res">
