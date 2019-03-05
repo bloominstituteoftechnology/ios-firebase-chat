@@ -76,13 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				7A2017F5222EB667004089D8 /* AppDelegate.swift */,
-				7A20180F222EC32D004089D8 /* Chats.swift */,
-				7A201811222EC419004089D8 /* ChatsController.swift */,
+				7A20181F222F3971004089D8 /* Model */,
+				7A201820222F3978004089D8 /* Model Controller */,
 				7A201809222EBBA6004089D8 /* AuthService.swift */,
-				7A2017F7222EB667004089D8 /* WelcomeViewController.swift */,
-				7A20180B222EC2B8004089D8 /* ChatsTableViewController.swift */,
-				7A20180D222EC2D3004089D8 /* AddChatViewController.swift */,
-				7A20181D222F08D9004089D8 /* ChatsViewController.swift */,
+				7A201821222F398C004089D8 /* View Controllers */,
 				7A2017F9222EB667004089D8 /* Main.storyboard */,
 				7A2017FC222EB669004089D8 /* Assets.xcassets */,
 				7A2017FE222EB669004089D8 /* LaunchScreen.storyboard */,
@@ -90,6 +87,33 @@
 				7A201807222EB71A004089D8 /* GoogleService-Info.plist */,
 			);
 			path = "Firebase Chat";
+			sourceTree = "<group>";
+		};
+		7A20181F222F3971004089D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7A20180F222EC32D004089D8 /* Chats.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7A201820222F3978004089D8 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7A201811222EC419004089D8 /* ChatsController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		7A201821222F398C004089D8 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7A2017F7222EB667004089D8 /* WelcomeViewController.swift */,
+				7A20180B222EC2B8004089D8 /* ChatsTableViewController.swift */,
+				7A20180D222EC2D3004089D8 /* AddChatViewController.swift */,
+				7A20181D222F08D9004089D8 /* ChatsViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		8569EA30F6F85940C2CF2731 /* Pods */ = {

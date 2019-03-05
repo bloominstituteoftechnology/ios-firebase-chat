@@ -40,7 +40,7 @@ class ChatsViewController: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         if let currentUser = UserDefaults.standard.value(forKey: "currentUser") {
-            userName = currentUser as! String
+            userName = (currentUser as! String)
         }
     }
     
@@ -76,6 +76,10 @@ extension ChatsViewController: MessagesDataSource {
             return Sender(id: "any_unique_id", displayName: "Steven")
         }
         // return Sender(id: "any_unique_id", displayName: "Steven")
+    }
+    
+    func isFromCurrentSender(message: MessageType) -> Bool {
+        return message.sender == currentSender()
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
