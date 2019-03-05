@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 
 class WelcomeViewController: UIViewController {
@@ -17,7 +18,15 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "Show Chats", sender: nil)
+        }
     }
 
     @IBAction func SignInButtonPressed(_ sender: UIButton) {

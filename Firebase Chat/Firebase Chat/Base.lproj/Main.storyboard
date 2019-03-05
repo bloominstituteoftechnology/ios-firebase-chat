@@ -13,13 +13,13 @@
         <!--Chats-->
         <scene sceneID="rjj-yy-5MZ">
             <objects>
-                <tableViewController id="yH1-Io-O1l" sceneMemberID="viewController">
+                <tableViewController id="yH1-Io-O1l" customClass="ChatsTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fya-ZH-nHs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="bkY-d7-6zW" style="IBUITableViewCellStyleDefault" id="oSO-yx-9Ef">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatsCell" textLabel="bkY-d7-6zW" style="IBUITableViewCellStyleDefault" id="oSO-yx-9Ef">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oSO-yx-9Ef" id="M9A-MU-o1L">
@@ -60,7 +60,7 @@
         <!--Add Your Chat-->
         <scene sceneID="YIW-Ql-MaT">
             <objects>
-                <viewController id="f6D-dN-Z2N" sceneMemberID="viewController">
+                <viewController id="f6D-dN-Z2N" customClass="AddChatViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MAT-BF-dw1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,8 +77,15 @@
                         <viewLayoutGuide key="safeArea" id="yvh-sV-wku"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Your Chat" id="RPy-E1-EGn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rlX-2C-ssA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rlX-2C-ssA">
+                            <connections>
+                                <action selector="saveBarButtonPressed:" destination="f6D-dN-Z2N" id="9td-nR-tl6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="chatNameTextField" destination="xUL-1x-DtF" id="H2Y-ft-cr7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9K-AI-OUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
