@@ -89,7 +89,7 @@ class ChatsController {
     
   
     
-    func sendMessageToDatabase(chat: Chats?, id: String, text: String, onSuccess: @escaping ()->Void){
+    func sendMessageToDatabase(chat: Chats?, username: String, id: String, text: String, onSuccess: @escaping ()->Void){
         
         let newChatId = messagesRef.childByAutoId().key
         let newChatReference = messagesPostRef.child(newChatId!)
@@ -105,7 +105,7 @@ class ChatsController {
         
         let currentUserId = currentUser.uid
         //push to database
-        newChatReference.setValue(["uid": currentUserId, "text": text, "timeStamp": timeStamp]) { (error, ref) in
+        newChatReference.setValue(["username": username,"uid": currentUserId, "text": text, "timeStamp": timeStamp]) { (error, ref) in
             if error != nil {
                 print("Error posting to database: \(error!.localizedDescription)")
                 return
@@ -116,9 +116,9 @@ class ChatsController {
     }
     
     
-    func uploadMessagesToServer(chat: Chats?, id: String, text: String, onSuccess: @escaping () -> Void){
+    func uploadMessagesToServer(chat: Chats?, username: String, id: String, text: String, onSuccess: @escaping () -> Void){
         
-        sendMessageToDatabase(chat: chat, id: id, text: text) {
+        sendMessageToDatabase(chat: chat, username: username, id: id, text: text) {
             onSuccess()
         }
         

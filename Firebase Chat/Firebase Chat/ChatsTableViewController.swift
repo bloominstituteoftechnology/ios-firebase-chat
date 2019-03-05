@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageKit
 
 class ChatsTableViewController: UITableViewController {
     
@@ -17,11 +18,44 @@ class ChatsTableViewController: UITableViewController {
 //            tableView.reloadData()
 //        }
 //    }
+    var userName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadPosts()
+        if let currentUser = UserDefaults.standard.value(forKey: "displayName") {
+            print("There is a username saved already: \(currentUser)")
+            userName = currentUser as! String
+            
+        } else {
+            
+            //Create alert that ask for username and save it to user defaults
+            
+            let alert = UIAlertController(title: "Set a username", message: nil, preferredStyle: .alert)
+            
+            var usernameTextField: UITextField!
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "Username:"
+                usernameTextField = textField
+            }
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+                //Take the text fields text and save it to user defaults
+                
+                let displayName = usernameTextField.text ?? "No name"
+               
+                
+                //alert.textFields?.first?.text// dirty....
+                
+                UserDefaults.standard.set(displayName, forKey: "displayName")
+                
+                
+            }
+            alert.addAction(submitAction)
+            present(alert, animated: true)
+        }
     }
     
     func loadPosts(){
@@ -79,6 +113,7 @@ class ChatsTableViewController: UITableViewController {
             guard let index = tableView.indexPathForSelectedRow else {return}
             let chats = chatsController.chatrooms[index.row]
             destinationVC?.chats = chats
+            destinationVC?.userName = userName
         }
     }
    
