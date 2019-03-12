@@ -52,6 +52,9 @@ PODS:
   - GoogleUtilities/UserDefaults (5.3.7):
     - GoogleUtilities/Logger
   - leveldb-library (1.20)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -61,6 +64,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - MessageKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -73,6 +77,8 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleUtilities
     - leveldb-library
+    - MessageInputBar
+    - MessageKit
     - nanopb
 
 SPEC CHECKSUMS:
@@ -85,8 +91,10 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 6cf307834da065863f9faf4c0de0a936d81dd832
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: f8bb47822b1c16306fbcb9eee322dc82ad41319c
+PODFILE CHECKSUM: e7127883893026fb8ff70a9756a5dbe22aea1fa7
 
 COCOAPODS: 1.6.1
