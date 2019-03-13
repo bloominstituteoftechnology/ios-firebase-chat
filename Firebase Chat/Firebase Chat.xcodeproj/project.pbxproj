@@ -16,6 +16,7 @@
 		A2AD36C1223907F7001FCEA2 /* FirebaseChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD36C0223907F7001FCEA2 /* FirebaseChatTableViewController.swift */; };
 		A2AD36C6223908B9001FCEA2 /* FirebaseChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD36C5223908B9001FCEA2 /* FirebaseChatDetailViewController.swift */; };
 		A2AD36C922391E27001FCEA2 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD36C822391E27001FCEA2 /* Message.swift */; };
+		A2AD36CB22391EB3001FCEA2 /* Chatroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AD36CA22391EB3001FCEA2 /* Chatroom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A2AD36C0223907F7001FCEA2 /* FirebaseChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatTableViewController.swift; sourceTree = "<group>"; };
 		A2AD36C5223908B9001FCEA2 /* FirebaseChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatDetailViewController.swift; sourceTree = "<group>"; };
 		A2AD36C822391E27001FCEA2 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A2AD36CA22391EB3001FCEA2 /* Chatroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chatroom.swift; sourceTree = "<group>"; };
 		FFFD166388CF285715F5E531 /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 		A2AD36C722391E10001FCEA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A2AD36CA22391EB3001FCEA2 /* Chatroom.swift */,
 				A2AD36C822391E27001FCEA2 /* Message.swift */,
 			);
 			path = Model;
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2AD36C6223908B9001FCEA2 /* FirebaseChatDetailViewController.swift in Sources */,
+				A2AD36CB22391EB3001FCEA2 /* Chatroom.swift in Sources */,
 				A2AD36C922391E27001FCEA2 /* Message.swift in Sources */,
 				A2AD36C1223907F7001FCEA2 /* FirebaseChatTableViewController.swift in Sources */,
 				A213AB3F223864E500B7BE96 /* AppDelegate.swift in Sources */,
