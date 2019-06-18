@@ -52,7 +52,12 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.2.0):
     - GoogleUtilities/Logger
+  - InputBarAccessoryView (4.3.1):
+    - InputBarAccessoryView/Core (= 4.3.1)
+  - InputBarAccessoryView/Core (4.3.1)
   - leveldb-library (1.20)
+  - MessageKit (3.1.0):
+    - InputBarAccessoryView (~> 4.3.0)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -62,6 +67,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - MessageKit (from `https://github.com/MessageKit/MessageKit.git`, branch `3.0.0-swift5`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -73,8 +79,19 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
+    - InputBarAccessoryView
     - leveldb-library
     - nanopb
+
+EXTERNAL SOURCES:
+  MessageKit:
+    :branch: 3.0.0-swift5
+    :git: https://github.com/MessageKit/MessageKit.git
+
+CHECKOUT OPTIONS:
+  MessageKit:
+    :commit: c2c44a788381dd93e9c17371698f00b96662aee1
+    :git: https://github.com/MessageKit/MessageKit.git
 
 SPEC CHECKSUMS:
   Firebase: 5965bac23e7fcb5fa6d926ed429c9ecef8a2014e
@@ -85,9 +102,11 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: cdb3827746d53ece7ae87a5c51c25c3055443366
   GoogleAppMeasurement: 51d8d9ea48f0ca44484d29cfbdef976fbd4fc336
   GoogleUtilities: 996e0db07153674fd1b54b220fda3a3dc3547cba
+  InputBarAccessoryView: 58a348be7ea2736c7eec60e5c315511c2dbb39fd
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageKit: 72add24fcba6c6ca1e09385285f6f66757340769
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 2c60b06a19d18f2ae12510e1e157b90a951feaac
+PODFILE CHECKSUM: 1c963d150a4eb91371a99688f14fe2a7b4388bcb
 
 COCOAPODS: 1.7.1
