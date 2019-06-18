@@ -8,5 +8,6 @@ target 'FirebaseChat' do
   # Pods for FirebaseChat
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
   pod 'MessageKit', :git => 'https://github.com/MessageKit/MessageKit.git', :branch => '3.0.0-swift5'
 end
