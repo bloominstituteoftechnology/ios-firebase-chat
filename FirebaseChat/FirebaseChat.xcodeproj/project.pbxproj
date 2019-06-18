@@ -16,7 +16,7 @@
 		ECCAB25222B97389008A69E4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25122B97389008A69E4 /* ChatRoomTableViewController.swift */; };
 		ECCAB25522B973D4008A69E4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25422B973D4008A69E4 /* MessageViewController.swift */; };
 		ECCAB25822B9787B008A69E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25722B9787B008A69E4 /* User.swift */; };
-		ECCAB25A22B979EA008A69E4 /* Threads.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25922B979EA008A69E4 /* Threads.swift */; };
+		ECCAB25A22B979EA008A69E4 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25922B979EA008A69E4 /* ChatRoom.swift */; };
 		ECCAB25C22B979F9008A69E4 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25B22B979F9008A69E4 /* Messages.swift */; };
 		ECCAB25E22B97DE4008A69E4 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25D22B97DE4008A69E4 /* ModelController.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,7 @@
 		ECCAB25122B97389008A69E4 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
 		ECCAB25422B973D4008A69E4 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageViewController.swift; path = "FirebaseChat/View Controllers/MessageViewController.swift"; sourceTree = SOURCE_ROOT; };
 		ECCAB25722B9787B008A69E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		ECCAB25922B979EA008A69E4 /* Threads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Threads.swift; sourceTree = "<group>"; };
+		ECCAB25922B979EA008A69E4 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		ECCAB25B22B979F9008A69E4 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		ECCAB25D22B97DE4008A69E4 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelController.swift; path = "FirebaseChat/Model Controller/ModelController.swift"; sourceTree = SOURCE_ROOT; };
 		ECF1BEBAFDFA0ACB17DBD684 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,6 +95,7 @@
 				ECCAB25322B97391008A69E4 /* View Controllers */,
 				ECCAB25022B97164008A69E4 /* Storyboards */,
 				ECCAB24F22B9714E008A69E4 /* Resources */,
+				EC286CC722B9690D00AB5DDF /* GoogleService-Info.plist */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 				EC286CB522B968C800AB5DDF /* AppDelegate.swift */,
 				EC286CBC22B968CE00AB5DDF /* Assets.xcassets */,
 				EC286CC122B968CE00AB5DDF /* Info.plist */,
-				EC286CC722B9690D00AB5DDF /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				ECCAB25722B9787B008A69E4 /* User.swift */,
-				ECCAB25922B979EA008A69E4 /* Threads.swift */,
+				ECCAB25922B979EA008A69E4 /* ChatRoom.swift */,
 				ECCAB25B22B979F9008A69E4 /* Messages.swift */,
 			);
 			path = Models;
@@ -265,7 +265,7 @@
 				ECCAB25822B9787B008A69E4 /* User.swift in Sources */,
 				ECCAB25C22B979F9008A69E4 /* Messages.swift in Sources */,
 				ECCAB25222B97389008A69E4 /* ChatRoomTableViewController.swift in Sources */,
-				ECCAB25A22B979EA008A69E4 /* Threads.swift in Sources */,
+				ECCAB25A22B979EA008A69E4 /* ChatRoom.swift in Sources */,
 				ECCAB25522B973D4008A69E4 /* MessageViewController.swift in Sources */,
 				ECCAB25E22B97DE4008A69E4 /* ModelController.swift in Sources */,
 				EC286CB622B968C800AB5DDF /* AppDelegate.swift in Sources */,
