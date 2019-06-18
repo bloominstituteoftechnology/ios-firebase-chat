@@ -8,8 +8,23 @@
 
 import Foundation
 
-struct Message {
+struct Message: PortableDictionaryProtocol {
+
+	static var decoder: JSONDecoder {
+		let decoder = JSONDecoder()
+		decoder.dateDecodingStrategy = .secondsSince1970
+		return decoder
+	}
+
+	static var encoder: JSONEncoder {
+		let encoder = JSONEncoder()
+		encoder.dateEncodingStrategy = .secondsSince1970
+		return encoder
+	}
+	
 	let text: String
 	let timestamp: Date
 	let sender: String
+	let senderID: UUID
+
 }
