@@ -9,7 +9,7 @@
 import Foundation
 import MessageKit
 
-struct Sender: SenderType {
+struct Sender: SenderType, Codable {
     
     var senderId: String
     var displayName: String

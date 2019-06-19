@@ -46,7 +46,12 @@ class MessageViewController: MessagesViewController {
 extension MessageViewController: MessagesDataSource {
     
     func currentSender() -> SenderType {
-        return Sender(displayName: "Topher", senderId: UUID().uuidString)
+        
+        guard let currentUser = modelController?.currentUser else {
+            fatalError("Error with current user")
+        }
+        
+        return currentUser
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {

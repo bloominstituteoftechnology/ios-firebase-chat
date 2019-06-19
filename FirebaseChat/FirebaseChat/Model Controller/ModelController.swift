@@ -16,6 +16,7 @@ class ModelController {
     
     var chatRooms = [ChatRoom]()
     var messages = [Message]()
+    var currentUser: Sender?
     
     func createChatRoom(with chatRoomName: String, completion: @escaping (Error?) -> Void) {
         
