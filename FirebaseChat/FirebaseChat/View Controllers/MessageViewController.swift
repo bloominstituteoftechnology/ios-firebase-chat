@@ -55,7 +55,7 @@ extension MessageViewController: MessagesDataSource {
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
     
-        guard let message = modelController?.messages[indexPath.item] else {
+        guard let message = modelController?.messages[indexPath.section] else {
             fatalError("No message for indexPath.item")
         }
         
