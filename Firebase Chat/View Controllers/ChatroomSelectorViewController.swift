@@ -51,6 +51,13 @@ class ChatroomSelectorViewController: UITableViewController {
 		sender.text = ""
 		chatroomController.createChatroom(topic: newTopic)
 	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let dest = segue.destination as? ChatroomViewController {
+			guard let indexPath = tableView.indexPathForSelectedRow else { return }
+			dest.chatroom = chatroomController.chatrooms[indexPath.row]
+		}
+	}
 }
 
 // MARK: - TableView Stuff

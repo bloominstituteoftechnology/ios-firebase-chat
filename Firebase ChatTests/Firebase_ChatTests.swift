@@ -104,8 +104,15 @@ class Firebase_ChatTests: XCTestCase {
 	func testCreateNewMessage() {
 		let messageController = MessageController()
 		let waitForFinish = expectation(description: "Waiting")
+		messageController.selectedChatroom = Chatroom(topic: "SampleChatroom")
 
-		messageController.createNewMessage(withText: "IMA FIRING MAH LAZORZ") {
+		let messageCount = messageController.currentMessageThread.count
+		XCTAssert(messageCount == 0)
+
+		messageController.createNewMessage(withText: "IMA FIRING MAH LAZORZ") { error in
+			if let error = error {
+				XCTFail("failed cuz of \(error)")
+			}
 			waitForFinish.fulfill()
 		}
 		waitForExpectations(timeout: 10) { (error) in
@@ -113,5 +120,18 @@ class Firebase_ChatTests: XCTestCase {
 				XCTFail("Timed out waiting for an expectation: \(error)")
 			}
 		}
+
+		let waitForLoad = expectation(description: "Waiting")
+		messageController.monitorChatroomMessage { _ in
+			waitForLoad.fulfill()
+		}
+		waitForExpectations(timeout: 10) { (error) in
+			if let error = error {
+				XCTFail("Timed out waiting for an expectation: \(error)")
+			}
+		}
+
+		let updatedMessageCount = messageController.currentMessageThread.count
+		XCTAssert(updatedMessageCount > messageCount)
 	}
 }

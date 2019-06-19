@@ -18,7 +18,11 @@ class MessageController {
 	var monitor: DatabaseHandle?
 
 	func monitorChatroomMessage(updater: @escaping ([Message]) -> Void) {
-		monitor = FirebaseController.dbMessages.observe(.value, with: { [weak self] (snapshot) in
+		guard let currentChatroom = selectedChatroom else {
+			updater([])
+			return
+		}
+		monitor = FirebaseController.dbMessages.child(currentChatroom.id.uuidString).observe(.value, with: { [weak self] (snapshot) in
 			guard let self = self else { updater([]); return }
 			var messages = [Message]()
 			for child in snapshot.children {
@@ -35,14 +39,19 @@ class MessageController {
 		})
 	}
 
-	func createNewMessage(withText text: String, completion: @escaping () -> Void) {
-		guard let currentUser = currentUser else { completion(); return }
+	func createNewMessage(withText text: String, completion: @escaping (Error?) -> Void) {
+		guard let currentUser = currentUser,
+			let currentChatroom = selectedChatroom else {
+			let error = NSError(domain: "com.ERRORDOMAIN", code: 12376, userInfo: nil)
+			completion(error)
+			return
+		}
 		let newMessage = Message(text: text, senderName: currentUser.displayName, senderID: currentUser.id)
 
 		do {
 			let messageDict = try newMessage.toDict()
-			FirebaseController.dbMessages.childByAutoId().setValue(messageDict) { (error, databaseRef) in
-				completion()
+			FirebaseController.dbMessages.child(currentChatroom.id.uuidString).childByAutoId().setValue(messageDict) { (error, databaseRef) in
+				completion(error)
 			}
 		} catch {
 			NSLog("Error creating new message: \(error)")

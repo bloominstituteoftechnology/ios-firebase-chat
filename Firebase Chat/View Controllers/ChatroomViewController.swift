@@ -64,7 +64,10 @@ extension ChatroomViewController: MessagesDisplayDelegate {
 extension ChatroomViewController: InputBarAccessoryViewDelegate {
 	func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
 		guard let sender = messageController.currentUser else { return }
-		messageController.createNewMessage(withText: text) {
+		messageController.createNewMessage(withText: text) { error in
+			if let error = error {
+				NSLog("Error creating message: \(error)")
+			}
 			inputBar.inputTextView.text = ""
 		}
 	}
