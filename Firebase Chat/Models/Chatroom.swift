@@ -25,4 +25,10 @@ struct Chatroom: PortableDictionaryProtocol {
 	let topic: String
 	let created: Date
 	let id: UUID
+
+	init(topic: String, created: Date = Date(), id: UUID = UUID()) {
+		self.topic = topic
+		self.created = created
+		self.id	 = id
+	}
 }

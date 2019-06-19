@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Firebase_Chat
+import Firebase
 
 class Firebase_ChatTests: XCTestCase {
 
@@ -45,7 +46,7 @@ class Firebase_ChatTests: XCTestCase {
 		XCTAssertNotNil(message)
 		XCTAssertEqual(inMessage, message.text)
 		XCTAssertEqual(sender, message.sender)
-		XCTAssertEqual(date, message.timestamp)
+		XCTAssertEqual(date.timeIntervalSince1970, message.timestamp.timeIntervalSince1970)
 		XCTAssertEqual(id, message.senderID)
 	}
 
@@ -63,5 +64,33 @@ class Firebase_ChatTests: XCTestCase {
 		XCTAssertEqual(testTopic, topic)
 		XCTAssertEqual(testCreated, date.timeIntervalSince1970)
 		XCTAssertEqual(testID, id.uuidString)
+	}
+
+	func testCreateChatroom() {
+		let chatroomController = ChatroomController()
+		let waitForFinish = expectation(description: "Waiting")
+
+		chatroomController.createChatroom(topic: "Test Topic") {
+			waitForFinish.fulfill()
+		}
+		waitForExpectations(timeout: 10) { (error) in
+			if let error = error {
+				XCTFail("Timed out waiting for firebase sync: \(error)")
+			}
+		}
+	}
+
+	func testFetchChatrooms() {
+		let chatroomController = ChatroomController()
+		let waitForFinish = expectation(description: "Waiting")
+
+		chatroomController.fetchChatrooms {
+			waitForFinish.fulfill()
+		}
+		waitForExpectations(timeout: 10) { (error) in
+			if let error = error {
+				XCTFail("Timed out waiting for firebase sync: \(error)")
+			}
+		}
 	}
 }
