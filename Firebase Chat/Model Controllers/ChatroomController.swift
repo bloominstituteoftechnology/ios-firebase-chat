@@ -36,9 +36,9 @@ class ChatroomController {
 		}
 	}
 
-	func monitorChatrooms(completion: @escaping ([Int]) -> Void = { _ in }) {
+	func monitorChatrooms(updater: @escaping ([Int]) -> Void = { _ in }) {
 		monitor = FirebaseController.dbChatrooms.observe(.value, with: { [weak self] (snapshot) in
-			guard let self = self else { completion([]); return }
+			guard let self = self else { updater([]); return }
 			var newChatrooms = [Chatroom]()
 			for child in snapshot.children {
 				guard let chatroomDict = (child as? DataSnapshot)?.value as? [String: Any] else { continue }
@@ -56,7 +56,7 @@ class ChatroomController {
 			self.chatrooms.append(contentsOf: newChatrooms)
 			let rangeHigh = self.chatrooms.count
 			let updatedRows = (rangeLow..<rangeHigh).map { Int($0) }
-			completion(updatedRows)
+			updater(updatedRows)
 		})
 	}
 
