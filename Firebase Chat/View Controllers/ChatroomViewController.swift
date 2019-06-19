@@ -51,10 +51,37 @@ extension ChatroomViewController: MessagesDataSource {
 	func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
 		return 1
 	}
+
+	func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+		let sender = messageController.currentMessageThread[indexPath.item].senderName
+//		NSAttributedString(string: <#T##String#>, attributes: <#T##[NSAttributedString.Key : Any]?#>)
+		return NSAttributedString(string: sender, attributes: [NSAttributedString.Key.font: UIFont.italicSystemFont(ofSize: 12)] )
+	}
+
+	func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+		let date = messageController.currentMessageThread[indexPath.item].sentDate
+		let formatter = DateFormatter()
+		formatter.dateFormat = "MM/dd hh:mm:ss"
+		return NSAttributedString(string: formatter.string(from: date), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)] )
+	}
 }
 
 extension ChatroomViewController: MessagesLayoutDelegate {
+	func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+		return 18
+	}
 
+	func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+		return 17
+	}
+
+	func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+		return 20
+	}
+
+	func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+		return 16
+	}
 }
 
 extension ChatroomViewController: MessagesDisplayDelegate {

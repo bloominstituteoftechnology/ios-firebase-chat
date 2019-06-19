@@ -34,7 +34,7 @@ class MessageController {
 					NSLog("Problem decoding remote message data: \(error)")
 				}
 			}
-			self.currentMessageThread = messages
+			self.currentMessageThread = messages.sorted { $0.sentDate < $1.sentDate }
 			updater(messages)
 		})
 	}
