@@ -22,7 +22,14 @@ class Firebase_ChatTests: XCTestCase {
 
 		XCTAssertNotNil(dict)
 		let testText = dict["text"] as! String
+		let testTime = dict["timestamp"] as! Double
+		let testSender = dict["sender"] as! String
+		let testSenderID = dict["senderID"] as! String
 		XCTAssertEqual(testText, inMessage)
+		XCTAssertEqual(testTime, date.timeIntervalSince1970)
+		XCTAssertEqual(testSender, sender)
+		XCTAssertEqual(testSenderID, id.uuidString)
+
 	}
 
 	func testConvertMessageFromDictionary() {
@@ -40,5 +47,21 @@ class Firebase_ChatTests: XCTestCase {
 		XCTAssertEqual(sender, message.sender)
 		XCTAssertEqual(date, message.timestamp)
 		XCTAssertEqual(id, message.senderID)
+	}
+
+	func testConvertChatroomToDictionary() {
+		let topic = "I'm Mr. Meeseeks look at me!"
+		let date = Date()
+		let id = UUID()
+		let chatroom = Chatroom(topic: topic, created: date, id: id)
+		let dict = try! chatroom.toDict()
+
+		XCTAssertNotNil(dict)
+		let testTopic = dict["topic"] as! String
+		let testCreated = dict["created"] as! Double
+		let testID = dict["id"] as! String
+		XCTAssertEqual(testTopic, topic)
+		XCTAssertEqual(testCreated, date.timeIntervalSince1970)
+		XCTAssertEqual(testID, id.uuidString)
 	}
 }

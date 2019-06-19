@@ -22,7 +22,6 @@ struct Chatroom: PortableDictionaryProtocol {
 		return encoder
 	}
 
-	var messageThreadID: UUID
 	let topic: String
 	let created: Date
 	let id: UUID
