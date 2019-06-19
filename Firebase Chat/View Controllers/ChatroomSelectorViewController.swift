@@ -20,6 +20,13 @@ class ChatroomSelectorViewController: UITableViewController {
 			self?.tableView.endUpdates()
 		}
 	}
+
+	@IBAction func createNewChatroomTopicFinished(_ sender: UITextField) {
+		sender.resignFirstResponder()
+		guard let newTopic = sender.text else { return }
+		sender.text = ""
+		chatroomController.createChatroom(topic: newTopic)
+	}
 }
 
 // MARK: - TableView Stuff

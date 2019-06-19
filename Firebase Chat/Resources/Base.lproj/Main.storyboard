@@ -18,9 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="VJS-ja-vim">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create New Chatroom Topic" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Boa-Pn-UPq">
+                                    <rect key="frame" x="16" y="8" width="382" height="28"/>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="createNewChatroomTopicFinished:" destination="TYP-if-yAO" eventType="primaryActionTriggered" id="rf8-0H-Kps"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Boa-Pn-UPq" secondAttribute="bottom" constant="8" id="J18-6l-feu"/>
+                                <constraint firstItem="Boa-Pn-UPq" firstAttribute="top" secondItem="VJS-ja-vim" secondAttribute="top" constant="8" id="gp8-NJ-iRw"/>
+                                <constraint firstItem="Boa-Pn-UPq" firstAttribute="leading" secondItem="VJS-ja-vim" secondAttribute="leading" constant="16" id="zL1-MG-bKk"/>
+                                <constraint firstAttribute="trailing" secondItem="Boa-Pn-UPq" secondAttribute="trailing" constant="16" id="zj1-EE-P2H"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatroomCell" textLabel="c2f-5u-ppj" style="IBUITableViewCellStyleDefault" id="1TH-Dj-4Ib">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1TH-Dj-4Ib" id="aXr-h8-BTp">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
