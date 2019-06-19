@@ -10,10 +10,13 @@ import UIKit
 
 class ChatRoomTableViewController: UITableViewController {
 
+    // MARK: - Properties
     var modelController = ModelController()
     
+    // MARK: - IBOutlets
     @IBOutlet var chatRoomNameTextField: UITextField!
     
+    // MARK: - View Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,12 +25,15 @@ class ChatRoomTableViewController: UITableViewController {
             let plistDecoder = PropertyListDecoder()
             
             do {
+                
                 modelController.currentUser = try plistDecoder.decode(Sender.self, from: currentUserData)
             } catch{
+                
                 NSLog("Error decoding Sender: \(error)")
             }
             
         } else {
+            
             presentUserNameSubmissionAlert()
         }
     }
@@ -35,7 +41,7 @@ class ChatRoomTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        modelController.fetchChatRooms { (error) in
+        modelController.fetchChatRooms { error in
             
             if let error = error {
                 NSLog("\(error)")
@@ -54,14 +60,17 @@ class ChatRoomTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
 
-        cell.textLabel?.text = modelController.chatRooms[indexPath.row].chatRoomName
+        cell.textLabel?.text = modelController.chatRooms[indexPath.row]
 
         return cell
     }
     
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
         if segue.identifier == "ShowMessages" {
             
             if let indexPath = tableView.indexPathForSelectedRow {
@@ -74,6 +83,7 @@ class ChatRoomTableViewController: UITableViewController {
         }
     }
     
+    // MARK: - Private Functions
     private func presentUserNameSubmissionAlert() {
         
         let ac = UIAlertController(title: "Enter a username", message: "This will be your user name while using this app.", preferredStyle: .alert)
@@ -102,7 +112,8 @@ class ChatRoomTableViewController: UITableViewController {
         
         present(ac, animated: true, completion: nil)
     }
-
+    
+    // MARK: - IBActions
     @IBAction func creatChatRoomButtonTapped(_ sender: Any) {
         
         chatRoomNameTextField.resignFirstResponder()
