@@ -8,7 +8,64 @@
 
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 class ChatroomViewController: MessagesViewController {
+	let messageController = MessageController()
 
+	var chatroom: Chatroom? {
+		didSet {
+			messageController.selectedChatroom = chatroom
+		}
+	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		messageController.monitorChatroomMessage { [weak self] _ in
+			DispatchQueue.main.async {
+				self?.messagesCollectionView.reloadData()
+			}
+		}
+
+		messageInputBar.delegate = self
+		messagesCollectionView.messagesDataSource = self
+		messagesCollectionView.messagesLayoutDelegate = self
+		messagesCollectionView.messagesDisplayDelegate = self
+	}
+}
+
+extension ChatroomViewController: MessagesDataSource {
+	func currentSender() -> SenderType {
+		return messageController.currentUser ?? User(id: UUID(), displayName: "I AM LORDE YAYAYA")
+	}
+
+	func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+		return messageController.currentMessageThread[indexPath.item]
+	}
+
+	func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+		return messageController.currentMessageThread.count
+	}
+
+	func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+		return 1
+	}
+}
+
+extension ChatroomViewController: MessagesLayoutDelegate {
+
+}
+
+extension ChatroomViewController: MessagesDisplayDelegate {
+
+}
+
+extension ChatroomViewController: InputBarAccessoryViewDelegate {
+	func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+		guard let sender = messageController.currentUser else { return }
+		messageController.createNewMessage(withText: text) {
+			inputBar.inputTextView.text = ""
+		}
+	}
 }
