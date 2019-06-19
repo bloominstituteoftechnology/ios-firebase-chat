@@ -13,12 +13,36 @@ class ChatroomSelectorViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
 		chatroomController.monitorChatrooms { [weak self] (updatedRows) in
 			self?.tableView.beginUpdates()
 			let indexPaths = updatedRows.map { IndexPath(row: $0, section: 0) }
 			self?.tableView.insertRows(at: indexPaths, with: .automatic)
 			self?.tableView.endUpdates()
 		}
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		if self.chatroomController.currentUser == nil {
+			self.presentUsernameSubmissionAlert()
+		}
+	}
+
+	private func presentUsernameSubmissionAlert() {
+		let alert = UIAlertController(title: "Enter a username:", message: "WHO ARE YOU?!", preferredStyle: .alert)
+		var userTextField: UITextField!
+		alert.addTextField { (textField) in
+			textField.placeholder = "I'm Mr. Meeseeks! Look at me!"
+			userTextField = textField
+		}
+		let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+			guard let username = userTextField.text, !username.isEmpty else { return }
+			let defaultSender = User(id: UUID(), displayName: username)
+			User.setDefault(sender: defaultSender)
+		}
+		alert.addAction(submitAction)
+		present(alert, animated: true)
 	}
 
 	@IBAction func createNewChatroomTopicFinished(_ sender: UITextField) {

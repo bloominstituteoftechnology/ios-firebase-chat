@@ -11,8 +11,11 @@ import Firebase
 import FirebaseDatabase
 
 class ChatroomController {
-	var chatrooms = [Chatroom]()
 
+	var currentUser: User? {
+		return User.defaultSender()
+	}
+	var chatrooms = [Chatroom]()
 	var monitor: DatabaseHandle?
 
 	func fetchChatrooms(completion: @escaping () -> Void) {

@@ -12,43 +12,43 @@ import Firebase
 
 class Firebase_ChatTests: XCTestCase {
 
-	func testConvertMessageToDictionary() {
-		let inMessage = "This is a message"
-		let sender = "ME"
-		let date = Date()
-		let id = UUID()
-		let message = Message(text: inMessage, timestamp: date, sender: sender, senderID: id)
-
-		let dict = try! message.toDict()
-
-		XCTAssertNotNil(dict)
-		let testText = dict["text"] as! String
-		let testTime = dict["timestamp"] as! Double
-		let testSender = dict["sender"] as! String
-		let testSenderID = dict["senderID"] as! String
-		XCTAssertEqual(testText, inMessage)
-		XCTAssertEqual(testTime, date.timeIntervalSince1970)
-		XCTAssertEqual(testSender, sender)
-		XCTAssertEqual(testSenderID, id.uuidString)
-
-	}
-
-	func testConvertMessageFromDictionary() {
-		let inMessage = "This is a message"
-		let sender = "ME"
-		let date = Date()
-		let id = UUID()
-
-		let dict = ["text": inMessage, "timestamp": date.timeIntervalSince1970, "sender": sender, "senderID": id.uuidString] as [String : Any]
-
-		let message = try! Message.fromDict(dict)
-
-		XCTAssertNotNil(message)
-		XCTAssertEqual(inMessage, message.text)
-		XCTAssertEqual(sender, message.sender)
-		XCTAssertEqual(date.timeIntervalSince1970, message.timestamp.timeIntervalSince1970)
-		XCTAssertEqual(id, message.senderID)
-	}
+//	func testConvertMessageToDictionary() {
+//		let inMessage = "This is a message"
+//		let sender = "ME"
+//		let date = Date()
+//		let id = UUID()
+//		let message = Message(text: inMessage, timestamp: date, sender: sender, senderID: id)
+//
+//		let dict = try! message.toDict()
+//
+//		XCTAssertNotNil(dict)
+//		let testText = dict["text"] as! String
+//		let testTime = dict["timestamp"] as! Double
+//		let testSender = dict["sender"] as! String
+//		let testSenderID = dict["senderID"] as! String
+//		XCTAssertEqual(testText, inMessage)
+//		XCTAssertEqual(testTime, date.timeIntervalSince1970)
+//		XCTAssertEqual(testSender, sender)
+//		XCTAssertEqual(testSenderID, id.uuidString)
+//
+//	}
+//
+//	func testConvertMessageFromDictionary() {
+//		let inMessage = "This is a message"
+//		let sender = "ME"
+//		let date = Date()
+//		let id = UUID()
+//
+//		let dict = ["text": inMessage, "timestamp": date.timeIntervalSince1970, "sender": sender, "senderID": id.uuidString] as [String : Any]
+//
+//		let message = try! Message.fromDict(dict)
+//
+//		XCTAssertNotNil(message)
+//		XCTAssertEqual(inMessage, message.text)
+//		XCTAssertEqual(sender, message.sender)
+//		XCTAssertEqual(date.timeIntervalSince1970, message.timestamp.timeIntervalSince1970)
+//		XCTAssertEqual(id, message.senderID)
+//	}
 
 	func testConvertChatroomToDictionary() {
 		let topic = "I'm Mr. Meeseeks look at me!"
@@ -94,5 +94,19 @@ class Firebase_ChatTests: XCTestCase {
 			}
 		}
 		XCTAssert(chatroomController.chatrooms.count > 0)
+	}
+
+	func testCreateNewMessage() {
+		let messageController = MessageController()
+		let waitForFinish = expectation(description: "Waiting")
+
+		messageController.createNewMessage(withText: "IMA FIRING MAH LAZORZ") {
+			waitForFinish.fulfill()
+		}
+		waitForExpectations(timeout: 10) { (error) in
+			if let error = error {
+				XCTFail("Timed out waiting for an expectation: \(error)")
+			}
+		}
 	}
 }
