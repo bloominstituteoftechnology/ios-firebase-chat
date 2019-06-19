@@ -23,6 +23,23 @@ class MessageViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let chatRoomName = chatRoomName {
+            
+            modelController?.fetchMessages(in: chatRoomName, completion: { error in
+                if let error = error {
+                    NSLog("Could not get messages from Server: \(error)")
+                }
+                
+                DispatchQueue.main.async {
+                    self.messagesCollectionView.reloadData()
+                }
+            })
+        }
+    }
 
 }
 

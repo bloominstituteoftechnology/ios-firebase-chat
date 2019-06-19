@@ -80,9 +80,9 @@ class ModelController {
         }
     }
     
-    func fetchMessages(in chatRoom: ChatRoom, completion: @escaping (Error?) -> Void) {
+    func fetchMessages(in chatRoom: String, completion: @escaping (Error?) -> Void) {
         
-        db.collection("chatRooms").document(chatRoom.chatRoomName).collection("messages").getDocuments { (snapshot, error) in
+        db.collection("chatRooms").document(chatRoom).collection("messages").getDocuments { (snapshot, error) in
             
             if let error = error {
                 completion(error)
@@ -93,8 +93,12 @@ class ModelController {
             
             for document in documents {
                 
-                print(document.data())
-                
+                if let fetchedMessage = Message(data: document.data()) {
+                    
+                    self.messages.append(fetchedMessage)
+                    
+                    completion(nil)
+                }
             }
         }
     }

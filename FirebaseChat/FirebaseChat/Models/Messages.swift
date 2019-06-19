@@ -8,6 +8,7 @@
 
 import Foundation
 import MessageKit
+import Firebase
 
 struct Message: MessageType {
     
@@ -19,14 +20,17 @@ struct Message: MessageType {
     
     
     init?(data: [String: Any]) {
-        guard let sender = data["sender"] as? SenderType,
-        let timestamp = data["timestamp"] as? Date,
-        let text = data["text"] as? String,
-        let messageId = data["messageId"] as? String
-        else { return nil }
+        guard let timestamp = data["sendDate"] as? Timestamp else { return nil }
+        guard let senderId = data["senderId"] as? String else { return nil }
+        guard let senderDisplayName = data["senderDisplayName"] as? String else { return nil }
+        guard let text = data["text"] as? String else { return nil }
+        guard let messageId = data["messageId"] as? String else { return nil }
+        
+        
+        let sender = Sender(displayName: senderDisplayName, senderId: senderId)
         
         self.sender = sender
-        self.sentDate = timestamp
+        self.sentDate = timestamp.dateValue()
         self.kind = .text(text)
         self.messageId = messageId
         self.text = text
