@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct ChatRoom: Codable {
+struct ChatRoom {
+    
     let chatRoomName: String
-    let messages: [Message]
+    
 }

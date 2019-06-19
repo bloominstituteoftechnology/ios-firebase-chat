@@ -16,8 +16,22 @@ class ChatRoomTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        modelController.fetchChatRooms { (error) in
+            
+            if let error = error {
+                NSLog("\(error)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -43,7 +57,7 @@ class ChatRoomTableViewController: UITableViewController {
         
         chatRoomNameTextField.text = ""
         
-        modelController.createCharRoom(with: chatRoomName) { error in
+        modelController.createChatRoom(with: chatRoomName) { error in
             
             if let error = error {
                 NSLog("Issue creating Chatroom on Server: \(error)")

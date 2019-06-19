@@ -16,7 +16,7 @@ class ModelController {
     
     var chatRooms = [ChatRoom]()
     
-    func createCharRoom(with chatRoomName: String, completion: @escaping (Error?) -> Void) {
+    func createChatRoom(with chatRoomName: String, completion: @escaping (Error?) -> Void) {
         
         db.collection("chatRooms").document(chatRoomName).setData([ : ]) { error in
             
@@ -25,14 +25,33 @@ class ModelController {
                 return
             }
             
-            let newRoom = ChatRoom(chatRoomName: chatRoomName, messages: [])
+            let newRoom = ChatRoom(chatRoomName: chatRoomName)
             self.chatRooms.append(newRoom)
             
             completion(nil)
         }
     }
     
-    
+    func fetchChatRooms(completion: @escaping (Error?) -> Void) {
+        
+        db.collection("chatRooms").getDocuments { (snapshot, error) in
+            
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let documents = snapshot?.documents else { return }
+            
+            for document in documents {
+                let chat = ChatRoom(chatRoomName: document.documentID)
+                
+                self.chatRooms.append(chat)
+            }
+            
+            completion(nil)
+        }
+    }
     
     
     
