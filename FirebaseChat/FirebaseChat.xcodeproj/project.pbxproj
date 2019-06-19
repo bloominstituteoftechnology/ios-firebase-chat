@@ -15,7 +15,7 @@
 		EC286CC822B9690D00AB5DDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EC286CC722B9690D00AB5DDF /* GoogleService-Info.plist */; };
 		ECCAB25222B97389008A69E4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25122B97389008A69E4 /* ChatRoomTableViewController.swift */; };
 		ECCAB25522B973D4008A69E4 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25422B973D4008A69E4 /* MessageViewController.swift */; };
-		ECCAB25822B9787B008A69E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25722B9787B008A69E4 /* User.swift */; };
+		ECCAB25822B9787B008A69E4 /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25722B9787B008A69E4 /* Sender.swift */; };
 		ECCAB25A22B979EA008A69E4 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25922B979EA008A69E4 /* ChatRoom.swift */; };
 		ECCAB25C22B979F9008A69E4 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25B22B979F9008A69E4 /* Messages.swift */; };
 		ECCAB25E22B97DE4008A69E4 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCAB25D22B97DE4008A69E4 /* ModelController.swift */; };
@@ -33,7 +33,7 @@
 		EC286CC722B9690D00AB5DDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECCAB25122B97389008A69E4 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
 		ECCAB25422B973D4008A69E4 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessageViewController.swift; path = "FirebaseChat/View Controllers/MessageViewController.swift"; sourceTree = SOURCE_ROOT; };
-		ECCAB25722B9787B008A69E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ECCAB25722B9787B008A69E4 /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
 		ECCAB25922B979EA008A69E4 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		ECCAB25B22B979F9008A69E4 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		ECCAB25D22B97DE4008A69E4 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelController.swift; path = "FirebaseChat/Model Controller/ModelController.swift"; sourceTree = SOURCE_ROOT; };
@@ -131,7 +131,7 @@
 		ECCAB25622B97516008A69E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				ECCAB25722B9787B008A69E4 /* User.swift */,
+				ECCAB25722B9787B008A69E4 /* Sender.swift */,
 				ECCAB25922B979EA008A69E4 /* ChatRoom.swift */,
 				ECCAB25B22B979F9008A69E4 /* Messages.swift */,
 			);
@@ -262,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECCAB25822B9787B008A69E4 /* User.swift in Sources */,
+				ECCAB25822B9787B008A69E4 /* Sender.swift in Sources */,
 				ECCAB25C22B979F9008A69E4 /* Messages.swift in Sources */,
 				ECCAB25222B97389008A69E4 /* ChatRoomTableViewController.swift in Sources */,
 				ECCAB25A22B979EA008A69E4 /* ChatRoom.swift in Sources */,

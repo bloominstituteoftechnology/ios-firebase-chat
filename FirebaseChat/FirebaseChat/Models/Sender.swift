@@ -7,17 +7,25 @@
 //
 
 import Foundation
+import MessageKit
 
-struct Sender: Codable {
-    let displayName: String
-    let id: String
+struct Sender: SenderType {
     
+    var senderId: String
+    var displayName: String
+
     init?(data: [String : Any]) {
         guard let displayName = data["displayName"] as? String,
-        let id = data["id"] as? String
+        let senderId = data["id"] as? String
         else { return nil }
-        
+
         self.displayName = displayName
-        self.id = id
+        self.senderId = senderId
+    }
+
+    init(displayName: String, senderId: String) {
+        self.displayName = displayName
+        self.senderId = senderId
+        
     }
 }

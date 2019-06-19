@@ -47,7 +47,18 @@ class ChatRoomTableViewController: UITableViewController {
         return cell
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMessages" {
+            
+            if let indexPath = tableView.indexPathForSelectedRow {
+               
+                let destination = segue.destination as! MessageViewController
+                let currentCell = tableView.cellForRow(at: indexPath)
+                destination.chatRoomName = currentCell?.textLabel?.text
+                destination.modelController = modelController
+            }
+        }
+    }
 
     @IBAction func creatChatRoomButtonTapped(_ sender: Any) {
         

@@ -35,6 +35,8 @@ class ModelController {
     
     func fetchChatRooms(completion: @escaping (Error?) -> Void) {
         
+        chatRooms = []
+        
         db.collection("chatRooms").getDocuments { (snapshot, error) in
             
             if let error = error {
@@ -54,21 +56,25 @@ class ModelController {
         }
     }
     
-    func createMessage(in chatRoom: ChatRoom, with message: Message, completion: @escaping (Error?) -> Void) {
+    func createMessage(in chatRoom: String, with message: Message, completion: @escaping (Error?) -> Void) {
         
         db.collection("chatRooms")
-            .document(chatRoom.chatRoomName)
+            .document(chatRoom)
             .collection("messages")
             .addDocument(data: [
-                "sender" : message.sender,
-                "timestamp" : message.timestamp,
-                "message" : message.message
+                "senderDisplayName" : message.sender.displayName,
+                "senderId" : message.sender.senderId,
+                "sendDate" : message.sentDate,
+                "messageId" : message.messageId,
+                "text" : message.text
             ]) { error in
                 
                 if let error = error {
                     completion(error)
                     return
                 }
+                
+                self.messages.append(message)
                 
                 completion(nil)
         }

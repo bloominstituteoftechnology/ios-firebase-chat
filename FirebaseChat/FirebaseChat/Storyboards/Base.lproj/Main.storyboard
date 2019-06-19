@@ -43,7 +43,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="m2H-kB-TPQ" kind="show" id="J02-dE-6sW"/>
+                                    <segue destination="m2H-kB-TPQ" kind="show" identifier="ShowMessages" id="J02-dE-6sW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

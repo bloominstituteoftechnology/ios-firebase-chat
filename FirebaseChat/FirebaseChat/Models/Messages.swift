@@ -7,20 +7,38 @@
 //
 
 import Foundation
+import MessageKit
 
-struct Message: Codable {
-    let sender: User
-    let timestamp: Date
-    let message: String
+struct Message: MessageType {
+    
+    var messageId: String
+    var sender: SenderType
+    var sentDate: Date
+    var kind: MessageKind
+    var text: String
+    
     
     init?(data: [String: Any]) {
-        guard let sender = data["sender"] as? User,
+        guard let sender = data["sender"] as? SenderType,
         let timestamp = data["timestamp"] as? Date,
-        let message = data["message"] as? String
+        let text = data["text"] as? String,
+        let messageId = data["messageId"] as? String
         else { return nil }
         
         self.sender = sender
-        self.timestamp = timestamp
-        self.message = message
+        self.sentDate = timestamp
+        self.kind = .text(text)
+        self.messageId = messageId
+        self.text = text
+    }
+    
+    init(sender: SenderType, sendDate: Date, messageId: String, text: String) {
+        
+        self.sender = sender
+        self.sentDate = sendDate
+        self.kind = .text(text)
+        self.messageId = messageId
+        self.text = text
     }
 }
+
