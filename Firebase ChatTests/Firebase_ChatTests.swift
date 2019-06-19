@@ -83,6 +83,7 @@ class Firebase_ChatTests: XCTestCase {
 	func testFetchChatrooms() {
 		let chatroomController = ChatroomController()
 		let waitForFinish = expectation(description: "Waiting")
+		XCTAssert(chatroomController.chatrooms.count == 0)
 
 		chatroomController.fetchChatrooms {
 			waitForFinish.fulfill()
@@ -92,5 +93,6 @@ class Firebase_ChatTests: XCTestCase {
 				XCTFail("Timed out waiting for firebase sync: \(error)")
 			}
 		}
+		XCTAssert(chatroomController.chatrooms.count > 0)
 	}
 }

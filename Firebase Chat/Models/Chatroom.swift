@@ -9,7 +9,7 @@
 
 import Foundation
 
-struct Chatroom: PortableDictionaryProtocol {
+struct Chatroom: PortableDictionaryProtocol, Equatable {
 	static var decoder: JSONDecoder {
 		let decoder = JSONDecoder()
 		decoder.dateDecodingStrategy = .secondsSince1970
@@ -30,5 +30,9 @@ struct Chatroom: PortableDictionaryProtocol {
 		self.topic = topic
 		self.created = created
 		self.id	 = id
+	}
+
+	static func == (lhs: Chatroom, rhs: Chatroom) -> Bool {
+		return lhs.id == rhs.id
 	}
 }
