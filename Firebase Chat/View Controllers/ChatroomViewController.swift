@@ -58,6 +58,17 @@ extension ChatroomViewController: MessagesLayoutDelegate {
 }
 
 extension ChatroomViewController: MessagesDisplayDelegate {
+	func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+		if message.sender.senderId == messageController.currentUser?.senderId {
+			return .blue
+		} else {
+			return .purple
+		}
+	}
+
+	func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+		return .white
+	}
 
 }
 
