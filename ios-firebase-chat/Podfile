@@ -10,4 +10,5 @@ target 'ios-firebase-chat' do
 
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'MessageKit'
 end
