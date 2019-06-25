@@ -17,7 +17,7 @@ class Message: Codable, Equatable, MessageType {
     let senderId: String
     var messageId: String
     var sender: SenderType {
-        return Sender(senderId: senderId, displayName: displayName)
+        return Sender(displayName: displayName, senderId: senderId)
     }
     var sentDate: Date {
         return timestamp
