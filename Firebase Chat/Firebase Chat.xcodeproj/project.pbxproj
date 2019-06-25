@@ -89,7 +89,7 @@
 				3D3E1B9422C2BA260087C1CE /* Storyboards */,
 				3D3E1B9622C2BA460087C1CE /* Resources */,
 				3D3E1B9222C2B7660087C1CE /* GoogleService-Info.plist */,
-				3D3E1BA222C2C15A0087C1CE /* New Group */,
+				3D3E1BA222C2C15A0087C1CE /* Model */,
 			);
 			path = "Firebase Chat";
 			sourceTree = "<group>";
@@ -122,13 +122,13 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		3D3E1BA222C2C15A0087C1CE /* New Group */ = {
+		3D3E1BA222C2C15A0087C1CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3D3E1B9E22C2C1360087C1CE /* Message.swift */,
 				3D3E1BA022C2C1540087C1CE /* ChatRoom.swift */,
 			);
-			path = "New Group";
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
