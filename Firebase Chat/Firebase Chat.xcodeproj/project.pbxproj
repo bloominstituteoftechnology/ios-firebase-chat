@@ -83,8 +83,8 @@
 				3D3E1B7E22C2ACEB0087C1CE /* AppDelegate.swift */,
 				3D3E1B8022C2ACEB0087C1CE /* ViewController.swift */,
 				3D3E1B8222C2ACEB0087C1CE /* Main.storyboard */,
-				3D3E1B8522C2ACEC0087C1CE /* Assets.xcassets */,
 				3D3E1B8722C2ACEC0087C1CE /* LaunchScreen.storyboard */,
+				3D3E1B8522C2ACEC0087C1CE /* Assets.xcassets */,
 				3D3E1B8A22C2ACEC0087C1CE /* Info.plist */,
 				3D3E1B9222C2B7660087C1CE /* GoogleService-Info.plist */,
 			);
