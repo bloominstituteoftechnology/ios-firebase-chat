@@ -9,12 +9,29 @@
 import Foundation
 
 struct ChatRoom {
-	
-	init(room: String, id: String) {
+	// Fetching chatromos from fireBare
+	init? (dictionary: [String: Any]) {
+		guard let room = dictionary["room"] as? String else { return nil}
 		self.room = room
-		self.id = id
+	}
+	
+	//sending chatrooms to firebase
+	
+	var dictionaryRepresentation: [String: Any] {
+		return ["room": room]
+	}
+	
+	
+	
+	init(room: String) {//, id: String = UUID().uuidString) {
+		self.room = room
+//		self.id = id
 	}
 	
 	let room: String
-	let id: String
+//	let id: String
+	
+	
+	
+	
 }

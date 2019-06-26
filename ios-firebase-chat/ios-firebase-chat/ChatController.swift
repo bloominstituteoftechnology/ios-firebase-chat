@@ -13,4 +13,6 @@ class ChatController {
 	
 	
 	private var ref = Database.database().reference()
+	
+	
 }
