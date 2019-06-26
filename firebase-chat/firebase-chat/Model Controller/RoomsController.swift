@@ -12,18 +12,16 @@ import Firebase
 class RoomsController {
 
 	func test() {
-		ref.child("rooms").child(UUID().uuidString).setValue(["room": "Gaming"])
+		ref.child("rooms")
 	}
-
+	
+	func test2() {
+		
+	}
+	
 	init(ref: DatabaseReference = Database.database().reference()) {
 		self.ref = ref
 	}
 	
 	var ref: DatabaseReference
-}
-
-struct Room {
-	let name: String
-	
-	
 }
