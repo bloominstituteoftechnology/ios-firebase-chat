@@ -14,6 +14,7 @@
 		E846AE0D22C330E3000A859E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E846AE0B22C330E3000A859E /* LaunchScreen.storyboard */; };
 		E846AE1522C3321B000A859E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E846AE1422C3321B000A859E /* GoogleService-Info.plist */; };
 		E846AE1722C334B1000A859E /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E846AE1622C334B1000A859E /* ChatRoomsTableViewController.swift */; };
+		E846AE1C22C33C37000A859E /* RoomsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E846AE1B22C33C37000A859E /* RoomsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E846AE0E22C330E3000A859E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E846AE1422C3321B000A859E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E846AE1622C334B1000A859E /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
+		E846AE1B22C33C37000A859E /* RoomsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E846AE0222C330E2000A859E /* AppDelegate.swift */,
+				E846AE1D22C33E31000A859E /* Model Controller */,
 				E846AE1A22C33542000A859E /* View Controllers */,
 				E846AE1922C33530000A859E /* Storyboards */,
 				E846AE1822C334D3000A859E /* Resources */,
@@ -113,6 +116,14 @@
 				E846AE1622C334B1000A859E /* ChatRoomsTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E846AE1D22C33E31000A859E /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E846AE1B22C33C37000A859E /* RoomsController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E846AE0322C330E2000A859E /* AppDelegate.swift in Sources */,
+				E846AE1C22C33C37000A859E /* RoomsController.swift in Sources */,
 				E846AE1722C334B1000A859E /* ChatRoomsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

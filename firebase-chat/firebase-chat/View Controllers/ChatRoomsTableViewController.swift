@@ -17,5 +17,5 @@ class ChatRoomsTableViewController: UITableViewController {
 
 	
 	
-	
+	let roomController = RoomsController()
 }
