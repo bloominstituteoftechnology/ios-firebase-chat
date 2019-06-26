@@ -12,8 +12,9 @@ class ChatRoomsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        chatRoomController.fetchChatRooms()
+        chatRoomController.createChatRoom(name: "Another Thread")
+        chatRoomController.createMessage(chatRoom: chatRoomController.chatRooms[0], text: "SomeText", user: Sender(id: "ASDFASDfas", displayName: "Jon"))
+        chatRoomController.createMessage(chatRoom: chatRoomController.chatRooms[0], text: "Some More Text", user: Sender(id: "ASDFASDfas", displayName: "Jon"))
 
     }
 
@@ -40,8 +41,13 @@ class ChatRoomsTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ViewChatRoom" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? MessageViewController else { return }
+
+            destinationVC.chatRoomController = chatRoomController
+            destinationVC.chatRoom = chatRoomController.chatRooms[indexPath.row]
+        }
     }
     let chatRoomController = ChatRoomController()
 }
