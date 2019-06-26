@@ -50,6 +50,6 @@ struct Message: MessageType {
     }
 
     var dictionaryRep: [String: Any] {
-        return ["text": text, "senderName": senderName, "senderID": senderID, "id": identifier, "sentDate": sentDate as? String]
+        return ["text": text, "senderName": senderName, "senderID": senderID, "id": identifier, "sentDate": "\(sentDate)"]
     }
 }

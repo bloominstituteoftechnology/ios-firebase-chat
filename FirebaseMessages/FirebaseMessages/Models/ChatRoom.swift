@@ -13,11 +13,11 @@ class ChatRoom {
 
     var messages: [Message]
     var name: String
-    var identifier: String
+    var id: String
 
     init(messages: [Message] = [], name: String, id: String = UUID().uuidString) {
         self.name = name
-        self.identifier = id
+        self.id = id
         self.messages = messages
     }
 
@@ -27,11 +27,11 @@ class ChatRoom {
             let id = dictionary["id"] as? String else { return nil}
         self.messages = messages
         self.name = name
-        self.identifier = id
+        self.id = id
     }
 
     var dictionaryRep: [String: Any] {
-        return ["messages": messages, "name": name, "id": identifier]
+        return ["messages": messages, "name": name, "id": id]
     }
 
 

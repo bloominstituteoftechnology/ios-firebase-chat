@@ -15,23 +15,37 @@ class ChatRoomController {
     func createChatRoom(name: String) {
         let ref = Database.database().reference()
         let chatRoom = ChatRoom(name: name)
-        ref.child("chatRooms").child(chatRoom.identifier).setValue(chatRoom.dictionaryRep)
+        ref.child("chatRooms").child(chatRoom.id).setValue(chatRoom.dictionaryRep)
         chatRooms.append(chatRoom)
     }
 
     func createMessage(chatRoom: ChatRoom ,text: String, user: Sender) {
         let ref = Database.database().reference()
         let message = Message(text: text, senderName: user.displayName, senderID: user.id)
-        ref.child("chatRooms").child(chatRoom.identifier).child("messages").child(message.identifier).setValue(message.dictionaryRep)
+        ref.child("chatRooms").child(chatRoom.id).child("messages").child(message.identifier).setValue(message.dictionaryRep)
         chatRoom.messages.append(message)
     }
 
-    func fetchChatRoom() {
-        let ref = Database.database().reference().child("chatRooms")
+    func fetchChatRooms() {
+        let ref = Database.database().reference()
+        ref.observeSingleEvent(of: .value) { (snapshot) in
+            guard let chatRoomDictionaries = snapshot.value as? [String: [String: Any]] else { return }
+
+            var chatRooms: [ChatRoom] = []
+
+            for(_, value) in chatRoomDictionaries {
+                print(value)
+                guard let chatRoom = ChatRoom(dictionary: value) else { return}
+                chatRooms.append(chatRoom)
+
+            }
+            self.chatRooms = chatRooms
+            print(self.chatRooms.count)
+        }
+
     }
-
-
     var chatRooms: [ChatRoom] = []
+
 
 }
 
