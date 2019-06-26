@@ -20,15 +20,15 @@ class ChatRoomsTableViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
 		
-		
+		cell.textLabel?.text = "\(indexPath.row)"
 		return cell
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "ChatRoomSegue" {
-			guard let viewController = segue.destination as? MessageViewController else { return }
+			//guard let viewController = segue.destination as? MessageViewController else { return }
 			
 			
 			

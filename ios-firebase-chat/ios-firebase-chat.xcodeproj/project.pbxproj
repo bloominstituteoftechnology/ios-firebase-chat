@@ -10,13 +10,13 @@
 		4EEA3D4E8C2C8012196924C2 /* Pods_ios_firebase_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0302B38538C616705AB23D46 /* Pods_ios_firebase_chat.framework */; };
 		E8B2C82C22C2AE5A00716421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C82B22C2AE5A00716421 /* AppDelegate.swift */; };
 		E8B2C83122C2AE5A00716421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C82F22C2AE5A00716421 /* Main.storyboard */; };
-		E8B2C83E22C2B24300716421 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C83D22C2B24300716421 /* GoogleService-Info.plist */; };
 		E8B2C84422C2D05800716421 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84322C2D05800716421 /* ChatRoomsTableViewController.swift */; };
 		E8B2C84622C2D0A900716421 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84522C2D0A900716421 /* MessageViewController.swift */; };
 		E8B2C84822C2D2C800716421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C84722C2D2C800716421 /* Assets.xcassets */; };
 		E8B2C84A22C2D2D400716421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C84922C2D2D400716421 /* LaunchScreen.storyboard */; };
 		E8B2C84C22C2D76200716421 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84B22C2D76200716421 /* ChatController.swift */; };
 		E8B2C84F22C2F25F00716421 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84E22C2F25F00716421 /* ChatRoom.swift */; };
+		E8B2C85622C2FE9F00716421 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C85522C2FE9F00716421 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,14 +27,13 @@
 		E8B2C82B22C2AE5A00716421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8B2C83022C2AE5A00716421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E8B2C83722C2AE5C00716421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		E8B2C83D22C2B24300716421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E8B2C84022C2CFF800716421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E8B2C84322C2D05800716421 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		E8B2C84522C2D0A900716421 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		E8B2C84722C2D2C800716421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8B2C84922C2D2D400716421 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8B2C84B22C2D76200716421 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatController.swift; path = ../ChatController.swift; sourceTree = "<group>"; };
 		E8B2C84E22C2F25F00716421 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		E8B2C85522C2FE9F00716421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +92,6 @@
 				E8B2C84222C2D03400716421 /* View Controllers */,
 				E8B2C84122C2D02500716421 /* Storyboards */,
 				E8B2C83F22C2CFF800716421 /* Resources */,
-				E8B2C83D22C2B24300716421 /* GoogleService-Info.plist */,
 			);
 			path = "ios-firebase-chat";
 			sourceTree = "<group>";
@@ -102,8 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				E8B2C84722C2D2C800716421 /* Assets.xcassets */,
+				E8B2C85522C2FE9F00716421 /* GoogleService-Info.plist */,
 				E8B2C83722C2AE5C00716421 /* Info.plist */,
-				E8B2C84022C2CFF800716421 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -202,8 +200,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8B2C83E22C2B24300716421 /* GoogleService-Info.plist in Resources */,
 				E8B2C84A22C2D2D400716421 /* LaunchScreen.storyboard in Resources */,
+				E8B2C85622C2FE9F00716421 /* GoogleService-Info.plist in Resources */,
 				E8B2C84822C2D2C800716421 /* Assets.xcassets in Resources */,
 				E8B2C83122C2AE5A00716421 /* Main.storyboard in Resources */,
 			);
