@@ -10,14 +10,13 @@ import Foundation
 import Firebase
 
 class RoomsController {
-	
+
 	func test() {
-		ref.child("rooms").setValue(["room": "Gaming"])
+		ref.child("rooms").child(UUID().uuidString).setValue(["room": "Gaming"])
 	}
-	
+
 	init(ref: DatabaseReference = Database.database().reference()) {
 		self.ref = ref
-		test()
 	}
 	
 	var ref: DatabaseReference
