@@ -9,6 +9,13 @@
 import Foundation
 
 struct Room {
+	let id: String
 	let roomname: String
-	var messages: [Message] = []
+	var messages: [Message]
+	
+	init(roomname: String, id: String = UUID().uuidString, messages: [Message] = []) {
+		self.id = id
+		self.roomname = roomname
+		self.messages = messages
+	}
 }
