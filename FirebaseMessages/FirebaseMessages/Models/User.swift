@@ -1,5 +1,5 @@
 //
-//  ChatRoom.swift
+//  User.swift
 //  FirebaseMessages
 //
 //  Created by Jonathan Ferrer on 6/25/19.
@@ -7,17 +7,12 @@
 //
 
 import Foundation
-import Firebase
 import MessageKit
 
-struct ChatRoom {
-    var name: String?
+struct User: SenderType {
     var id: String
-    var timeStamp: Date
-    var messages: [Message]
-
-
-
+    var senderId: String {
+        return id
+    }
+    var displayName: String
 }
-
-
