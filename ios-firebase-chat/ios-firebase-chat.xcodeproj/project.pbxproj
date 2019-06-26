@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		4EEA3D4E8C2C8012196924C2 /* Pods_ios_firebase_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0302B38538C616705AB23D46 /* Pods_ios_firebase_chat.framework */; };
 		E8B2C82C22C2AE5A00716421 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C82B22C2AE5A00716421 /* AppDelegate.swift */; };
-		E8B2C82E22C2AE5A00716421 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C82D22C2AE5A00716421 /* ViewController.swift */; };
 		E8B2C83122C2AE5A00716421 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C82F22C2AE5A00716421 /* Main.storyboard */; };
-		E8B2C83322C2AE5C00716421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C83222C2AE5C00716421 /* Assets.xcassets */; };
-		E8B2C83622C2AE5C00716421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C83422C2AE5C00716421 /* LaunchScreen.storyboard */; };
 		E8B2C83E22C2B24300716421 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C83D22C2B24300716421 /* GoogleService-Info.plist */; };
+		E8B2C84422C2D05800716421 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84322C2D05800716421 /* ChatRoomsTableViewController.swift */; };
+		E8B2C84622C2D0A900716421 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84522C2D0A900716421 /* MessageViewController.swift */; };
+		E8B2C84822C2D2C800716421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C84722C2D2C800716421 /* Assets.xcassets */; };
+		E8B2C84A22C2D2D400716421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8B2C84922C2D2D400716421 /* LaunchScreen.storyboard */; };
+		E8B2C84C22C2D76200716421 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84B22C2D76200716421 /* ChatController.swift */; };
+		E8B2C84F22C2F25F00716421 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B2C84E22C2F25F00716421 /* ChatRoom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +25,16 @@
 		81C8AEE8827E8B0FB7CE304D /* Pods-ios-firebase-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-firebase-chat.release.xcconfig"; path = "Target Support Files/Pods-ios-firebase-chat/Pods-ios-firebase-chat.release.xcconfig"; sourceTree = "<group>"; };
 		E8B2C82822C2AE5A00716421 /* ios-firebase-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-firebase-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8B2C82B22C2AE5A00716421 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E8B2C82D22C2AE5A00716421 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8B2C83022C2AE5A00716421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		E8B2C83222C2AE5C00716421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E8B2C83522C2AE5C00716421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E8B2C83722C2AE5C00716421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8B2C83722C2AE5C00716421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		E8B2C83D22C2B24300716421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8B2C84022C2CFF800716421 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E8B2C84322C2D05800716421 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
+		E8B2C84522C2D0A900716421 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		E8B2C84722C2D2C800716421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E8B2C84922C2D2D400716421 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E8B2C84B22C2D76200716421 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatController.swift; path = ../ChatController.swift; sourceTree = "<group>"; };
+		E8B2C84E22C2F25F00716421 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +63,6 @@
 				1FF44A56832EF2045ABCC8B7 /* Pods-ios-firebase-chat.debug.xcconfig */,
 				81C8AEE8827E8B0FB7CE304D /* Pods-ios-firebase-chat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,14 +88,58 @@
 			isa = PBXGroup;
 			children = (
 				E8B2C82B22C2AE5A00716421 /* AppDelegate.swift */,
-				E8B2C82D22C2AE5A00716421 /* ViewController.swift */,
-				E8B2C82F22C2AE5A00716421 /* Main.storyboard */,
-				E8B2C83222C2AE5C00716421 /* Assets.xcassets */,
-				E8B2C83422C2AE5C00716421 /* LaunchScreen.storyboard */,
-				E8B2C83722C2AE5C00716421 /* Info.plist */,
+				E8B2C85022C2F2B000716421 /* Models */,
+				E8B2C84D22C2F1DB00716421 /* Model Controllers */,
+				E8B2C84222C2D03400716421 /* View Controllers */,
+				E8B2C84122C2D02500716421 /* Storyboards */,
+				E8B2C83F22C2CFF800716421 /* Resources */,
 				E8B2C83D22C2B24300716421 /* GoogleService-Info.plist */,
 			);
 			path = "ios-firebase-chat";
+			sourceTree = "<group>";
+		};
+		E8B2C83F22C2CFF800716421 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E8B2C84722C2D2C800716421 /* Assets.xcassets */,
+				E8B2C83722C2AE5C00716421 /* Info.plist */,
+				E8B2C84022C2CFF800716421 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E8B2C84122C2D02500716421 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E8B2C82F22C2AE5A00716421 /* Main.storyboard */,
+				E8B2C84922C2D2D400716421 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E8B2C84222C2D03400716421 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8B2C84322C2D05800716421 /* ChatRoomsTableViewController.swift */,
+				E8B2C84522C2D0A900716421 /* MessageViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E8B2C84D22C2F1DB00716421 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E8B2C84B22C2D76200716421 /* ChatController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		E8B2C85022C2F2B000716421 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8B2C84E22C2F25F00716421 /* ChatRoom.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +202,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8B2C83622C2AE5C00716421 /* LaunchScreen.storyboard in Resources */,
 				E8B2C83E22C2B24300716421 /* GoogleService-Info.plist in Resources */,
-				E8B2C83322C2AE5C00716421 /* Assets.xcassets in Resources */,
+				E8B2C84A22C2D2D400716421 /* LaunchScreen.storyboard in Resources */,
+				E8B2C84822C2D2C800716421 /* Assets.xcassets in Resources */,
 				E8B2C83122C2AE5A00716421 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,8 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8B2C82E22C2AE5A00716421 /* ViewController.swift in Sources */,
+				E8B2C84422C2D05800716421 /* ChatRoomsTableViewController.swift in Sources */,
+				E8B2C84622C2D0A900716421 /* MessageViewController.swift in Sources */,
 				E8B2C82C22C2AE5A00716421 /* AppDelegate.swift in Sources */,
+				E8B2C84F22C2F25F00716421 /* ChatRoom.swift in Sources */,
+				E8B2C84C22C2D76200716421 /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,14 +288,6 @@
 				E8B2C83022C2AE5A00716421 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E8B2C83422C2AE5C00716421 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E8B2C83522C2AE5C00716421 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
