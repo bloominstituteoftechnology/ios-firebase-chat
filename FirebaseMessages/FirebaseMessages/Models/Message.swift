@@ -40,16 +40,16 @@ struct Message: MessageType {
             let senderName = dictionary["senderName"] as? String,
             let senderID = dictionary["senderID"] as? String,
             let id = dictionary["id"] as? String,
-            let sentDate = dictionary["sentDate"] as? Date else { return nil}
+            let sentDate = dictionary["sentDate"] as? TimeInterval else { return nil}
 
         self.text = text
         self.senderName = senderName
         self.senderID = "\(senderID)"
         self.identifier = id
-        self.sentDate = sentDate
+        self.sentDate = Date(timeIntervalSince1970: sentDate)
     }
 
     var dictionaryRep: [String: Any] {
-        return ["text": text, "senderName": senderName, "senderID": senderID, "id": identifier, "sentDate": "\(sentDate)"]
+        return ["text": text, "senderName": senderName, "senderID": senderID, "id": identifier, "sentDate": sentDate.timeIntervalSince1970]
     }
 }

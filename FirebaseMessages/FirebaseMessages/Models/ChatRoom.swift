@@ -22,10 +22,18 @@ class ChatRoom {
     }
 
     init?(dictionary: [String: Any]) {
-        guard let messages = dictionary["messages"] as? [Message],
+        guard let messages = dictionary["messages"] as? [String: [String: Any]],
             let name = dictionary["name"] as? String,
             let id = dictionary["id"] as? String else { return nil}
-        self.messages = messages
+
+        var messageArray: [Message] = []
+        for (_, messageDict) in messages {
+            if let message = Message(dictionary: messageDict) {
+            messageArray.append(message)
+            }
+        }
+
+        self.messages = messageArray
         self.name = name
         self.id = id
     }

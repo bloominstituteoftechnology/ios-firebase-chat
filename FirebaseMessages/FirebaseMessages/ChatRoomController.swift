@@ -27,22 +27,20 @@ class ChatRoomController {
     }
 
     func fetchChatRooms() {
-        let ref = Database.database().reference()
+        let ref = Database.database().reference().child("chatRooms")
         ref.observeSingleEvent(of: .value) { (snapshot) in
             guard let chatRoomDictionaries = snapshot.value as? [String: [String: Any]] else { return }
 
-            var chatRooms: [ChatRoom] = []
+//            var rooms: [ChatRoom] = []
 
             for(_, value) in chatRoomDictionaries {
-                print(value)
-                guard let chatRoom = ChatRoom(dictionary: value) else { return}
-                chatRooms.append(chatRoom)
+
+                guard let chatRoom = ChatRoom(dictionary: value) else { continue }
+                self.chatRooms.append(chatRoom)
 
             }
-            self.chatRooms = chatRooms
-            print(self.chatRooms.count)
+//            self.chatRooms = rooms
         }
-
     }
     var chatRooms: [ChatRoom] = []
 

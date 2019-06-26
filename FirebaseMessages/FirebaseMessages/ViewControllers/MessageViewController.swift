@@ -68,6 +68,12 @@ extension MessageViewController: InputBarAccessoryViewDelegate {
 
         chatRoomController?.createMessage(chatRoom: chatRoom, text: text, user: sender)
 
+        DispatchQueue.main.async {
+            self.messagesCollectionView.reloadData()
+            self.messageInputBar.inputTextView.text = ""
+        }
+
+
     }
 
 }
