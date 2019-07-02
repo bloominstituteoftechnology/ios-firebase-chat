@@ -9,13 +9,13 @@
 import Foundation
 import MessageKit
 
-class MessageThread: Codable, Equatable {
+class ChatRoom: Codable, Equatable {
     
     let title: String
-    var messages: [MessageThread.Message]
+    var messages: [ChatRoom.Message]
     let identifier: String
     
-    init(title: String, messages: [MessageThread.Message] = [], identifier: String = UUID().uuidString) {
+    init(title: String, messages: [ChatRoom.Message] = [], identifier: String = UUID().uuidString) {
         self.title = title
         self.messages = messages
         self.identifier = identifier
@@ -88,7 +88,7 @@ class MessageThread: Codable, Equatable {
         }
     }
     
-    static func ==(lhs: MessageThread, rhs: MessageThread) -> Bool {
+    static func ==(lhs: ChatRoom, rhs: ChatRoom) -> Bool {
         return lhs.title == rhs.title &&
             lhs.identifier == rhs.identifier &&
             lhs.messages == rhs.messages
