@@ -27,6 +27,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="createThread:" destination="Yxq-hH-QRO" eventType="editingDidEndOnExit" id="cTf-88-nxy"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,7 +41,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="FAX-jd-axq" style="IBUITableViewCellStyleDefault" id="8CI-uA-g9Z">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" textLabel="FAX-jd-axq" style="IBUITableViewCellStyleDefault" id="8CI-uA-g9Z">
                                 <rect key="frame" x="0.0" y="72" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8CI-uA-g9Z" id="Wg6-tU-3zd">
@@ -65,6 +68,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chat" id="MU5-Ww-GtR"/>
+                    <connections>
+                        <outlet property="chatRoomTitleTextField" destination="hNf-MT-tLK" id="ppX-s8-ztn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLb-ah-3fA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

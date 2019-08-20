@@ -9,38 +9,87 @@
 import UIKit
 
 class MessagesTableViewController: UITableViewController {
+    
+    let firebaseController = FirebaseController() 
+    
+    @IBOutlet weak var chatRoomTitleTextField: UITextField!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        firebaseController.fetchChatRooms {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let currentSender = UserDefaults.standard.currentSender {
+            firebaseController.currentUser = currentSender
+        } else {
+            let alert = UIAlertController(title: "Set a username", message: nil, preferredStyle: .alert)
+            
+            var usernameTextField: UITextField!
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "Username:"
+                usernameTextField = textField
+            }
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+                
+                // Take the text field's text and save it to UD.
+                
+                let displayName = usernameTextField.text ?? "No name"
+                let id = UUID().uuidString
+                
+                let sender = Sender(senderId: id, displayName: displayName)
+                
+                UserDefaults.standard.currentSender = sender
+                
+                self.firebaseController.currentUser = sender
+            }
+            
+            alert.addAction(submitAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
     }
 
+    @IBAction func createThread(_ sender: Any) {
+        chatRoomTitleTextField.resignFirstResponder()
+        
+        guard let roomTitle = chatRoomTitleTextField.text else { return }
+        
+        chatRoomTitleTextField.text = ""
+        
+        firebaseController.createChatRoom(with: roomTitle) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return firebaseController.chatRooms.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
+        
+        cell.textLabel?.text = firebaseController.chatRooms[indexPath.row].title
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

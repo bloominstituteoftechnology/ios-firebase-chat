@@ -23,6 +23,7 @@
 		6FF52541230C9EA100781A09 /* InputBarAccessoryView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF5253A230C9E8C00781A09 /* InputBarAccessoryView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FF52543230C9EED00781A09 /* UserDefaults+Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF52542230C9EED00781A09 /* UserDefaults+Sender.swift */; };
 		6FF52545230CA3A700781A09 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF52544230CA3A700781A09 /* ChatRoomViewController.swift */; };
+		6FF52547230CA45000781A09 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF52546230CA45000781A09 /* FirebaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +59,7 @@
 		6FF5253C230C9E9400781A09 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		6FF52542230C9EED00781A09 /* UserDefaults+Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Sender.swift"; sourceTree = "<group>"; };
 		6FF52544230CA3A700781A09 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
+		6FF52546230CA45000781A09 /* FirebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		9F2C9F46B41A701CC99AC86E /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 		6FEFB4B9230C81490094509F = {
 			isa = PBXGroup;
 			children = (
+				6FF52548230CA45500781A09 /* Model Controller */,
 				6FEFB4DC230C82420094509F /* Model */,
 				6FEFB4D9230C81CD0094509F /* View Controllers */,
 				6FEFB4C4230C81490094509F /* Chat */,
@@ -135,6 +138,14 @@
 				6FF52542230C9EED00781A09 /* UserDefaults+Sender.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6FF52548230CA45500781A09 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6FF52546230CA45000781A09 /* FirebaseController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 		9F1D3F892CEB4D5FB47683BE /* Pods */ = {
@@ -269,6 +280,7 @@
 				6FEFB4DE230C82520094509F /* ChatRoom.swift in Sources */,
 				6FEFB4D8230C81C60094509F /* MessagesTableViewController.swift in Sources */,
 				6FF52545230CA3A700781A09 /* ChatRoomViewController.swift in Sources */,
+				6FF52547230CA45000781A09 /* FirebaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
