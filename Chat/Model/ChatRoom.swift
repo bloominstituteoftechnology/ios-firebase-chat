@@ -95,7 +95,6 @@ class ChatRoom: Codable, Equatable {
     }
 }
 
-
 struct Sender: SenderType {
     var senderId: String
     var displayName: String

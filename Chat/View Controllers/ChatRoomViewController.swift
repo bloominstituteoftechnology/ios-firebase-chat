@@ -45,6 +45,7 @@ extension ChatRoomViewController: MessagesDataSource {
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return 1
     }
+    
     func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
         return chatRoom?.messages.count ?? 0
     }
@@ -53,7 +54,6 @@ extension ChatRoomViewController: MessagesDataSource {
 }
 
 extension ChatRoomViewController: MessagesLayoutDelegate {
-    
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let sender = message.sender.displayName
         let senderString = NSAttributedString(string: sender, attributes: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
@@ -76,13 +76,13 @@ extension ChatRoomViewController: MessagesLayoutDelegate {
         
         return attributedDate
     }
+    
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 24
     }
 }
 
 extension ChatRoomViewController: MessagesDisplayDelegate {
-    
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         
         if isFromCurrentSender(message: message) {
@@ -90,7 +90,6 @@ extension ChatRoomViewController: MessagesDisplayDelegate {
         } else {
             return UIColor.init(red: 205.0/255.0, green: 216.0/255.0, blue: 216.0/255.0, alpha: 1.0)
         }
-        
     }
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
@@ -99,9 +98,6 @@ extension ChatRoomViewController: MessagesDisplayDelegate {
         
         return .bubbleTail(corner, .curved)
     }
-    
-    
-    
 }
 
 extension ChatRoomViewController: InputBarAccessoryViewDelegate {
@@ -117,7 +113,6 @@ extension ChatRoomViewController: InputBarAccessoryViewDelegate {
                 self.messageInputBar.inputTextView.text = ""
             }
         })
-        
     }
     
 }
