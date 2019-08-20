@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,12 @@
 		6FEFB4DE230C82520094509F /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEFB4DD230C82520094509F /* ChatRoom.swift */; };
 		6FEFB4E0230C84FB0094509F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FEFB4DF230C84FB0094509F /* GoogleService-Info.plist */; };
 		6FEFB4E2230C85DF0094509F /* Pods_Chat.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64F541DCACF58DBBE8538279 /* Pods_Chat.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FF5253E230C9EA100781A09 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF5253C230C9E9400781A09 /* MessageKit.framework */; };
+		6FF5253F230C9EA100781A09 /* MessageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF5253C230C9E9400781A09 /* MessageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FF52540230C9EA100781A09 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF5253A230C9E8C00781A09 /* InputBarAccessoryView.framework */; };
+		6FF52541230C9EA100781A09 /* InputBarAccessoryView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF5253A230C9E8C00781A09 /* InputBarAccessoryView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FF52543230C9EED00781A09 /* UserDefaults+Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF52542230C9EED00781A09 /* UserDefaults+Sender.swift */; };
+		6FF52545230CA3A700781A09 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF52544230CA3A700781A09 /* ChatRoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +33,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				6FEFB4E2230C85DF0094509F /* Pods_Chat.framework in Embed Frameworks */,
+				6FF5253F230C9EA100781A09 /* MessageKit.framework in Embed Frameworks */,
+				6FF52541230C9EA100781A09 /* InputBarAccessoryView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +54,10 @@
 		6FEFB4DA230C823E0094509F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		6FEFB4DD230C82520094509F /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		6FEFB4DF230C84FB0094509F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6FF5253A230C9E8C00781A09 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = "<group>"; };
+		6FF5253C230C9E9400781A09 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
+		6FF52542230C9EED00781A09 /* UserDefaults+Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Sender.swift"; sourceTree = "<group>"; };
+		6FF52544230CA3A700781A09 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		9F2C9F46B41A701CC99AC86E /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +67,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E58EEFD0D24B7FFC1C40AD5 /* Pods_Chat.framework in Frameworks */,
+				6FF5253E230C9EA100781A09 /* MessageKit.framework in Frameworks */,
+				6FF52540230C9EA100781A09 /* InputBarAccessoryView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +78,8 @@
 		56D491D88D02D6E92F7A091F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6FF5253C230C9E9400781A09 /* MessageKit.framework */,
+				6FF5253A230C9E8C00781A09 /* InputBarAccessoryView.framework */,
 				64F541DCACF58DBBE8538279 /* Pods_Chat.framework */,
 			);
 			name = Frameworks;
@@ -106,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				6FEFB4D7230C81C60094509F /* MessagesTableViewController.swift */,
+				6FF52544230CA3A700781A09 /* ChatRoomViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -115,6 +132,7 @@
 			children = (
 				6FEFB4DA230C823E0094509F /* Message.swift */,
 				6FEFB4DD230C82520094509F /* ChatRoom.swift */,
+				6FF52542230C9EED00781A09 /* UserDefaults+Sender.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -246,9 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FEFB4DB230C823E0094509F /* Message.swift in Sources */,
+				6FF52543230C9EED00781A09 /* UserDefaults+Sender.swift in Sources */,
 				6FEFB4C6230C81490094509F /* AppDelegate.swift in Sources */,
 				6FEFB4DE230C82520094509F /* ChatRoom.swift in Sources */,
 				6FEFB4D8230C81C60094509F /* MessagesTableViewController.swift in Sources */,
+				6FF52545230CA3A700781A09 /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +417,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CR35R32AT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Chat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -416,6 +440,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4CR35R32AT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Chat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

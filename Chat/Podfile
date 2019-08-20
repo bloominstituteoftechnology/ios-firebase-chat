@@ -10,6 +10,6 @@ target 'Chat' do
 
   # Pods for Chat
   pod 'Firebase'
-  pod 'Firebase/InAppMessaging'
-  pod 'Firebase/Analytics'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 end
