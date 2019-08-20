@@ -1,0 +1,10 @@
+{
+  "commitish" : "4.3.0",
+  "iOS" : [
+    {
+      "name" : "InputBarAccessoryView",
+      "hash" : "d50addc57e7bfb61d60768f0fc9878cc13744c96dadb74387d52298be9e72aa9",
+      "swiftToolchainVersion" : "5.0.1 (swiftlang-1001.0.82.4 clang-1001.0.46.5)"
+    }
+  ]
+}
