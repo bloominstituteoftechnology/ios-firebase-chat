@@ -50,40 +50,15 @@ class FirebaseController {
                 return
             }
             
-            guard let data = data else { NSLog("No data returned from data task"); completion(); return }
+            guard let data = data else { NSLog("No data returned from data task")
+                completion()
+                return }
             
             do {
                 self.chatRooms = try JSONDecoder().decode([String: ChatRoom].self, from: data).map({ $0.value })
-            } catch let jsonError as DecodingError {
-                let ctx: DecodingError.Context
-                switch jsonError {
-                    
-                case .typeMismatch(let type, let context):
-                    print("Mismatched type: \(type)")
-                    ctx = context
-                case .valueNotFound(let type, let context):
-                    print("Missing value of type \(type)")
-                    ctx = context
-                case .keyNotFound(let key, let context):
-                    print("Unknown key: \(key.stringValue)")
-                    ctx = context
-                case .dataCorrupted(let context):
-                    print("Corrupted data")
-                    ctx = context
-                }
-                
-                let path = ctx.codingPath.map { p -> String in
-                    return p.intValue != nil ? "[\(p.intValue!)]" : "."+p.stringValue
-                    }.joined()
-                
-                print("path: [root]\(path)")
-                
-                
-                self.chatRooms = []
-                NSLog("Error decoding chat rooms from JSON data: \(error)")
             } catch {
                 self.chatRooms = []
-                NSLog("Unknown error decoding chat rooms from JSON data: \(error)")
+                NSLog("Unknown error decoding chat rooms from JSON data")
             }
             
             completion()
