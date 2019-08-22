@@ -16,7 +16,7 @@ extension UserDefaults {
                 let displayName = string(forKey: "displayName") else {
                     return nil
             }
-            return Sender(senderId: senderID, displayName: displayName)
+            return Sender(displayName: displayName, senderId: senderID)
         }
         set {
             set(newValue?.senderId, forKey: "senderId")

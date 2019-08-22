@@ -9,11 +9,17 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
+import Firebase
 
 class ChatRoomViewController: MessagesViewController {
 
     var firebaseController: FirebaseController?
     var chatRoom: ChatRoom?
+    var messages: [Message] = [] {
+        didSet {
+            self.messagesCollectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +27,30 @@ class ChatRoomViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
+        
+        loadMessages()
+    }
+    
+    func loadMessages(){
+        guard isViewLoaded else {return}
+        
+        Database.database().reference().child("myMessages").observe(.childAdded) { (snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let captionText = dict["text"] as! String
+                let uid = dict["senderId"] as! String
+                let username = dict["displayName"] as! String
+                
+                let messages = Message(chatroom: nil, text: captionText, displayName: username, senderID: uid, messageId: snapshot.key)
+                self.messages.append(messages)
+                self.messagesCollectionView.reloadData()
+        
+            }
+        }
     }
     
 }
+
+
 
 extension ChatRoomViewController: MessagesDataSource {
     func currentSender() -> SenderType {
@@ -36,9 +63,7 @@ extension ChatRoomViewController: MessagesDataSource {
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
         
-        guard let message = chatRoom?.messages[indexPath.item] else {
-            fatalError("Unable to find message in thread")
-        }
+        let message = messages[indexPath.item]
         return message
     }
     
@@ -47,7 +72,7 @@ extension ChatRoomViewController: MessagesDataSource {
     }
     
     func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
-        return chatRoom?.messages.count ?? 0
+        return messages.count
     }
     
     
@@ -106,13 +131,26 @@ extension ChatRoomViewController: InputBarAccessoryViewDelegate {
         guard let chatRoom = chatRoom,
             let sender = currentSender() as? Sender else { return }
         
-        firebaseController?.createMessage(in: chatRoom, withText: text, sender: sender, completion: {
-            
-            DispatchQueue.main.async {
-                self.messagesCollectionView.reloadData()
-                self.messageInputBar.inputTextView.text = ""
+        for component in inputBar.inputTextView.components {
+            if let str = component as? String {
+                _ = firebaseController?.uploadMessagesToServer(chatRoom: chatRoom, displayName: sender.displayName, id: (chatRoom.id)!, text: str, onSuccess: {
+                    print("Message submitted")
+                })
             }
-        })
+            
+        }
+        inputBar.inputTextView.text = String()
+        messagesCollectionView.scrollToBottom(animated: true)
     }
+    
+        
+//        firebaseController?.createMessage(in: chatRoom, withText: text, sender: sender, completion: {
+//
+//            DispatchQueue.main.async {
+//                self.messagesCollectionView.reloadData()
+//                self.messageInputBar.inputTextView.text = ""
+//            }
+//        })
+    
     
 }

@@ -8,35 +8,63 @@
 
 import Foundation
 import MessageKit
+import Firebase
 
 struct Message: MessageType {
-    let text: String
-    
-    let senderName: String
-    let senderID: UUID
     var sender: SenderType {
-        return Sender(senderId: senderID.uuidString, displayName: senderName)
+        return Sender(displayName: displayName, senderId: senderID)
     }
+    let chatroom: ChatRoom?
+    var text: String
+    var displayName: String
+    var senderID: String
+    var messageId: String
     
-    let id: UUID
-    var messageId: String {
-        return id.uuidString
-    }
-    
-    let sentDate: Date
-    
+    // MARK: - MessageType
+    var sentDate: Date {
+        return Date() }
     var kind: MessageKind {
-        return .text(text)
-    }
+        return .text(text) }
     
-    init(text: String, senderName: String, senderID: UUID, id: UUID = UUID(), sentDate: Date = Date()) {
-        self.text = text
-        self.senderName = senderName
-        self.senderID = senderID
-        self.id = id
-        self.sentDate = sentDate
-    }
     
-   
 }
+
+//
+//struct Message: MessageType {
+//    var messageId: String
+//    let text: String
+//    var sender: SenderType
+//    let sentDate: Date
+//
+//    var kind: MessageKind {
+//        return .text(text)
+//    }
+//
+//    init(text: String, sender: Sender, messageId: UUID = UUID(), sentDate: Date = Date()) {
+//        self.text = text
+//        self.sender = sender
+//        self.messageId = messageId.uuidString
+//        self.sentDate = sentDate
+//    }
+//
+//    init?(data: [String: Any]) {
+//        guard let timestamp = data["sentDate"] as? Date else { return nil }
+//        guard let senderId = data["senderId"] as? String else { return nil }
+//        guard let senderDisplayName = data["displayName"] as? String else { return nil }
+//        guard let text = data["text"] as? String else { return nil }
+//        guard let messageId = data["messageId"] as? String else { return nil }
+//
+//        let sender = Sender(displayName: senderDisplayName, senderId: senderId)
+//
+//        self.sender = sender
+//        self.sentDate = timestamp
+//        self.messageId = messageId
+//        self.text = text
+//
+//    }
+
+    
+
+   
+//}
 

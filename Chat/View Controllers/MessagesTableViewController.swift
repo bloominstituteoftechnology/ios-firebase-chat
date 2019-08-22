@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MessagesTableViewController: UITableViewController {
     
@@ -14,19 +15,17 @@ class MessagesTableViewController: UITableViewController {
 
     let firebaseController = FirebaseController()
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        firebaseController.fetchChatRooms {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+//        loadChatRooms()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         if let currentSender = UserDefaults.standard.currentSender {
             firebaseController.currentUser = currentSender
         } else {
@@ -44,7 +43,7 @@ class MessagesTableViewController: UITableViewController {
                 let displayName = usernameTextField.text ?? "No name"
                 let id = UUID().uuidString
                 
-                let sender = Sender(senderId: id, displayName: displayName)
+                let sender = Sender(displayName: displayName, senderId: id)
                 
                 UserDefaults.standard.currentSender = sender
                 
@@ -55,6 +54,21 @@ class MessagesTableViewController: UITableViewController {
             present(alert, animated: true, completion: nil)
         }
         
+        
+    }
+    
+    func loadChatRooms(){
+        
+        firebaseController.observeChatRooms { (chatrooms) in
+            guard chatrooms.senderId != nil else {return}
+            
+            self.firebaseController.chatRooms.sort(by: {(chat1, chat2) -> Bool in
+                Int(truncating: chat1.timeStamp!) > Int(truncating: chatrooms.timeStamp!)
+            })
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     @IBAction func createThread(_ sender: Any) {
@@ -62,13 +76,17 @@ class MessagesTableViewController: UITableViewController {
         
         guard let roomTitle = chatRoomTitleTextField.text else { return }
         
-        chatRoomTitleTextField.text = ""
         
-        firebaseController.createChatRoom(with: roomTitle) {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
+        firebaseController.uploadDataToServer(chatRoomName: roomTitle) {
+            self.chatRoomTitleTextField.text = ""
+            
         }
+        
+//        firebaseController.createChatRoom(with: roomTitle) {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     // MARK: - Table view data source
@@ -82,7 +100,7 @@ class MessagesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
         
-        cell.textLabel?.text = firebaseController.chatRooms[indexPath.row].title
+        cell.textLabel?.text = firebaseController.chatRooms[indexPath.row].name
         
         return cell
     }
