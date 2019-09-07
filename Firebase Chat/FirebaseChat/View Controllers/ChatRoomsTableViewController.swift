@@ -69,7 +69,6 @@ class ChatRoomsTableViewController: UITableViewController {
         
         alert.addAction(cancelAction)
         alert.addAction(submitAction)
-        
         present(alert, animated: true, completion: nil)
     }
     

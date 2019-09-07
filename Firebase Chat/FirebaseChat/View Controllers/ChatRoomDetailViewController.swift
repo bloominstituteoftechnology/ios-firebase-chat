@@ -95,13 +95,9 @@ class ChatRoomDetailViewController: MessagesViewController, MessagesDisplayDeleg
     // MARK: - MessagesInputBarDelegate
     
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
-        
         guard let messageText = inputBar.inputTextView.text else { return }
-        
         messageController.createMessageIn(room: room, with: currentSender(), text: messageText)
-        
         messageController.fetchMessagesFor(room: room)
-        
         inputBar.inputTextView.text = ""
     }
     
