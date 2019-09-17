@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EC2370D7477491FA8FE4DBFF4F7BC502"
+               BlueprintIdentifier = "571D48138D13E2A712E3F4F8587AC655"
                BuildableName = "MessageKit.framework"
                BlueprintName = "MessageKit"
                ReferencedContainer = "container:Pods.xcodeproj">
