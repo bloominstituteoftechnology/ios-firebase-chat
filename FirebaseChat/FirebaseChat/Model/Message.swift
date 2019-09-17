@@ -26,7 +26,7 @@ struct Message {
     }
     
     func toDict() -> [String: Any] {
-        return ["text": text, "timestamp": timestamp, "displayName": displayName, "senderId": senderId, "messageId": messageId]
+        return ["text": text, "timestamp": timestamp.timeIntervalSince1970, "displayName": displayName, "senderId": senderId, "messageId": messageId]
     }
 }
 public struct Sender: SenderType {
