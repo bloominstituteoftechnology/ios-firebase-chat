@@ -16,6 +16,7 @@
 		759C640B23317E1300B3B000 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C640A23317E1300B3B000 /* MessageDetailViewController.swift */; };
 		759C640E233193B300B3B000 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C640D233193B300B3B000 /* Message.swift */; };
 		759C6410233193FA00B3B000 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C640F233193FA00B3B000 /* ChatRoom.swift */; };
+		759C6413233195DF00B3B000 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759C6412233195DF00B3B000 /* ChatRoomController.swift */; };
 		8C2D4A4BF164B3A029055DB0 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC29CBD4C219813A6A6CD67 /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		759C640A23317E1300B3B000 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		759C640D233193B300B3B000 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		759C640F233193FA00B3B000 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		759C6412233195DF00B3B000 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 		759C63F223317ADA00B3B000 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
+				759C6411233195CC00B3B000 /* ModelController */,
 				759C640C233193A600B3B000 /* Model */,
 				759C640723317D8200B3B000 /* ViewController */,
 				759C63F323317ADA00B3B000 /* AppDelegate.swift */,
@@ -114,6 +117,14 @@
 				759C640F233193FA00B3B000 /* ChatRoom.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		759C6411233195CC00B3B000 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				759C6412233195DF00B3B000 /* ChatRoomController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +247,7 @@
 				759C640E233193B300B3B000 /* Message.swift in Sources */,
 				759C63F423317ADA00B3B000 /* AppDelegate.swift in Sources */,
 				759C6410233193FA00B3B000 /* ChatRoom.swift in Sources */,
+				759C6413233195DF00B3B000 /* ChatRoomController.swift in Sources */,
 				759C640B23317E1300B3B000 /* MessageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

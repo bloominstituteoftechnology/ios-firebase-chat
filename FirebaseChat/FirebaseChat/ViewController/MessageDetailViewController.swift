@@ -14,8 +14,8 @@ class MessageDetailViewController: MessagesViewController {
     
     // MARK: - Properties
     
-    var messageThreadController: MessageThreadController?
-    var messageThread: MessageThread?
+    var chatRoomController: ChatRoomController?
+    var chatRoom: ChatRoom?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class MessageDetailViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        messageThread?.messages.sort(by: {$0.timestamp < $1.timestamp})
+        chatRoom?.messages.sort(by: {$0.timestamp < $1.timestamp})
         
         messageInputBar.delegate = self
     }
@@ -33,7 +33,7 @@ class MessageDetailViewController: MessagesViewController {
 
 extension MessageDetailViewController: MessagesDataSource {
     public func currentSender() -> SenderType {
-        guard let user = messageThreadController?.currentUser else {
+        guard let user = chatRoomController?.currentUser else {
             fatalError("no user set")
             
         }
@@ -41,7 +41,7 @@ extension MessageDetailViewController: MessagesDataSource {
     }
     
     public func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        guard let message = messageThread?.messages[indexPath.item] else { fatalError("no message")}
+        guard let message = chatRoom?.messages[indexPath.item] else { fatalError("no message")}
         return message
     }
     
@@ -49,7 +49,7 @@ extension MessageDetailViewController: MessagesDataSource {
         return 1
     }
     public func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
-        return messageThread?.messages.count ?? 0
+        return chatRoom?.messages.count ?? 0
     }
     
     
@@ -62,7 +62,7 @@ extension MessageDetailViewController: MessagesLayoutDelegate {
 extension MessageDetailViewController: MessagesDisplayDelegate {
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         
-        guard let user = messageThreadController?.currentUser else {
+        guard let user = chatRoomController?.currentUser else {
             fatalError("no user set")
         }
         if message.sender.senderId == user.senderId {
@@ -77,18 +77,18 @@ extension MessageDetailViewController: MessagesDisplayDelegate {
 extension MessageDetailViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         
-        guard let thread = messageThread else {
+        guard let chatRoom = chatRoom else {
             fatalError("No thread set")
         }
-        guard let user = messageThreadController?.currentUser else {
+        guard let user = chatRoomController?.currentUser else {
             fatalError("No user set")
         }
-        messageThreadController?.createMessage(in: thread, withText: text, sender: user, completion: {
-            //update UI
-            DispatchQueue.main.async {
-                self.messagesCollectionView.reloadData()
-                self.messageInputBar.inputTextView.text = ""
-            }
-        })
+//        chatRoomController?.createMessage(in: chatRoom, withText: text, sender: user, completion: {
+//            //update UI
+//            DispatchQueue.main.async {
+//                self.messagesCollectionView.reloadData()
+//                self.messageInputBar.inputTextView.text = ""
+//            }
+//        })
     }
 }
