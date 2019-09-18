@@ -36,6 +36,12 @@ class GroupsVC: UITableViewController {
 		}
 	}
 	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let messagesVC = segue.destination as? MessagesVC, let indexPath = tableView.indexPathForSelectedRow {
+			messagesVC.group = chatController.groups[indexPath.row]
+		}
+	}
+	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesBegan(touches, with: event)
 		view.endEditing(true)
