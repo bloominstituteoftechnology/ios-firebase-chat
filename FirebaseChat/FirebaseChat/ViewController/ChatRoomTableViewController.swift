@@ -17,12 +17,19 @@ class ChatRoomTableViewController: UITableViewController {
         super.viewDidLoad()
         //FirebaseApp.configure()
         let chatRoomController = ChatRoomController()
-        chatRoomController.createChatRoom(title: "test1")
-//        chatRoomController.fetchChatRoom {
-//            let message = Message(text: "this is test 1", sender: Sender(senderId: "BradleyYin", displayName: "Bradley Yin"), timestamp: Date(), messageId: UUID().uuidString)
-//            print(chatRoomController.chatRooms.count)
-//            chatRoomController.createMessage(chatRoom: chatRoomController.chatRooms[0], message: message)
-//        }
+        chatRoomController.createChatRoom(title: "test1") {
+            print("chat room created")
+        }
+        chatRoomController.fetchChatRoom {
+            let message = Message(text: "this is test 1", sender: Sender(senderId: "BradleyYin", displayName: "Bradley Yin"), timestamp: Date(), messageId: UUID().uuidString)
+            print(chatRoomController.chatRooms.count)
+            chatRoomController.createMessage(chatRoom: chatRoomController.chatRooms[0], message: message, completion: {
+                chatRoomController.fetchMessages(chatRoom: chatRoomController.chatRooms[0], completion: {
+                    print("message fetch")
+                })
+            })
+            
+        }
         
 
         

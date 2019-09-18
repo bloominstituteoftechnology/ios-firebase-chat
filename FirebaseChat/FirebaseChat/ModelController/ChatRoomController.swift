@@ -19,14 +19,14 @@ class ChatRoomController {
     
     func createChatRoom(title: String, completion: @escaping () -> Void) {
         let chatRoom = ChatRoom(title: title, messages: [], identifier: UUID().uuidString)
-        databaseRef.child(chatRoom.identifier).setValue(chatRoom.toDict())
+        databaseRef.child("chatRooms").child(chatRoom.identifier).setValue(chatRoom.toDict())
         completion()
     }
     
     func fetchChatRoom(completion: @escaping () -> Void) {
-        databaseRef.observeSingleEvent(of: .childAdded) { (snapshot) in
-            guard let snapshotValue = snapshot.value as? Dictionary<String, String> else { fatalError("cant cast to dict")}
-            let chatRoom = ChatRoom(title: snapshotValue["title"]!, messages: [], identifier: snapshotValue["identifier"]!)
+        databaseRef.child("chatRooms").observe(.childAdded) { (snapshot) in
+            guard let snapshotValue = snapshot.value as? Dictionary<String, Any> else { fatalError("cant cast to dict")}
+            let chatRoom = ChatRoom(title: snapshotValue["title"]! as! String, messages: [], identifier: snapshotValue["identifier"] as! String)
             self.chatRooms.append(chatRoom)
             print(self.chatRooms)
             completion()
@@ -35,8 +35,20 @@ class ChatRoomController {
     }
     
     func createMessage(chatRoom: ChatRoom, message: Message, completion: @escaping () -> Void) {
-    databaseRef.child(chatRoom.identifier).child("messages").child(message.messageId).setValue(message.toDict())
+    databaseRef.child("chatRooms").child(chatRoom.identifier).child("messages").child(message.messageId).setValue(message.toDict())
         
         completion()
+    }
+    
+    func fetchMessages(chatRoom: ChatRoom, completion: @escaping () -> Void) {
+        databaseRef.child("chatRooms").child(chatRoom.identifier).child("messages").observe(.childAdded) { (snapshot) in
+            guard let snapshotValue = snapshot.value as? Dictionary<String, Any> else { fatalError("cant cast to dict")}
+            
+            print(snapshotValue["displayName"])
+            
+            
+            completion()
+            
+        }
     }
 }
