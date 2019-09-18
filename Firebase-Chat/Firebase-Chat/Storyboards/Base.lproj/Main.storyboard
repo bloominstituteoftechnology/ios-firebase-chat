@@ -18,9 +18,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="yB2-Gv-kJR">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="63"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Chat Room Name..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kL5-Cr-aZx">
+                                    <rect key="frame" x="16" y="11.5" width="382" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="Wfm-Er-gso"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="createChatRoom:" destination="Lc0-sW-Wv2" eventType="editingDidEndOnExit" id="E2D-H0-qVA"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="kL5-Cr-aZx" secondAttribute="trailing" constant="16" id="0SO-t4-yN6"/>
+                                <constraint firstItem="kL5-Cr-aZx" firstAttribute="centerY" secondItem="yB2-Gv-kJR" secondAttribute="centerY" id="7vb-yg-39L"/>
+                                <constraint firstItem="kL5-Cr-aZx" firstAttribute="leading" secondItem="yB2-Gv-kJR" secondAttribute="leading" constant="16" id="GgM-Ok-lJn"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ShowMessagesSegue" id="4ie-zM-PU5">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="91" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4ie-zM-PU5" id="mDe-dZ-JUg">
                                     <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
@@ -37,10 +61,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Chat Rooms" id="mMc-Lh-fFK"/>
+                    <connections>
+                        <outlet property="chatRoomNameTextField" destination="kL5-Cr-aZx" id="2ro-Hs-a8r"/>
+                        <outlet property="textFieldContainerView" destination="yB2-Gv-kJR" id="JXI-BD-NOs"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xpl-dm-ffY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="509" y="154"/>
+            <point key="canvasLocation" x="508.69565217391306" y="153.34821428571428"/>
         </scene>
         <!--Room-->
         <scene sceneID="AAc-Tp-D9j">

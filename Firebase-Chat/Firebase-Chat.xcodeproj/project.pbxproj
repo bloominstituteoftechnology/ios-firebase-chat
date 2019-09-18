@@ -13,6 +13,10 @@
 		37868647233188DE00315686 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37868645233188DE00315686 /* LaunchScreen.storyboard */; };
 		3786864F2331981800315686 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786864E2331981800315686 /* ChatRoomsTableViewController.swift */; };
 		3786865423319D8900315686 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3786865323319D8900315686 /* GoogleService-Info.plist */; };
+		378686582331A8FA00315686 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378686572331A8FA00315686 /* Message.swift */; };
+		3786865A2331A90600315686 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378686592331A90600315686 /* ChatRoom.swift */; };
+		3786865C2331A91C00315686 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786865B2331A91C00315686 /* MessageController.swift */; };
+		3786865E2331A93300315686 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786865D2331A93300315686 /* ChatRoomController.swift */; };
 		42A1541DB90B43C25B477F1D /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C154522591B32C230B929A /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,10 @@
 		37868648233188DE00315686 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3786864E2331981800315686 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		3786865323319D8900315686 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		378686572331A8FA00315686 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		378686592331A90600315686 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		3786865B2331A91C00315686 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		3786865D2331A93300315686 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		57C154522591B32C230B929A /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -63,8 +71,10 @@
 		3786863B233188DD00315686 /* Firebase-Chat */ = {
 			isa = PBXGroup;
 			children = (
-				378686502331982800315686 /* Storyboards */,
+				378686552331A85900315686 /* Model */,
+				378686562331A89100315686 /* Model Controller */,
 				378686512331984200315686 /* View Controllers */,
+				378686502331982800315686 /* Storyboards */,
 				378686522331988C00315686 /* Resources */,
 				37868643233188DE00315686 /* Assets.xcassets */,
 			);
@@ -96,6 +106,24 @@
 				3786865323319D8900315686 /* GoogleService-Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		378686552331A85900315686 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				378686572331A8FA00315686 /* Message.swift */,
+				378686592331A90600315686 /* ChatRoom.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		378686562331A89100315686 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3786865B2331A91C00315686 /* MessageController.swift */,
+				3786865D2331A93300315686 /* ChatRoomController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 		B3D396A89BBD6AB8DB2B2677 /* Frameworks */ = {
@@ -244,7 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378686582331A8FA00315686 /* Message.swift in Sources */,
+				3786865A2331A90600315686 /* ChatRoom.swift in Sources */,
+				3786865C2331A91C00315686 /* MessageController.swift in Sources */,
 				3786864F2331981800315686 /* ChatRoomsTableViewController.swift in Sources */,
+				3786865E2331A93300315686 /* ChatRoomController.swift in Sources */,
 				3786863D233188DD00315686 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

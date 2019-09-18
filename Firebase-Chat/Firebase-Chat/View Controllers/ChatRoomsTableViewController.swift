@@ -7,15 +7,37 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatRoomsTableViewController: UITableViewController {
 
+	@IBOutlet weak var textFieldContainerView: UIView!
+	@IBOutlet weak var chatRoomNameTextField: UITextField!
+
+	let chatRoomController = ChatRoomController()
+
+	let rootRef = Database.database().reference()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
 		
     }
 
-    // MARK: - Table view data source
+	@IBAction func createChatRoom(_ sender: Any) {
+		chatRoomNameTextField.resignFirstResponder()
+
+		guard let roomName = chatRoomNameTextField.text,
+			!roomName.isEmpty else { return }
+
+		let chatRoom = ChatRoom(name: roomName)
+		chatRoomController.createChatRoom(with: chatRoom)
+
+		chatRoomNameTextField.text = ""
+	}
+
+
+	// MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
