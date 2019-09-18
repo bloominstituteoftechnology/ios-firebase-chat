@@ -58,8 +58,8 @@ class ChatRoomController {
             
             let message = Message(text: text, sender: sender, timestamp: Date(timeIntervalSince1970: timestamp), messageId: messageId)
             print(self.chatRooms)
-            let index = self.chatRooms.firstIndex(of: chatRoom)!
-            self.chatRooms[index].messages.append(message)
+            //let index = self.chatRooms.firstIndex(of: chatRoom)!
+            //self.chatRooms[index].messages.append(message)
             newChatRoom.messages.append(message)
             completion(newChatRoom)
         }
