@@ -33,7 +33,7 @@ extension MessagesDetailViewController: MessagesDataSource {
 
 	func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
 		let message = messagesController.messages[indexPath.item]
-		// *  LOOK AT MESSAGE MODEL *
+		
 		return message
 	}
 
