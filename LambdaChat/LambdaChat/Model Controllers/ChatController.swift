@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
+import MessageKit
 
 class ChatController {
 	
@@ -17,6 +18,8 @@ class ChatController {
 	let groupsRef: DatabaseReference
 	let messagesRef: DatabaseReference
 	var groups = [Group]()
+	var messages = [Message]()
+	var users = [Sender]()
 	
 	//MARK: - Helpers
 	
@@ -34,10 +37,11 @@ class ChatController {
 		completion()
 	}
 	
-	func createMessage(for group: Group, from sender: String, with message: String) {
+	func createMessage(for group: Group, from sender: Sender, with message: String, completion: @escaping () -> Void) {
 		let newMessage = Message(from: sender, with: message)
 		
-		ref.child(group.id.uuidString).childByAutoId().setValue(newMessage.toDictionary())
+		messagesRef.child(group.id.uuidString).child(newMessage.id.uuidString).setValue(newMessage.toDictionary())
+		completion()
 	}
 	
 	//MARK: - Read
@@ -46,13 +50,26 @@ class ChatController {
 		groupsRef.observe(.value, with: { snapshot in
 			var newGroups = [Group]()
 			for child in snapshot.children {
-				// 4
 				if let snapshot = child as? DataSnapshot,
 					let group = Group(snapshot: snapshot) {
 					newGroups.append(group)
 				}
 			}
 			self.groups = newGroups
+			completion()
+		})
+	}
+	
+	func fetchMessages(for group: Group, completion: @escaping () -> Void) {
+		messagesRef.child(group.id.uuidString).observe(.value, with: { snapshot in
+			var newMessages = [Message]()
+			for child in snapshot.children {
+				if let snapshot = child as? DataSnapshot,
+					let message = Message(snapshot: snapshot) {
+					newMessages.append(message)
+				}
+			}
+			self.messages = newMessages
 			completion()
 		})
 	}
