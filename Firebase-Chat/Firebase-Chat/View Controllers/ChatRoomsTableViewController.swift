@@ -20,8 +20,11 @@ class ChatRoomsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-		
+		chatRoomController.fetchChatRooms {
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
+		}
     }
 
 	@IBAction func createChatRoom(_ sender: Any) {
@@ -41,23 +44,19 @@ class ChatRoomsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return chatRoomController.chatRooms.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
+        cell.textLabel?.text = chatRoomController.chatRooms[indexPath.row].name
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

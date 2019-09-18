@@ -16,8 +16,26 @@ class ChatRoomController {
 	var chatRooms: [ChatRoom] = []
 	let roomRef = Database.database().reference(withPath: "chatrooms")
 
+
 	func createChatRoom(with chatRoom: ChatRoom) {
 		let chatRoomRef = self.roomRef.child(chatRoom.chatRoomId.uuidString)
 		chatRoomRef.setValue(chatRoom.toDictionary())
 	}
+
+
+	func fetchChatRooms(completion: @escaping () -> Void) {
+		roomRef.observe(.value, with: { snapshot in
+			var newRooms: [ChatRoom] = []
+			for child in snapshot.children {
+				if let snapshot = child as? DataSnapshot,
+					let chatRoom = ChatRoom(snapshot: snapshot) {
+					newRooms.append(chatRoom)
+				}
+			}
+			self.chatRooms = newRooms
+			completion()
+		})
+	}
+
+
 }

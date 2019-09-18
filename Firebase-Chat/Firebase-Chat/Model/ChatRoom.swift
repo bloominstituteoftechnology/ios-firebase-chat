@@ -7,28 +7,45 @@
 //
 
 import Foundation
+import Firebase
 
-struct ChatRoom: Codable, Equatable {
+var dateFormatter: DateFormatter {
+	let formatter = DateFormatter()
+	formatter.dateStyle = .long
+	formatter.timeStyle = .long
+	return formatter
+}
+
+struct ChatRoom {
 	let chatRoomId: UUID
 	let name: String
 	let timestamp: Date
-	let messages: [Message]
+	let messages: [Message]?
 
-	init(name: String, chatRoomId: UUID = UUID(), messages: [Message] = [], timestamp: Date = Date()) {
+	init(name: String, chatRoomId: UUID = UUID(), messages: [Message]? = nil, timestamp: Date = Date()) {
 		self.name = name
 		self.chatRoomId = chatRoomId
 		self.messages = messages
 		self.timestamp = timestamp
 	}
 
-	func toDictionary() -> Any {
-		
-		var dateFormatter: DateFormatter {
-			let formatter = DateFormatter()
-			formatter.dateFormat = "MM-dd-yyy'T'HH:mm"
-			return formatter
+	init?(snapshot: DataSnapshot) {
+		guard
+			let value = snapshot.value as? [String: AnyObject],
+			let name = value["name"] as? String,
+			let timestamp = value["timestamp"] as? String,
+			let uuidFromStr = UUID(uuidString: snapshot.key),
+			let dateFromStr = dateFormatter.date(from: timestamp) else {
+			return nil
 		}
 
+		self.chatRoomId = uuidFromStr
+		self.name = name
+		self.timestamp = dateFromStr
+		self.messages = nil
+	}
+
+	func toDictionary() -> Any {
 		return [
 			"chatRoomId": chatRoomId.uuidString,
 			"name": name,

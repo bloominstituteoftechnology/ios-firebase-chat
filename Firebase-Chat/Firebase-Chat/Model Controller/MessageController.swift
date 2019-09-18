@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import Firebase
+import MessageKit
+
+class MessageController {
+
+	let reference = DatabaseReference()
+	var messages: [Message] = []
+	var currentUser: Sender?
+}

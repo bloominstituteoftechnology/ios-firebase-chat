@@ -17,6 +17,7 @@
 		3786865A2331A90600315686 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378686592331A90600315686 /* ChatRoom.swift */; };
 		3786865C2331A91C00315686 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786865B2331A91C00315686 /* MessageController.swift */; };
 		3786865E2331A93300315686 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786865D2331A93300315686 /* ChatRoomController.swift */; };
+		378686602331F82C00315686 /* MessagesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3786865F2331F82C00315686 /* MessagesDetailViewController.swift */; };
 		42A1541DB90B43C25B477F1D /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C154522591B32C230B929A /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		378686592331A90600315686 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		3786865B2331A91C00315686 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		3786865D2331A93300315686 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		3786865F2331F82C00315686 /* MessagesDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesDetailViewController.swift; sourceTree = "<group>"; };
 		57C154522591B32C230B929A /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				3786864E2331981800315686 /* ChatRoomsTableViewController.swift */,
+				3786865F2331F82C00315686 /* MessagesDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				3786865A2331A90600315686 /* ChatRoom.swift in Sources */,
 				3786865C2331A91C00315686 /* MessageController.swift in Sources */,
 				3786864F2331981800315686 /* ChatRoomsTableViewController.swift in Sources */,
+				378686602331F82C00315686 /* MessagesDetailViewController.swift in Sources */,
 				3786865E2331A93300315686 /* ChatRoomController.swift in Sources */,
 				3786863D233188DD00315686 /* AppDelegate.swift in Sources */,
 			);
