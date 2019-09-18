@@ -12,21 +12,15 @@ import MessageKit
 
 struct Message {
 	let id: UUID
-//	let sender: Sender
 	let message: String
 	let timestamp: Date
-	
-	var senderId: String
-	var senderName: String
+	private let sentBy: Sender
 	
 	init(id: UUID = UUID(), from sender: Sender, with message: String, timestamp: Date = Date()) {
 		self.id = id
-//		self.sender = sender
+		self.sentBy = sender
 		self.message = message
 		self.timestamp = timestamp
-		
-		senderId = sender.id
-		senderName = sender.displayName
 	}
 	
 	init?(snapshot: DataSnapshot) {
@@ -41,16 +35,15 @@ struct Message {
 		}
 		
 		self.id = UUID(uuidString: snapshot.key) ?? UUID()
-		self.senderId = senderId
-		self.senderName = senderName
+		self.sentBy = Sender(id: senderId, displayName: senderName)
 		self.message = message
 		self.timestamp = timestamp
 	}
 	
 	func toDictionary() -> Any {
 		return [
-			"senderId": senderId,
-			"senderName": senderName,
+			"senderId": sentBy.id,
+			"senderName": sentBy.displayName,
 			"message": message,
 			"timestamp": timestamp.transformIsoToString
 		]
@@ -63,7 +56,7 @@ extension Message: MessageType {
 	}
 	
 	var sender: SenderType {
-		return Sender(senderId: senderId, displayName: senderName)
+		return Sender(senderId: sentBy.id, displayName: sentBy.displayName)
 	}
 	
 	var sentDate: Date {
