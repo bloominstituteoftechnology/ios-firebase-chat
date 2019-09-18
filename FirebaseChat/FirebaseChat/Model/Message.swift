@@ -9,7 +9,7 @@
 import Foundation
 import MessageKit
 
-struct Message {
+struct Message: Equatable {
     let text: String
     let timestamp: Date
     let displayName: String

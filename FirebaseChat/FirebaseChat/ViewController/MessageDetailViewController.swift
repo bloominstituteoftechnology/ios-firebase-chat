@@ -23,8 +23,13 @@ class MessageDetailViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        chatRoom?.messages.sort(by: {$0.timestamp < $1.timestamp})
-        
+        guard let chatRoom = chatRoom else { return }
+        chatRoomController?.fetchMessages(chatRoom: chatRoom, completion: { chatRoom in
+            self.chatRoom = chatRoom
+            print(self.chatRoom?.messages)
+            self.chatRoom?.messages.sort(by: {$0.timestamp < $1.timestamp})
+            self.messagesCollectionView.reloadData()
+        })
         messageInputBar.delegate = self
     }
     
@@ -83,12 +88,13 @@ extension MessageDetailViewController: InputBarAccessoryViewDelegate {
         guard let user = chatRoomController?.currentUser else {
             fatalError("No user set")
         }
-//        chatRoomController?.createMessage(in: chatRoom, withText: text, sender: user, completion: {
-//            //update UI
-//            DispatchQueue.main.async {
-//                self.messagesCollectionView.reloadData()
-//                self.messageInputBar.inputTextView.text = ""
-//            }
-//        })
+        let message = Message(text: text, sender: user)
+        chatRoomController?.createMessage(chatRoom: chatRoom, message: message, completion: {
+            //update UI
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+                self.messageInputBar.inputTextView.text = ""
+            }
+        })
     }
 }

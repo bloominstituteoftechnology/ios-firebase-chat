@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ChatRoom {
+struct ChatRoom: Equatable {
     let title: String
     var messages: [Message]
     let identifier: String
@@ -20,5 +20,11 @@ struct ChatRoom {
     }
     func toDict() -> [String: Any] {
         return ["title": title, "messages": messages, "identifier": identifier]
+    }
+    
+    static func ==(lhs: ChatRoom, rhs: ChatRoom) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.identifier == rhs.identifier //&&
+            //lhs.messages == rhs.messages
     }
 }

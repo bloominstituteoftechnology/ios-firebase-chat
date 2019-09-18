@@ -10,29 +10,18 @@ import UIKit
 import Firebase
 
 class ChatRoomTableViewController: UITableViewController {
+    @IBOutlet weak var newChatRoomTextField: UITextField!
     
-    
+    var chatRoomController: ChatRoomController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //FirebaseApp.configure()
-        let chatRoomController = ChatRoomController()
-        chatRoomController.createChatRoom(title: "test1") {
-            print("chat room created")
-        }
+        chatRoomController = ChatRoomController()
         chatRoomController.fetchChatRoom {
-            let message = Message(text: "this is test 1", sender: Sender(senderId: "BradleyYin", displayName: "Bradley Yin"), timestamp: Date(), messageId: UUID().uuidString)
-            print(chatRoomController.chatRooms.count)
-            chatRoomController.createMessage(chatRoom: chatRoomController.chatRooms[0], message: message, completion: {
-                chatRoomController.fetchMessages(chatRoom: chatRoomController.chatRooms[0], completion: {
-                    print("message fetch")
-                })
-            })
-            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
-        
-
-        
     }
 
     // MARK: - Table view data source
@@ -44,19 +33,32 @@ class ChatRoomTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return chatRoomController.chatRooms.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
+        cell.textLabel?.text = chatRoomController.chatRooms[indexPath.row].title
 
-        // Configure the cell...
 
         return cell
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToMessageVC" {
+            guard let indexPath = tableView.indexPathForSelectedRow, let messageVC = segue.destination as? MessageDetailViewController else { fatalError("cant go to message vc")}
+            messageVC.chatRoom = chatRoomController.chatRooms[indexPath.row]
+            messageVC.chatRoomController = chatRoomController
+        }
+    }
+ 
+    @IBAction func addChatRoomTapped(_ sender: Any) {
+        guard let title = newChatRoomTextField.text, !title.isEmpty else { return }
+        chatRoomController.createChatRoom(title: title) {
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
