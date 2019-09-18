@@ -18,6 +18,9 @@
 		B5CB01D22331896200CB0349 /* LambdaChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01D12331896200CB0349 /* LambdaChatUITests.swift */; };
 		B5CB01EF23318B3D00CB0349 /* GroupsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01EE23318B3D00CB0349 /* GroupsVC.swift */; };
 		B5CB01F123318BCA00CB0349 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F023318BCA00CB0349 /* MessagesVC.swift */; };
+		B5CB01F323319D8400CB0349 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F223319D8400CB0349 /* Group.swift */; };
+		B5CB01F52331A2E200CB0349 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F42331A2E200CB0349 /* Message.swift */; };
+		B5CB01F72331A92900CB0349 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F62331A92900CB0349 /* ChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,9 @@
 		B5CB01D32331896200CB0349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5CB01EE23318B3D00CB0349 /* GroupsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVC.swift; sourceTree = "<group>"; };
 		B5CB01F023318BCA00CB0349 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
+		B5CB01F223319D8400CB0349 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		B5CB01F42331A2E200CB0349 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B5CB01F62331A92900CB0349 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		D6317257E87F264062743CF9 /* Pods-LambdaChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LambdaChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LambdaChatTests/Pods-LambdaChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		DABD158E21D3CFF1E1499D08 /* Pods_LambdaChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E705D27F8197CDB508147904 /* Pods_LambdaChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,8 @@
 		B5CB01DF2331897700CB0349 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B5CB01F223319D8400CB0349 /* Group.swift */,
+				B5CB01F42331A2E200CB0349 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 		B5CB01E42331897700CB0349 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5CB01F62331A92900CB0349 /* ChatController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -425,6 +434,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LambdaChat/Pods-LambdaChat-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/InputBarAccessoryView/InputBarAccessoryView.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -432,6 +442,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InputBarAccessoryView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -450,7 +461,10 @@
 			files = (
 				B5CB01F123318BCA00CB0349 /* MessagesVC.swift in Sources */,
 				B5CB01EF23318B3D00CB0349 /* GroupsVC.swift in Sources */,
+				B5CB01F52331A2E200CB0349 /* Message.swift in Sources */,
 				B5CB01B22331896000CB0349 /* AppDelegate.swift in Sources */,
+				B5CB01F323319D8400CB0349 /* Group.swift in Sources */,
+				B5CB01F72331A92900CB0349 /* ChatController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +643,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PD94K2S3RY;
 				INFOPLIST_FILE = "$(SRCROOT)/LambdaChat/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.LambdaChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -645,7 +662,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PD94K2S3RY;
 				INFOPLIST_FILE = "$(SRCROOT)/LambdaChat/Resources/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.LambdaChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -662,7 +682,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PD94K2S3RY;
 				INFOPLIST_FILE = LambdaChatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.LambdaChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -680,7 +704,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PD94K2S3RY;
 				INFOPLIST_FILE = LambdaChatTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.LambdaChatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -697,7 +725,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PD94K2S3RY;
 				INFOPLIST_FILE = LambdaChatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.LambdaChatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -714,7 +746,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PD94K2S3RY;
 				INFOPLIST_FILE = LambdaChatUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lambda.LambdaChatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
