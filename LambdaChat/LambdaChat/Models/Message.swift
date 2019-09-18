@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Message {
 	let sender: String
@@ -19,17 +20,26 @@ struct Message {
 		self.timestamp = timestamp
 	}
 	
-	func toDictionary() -> Any {
-		var dateFormatter: DateFormatter {
-			let formatter = DateFormatter()
-			formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-			return formatter
+	init?(snapshot: DataSnapshot) {
+		guard
+			let value = snapshot.value as? [String: AnyObject],
+			let sender = value["sender"] as? String,
+			let message = value["message"] as? String,
+			let timesString = value["timestamp"] as? String,
+			let timestamp = timesString.transformToIsoDate else {
+				return nil
 		}
 		
+		self.sender = sender
+		self.message = message
+		self.timestamp = timestamp
+	}
+	
+	func toDictionary() -> Any {
 		return [
 			"sender": sender,
 			"message": message,
-			"timestamp": dateFormatter.string(from: timestamp)
+			"timestamp": timestamp.transformIsoToString
 		]
 	}
 }

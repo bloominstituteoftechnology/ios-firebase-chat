@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct Group {
 	let id: UUID
@@ -21,17 +22,27 @@ struct Group {
 		self.messages = messages
 	}
 	
-	func toDictionary() -> Any {
-		var dateFormatter: DateFormatter {
-			let formatter = DateFormatter()
-			formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-			return formatter
+	init?(snapshot: DataSnapshot) {
+		guard
+			let value = snapshot.value as? [String: AnyObject],
+			let id = value["id"] as? String,
+			let title = value["title"] as? String,
+			let timesString = value["timestamp"] as? String,
+			let timestamp = timesString.transformToIsoDate else {
+				return nil
 		}
 		
+		self.id = UUID(uuidString: id) ?? UUID()
+		self.title = title
+		self.timestamp = timestamp
+		self.messages = nil
+	}
+	
+	func toDictionary() -> Any {
 		return [
 			"id": id.uuidString,
 			"title": title,
-			"timestamp": dateFormatter.string(from: timestamp)
+			"timestamp": timestamp.transformIsoToString
 		]
 	}
 }

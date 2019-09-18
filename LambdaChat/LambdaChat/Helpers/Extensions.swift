@@ -14,3 +14,18 @@ extension UITextField {
 		return (trimmedText ?? "").isEmpty ? nil : trimmedText
 	}
 }
+
+extension Date {
+	var transformIsoToString: String {
+		let formatter = ISO8601DateFormatter()
+		return formatter.string(from: self)
+	}
+}
+
+extension String {
+	var transformToIsoDate: Date? {
+		guard self != "" else { return nil }
+		let formatter = ISO8601DateFormatter()
+		return formatter.date(from: self)
+	}
+}

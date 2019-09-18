@@ -26,6 +26,16 @@ class GroupsVC: UITableViewController {
 		titleTextField.delegate = self
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		chatController.fetchGroups { () in
+			guard !self.chatController.groups.isEmpty else { return }
+			
+			self.tableView.reloadData()
+		}
+	}
+	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesBegan(touches, with: event)
 		view.endEditing(true)
@@ -47,13 +57,13 @@ class GroupsVC: UITableViewController {
 	// MARK: - Table view data source
 	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return chatController.groups?.count ?? 0
+		return chatController.groups.count
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath)
 		
-		cell.textLabel?.text = chatController.groups?[indexPath.row].title
+		cell.textLabel?.text = chatController.groups[indexPath.row].title
 		
 		return cell
 	}
@@ -61,19 +71,15 @@ class GroupsVC: UITableViewController {
 
 extension GroupsVC: UITextFieldDelegate {
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-		guard let title = textField.optionalText else {
+		guard let title = textField.optionalText,
+			!chatController.groups.contains(where: {$0.title.lowercased() == title.lowercased()}) else {
 				okAlert(title: "This group name is invalid or already exists")
 				return false
 		}
 		
-		if let groups = chatController.groups {
-			if groups.contains(where: {$0.title == title}) {
-				okAlert(title: "This group name is invalid or already exists")
-				return false
-			}
+		chatController.createGroup(with: title.capitalized) {
+			self.titleTextField.text = ""
 		}
-		
-		chatController.createGroup(with: title)
 		return true
 	}
 }
