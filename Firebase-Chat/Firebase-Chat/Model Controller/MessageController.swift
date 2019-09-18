@@ -14,5 +14,6 @@ class MessageController {
 
 	let reference = DatabaseReference()
 	var messages: [Message] = []
+	let messageRef = Database.database().reference(withPath: "messages")
 	var currentUser: Sender?
 }

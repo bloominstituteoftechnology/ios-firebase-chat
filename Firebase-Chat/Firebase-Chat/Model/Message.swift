@@ -12,4 +12,6 @@ struct Message: Codable, Equatable {
 	let text: String
 	let sender: String
 	let timestamp: Date
+	let senderId: String
+	let messageId: UUID
 }
