@@ -21,6 +21,8 @@
 		B5CB01F323319D8400CB0349 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F223319D8400CB0349 /* Group.swift */; };
 		B5CB01F52331A2E200CB0349 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F42331A2E200CB0349 /* Message.swift */; };
 		B5CB01F72331A92900CB0349 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F62331A92900CB0349 /* ChatController.swift */; };
+		B5CB01F92331B9F600CB0349 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CB01F82331B9F600CB0349 /* Extensions.swift */; };
+		B5CB01FB2331BDC100CB0349 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5CB01FA2331BDC100CB0349 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		B5CB01F223319D8400CB0349 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		B5CB01F42331A2E200CB0349 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B5CB01F62331A92900CB0349 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		B5CB01F82331B9F600CB0349 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B5CB01FA2331BDC100CB0349 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6317257E87F264062743CF9 /* Pods-LambdaChatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LambdaChatTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LambdaChatTests/Pods-LambdaChatTests.release.xcconfig"; sourceTree = "<group>"; };
 		DABD158E21D3CFF1E1499D08 /* Pods_LambdaChatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaChatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E705D27F8197CDB508147904 /* Pods_LambdaChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +201,7 @@
 		B5CB01E32331897700CB0349 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B5CB01F82331B9F600CB0349 /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 		B5CB01E62331897800CB0349 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5CB01FA2331BDC100CB0349 /* GoogleService-Info.plist */,
 				B5CB01B12331896000CB0349 /* AppDelegate.swift */,
 				B5CB01B82331896100CB0349 /* Assets.xcassets */,
 				B5CB01BD2331896100CB0349 /* Info.plist */,
@@ -350,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CB01BC2331896100CB0349 /* LaunchScreen.storyboard in Resources */,
+				B5CB01FB2331BDC100CB0349 /* GoogleService-Info.plist in Resources */,
 				B5CB01B92331896100CB0349 /* Assets.xcassets in Resources */,
 				B5CB01B72331896000CB0349 /* Main.storyboard in Resources */,
 			);
@@ -465,6 +472,7 @@
 				B5CB01B22331896000CB0349 /* AppDelegate.swift in Sources */,
 				B5CB01F323319D8400CB0349 /* Group.swift in Sources */,
 				B5CB01F72331A92900CB0349 /* ChatController.swift in Sources */,
+				B5CB01F92331B9F600CB0349 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

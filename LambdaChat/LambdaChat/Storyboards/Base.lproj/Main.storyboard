@@ -18,9 +18,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="j2y-Ml-idK">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a new thread:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RK0-l5-yYV">
+                                    <rect key="frame" x="8" y="7" width="398" height="30"/>
+                                    <accessibility key="accessibilityConfiguration">
+                                        <bool key="isElement" value="NO"/>
+                                    </accessibility>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.86550761009999999" green="0.86550761009999999" blue="0.86550761009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="RK0-l5-yYV" firstAttribute="top" secondItem="j2y-Ml-idK" secondAttribute="top" constant="7" id="45r-Zw-llD"/>
+                                <constraint firstAttribute="bottom" secondItem="RK0-l5-yYV" secondAttribute="bottom" constant="7" id="JZq-wA-B7r"/>
+                                <constraint firstAttribute="trailing" secondItem="RK0-l5-yYV" secondAttribute="trailing" constant="8" id="Jow-Y9-Hef"/>
+                                <constraint firstItem="RK0-l5-yYV" firstAttribute="leading" secondItem="j2y-Ml-idK" secondAttribute="leading" constant="8" id="OKl-iO-3w6"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="5sW-Gt-WCW" rowHeight="75" style="IBUITableViewCellStyleDefault" id="F5v-jd-TVv">
-                                <rect key="frame" x="0.0" y="28" width="414" height="75"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" textLabel="5sW-Gt-WCW" rowHeight="75" style="IBUITableViewCellStyleDefault" id="F5v-jd-TVv">
+                                <rect key="frame" x="0.0" y="72" width="414" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F5v-jd-TVv" id="kaa-cW-stb">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
@@ -46,6 +68,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Message Board" id="aFI-AF-Y9W"/>
+                    <connections>
+                        <outlet property="titleTextField" destination="RK0-l5-yYV" id="c3v-JI-DHM"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18P-UK-apJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

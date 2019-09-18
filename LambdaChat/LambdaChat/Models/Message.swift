@@ -12,4 +12,24 @@ struct Message {
 	let sender: String
 	let message: String
 	let timestamp: Date
+	
+	init(from sender: String, with message: String, timestamp: Date = Date()) {
+		self.sender = sender
+		self.message = message
+		self.timestamp = timestamp
+	}
+	
+	func toDictionary() -> Any {
+		var dateFormatter: DateFormatter {
+			let formatter = DateFormatter()
+			formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+			return formatter
+		}
+		
+		return [
+			"sender": sender,
+			"message": message,
+			"timestamp": dateFormatter.string(from: timestamp)
+		]
+	}
 }

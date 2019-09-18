@@ -20,4 +20,18 @@ struct Group {
 		self.timestamp = timestamp
 		self.messages = messages
 	}
+	
+	func toDictionary() -> Any {
+		var dateFormatter: DateFormatter {
+			let formatter = DateFormatter()
+			formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+			return formatter
+		}
+		
+		return [
+			"id": id.uuidString,
+			"title": title,
+			"timestamp": dateFormatter.string(from: timestamp)
+		]
+	}
 }
