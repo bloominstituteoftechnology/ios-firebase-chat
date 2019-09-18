@@ -8,38 +8,69 @@
 
 import Foundation
 import Firebase
+import MessageKit
 
 struct Message {
-	let sender: String
+	let id: UUID
+//	let sender: Sender
 	let message: String
 	let timestamp: Date
 	
-	init(from sender: String, with message: String, timestamp: Date = Date()) {
-		self.sender = sender
+	var senderId: String
+	var senderName: String
+	
+	init(id: UUID = UUID(), from sender: Sender, with message: String, timestamp: Date = Date()) {
+		self.id = id
+//		self.sender = sender
 		self.message = message
 		self.timestamp = timestamp
+		
+		senderId = sender.id
+		senderName = sender.displayName
 	}
 	
 	init?(snapshot: DataSnapshot) {
 		guard
 			let value = snapshot.value as? [String: AnyObject],
-			let sender = value["sender"] as? String,
+			let senderId = value["senderId"] as? String,
+			let senderName = value["senderName"] as? String,
 			let message = value["message"] as? String,
 			let timesString = value["timestamp"] as? String,
 			let timestamp = timesString.transformToIsoDate else {
 				return nil
 		}
 		
-		self.sender = sender
+		self.id = UUID(uuidString: snapshot.key) ?? UUID()
+		self.senderId = senderId
+		self.senderName = senderName
 		self.message = message
 		self.timestamp = timestamp
 	}
 	
 	func toDictionary() -> Any {
 		return [
-			"sender": sender,
+			"senderId": senderId,
+			"senderName": senderName,
 			"message": message,
 			"timestamp": timestamp.transformIsoToString
 		]
+	}
+}
+
+extension Message: MessageType {
+	var messageId: String {
+		return id.uuidString
+	}
+	
+	var sender: SenderType {
+		return Sender(senderId: senderId, displayName: senderName)
+	}
+	
+	var sentDate: Date {
+		return timestamp
+	}
+	
+	var kind: MessageKind {
+		return .text(message)
 	}
 }

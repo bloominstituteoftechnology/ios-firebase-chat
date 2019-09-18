@@ -25,14 +25,13 @@ struct Group {
 	init?(snapshot: DataSnapshot) {
 		guard
 			let value = snapshot.value as? [String: AnyObject],
-			let id = value["id"] as? String,
 			let title = value["title"] as? String,
 			let timesString = value["timestamp"] as? String,
 			let timestamp = timesString.transformToIsoDate else {
 				return nil
 		}
 		
-		self.id = UUID(uuidString: id) ?? UUID()
+		self.id = UUID(uuidString: snapshot.key) ?? UUID()
 		self.title = title
 		self.timestamp = timestamp
 		self.messages = nil
@@ -40,7 +39,6 @@ struct Group {
 	
 	func toDictionary() -> Any {
 		return [
-			"id": id.uuidString,
 			"title": title,
 			"timestamp": timestamp.transformIsoToString
 		]
