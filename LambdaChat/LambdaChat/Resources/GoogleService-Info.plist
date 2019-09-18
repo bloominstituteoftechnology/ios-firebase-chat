@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>390309268745-ldtlupfofrbhgniudk5eeo415gvbnscv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.390309268745-ldtlupfofrbhgniudk5eeo415gvbnscv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAwYrXBWnDqBAuLh_s6WcQZ4FHZ11kvx_Y</string>
+	<key>GCM_SENDER_ID</key>
+	<string>390309268745</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lambda.LambdaChat</string>
+	<key>PROJECT_ID</key>
+	<string>showcase-this</string>
+	<key>STORAGE_BUCKET</key>
+	<string>showcase-this.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:390309268745:ios:30dbf1b9a794e2aa3fd7d8</string>
+	<key>DATABASE_URL</key>
+	<string>https://showcase-this.firebaseio.com</string>
+</dict>
+</plist>
