@@ -31,6 +31,8 @@ class MessagesDetailViewController: MessagesViewController {
 				self.messagesCollectionView.reloadData()
 			}
 		}
+
+
     }
 }
 
@@ -65,6 +67,7 @@ extension MessagesDetailViewController: MessagesDisplayDelegate {
 		if aMessage.sender.senderId == user.senderId {
 			return .bubbleTailOutline(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), .bottomRight, .pointedEdge)
 		} else {
+			
 			return .bubbleTailOutline(#colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), .bottomLeft, .pointedEdge)
 		}
 	}
