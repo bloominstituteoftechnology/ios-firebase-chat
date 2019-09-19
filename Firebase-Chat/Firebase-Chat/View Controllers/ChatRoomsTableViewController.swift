@@ -20,6 +20,7 @@ class ChatRoomsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		tableView.tableFooterView = UIView()
 		chatRoomController.fetchChatRooms {
 			DispatchQueue.main.async {
 				self.tableView.reloadData()
@@ -101,6 +102,7 @@ class ChatRoomsTableViewController: UITableViewController {
 		if let messagesVC = segue.destination as? MessagesDetailViewController,
 			let indexPath = tableView.indexPathForSelectedRow {
 			messagesVC.chatRoom = chatRoomController.chatRooms[indexPath.row]
+			messagesVC.chatRoomController = chatRoomController
 		}
     }
 

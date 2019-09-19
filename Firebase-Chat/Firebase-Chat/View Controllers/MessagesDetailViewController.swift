@@ -13,6 +13,7 @@ import InputBarAccessoryView
 class MessagesDetailViewController: MessagesViewController {
 
 	let messagesController = MessageController()
+	var chatRoomController: ChatRoomController?
 	var chatRoom: ChatRoom?
 
     override func viewDidLoad() {
@@ -44,7 +45,8 @@ extension MessagesDetailViewController: MessagesDataSource {
 	}
 
 	func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-		let message = messagesController.messages[indexPath.item]
+		guard let messages = chatRoom?.messages else { fatalError("No messages found") }
+		let message = messages[indexPath.item]
 		
 		return message
 	}
@@ -54,7 +56,9 @@ extension MessagesDetailViewController: MessagesDataSource {
 	}
 
 	func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
-		return messagesController.messages.count
+		guard let messages = chatRoom?.messages else { return 0 }
+//		return messagesController.messages.count
+		return	messages.count
 	}
 }
 
@@ -77,6 +81,8 @@ extension MessagesDetailViewController: InputBarAccessoryViewDelegate {
 	func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
 		print("text: \(text)")
 
+		inputBar.inputTextView.text = ""
+
 		guard let room = chatRoom else {
 			fatalError("No thread set!")
 		}
@@ -90,7 +96,15 @@ extension MessagesDetailViewController: InputBarAccessoryViewDelegate {
 }
 
 extension MessagesDetailViewController: MessagesLayoutDelegate {
+	func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+		guard let user = messagesController.currentUser else { fatalError("No user set") }
 
+		if message.sender.senderId == user.senderId {
+			return #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+		} else {
+			return #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+		}
+	}
 }
 
 

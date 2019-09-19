@@ -16,11 +16,11 @@ var dateFormatter: DateFormatter {
 	return formatter
 }
 
-struct ChatRoom {
+class ChatRoom {
 	let chatRoomId: UUID
 	let name: String
 	let timestamp: Date
-	let messages: [Message]?
+	var messages: [Message]?
 
 	init(name: String, chatRoomId: UUID = UUID(), messages: [Message]? = nil, timestamp: Date = Date()) {
 		self.name = name

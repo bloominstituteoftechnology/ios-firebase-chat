@@ -32,7 +32,7 @@ class ChatRoomController {
 					newRooms.append(chatRoom)
 				}
 			}
-			self.chatRooms = newRooms
+			self.chatRooms = newRooms.sorted { $0.timestamp < $1.timestamp }
 			completion()
 		})
 	}

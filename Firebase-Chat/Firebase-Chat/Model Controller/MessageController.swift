@@ -23,19 +23,21 @@ class MessageController {
 		let childRef = self.messagesRef.child(chatRoom.chatRoomId.uuidString)
 		let messageRef = childRef.child(message.messageId)
 		messageRef.setValue(message.toDictionary())
-
 	}
+
 
 	func fetchMessages(with chatRoom: ChatRoom, completion: @escaping () -> Void) {
 		let childRef = self.messagesRef.child(chatRoom.chatRoomId.uuidString)
-		var newMessages: [Message] = []
 		childRef.observe(.value, with: { snapshot in
+			var newMessages: [Message] = []
 			for child in snapshot.children {
 				if let snapshot = child as? DataSnapshot,
 					let message = Message(snapshot: snapshot) {
+
 					newMessages.append(message)
 				}
 			}
+			chatRoom.messages = newMessages.sorted { $0.timestamp < $1.timestamp }
 			self.messages = newMessages
 			completion()
 		})
