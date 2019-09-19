@@ -14,7 +14,7 @@ struct Message {
 	let text: String
 	let user: Sender
 	let timestamp: Date
-	let messageID: UUID
+	private let messageID: UUID
 
 	init(text: String, sender: Sender, timestamp: Date = Date(), messageId: UUID = UUID()) {
 		self.text = text

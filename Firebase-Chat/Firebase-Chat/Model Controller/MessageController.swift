@@ -21,7 +21,7 @@ class MessageController {
 	func createMessage(chatRoom: ChatRoom, with text: String, sender: Sender, timestamp: Date = Date(), messageId: UUID = UUID()) {
 		let message = Message(text: text, sender: sender)
 		let childRef = self.messagesRef.child(chatRoom.chatRoomId.uuidString)
-		let messageRef = childRef.child(message.id.uuidString)
+		let messageRef = childRef.child(message.messageId)
 		messageRef.setValue(message.toDictionary())
 
 	}
