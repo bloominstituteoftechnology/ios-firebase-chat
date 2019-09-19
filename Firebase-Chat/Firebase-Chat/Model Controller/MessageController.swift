@@ -37,8 +37,11 @@ class MessageController {
 					newMessages.append(message)
 				}
 			}
-			chatRoom.messages = newMessages.sorted { $0.timestamp < $1.timestamp }
-			self.messages = newMessages
+			let sortedMessages = newMessages.sorted { $0.timestamp < $1.timestamp }
+			DispatchQueue.main.async {
+//				self.messages = newMessages
+				chatRoom.messages = sortedMessages
+			}
 			completion()
 		})
 	}

@@ -32,8 +32,6 @@ class MessagesDetailViewController: MessagesViewController {
 				self.messagesCollectionView.reloadData()
 			}
 		}
-
-
     }
 }
 
@@ -66,7 +64,9 @@ extension MessagesDetailViewController: MessagesDisplayDelegate {
 	func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
 		guard let user = messagesController.currentUser else { fatalError("No user set") }
 
-		let aMessage = messagesController.messages[indexPath.item]
+		guard let messages = chatRoom?.messages else { return .bubbleOutline(.blue) }
+
+		let aMessage = messages[indexPath.item]
 
 		if aMessage.sender.senderId == user.senderId {
 			return .bubbleTailOutline(#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1), .bottomRight, .pointedEdge)

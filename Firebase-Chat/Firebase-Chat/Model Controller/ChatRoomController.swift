@@ -32,7 +32,10 @@ class ChatRoomController {
 					newRooms.append(chatRoom)
 				}
 			}
-			self.chatRooms = newRooms.sorted { $0.timestamp < $1.timestamp }
+			let sortedRooms = newRooms.sorted { $0.timestamp < $1.timestamp }
+			DispatchQueue.main.async {
+				self.chatRooms = sortedRooms
+			}
 			completion()
 		})
 	}
