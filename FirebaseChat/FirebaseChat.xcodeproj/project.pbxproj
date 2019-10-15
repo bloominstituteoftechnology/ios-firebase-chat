@@ -12,7 +12,7 @@
 		32B4161B23565C8F0068CF35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B4161923565C8F0068CF35 /* Main.storyboard */; };
 		32B4161D23565C900068CF35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B4161C23565C900068CF35 /* Assets.xcassets */; };
 		32B4162023565C900068CF35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B4161E23565C900068CF35 /* LaunchScreen.storyboard */; };
-		32B4162823565F160068CF35 /* GoogleService-Info(2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 32B4162723565F160068CF35 /* GoogleService-Info(2).plist */; };
+		32B4162823565F160068CF35 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32B4162723565F160068CF35 /* GoogleService-Info.plist */; };
 		32B41630235664C20068CF35 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162E235664C20068CF35 /* MessageKit.framework */; };
 		32B41631235664C20068CF35 /* MessageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162E235664C20068CF35 /* MessageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		32B41632235664C20068CF35 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162F235664C20068CF35 /* InputBarAccessoryView.framework */; };
@@ -49,7 +49,7 @@
 		32B4161C23565C900068CF35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32B4161F23565C900068CF35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32B4162123565C900068CF35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32B4162723565F160068CF35 /* GoogleService-Info(2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info(2).plist"; sourceTree = "<group>"; };
+		32B4162723565F160068CF35 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		32B4162E235664C20068CF35 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		32B4162F235664C20068CF35 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = "<group>"; };
 		32B41636235666D70068CF35 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				32B4162B235663640068CF35 /* Views */,
 				32B4162C2356636D0068CF35 /* View Controllers */,
 				32B4162123565C900068CF35 /* Info.plist */,
-				32B4162723565F160068CF35 /* GoogleService-Info(2).plist */,
+				32B4162723565F160068CF35 /* GoogleService-Info.plist */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 				32B4162023565C900068CF35 /* LaunchScreen.storyboard in Resources */,
 				32B4161D23565C900068CF35 /* Assets.xcassets in Resources */,
 				32B4161B23565C8F0068CF35 /* Main.storyboard in Resources */,
-				32B4162823565F160068CF35 /* GoogleService-Info(2).plist in Resources */,
+				32B4162823565F160068CF35 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

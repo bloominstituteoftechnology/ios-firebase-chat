@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum HTTPMethod: String {
+    case get    = "GET"
+    case put    = "PUT"
+    case post   = "POST"
+    case delete = "DELETE"
+}
+
 class MessageThreadController {
     
     static let baseURL = URL(string: "https://fir-chat-9652f.firebaseio.com/")!
