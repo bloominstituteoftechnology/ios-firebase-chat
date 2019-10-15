@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,8 +14,27 @@
 		32B4161D23565C900068CF35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B4161C23565C900068CF35 /* Assets.xcassets */; };
 		32B4162023565C900068CF35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B4161E23565C900068CF35 /* LaunchScreen.storyboard */; };
 		32B4162823565F160068CF35 /* GoogleService-Info(2).plist in Resources */ = {isa = PBXBuildFile; fileRef = 32B4162723565F160068CF35 /* GoogleService-Info(2).plist */; };
+		32B41630235664C20068CF35 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162E235664C20068CF35 /* MessageKit.framework */; };
+		32B41631235664C20068CF35 /* MessageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162E235664C20068CF35 /* MessageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32B41632235664C20068CF35 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162F235664C20068CF35 /* InputBarAccessoryView.framework */; };
+		32B41633235664C20068CF35 /* InputBarAccessoryView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 32B4162F235664C20068CF35 /* InputBarAccessoryView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E756E2D2ACE0386ADB21AC68 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 442794FB4FBB2625CF8E5B3E /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		32B41634235664C20068CF35 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				32B41631235664C20068CF35 /* MessageKit.framework in Embed Frameworks */,
+				32B41633235664C20068CF35 /* InputBarAccessoryView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		329CFEB13932FF3AA9CA45C4 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -28,6 +47,8 @@
 		32B4161F23565C900068CF35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32B4162123565C900068CF35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32B4162723565F160068CF35 /* GoogleService-Info(2).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info(2).plist"; sourceTree = "<group>"; };
+		32B4162E235664C20068CF35 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
+		32B4162F235664C20068CF35 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = "<group>"; };
 		442794FB4FBB2625CF8E5B3E /* Pods_FirebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39B26E384CEC52D92AA5180 /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -38,6 +59,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E756E2D2ACE0386ADB21AC68 /* Pods_FirebaseChat.framework in Frameworks */,
+				32B41630235664C20068CF35 /* MessageKit.framework in Frameworks */,
+				32B41632235664C20068CF35 /* InputBarAccessoryView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				32B4161223565C8F0068CF35 /* FirebaseChat */,
+				32B4162D2356637B0068CF35 /* Resources */,
 				32B4161123565C8F0068CF35 /* Products */,
 				D172CA8DAA6DC3B1159DDEF0 /* Pods */,
 				58BDD408B64BE795C6BB4897 /* Frameworks */,
@@ -65,21 +89,46 @@
 		32B4161223565C8F0068CF35 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
-				32B4161323565C8F0068CF35 /* AppDelegate.swift */,
-				32B4161523565C8F0068CF35 /* SceneDelegate.swift */,
-				32B4161723565C8F0068CF35 /* ViewController.swift */,
-				32B4161923565C8F0068CF35 /* Main.storyboard */,
-				32B4161C23565C900068CF35 /* Assets.xcassets */,
-				32B4161E23565C900068CF35 /* LaunchScreen.storyboard */,
+				32B4162C2356636D0068CF35 /* View Controllers */,
+				32B4162B235663640068CF35 /* Views */,
 				32B4162123565C900068CF35 /* Info.plist */,
 				32B4162723565F160068CF35 /* GoogleService-Info(2).plist */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
 		};
+		32B4162B235663640068CF35 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32B4161923565C8F0068CF35 /* Main.storyboard */,
+				32B4161E23565C900068CF35 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		32B4162C2356636D0068CF35 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				32B4161723565C8F0068CF35 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		32B4162D2356637B0068CF35 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				32B4161323565C8F0068CF35 /* AppDelegate.swift */,
+				32B4161523565C8F0068CF35 /* SceneDelegate.swift */,
+				32B4161C23565C900068CF35 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		58BDD408B64BE795C6BB4897 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32B4162F235664C20068CF35 /* InputBarAccessoryView.framework */,
+				32B4162E235664C20068CF35 /* MessageKit.framework */,
 				442794FB4FBB2625CF8E5B3E /* Pods_FirebaseChat.framework */,
 			);
 			name = Frameworks;
@@ -91,7 +140,6 @@
 				329CFEB13932FF3AA9CA45C4 /* Pods-FirebaseChat.debug.xcconfig */,
 				E39B26E384CEC52D92AA5180 /* Pods-FirebaseChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -107,6 +155,8 @@
 				32B4160D23565C8F0068CF35 /* Frameworks */,
 				32B4160E23565C8F0068CF35 /* Resources */,
 				BFCFE0E5DB6E5FC8AB0EA080 /* [CP] Embed Pods Frameworks */,
+				32B41634235664C20068CF35 /* Embed Frameworks */,
+				32B41635235664CE0068CF35 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -165,6 +215,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		32B41635235664CE0068CF35 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Messagekit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/InputAccessoryView.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/Messagekit.framework",
+				"$(DERIVED_FILE_DIR)/Carthage/Build/iOS/InputAccessoryView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n/usr/local/bin/carthage outdated --xcode-warnings\n";
+		};
 		41C8FF4E1FD9C8822E9E7F1F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +431,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM84C6XKT7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FirebaseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,6 +454,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YM84C6XKT7;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = FirebaseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
