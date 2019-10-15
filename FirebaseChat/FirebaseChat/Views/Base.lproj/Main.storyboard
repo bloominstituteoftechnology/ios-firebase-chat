@@ -16,10 +16,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U9R-xA-ckc">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="122" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iGe-Vh-csz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageThreadCell" id="iGe-Vh-csz">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iGe-Vh-csz" id="2ks-4f-3Vn">
@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="4aM-b7-bka" kind="show" id="7r7-Wp-YNp"/>
+                                            <segue destination="4aM-b7-bka" kind="show" identifier="toMessageDetail" id="7r7-Wp-YNp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -36,18 +36,30 @@
                                     <outlet property="delegate" destination="RO3-pI-Kzz" id="Mge-uR-Vuh"/>
                                 </connections>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create New Thread" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gZC-RT-MtB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="createThread:" destination="RO3-pI-Kzz" eventType="editingDidEndOnExit" id="Q7e-qz-GG0"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="U9R-xA-ckc" secondAttribute="bottom" id="0KE-5e-wQB"/>
-                            <constraint firstItem="U9R-xA-ckc" firstAttribute="top" secondItem="8tE-Kt-FaW" secondAttribute="top" id="37V-Wv-Nl7"/>
+                            <constraint firstItem="gZC-RT-MtB" firstAttribute="leading" secondItem="8tE-Kt-FaW" secondAttribute="leading" id="Qwe-He-ZIQ"/>
                             <constraint firstItem="U9R-xA-ckc" firstAttribute="trailing" secondItem="8tE-Kt-FaW" secondAttribute="trailing" id="T5d-cW-mOw"/>
+                            <constraint firstItem="U9R-xA-ckc" firstAttribute="top" secondItem="gZC-RT-MtB" secondAttribute="bottom" id="XLm-a3-ure"/>
+                            <constraint firstItem="gZC-RT-MtB" firstAttribute="top" secondItem="8tE-Kt-FaW" secondAttribute="top" id="gyR-dL-n2i"/>
                             <constraint firstItem="U9R-xA-ckc" firstAttribute="leading" secondItem="8tE-Kt-FaW" secondAttribute="leading" id="jgr-fy-gC4"/>
+                            <constraint firstItem="gZC-RT-MtB" firstAttribute="trailing" secondItem="8tE-Kt-FaW" secondAttribute="trailing" id="ojN-MX-hMq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8tE-Kt-FaW"/>
                     </view>
                     <navigationItem key="navigationItem" id="6ZL-Ay-ZKs"/>
                     <connections>
+                        <outlet property="newThreadTextField" destination="gZC-RT-MtB" id="OY5-Qu-Qrb"/>
                         <outlet property="tableView" destination="U9R-xA-ckc" id="2pE-Ne-Wlq"/>
                     </connections>
                 </viewController>

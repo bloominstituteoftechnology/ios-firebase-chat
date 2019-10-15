@@ -14,7 +14,15 @@ class MessageBoardViewController: MessagesViewController {
     
     // MARK: - Properties
     
+    var messageThread: MessageThread?
+    var messageThreadController: MessageThreadController?
     
+    private lazy var formatter: DateFormatter = {
+        let result = DateFormatter()
+        result.dateStyle = .medium
+        result.timeStyle = .medium
+        return result
+    }()
 
 
     override func viewDidLoad() {
