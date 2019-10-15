@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		0ECF5BE7235654BC0061F7CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5BE6235654BC0061F7CD /* Assets.xcassets */; };
 		0ECF5BEA235654BC0061F7CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5BE8235654BC0061F7CD /* LaunchScreen.storyboard */; };
 		0ECF5BF223565C280061F7CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF5BF123565C280061F7CD /* GoogleService-Info.plist */; };
+		0ED396542356733A006B9CF9 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED396532356733A006B9CF9 /* ChatRoom.swift */; };
+		0ED39656235677F8006B9CF9 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED39655235677F8006B9CF9 /* ChatRoomController.swift */; };
 		2F9BCD0B295D823DC010A86A /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A3786DEE166EAD8BAE092A2 /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		0ECF5BE9235654BC0061F7CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0ECF5BEB235654BC0061F7CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ECF5BF123565C280061F7CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0ED396532356733A006B9CF9 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		0ED39655235677F8006B9CF9 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		3A3786DEE166EAD8BAE092A2 /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA90365D9705519AABEB2F91 /* Pods-Firebase Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.release.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,12 +68,14 @@
 			isa = PBXGroup;
 			children = (
 				0ECF5BDD235654B70061F7CD /* AppDelegate.swift */,
+				0ED396532356733A006B9CF9 /* ChatRoom.swift */,
 				0ECF5BE1235654B70061F7CD /* ViewController.swift */,
 				0ECF5BE3235654B70061F7CD /* Main.storyboard */,
 				0ECF5BE6235654BC0061F7CD /* Assets.xcassets */,
 				0ECF5BF123565C280061F7CD /* GoogleService-Info.plist */,
 				0ECF5BE8235654BC0061F7CD /* LaunchScreen.storyboard */,
 				0ECF5BEB235654BC0061F7CD /* Info.plist */,
+				0ED39655235677F8006B9CF9 /* ChatRoomController.swift */,
 			);
 			path = "Firebase Chat";
 			sourceTree = "<group>";
@@ -80,7 +86,6 @@
 				004EEEDB74329F47650A8F9F /* Pods-Firebase Chat.debug.xcconfig */,
 				BA90365D9705519AABEB2F91 /* Pods-Firebase Chat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ED39656235677F8006B9CF9 /* ChatRoomController.swift in Sources */,
+				0ED396542356733A006B9CF9 /* ChatRoom.swift in Sources */,
 				0ECF5BE2235654B70061F7CD /* ViewController.swift in Sources */,
 				0ECF5BDE235654B70061F7CD /* AppDelegate.swift in Sources */,
 			);
