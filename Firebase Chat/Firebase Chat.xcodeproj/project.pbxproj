@@ -19,6 +19,7 @@
 		FA735A8B237B6CD300D59A82 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A8A237B6CD300D59A82 /* Message.swift */; };
 		FA735A8D237B6CF100D59A82 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A8C237B6CF100D59A82 /* ChatRoom.swift */; };
 		FA735A90237B6F6400D59A82 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A8F237B6F6400D59A82 /* ChatController.swift */; };
+		FA735A93237B7BDB00D59A82 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A92237B7BDB00D59A82 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FA735A8A237B6CD300D59A82 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		FA735A8C237B6CF100D59A82 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		FA735A8F237B6F6400D59A82 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		FA735A92237B7BDB00D59A82 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				FA735A74237B586500D59A82 /* Assets.xcassets */,
 				FA735A79237B586500D59A82 /* Info.plist */,
 				FA735A82237B5E1F00D59A82 /* GoogleService-Info.plist */,
+				FA735A92237B7BDB00D59A82 /* HTTPMethod.swift */,
 			);
 			path = "Firebase Chat";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				FA735A6C237B586200D59A82 /* AppDelegate.swift in Sources */,
 				FA735A90237B6F6400D59A82 /* ChatController.swift in Sources */,
 				FA735A6E237B586200D59A82 /* SceneDelegate.swift in Sources */,
+				FA735A93237B7BDB00D59A82 /* HTTPMethod.swift in Sources */,
 				FA735A8B237B6CD300D59A82 /* Message.swift in Sources */,
 				FA735A88237B627B00D59A82 /* MessageViewController.swift in Sources */,
 				FA735A86237B623C00D59A82 /* ChatsTableViewController.swift in Sources */,

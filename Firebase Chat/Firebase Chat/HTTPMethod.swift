@@ -1,5 +1,5 @@
 //
-//  ChatRoom.swift
+//  HTTPMethod.swift
 //  Firebase Chat
 //
 //  Created by macbook on 11/12/19.
@@ -7,8 +7,10 @@
 //
 
 import Foundation
-import MessageKit
 
-struct ChatRoom: Decodable, Equatable {
-    
+enum HTTPMethod: String {
+    case get = "GET"
+    case put = "PUT"
+    case post = "POST"
+    case delete = "DELETE"
 }
