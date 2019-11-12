@@ -29,7 +29,8 @@ class ThreadViewController: MessagesViewController {
 
 extension ThreadViewController: MessagesDataSource {
     func currentSender() -> SenderType {
-        self.sender
+        guard let sender = messageThreadController?.currentSender else { fatalError() }
+        return sender
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {

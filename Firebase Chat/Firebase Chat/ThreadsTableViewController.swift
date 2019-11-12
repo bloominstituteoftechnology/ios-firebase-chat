@@ -22,6 +22,35 @@ class ThreadsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if let currentUserDictionary = UserDefaults.standard.value(forKey: "CurrentSender") as? [String: String] {
+            let currentUser = Sender(from: currentUserDictionary)
+            messageThreadController.currentSender = currentUser
+        } else {
+            let alert = UIAlertController(title: "Set a display name", message: nil, preferredStyle: .alert)
+            
+            var usernameTextField: UITextField!
+            
+            alert.addTextField { textField in
+                textField.placeholder = "Display name"
+                usernameTextField = textField
+            }
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { _ in
+                let displayName = usernameTextField.text ?? "Unknown sender"
+                let id = UUID().uuidString
+                
+                let sender = Sender(senderId: id, displayName: displayName)
+                
+                UserDefaults.standard.set(sender.dictionaryRepresentation, forKey: "CurrentSender")
+                
+                self.messageThreadController.currentSender = sender
+            }
+            
+            alert.addAction(submitAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
         messageThreadController.fetchThreads {
             DispatchQueue.main.async {
                 self.tableView.reloadData()

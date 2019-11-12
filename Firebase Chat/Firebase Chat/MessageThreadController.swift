@@ -12,6 +12,7 @@ import FirebaseDatabase
 class MessageThreadController {
     var ref = Database.database().reference()
     var threads: [MessageThread] = []
+    var currentSender: Sender?
     
     func createMessageThread(title: String) {
         let thread = MessageThread(title: title)
