@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageKit
 
 class FirebaseChatTableViewController: UITableViewController {
 
