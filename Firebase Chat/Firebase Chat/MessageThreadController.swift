@@ -20,12 +20,13 @@ class MessageThreadController {
         ref.child(thread.identifier).setValue(thread.dictionaryRepresentation)
     }
     
-    func createMessage(in thread: MessageThread, withText text: String, fromSender sender: Sender) {
-        
+    func createMessage(in thread: MessageThread, withText text: String, fromSender sender: Sender, completion: @escaping () -> Void) {
+                
         let message = MessageThread.Message(text: text, sender: sender)
         thread.messages.append(message)
         
         ref.child(thread.identifier).setValue(thread.dictionaryRepresentation)
+        completion()
     }
     
     func fetchThreads(completion: @escaping () -> Void) {
