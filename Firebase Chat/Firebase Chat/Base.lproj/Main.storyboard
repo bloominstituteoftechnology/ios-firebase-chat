@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Threads Table View Controller-->
         <scene sceneID="ifp-xe-OMT">
             <objects>
-                <tableViewController id="clb-O5-LEZ" sceneMemberID="viewController">
+                <tableViewController id="clb-O5-LEZ" customClass="ThreadsTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="O5D-M9-G0r">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Mbb-ds-4Oh" kind="show" id="qML-ee-0nk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +37,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEY-7W-8gD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628.985507246377" y="186.83035714285714"/>
+            <point key="canvasLocation" x="1633" y="187"/>
+        </scene>
+        <!--Thread View Controller-->
+        <scene sceneID="XwO-SK-L4w">
+            <objects>
+                <viewController id="Mbb-ds-4Oh" customClass="ThreadViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bwy-mT-V9V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="t5J-uu-fe7"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="viJ-xM-8k5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cl7-wU-q9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2572" y="187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dNS-3K-8RN">
