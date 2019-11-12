@@ -20,6 +20,8 @@
 		8052CED6237B518000828833 /* MessageKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8052CED2237B518000828833 /* MessageKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8052CEDB237B53E000828833 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8052CEDA237B53E000828833 /* ChatRoomsTableViewController.swift */; };
 		8052CEDD237B542000828833 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8052CEDC237B542000828833 /* MessageViewController.swift */; };
+		8052CEE1237B62A800828833 /* ChatRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8052CEE0237B62A800828833 /* ChatRooms.swift */; };
+		8052CEE4237B746F00828833 /* ChatRoomsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8052CEE3237B746F00828833 /* ChatRoomsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +54,8 @@
 		8052CED2237B518000828833 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		8052CEDA237B53E000828833 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		8052CEDC237B542000828833 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		8052CEE0237B62A800828833 /* ChatRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRooms.swift; sourceTree = "<group>"; };
+		8052CEE3237B746F00828833 /* ChatRoomsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsController.swift; sourceTree = "<group>"; };
 		A54895B4A597087F4B0B4961 /* libPods-firebaseChats.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-firebaseChats.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,6 +94,8 @@
 		8052CEB8237B452200828833 /* firebaseChats */ = {
 			isa = PBXGroup;
 			children = (
+				8052CEE2237B744E00828833 /* Model Controllers */,
+				8052CEDF237B629400828833 /* Models */,
 				8052CED9237B53CA00828833 /* View Controllers */,
 				8052CEB9237B452200828833 /* AppDelegate.swift */,
 				8052CEBB237B452200828833 /* SceneDelegate.swift */,
@@ -109,6 +115,22 @@
 				8052CEDC237B542000828833 /* MessageViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8052CEDF237B629400828833 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8052CEE0237B62A800828833 /* ChatRooms.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8052CEE2237B744E00828833 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8052CEE3237B746F00828833 /* ChatRoomsController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		832F56576AEE2B66E7F9CE73 /* Pods */ = {
@@ -252,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8052CEBA237B452200828833 /* AppDelegate.swift in Sources */,
+				8052CEE1237B62A800828833 /* ChatRooms.swift in Sources */,
+				8052CEE4237B746F00828833 /* ChatRoomsController.swift in Sources */,
 				8052CEBC237B452200828833 /* SceneDelegate.swift in Sources */,
 				8052CEDD237B542000828833 /* MessageViewController.swift in Sources */,
 				8052CEDB237B53E000828833 /* ChatRoomsTableViewController.swift in Sources */,
