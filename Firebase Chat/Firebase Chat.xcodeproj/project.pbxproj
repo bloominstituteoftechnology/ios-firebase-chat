@@ -14,9 +14,11 @@
 		595E135C237B5B2100B20B5A /* InputBarAccessoryView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 595E1358237B5B2100B20B5A /* InputBarAccessoryView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		595E1360237B5D7600B20B5A /* ThreadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E135F237B5D7600B20B5A /* ThreadsTableViewController.swift */; };
 		595E1362237B5DAE00B20B5A /* ThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E1361237B5DAE00B20B5A /* ThreadViewController.swift */; };
+		595E1364237B5E2F00B20B5A /* MessageThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E1363237B5E2F00B20B5A /* MessageThread.swift */; };
+		595E1366237B608F00B20B5A /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E1365237B608F00B20B5A /* Sender.swift */; };
+		595E1368237B62D900B20B5A /* MessageThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E1367237B62D900B20B5A /* MessageThreadController.swift */; };
 		59F86DC8237B5157001AA2D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F86DC7237B5157001AA2D7 /* AppDelegate.swift */; };
 		59F86DCA237B5157001AA2D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F86DC9237B5157001AA2D7 /* SceneDelegate.swift */; };
-		59F86DCC237B5157001AA2D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F86DCB237B5157001AA2D7 /* ViewController.swift */; };
 		59F86DCF237B5158001AA2D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F86DCD237B5158001AA2D7 /* Main.storyboard */; };
 		59F86DD1237B515C001AA2D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F86DD0237B515C001AA2D7 /* Assets.xcassets */; };
 		59F86DD4237B515C001AA2D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F86DD2237B515C001AA2D7 /* LaunchScreen.storyboard */; };
@@ -47,10 +49,12 @@
 		595E1358237B5B2100B20B5A /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = "<group>"; };
 		595E135F237B5D7600B20B5A /* ThreadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTableViewController.swift; sourceTree = "<group>"; };
 		595E1361237B5DAE00B20B5A /* ThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadViewController.swift; sourceTree = "<group>"; };
+		595E1363237B5E2F00B20B5A /* MessageThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThread.swift; sourceTree = "<group>"; };
+		595E1365237B608F00B20B5A /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		595E1367237B62D900B20B5A /* MessageThreadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadController.swift; sourceTree = "<group>"; };
 		59F86DC4237B5157001AA2D7 /* Firebase Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F86DC7237B5157001AA2D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		59F86DC9237B5157001AA2D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		59F86DCB237B5157001AA2D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		59F86DCE237B5158001AA2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59F86DD0237B515C001AA2D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59F86DD3237B515C001AA2D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,8 +107,10 @@
 			children = (
 				59F86DC7237B5157001AA2D7 /* AppDelegate.swift */,
 				59F86DC9237B5157001AA2D7 /* SceneDelegate.swift */,
-				59F86DCB237B5157001AA2D7 /* ViewController.swift */,
 				59F86DCD237B5158001AA2D7 /* Main.storyboard */,
+				595E1363237B5E2F00B20B5A /* MessageThread.swift */,
+				595E1365237B608F00B20B5A /* Sender.swift */,
+				595E1367237B62D900B20B5A /* MessageThreadController.swift */,
 				595E135F237B5D7600B20B5A /* ThreadsTableViewController.swift */,
 				595E1361237B5DAE00B20B5A /* ThreadViewController.swift */,
 				59F86DD0237B515C001AA2D7 /* Assets.xcassets */,
@@ -264,11 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59F86DCC237B5157001AA2D7 /* ViewController.swift in Sources */,
 				59F86DC8237B5157001AA2D7 /* AppDelegate.swift in Sources */,
 				595E1362237B5DAE00B20B5A /* ThreadViewController.swift in Sources */,
 				595E1360237B5D7600B20B5A /* ThreadsTableViewController.swift in Sources */,
 				59F86DCA237B5157001AA2D7 /* SceneDelegate.swift in Sources */,
+				595E1366237B608F00B20B5A /* Sender.swift in Sources */,
+				595E1368237B62D900B20B5A /* MessageThreadController.swift in Sources */,
+				595E1364237B5E2F00B20B5A /* MessageThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

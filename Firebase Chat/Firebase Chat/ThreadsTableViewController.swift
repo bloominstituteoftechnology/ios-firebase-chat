@@ -9,6 +9,10 @@
 import UIKit
 
 class ThreadsTableViewController: UITableViewController {
+    
+    //MARK: Properties
+    
+    let messageThreadController = MessageThreadController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,5 +90,17 @@ class ThreadsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    //MARK: Actions
+    
+    @IBAction func createThread(_ sender: UITextField) {
+        sender.resignFirstResponder()
+        
+        guard let title = sender.text else { return }
+        
+        sender.text = ""
+        
+        messageThreadController.createMessageThread(title: title)
+    }
+    
 }

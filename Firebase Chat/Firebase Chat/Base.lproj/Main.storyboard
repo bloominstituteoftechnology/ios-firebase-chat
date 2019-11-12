@@ -15,9 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="3ZZ-Gz-JQ2">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create new thread" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RgH-aj-oke">
+                                    <rect key="frame" x="8" y="8" width="398" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="createThread:" destination="clb-O5-LEZ" eventType="editingDidEndOnExit" id="cUb-Jk-gX6"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="RgH-aj-oke" secondAttribute="trailing" constant="8" id="FTr-Ae-sd6"/>
+                                <constraint firstItem="RgH-aj-oke" firstAttribute="top" secondItem="3ZZ-Gz-JQ2" secondAttribute="top" constant="8" id="NRg-dX-M0b"/>
+                                <constraint firstAttribute="bottom" secondItem="RgH-aj-oke" secondAttribute="bottom" constant="8" id="qpF-Uh-YKf"/>
+                                <constraint firstItem="RgH-aj-oke" firstAttribute="leading" secondItem="3ZZ-Gz-JQ2" secondAttribute="leading" constant="8" id="uzb-hO-GQX"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="p85-PG-J0w">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p85-PG-J0w" id="7ZT-bx-5dg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
