@@ -13,13 +13,10 @@ class MessageThreadController {
     var ref = Database.database().reference()
     var threads: [MessageThread] = []
     
-    init() {
-        fetchThreads()
-    }
-    
     func createMessageThread(title: String) {
         let thread = MessageThread(title: title)
         
+        threads.append(thread)
         ref.child(thread.identifier).setValue(thread.dictionaryRepresentation)
     }
     
@@ -31,16 +28,16 @@ class MessageThreadController {
         ref.child(thread.identifier).setValue(thread.dictionaryRepresentation)
     }
     
-    func fetchThreads() {
+    func fetchThreads(completion: @escaping () -> Void) {
         threads = []
         ref.observeSingleEvent(of: .value) { (snapshot) in
-            guard let values = snapshot.value as? NSDictionary else { return }
+            guard let values = snapshot.value as? NSDictionary else { completion(); return }
             for value in values {
                 guard let threadDictionary = value.value as? NSDictionary,
                     let thread = MessageThread(from: threadDictionary) else { continue }
                 self.threads.append(thread)
             }
-            print(self.threads)
+            completion()
         }
     }
 }

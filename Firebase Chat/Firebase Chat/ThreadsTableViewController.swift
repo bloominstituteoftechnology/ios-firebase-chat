@@ -22,23 +22,26 @@ class ThreadsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        messageThreadController.fetchThreads {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return messageThreadController.threads.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ThreadCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = messageThreadController.threads[indexPath.row].title
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,12 +92,12 @@ class ThreadsTableViewController: UITableViewController {
     
     @IBAction func createThread(_ sender: UITextField) {
         sender.resignFirstResponder()
-        
         guard let title = sender.text else { return }
-        
         sender.text = ""
         
         messageThreadController.createMessageThread(title: title)
+        
+        tableView.reloadData()
     }
     
 }
