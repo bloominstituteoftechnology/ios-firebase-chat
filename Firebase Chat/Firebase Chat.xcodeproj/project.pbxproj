@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		FA735A75237B586500D59A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA735A74237B586500D59A82 /* Assets.xcassets */; };
 		FA735A78237B586500D59A82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA735A76237B586500D59A82 /* LaunchScreen.storyboard */; };
 		FA735A83237B5E1F00D59A82 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA735A82237B5E1F00D59A82 /* GoogleService-Info.plist */; };
+		FA735A86237B623C00D59A82 /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A85237B623C00D59A82 /* ChatsTableViewController.swift */; };
+		FA735A88237B627B00D59A82 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A87237B627B00D59A82 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FA735A77237B586500D59A82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA735A79237B586500D59A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA735A82237B5E1F00D59A82 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		FA735A85237B623C00D59A82 /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
+		FA735A87237B627B00D59A82 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,6 @@
 				6CEEBD82EE071F7F6CCF9F63 /* Pods-Firebase Chat.debug.xcconfig */,
 				EADF47F9556E294580839D3D /* Pods-Firebase Chat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -63,6 +66,7 @@
 		FA735A5F237B586200D59A82 = {
 			isa = PBXGroup;
 			children = (
+				FA735A84237B621700D59A82 /* View Controllers */,
 				FA735A7F237B5C5400D59A82 /* Storyboards */,
 				FA735A6A237B586200D59A82 /* Firebase Chat */,
 				FA735A69237B586200D59A82 /* Products */,
@@ -98,6 +102,15 @@
 				FA735A76237B586500D59A82 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA735A84237B621700D59A82 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA735A85237B623C00D59A82 /* ChatsTableViewController.swift */,
+				FA735A87237B627B00D59A82 /* MessageViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +231,8 @@
 			files = (
 				FA735A6C237B586200D59A82 /* AppDelegate.swift in Sources */,
 				FA735A6E237B586200D59A82 /* SceneDelegate.swift in Sources */,
+				FA735A88237B627B00D59A82 /* MessageViewController.swift in Sources */,
+				FA735A86237B623C00D59A82 /* ChatsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
