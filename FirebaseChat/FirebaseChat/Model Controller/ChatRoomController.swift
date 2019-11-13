@@ -22,7 +22,7 @@ class ChatRoomController {
     // Create a chat room in Firebase
     func createChatRoom(title: String, completion: @escaping () -> Void) {
         let chatRoom = ChatRoom(title: title)
-        self.ref.child("ChatRooms").child(chatRoom.identifier).setValue(chatRoom.dictionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
+        ref.child("ChatRooms").child(chatRoom.identifier).setValue(chatRoom.dictionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
           if let error = error {
             print("Data could not be saved: \(error).")
             completion()
@@ -58,8 +58,20 @@ class ChatRoomController {
     }
     
     // Create a message in a chat room in Firebase
-    func createMessage() {
+    func createMessage(chatRoom: ChatRoom, text: String, sender: Sender, completion: @escaping () -> Void) {
+        let message = ChatRoom.Message(text: text, sender: sender)
         
+        ref.child("ChatRooms").child(chatRoom.identifier).child("messages").setValue(message.dinctionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
+          if let error = error {
+            print("Data could not be saved: \(error).")
+            completion()
+            return
+          } else {
+            print("Data saved successfully!")
+            chatRoom.messages.append(message)
+            completion()
+          }
+        }
     }
     
     
