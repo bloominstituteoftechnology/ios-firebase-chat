@@ -43,7 +43,22 @@ extension ThreadViewController: MessagesDataSource {
     }
 }
 
-extension ThreadViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {}
+extension ThreadViewController: MessagesLayoutDelegate {
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+}
+
+extension ThreadViewController: MessagesDisplayDelegate {
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? .orange : UIColor(red:0.86, green:0.86, blue:0.86, alpha:1.0)
+    }
+}
+
 
 extension ThreadViewController: MessageInputBarDelegate {
     func inputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
