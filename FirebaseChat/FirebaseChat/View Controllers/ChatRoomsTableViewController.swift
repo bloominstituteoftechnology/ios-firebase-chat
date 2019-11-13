@@ -9,38 +9,64 @@
 import UIKit
 
 class ChatRoomsTableViewController: UITableViewController {
-
+    @IBOutlet weak var chatRoomTextField: UITextField!
+    
+    let chatRoomController = ChatRoomController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        if let currentUserDictionary = UserDefaults.standard.value(forKey: "currentUser") as? [String: String] {
+            let currentUser = Sender(dictionary: currentUserDictionary)
+            chatRoomController.currentUser = currentUser
+        } else {
+            let alert = UIAlertController(title: "Set a username", message: nil, preferredStyle: .alert)
+            
+            var usernameTextField: UITextField!
+            
+            alert.addTextField { (textField) in
+                textField.placeholder = "Username:"
+                usernameTextField = textField
+            }
+            
+            let submitAction = UIAlertAction(title: "Submit", style: .default) { (_) in
+                let displayName = usernameTextField.text ?? "Unknown user"
+                let id = UUID().uuidString
+                
+                let sender = Sender(senderId: id, displayName: displayName)
+                
+                UserDefaults.standard.set(sender.dictionaryRepresentation, forKey: "currentUser")
+                
+                self.chatRoomController.currentUser = sender
+            }
+            
+            alert.addAction(submitAction)
+            present(alert, animated: true, completion: nil)
+            
+        }
+        
+        chatRoomController.fetchChatRooms() {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return chatRoomController.chatRooms.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
 
-        // Configure the cell...
-
+        cell.textLabel?.text = chatRoomController.chatRooms[indexPath.row].title
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,4 +113,17 @@ class ChatRoomsTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func createNewChatRoom(_ sender: Any) {
+        chatRoomTextField.resignFirstResponder()
+        
+        guard let chatRoomTitle = chatRoomTextField.text else { return }
+        
+        chatRoomTextField.text = ""
+        
+        chatRoomController.createChatRoom(title: chatRoomTitle) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }

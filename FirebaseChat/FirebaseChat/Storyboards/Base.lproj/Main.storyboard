@@ -15,9 +15,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="FGs-mv-2IU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a new chat room:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nTK-TV-ZJO">
+                                    <rect key="frame" x="8" y="7" width="398" height="30"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                    <connections>
+                                        <action selector="createNewChatRoom:" destination="okL-eh-SGU" eventType="editingDidEndOnExit" id="G9O-Zw-feR"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" red="0.86550761009999999" green="0.86550761009999999" blue="0.86550761009999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="nTK-TV-ZJO" secondAttribute="bottom" constant="7" id="QcY-P1-RM5"/>
+                                <constraint firstAttribute="trailing" secondItem="nTK-TV-ZJO" secondAttribute="trailing" constant="8" id="ZGw-O8-UYP"/>
+                                <constraint firstItem="nTK-TV-ZJO" firstAttribute="top" secondItem="FGs-mv-2IU" secondAttribute="top" constant="7" id="bJt-v9-Ng7"/>
+                                <constraint firstItem="nTK-TV-ZJO" firstAttribute="leading" secondItem="FGs-mv-2IU" secondAttribute="leading" constant="8" id="ciF-eH-smO"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Adf-jj-77o">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" id="Adf-jj-77o">
+                                <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Adf-jj-77o" id="BH9-Yf-7Ez">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -34,6 +55,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="voN-tW-e3d"/>
+                    <connections>
+                        <outlet property="chatRoomTextField" destination="nTK-TV-ZJO" id="QgX-Bf-WKG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8he-Jm-OBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

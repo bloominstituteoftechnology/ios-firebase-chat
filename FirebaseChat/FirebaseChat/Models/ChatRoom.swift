@@ -21,12 +21,6 @@ class ChatRoom: Codable, Equatable {
         self.identifier = identifier
     }
     
-    enum CodingKeys: String, CodingKey {
-        case title
-        case messages
-        case identifier
-    }
-    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
@@ -40,6 +34,35 @@ class ChatRoom: Codable, Equatable {
         
         self.title = title
         self.identifier = identifier
+    }
+    
+    convenience init?(dictionary: [String: Any]) {
+        guard let title = dictionary["title"] as? String,
+            let identifier = dictionary["identifier"] as? String else {
+                return nil
+        }
+        
+        if let messagesDict = dictionary["messages"] as? [[String: Any]] {
+            var messages: [ChatRoom.Message] = []
+            for message in messagesDict {
+                if let message = Message(dictionary: message) {
+                    messages.append(message)
+                }
+            }
+            self.init(title: title, messages: messages, identifier: identifier)
+        } else {
+            self.init(title: title, identifier: identifier)
+        }
+    }
+    
+    var dictionaryRepresentation: [String: Any] {
+        return ["title": title, "messages": self.messages.map({$0.dinctionaryRepresentation}), "identifier": identifier]
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case title
+        case messages
+        case identifier
     }
     
     static func == (lhs: ChatRoom, rhs: ChatRoom) -> Bool {
@@ -66,6 +89,21 @@ class ChatRoom: Codable, Equatable {
             self.displayName = sender.displayName
             self.messageId = messageId
             self.sentDate = sentDate
+        }
+        
+        init?(dictionary: [String: Any]) {
+            guard let text = dictionary["text"] as? String,
+                let senderDict = dictionary["sender"] as? [String: String],
+                let sender = Sender(dictionary: senderDict),
+                let messageId = dictionary["messageId"] as? String,
+                let sentDate = dictionary["sentDate"] as? Date else { return nil }
+            
+            self.init(text: text, sender: sender, messageId: messageId, sentDate: sentDate)
+        }
+        
+        var dinctionaryRepresentation: [String: Any] {
+            guard let sender = sender as? Sender else { return [:] }
+            return ["text": text, "sender": sender.dictionaryRepresentation, "messageId": messageId, "sentDate": sentDate]
         }
         
         

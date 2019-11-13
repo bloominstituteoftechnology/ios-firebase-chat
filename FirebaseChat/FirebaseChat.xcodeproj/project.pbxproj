@@ -18,6 +18,7 @@
 		A66ED831237B6883003FFD36 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66ED830237B6883003FFD36 /* MessageViewController.swift */; };
 		A66ED836237B6C38003FFD36 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66ED835237B6C38003FFD36 /* ChatRoom.swift */; };
 		A66ED838237B76C3003FFD36 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66ED837237B76C3003FFD36 /* ChatRoomController.swift */; };
+		A681025C237BC7FB00EB0926 /* Sender+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = A681025B237BC7FB00EB0926 /* Sender+UserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		A66ED830237B6883003FFD36 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		A66ED835237B6C38003FFD36 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		A66ED837237B76C3003FFD36 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		A681025B237BC7FB00EB0926 /* Sender+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sender+UserDefaults.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				A66ED835237B6C38003FFD36 /* ChatRoom.swift */,
+				A681025B237BC7FB00EB0926 /* Sender+UserDefaults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				A60AF4FA237B4FAB009566A9 /* SceneDelegate.swift in Sources */,
 				A66ED831237B6883003FFD36 /* MessageViewController.swift in Sources */,
 				A66ED836237B6C38003FFD36 /* ChatRoom.swift in Sources */,
+				A681025C237BC7FB00EB0926 /* Sender+UserDefaults.swift in Sources */,
 				A66ED838237B76C3003FFD36 /* ChatRoomController.swift in Sources */,
 				A66ED82D237B6816003FFD36 /* ChatRoomsTableViewController.swift in Sources */,
 			);
