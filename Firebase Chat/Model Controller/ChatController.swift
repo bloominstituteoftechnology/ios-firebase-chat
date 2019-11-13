@@ -14,9 +14,9 @@ struct ChatController {
     static let baseURL = URL(string: "")!
     var chatRooms: [ChatRoom] = []
     
-    var currentSender: Sender?
+    var currentUser: Sender?
     
-    func fetchChatRooms(completion: @escaping () -> Void) {
+    mutating func fetchChatRooms(completion: @escaping () -> Void) {
         
         let requestURL = ChatController.baseURL.appendingPathExtension("json")
         
