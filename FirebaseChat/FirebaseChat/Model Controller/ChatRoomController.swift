@@ -61,7 +61,9 @@ class ChatRoomController {
     func createMessage(chatRoom: ChatRoom, text: String, sender: Sender, completion: @escaping () -> Void) {
         let message = ChatRoom.Message(text: text, sender: sender)
         
-        ref.child("ChatRooms").child(chatRoom.identifier).child("messages").setValue(message.dinctionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
+        let messageRef = ref.child("ChatRooms").child(chatRoom.identifier).child("messages")
+        let accessRef = messageRef.childByAutoId()
+        accessRef.setValue(message.dinctionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
           if let error = error {
             print("Data could not be saved: \(error).")
             completion()

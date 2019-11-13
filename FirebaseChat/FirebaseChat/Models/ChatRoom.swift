@@ -92,18 +92,27 @@ class ChatRoom: Codable, Equatable {
         }
         
         init?(dictionary: [String: Any]) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            
             guard let text = dictionary["text"] as? String,
                 let senderDict = dictionary["sender"] as? [String: String],
                 let sender = Sender(dictionary: senderDict),
                 let messageId = dictionary["messageId"] as? String,
-                let sentDate = dictionary["sentDate"] as? Date else { return nil }
+                let dateString = dictionary["sentDate"] as? String,
+                let sentDate = dateFormatter.date(from: dateString) else { return nil }
             
             self.init(text: text, sender: sender, messageId: messageId, sentDate: sentDate)
         }
         
         var dinctionaryRepresentation: [String: Any] {
             guard let sender = sender as? Sender else { return [:] }
-            return ["text": text, "sender": sender.dictionaryRepresentation, "messageId": messageId, "sentDate": sentDate]
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .short
+            dateFormatter.timeStyle = .short
+            let dateString = dateFormatter.string(from: sentDate)
+            return ["text": text, "sender": sender.dictionaryRepresentation, "messageId": messageId, "sentDate": dateString]
         }
         
         
