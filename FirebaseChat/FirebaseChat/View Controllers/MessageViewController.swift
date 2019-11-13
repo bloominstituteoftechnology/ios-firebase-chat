@@ -23,6 +23,19 @@ class MessageViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let chatRoomController = chatRoomController, let chatRoom = chatRoom else { return }
+        
+        chatRoomController.fetchMessage(chatRoom: chatRoom, completion: {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+            }
+        })
+        
+    }
+    
 }
 
 extension MessageViewController: MessagesDataSource {

@@ -23,15 +23,15 @@ class ChatRoomController {
     func createChatRoom(title: String, completion: @escaping () -> Void) {
         let chatRoom = ChatRoom(title: title)
         ref.child("ChatRooms").child(chatRoom.identifier).setValue(chatRoom.dictionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-            completion()
-            return
-          } else {
-            print("Data saved successfully!")
-            self.chatRooms.append(chatRoom)
-            completion()
-          }
+            if let error = error {
+                print("Data could not be saved: \(error).")
+                completion()
+                return
+            } else {
+                print("Data saved successfully!")
+                self.chatRooms.append(chatRoom)
+                completion()
+            }
         }
     }
     
@@ -53,6 +53,7 @@ class ChatRoomController {
                     let chatRoom = ChatRoom(dictionary: chatRoomRep) else { continue }
                 self.chatRooms.append(chatRoom)
             }
+            self.chatRooms.sort(by: { $0.title < $1.title})
             completion()
         }
     }
@@ -64,19 +65,38 @@ class ChatRoomController {
         let messageRef = ref.child("ChatRooms").child(chatRoom.identifier).child("messages")
         let accessRef = messageRef.childByAutoId()
         accessRef.setValue(message.dinctionaryRepresentation) { (error:Error?, ref:DatabaseReference) in
-          if let error = error {
-            print("Data could not be saved: \(error).")
-            completion()
-            return
-          } else {
-            print("Data saved successfully!")
-            chatRoom.messages.append(message)
-            completion()
-          }
+            if let error = error {
+                print("Data could not be saved: \(error).")
+                completion()
+                return
+            } else {
+                print("Data saved successfully!")
+                chatRoom.messages.append(message)
+                completion()
+            }
         }
     }
     
-    
-    
     // Fetch messages in a chat room from Firebase
+    func fetchMessage(chatRoom: ChatRoom, completion: @escaping () -> Void) {
+        ref.child("ChatRooms").child(chatRoom.identifier).child("messages").observeSingleEvent(of: .value) { (snapshot) in
+            if !snapshot.exists() { completion(); return }
+            
+            guard let messagesDicts = snapshot.value as? [String: Any] else {
+                NSLog("Invalid messagesDict")
+                completion()
+                return
+            }
+            
+            var fetchedMessages: [ChatRoom.Message] = []
+            for messageDict in messagesDicts {
+               guard let messageRep = messageDict.value as? [String: Any],
+                let message = ChatRoom.Message(dictionary: messageRep) else { continue }
+                fetchedMessages.append(message)
+            }
+            fetchedMessages.sort(by: {$0.sentDate < $1.sentDate})
+            chatRoom.messages = fetchedMessages
+            completion()
+        }
+    }
 }
