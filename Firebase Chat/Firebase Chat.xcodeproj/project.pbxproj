@@ -16,6 +16,9 @@
 		E3D328512397056900A69CDA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3D328502397056900A69CDA /* GoogleService-Info.plist */; };
 		E3D328552397095800A69CDA /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D328542397095800A69CDA /* ChatRoomViewController.swift */; };
 		E3D328572397097800A69CDA /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D328562397097800A69CDA /* MessageViewController.swift */; };
+		E3D3285B2397161C00A69CDA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3285A2397161C00A69CDA /* Message.swift */; };
+		E3D3285D2397172600A69CDA /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3285C2397172600A69CDA /* Chat.swift */; };
+		E3D3286223971A7D00A69CDA /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3286123971A7D00A69CDA /* ChatController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		E3D328502397056900A69CDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E3D328542397095800A69CDA /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		E3D328562397097800A69CDA /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		E3D3285A2397161C00A69CDA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E3D3285C2397172600A69CDA /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		E3D3286123971A7D00A69CDA /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		E30AC833239498C400228B6C /* Firebase Chat */ = {
 			isa = PBXGroup;
 			children = (
+				E3D3285E239719FA00A69CDA /* Model Controller */,
 				E3D328582397097F00A69CDA /* View Controllers */,
 				E3D3285923970B4600A69CDA /* Models */,
 				E30AC834239498C400228B6C /* AppDelegate.swift */,
@@ -109,8 +116,18 @@
 		E3D3285923970B4600A69CDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E3D3285A2397161C00A69CDA /* Message.swift */,
+				E3D3285C2397172600A69CDA /* Chat.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E3D3285E239719FA00A69CDA /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E3D3286123971A7D00A69CDA /* ChatController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +246,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3D3285B2397161C00A69CDA /* Message.swift in Sources */,
+				E3D3285D2397172600A69CDA /* Chat.swift in Sources */,
+				E3D3286223971A7D00A69CDA /* ChatController.swift in Sources */,
 				E30AC835239498C400228B6C /* AppDelegate.swift in Sources */,
 				E30AC837239498C400228B6C /* SceneDelegate.swift in Sources */,
 				E3D328572397097800A69CDA /* MessageViewController.swift in Sources */,
