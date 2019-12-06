@@ -15,32 +15,31 @@ class ChatRoomController {
     
     func createChatRoom(with title: String, completion: @escaping () -> Void) {
         let chatRoom = ChatRoom(title: title)
-        
+
         let requestURL = ChatRoomController.baseURL.appendingPathComponent(chatRoom.identifier).appendingPathExtension("json")
-        
+
         var request = URLRequest(url: requestURL)
-        
-        request.httpMethod = HTTPMethod.put.rawValue
-        
+
+        request.httpMethod = "PUT"
+
         do {
             request.httpBody = try JSONEncoder().encode(chatRoom)
         } catch {
             NSLog("Error encoding thread to JSON: \(error)")
         }
-        
+
         URLSession.shared.dataTask(with: request) { (data, _, error) in
-            
+
             if let error = error {
                 NSLog("Error with message thread creation data task: \(error)")
                 completion()
                 return
             }
-            
+
             self.chatRooms.append(chatRoom)
             completion()
-            
-        }.resume()
 
+        }.resume()
     }
     
     func fetchChatRooms(completion: @escaping () -> Void) {
