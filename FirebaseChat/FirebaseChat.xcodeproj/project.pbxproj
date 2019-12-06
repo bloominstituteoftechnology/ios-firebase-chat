@@ -11,6 +11,8 @@
 		3723AF03239ADEB80045DD10 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3723AF02239ADEB80045DD10 /* MessageKit.framework */; };
 		3723AF05239AE0320045DD10 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723AF04239AE0320045DD10 /* ChatRoomTableViewController.swift */; };
 		3723AF07239AE0A50045DD10 /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723AF06239AE0A50045DD10 /* ChatMessagesViewController.swift */; };
+		3723AF09239AE25D0045DD10 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723AF08239AE25D0045DD10 /* ChatRoom.swift */; };
+		3723AF0C239AE31D0045DD10 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3723AF0B239AE31D0045DD10 /* ChatRoomController.swift */; };
 		37CE8856239ACA23009F3185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE8855239ACA23009F3185 /* AppDelegate.swift */; };
 		37CE8858239ACA23009F3185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE8857239ACA23009F3185 /* SceneDelegate.swift */; };
 		37CE885D239ACA23009F3185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CE885B239ACA23009F3185 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 		3723AF02239ADEB80045DD10 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = "<group>"; };
 		3723AF04239AE0320045DD10 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
 		3723AF06239AE0A50045DD10 /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
+		3723AF08239AE25D0045DD10 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		3723AF0B239AE31D0045DD10 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		37CE8852239ACA23009F3185 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CE8855239ACA23009F3185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37CE8857239ACA23009F3185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +56,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3723AF0A239AE3040045DD10 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3723AF0B239AE31D0045DD10 /* ChatRoomController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		37CE8849239ACA23009F3185 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				37CE886B239AD1D8009F3185 /* Models */,
+				3723AF0A239AE3040045DD10 /* Model Controllers */,
 				37CE8869239AD1B9009F3185 /* View Controllers */,
 				37CE886A239AD1C0009F3185 /* Storyboards */,
 				37CE8855239ACA23009F3185 /* AppDelegate.swift */,
@@ -106,6 +119,7 @@
 		37CE886B239AD1D8009F3185 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3723AF08239AE25D0045DD10 /* ChatRoom.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +284,8 @@
 				3723AF07239AE0A50045DD10 /* ChatMessagesViewController.swift in Sources */,
 				3723AF05239AE0320045DD10 /* ChatRoomTableViewController.swift in Sources */,
 				37CE8856239ACA23009F3185 /* AppDelegate.swift in Sources */,
+				3723AF09239AE25D0045DD10 /* ChatRoom.swift in Sources */,
+				3723AF0C239AE31D0045DD10 /* ChatRoomController.swift in Sources */,
 				37CE8858239ACA23009F3185 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
