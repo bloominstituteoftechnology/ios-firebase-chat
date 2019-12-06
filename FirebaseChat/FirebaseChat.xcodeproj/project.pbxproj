@@ -7,24 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		374BFE1C239AC4B300F84D8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374BFE1B239AC4B300F84D8E /* AppDelegate.swift */; };
-		374BFE1E239AC4B300F84D8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374BFE1D239AC4B300F84D8E /* ViewController.swift */; };
-		374BFE20239AC4B500F84D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 374BFE1F239AC4B500F84D8E /* Assets.xcassets */; };
-		374BFE23239AC4B500F84D8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 374BFE21239AC4B500F84D8E /* Main.storyboard */; };
+		37CE8856239ACA23009F3185 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE8855239ACA23009F3185 /* AppDelegate.swift */; };
+		37CE8858239ACA23009F3185 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE8857239ACA23009F3185 /* SceneDelegate.swift */; };
+		37CE885A239ACA23009F3185 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CE8859239ACA23009F3185 /* ViewController.swift */; };
+		37CE885D239ACA23009F3185 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CE885B239ACA23009F3185 /* Main.storyboard */; };
+		37CE885F239ACA24009F3185 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37CE885E239ACA24009F3185 /* Assets.xcassets */; };
+		37CE8862239ACA24009F3185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37CE8860239ACA24009F3185 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		374BFE18239AC4B300F84D8E /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		374BFE1B239AC4B300F84D8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		374BFE1D239AC4B300F84D8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		374BFE1F239AC4B500F84D8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		374BFE22239AC4B500F84D8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		374BFE24239AC4B500F84D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		374BFE25239AC4B500F84D8E /* FirebaseChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseChat.entitlements; sourceTree = "<group>"; };
+		37CE8852239ACA23009F3185 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37CE8855239ACA23009F3185 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37CE8857239ACA23009F3185 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		37CE8859239ACA23009F3185 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37CE885C239ACA23009F3185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37CE885E239ACA24009F3185 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37CE8861239ACA24009F3185 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37CE8863239ACA24009F3185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		374BFE15239AC4B300F84D8E /* Frameworks */ = {
+		37CE884F239ACA23009F3185 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,31 +37,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		374BFE0F239AC4B300F84D8E = {
+		37CE8849239ACA23009F3185 = {
 			isa = PBXGroup;
 			children = (
-				374BFE1A239AC4B300F84D8E /* FirebaseChat */,
-				374BFE19239AC4B300F84D8E /* Products */,
+				37CE8854239ACA23009F3185 /* FirebaseChat */,
+				37CE8853239ACA23009F3185 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		374BFE19239AC4B300F84D8E /* Products */ = {
+		37CE8853239ACA23009F3185 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				374BFE18239AC4B300F84D8E /* FirebaseChat.app */,
+				37CE8852239ACA23009F3185 /* FirebaseChat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		374BFE1A239AC4B300F84D8E /* FirebaseChat */ = {
+		37CE8854239ACA23009F3185 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
-				374BFE1B239AC4B300F84D8E /* AppDelegate.swift */,
-				374BFE1D239AC4B300F84D8E /* ViewController.swift */,
-				374BFE1F239AC4B500F84D8E /* Assets.xcassets */,
-				374BFE21239AC4B500F84D8E /* Main.storyboard */,
-				374BFE24239AC4B500F84D8E /* Info.plist */,
-				374BFE25239AC4B500F84D8E /* FirebaseChat.entitlements */,
+				37CE8855239ACA23009F3185 /* AppDelegate.swift */,
+				37CE8857239ACA23009F3185 /* SceneDelegate.swift */,
+				37CE8859239ACA23009F3185 /* ViewController.swift */,
+				37CE885B239ACA23009F3185 /* Main.storyboard */,
+				37CE885E239ACA24009F3185 /* Assets.xcassets */,
+				37CE8860239ACA24009F3185 /* LaunchScreen.storyboard */,
+				37CE8863239ACA24009F3185 /* Info.plist */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -66,13 +70,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		374BFE17239AC4B300F84D8E /* FirebaseChat */ = {
+		37CE8851239ACA23009F3185 /* FirebaseChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 374BFE28239AC4B500F84D8E /* Build configuration list for PBXNativeTarget "FirebaseChat" */;
+			buildConfigurationList = 37CE8866239ACA24009F3185 /* Build configuration list for PBXNativeTarget "FirebaseChat" */;
 			buildPhases = (
-				374BFE14239AC4B300F84D8E /* Sources */,
-				374BFE15239AC4B300F84D8E /* Frameworks */,
-				374BFE16239AC4B300F84D8E /* Resources */,
+				37CE884E239ACA23009F3185 /* Sources */,
+				37CE884F239ACA23009F3185 /* Frameworks */,
+				37CE8850239ACA23009F3185 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -80,25 +84,25 @@
 			);
 			name = FirebaseChat;
 			productName = FirebaseChat;
-			productReference = 374BFE18239AC4B300F84D8E /* FirebaseChat.app */;
+			productReference = 37CE8852239ACA23009F3185 /* FirebaseChat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		374BFE10239AC4B300F84D8E /* Project object */ = {
+		37CE884A239ACA23009F3185 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Bobby Keffury";
 				TargetAttributes = {
-					374BFE17239AC4B300F84D8E = {
+					37CE8851239ACA23009F3185 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 374BFE13239AC4B300F84D8E /* Build configuration list for PBXProject "FirebaseChat" */;
+			buildConfigurationList = 37CE884D239ACA23009F3185 /* Build configuration list for PBXProject "FirebaseChat" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -106,53 +110,63 @@
 				en,
 				Base,
 			);
-			mainGroup = 374BFE0F239AC4B300F84D8E;
-			productRefGroup = 374BFE19239AC4B300F84D8E /* Products */;
+			mainGroup = 37CE8849239ACA23009F3185;
+			productRefGroup = 37CE8853239ACA23009F3185 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				374BFE17239AC4B300F84D8E /* FirebaseChat */,
+				37CE8851239ACA23009F3185 /* FirebaseChat */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		374BFE16239AC4B300F84D8E /* Resources */ = {
+		37CE8850239ACA23009F3185 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374BFE20239AC4B500F84D8E /* Assets.xcassets in Resources */,
-				374BFE23239AC4B500F84D8E /* Main.storyboard in Resources */,
+				37CE8862239ACA24009F3185 /* LaunchScreen.storyboard in Resources */,
+				37CE885F239ACA24009F3185 /* Assets.xcassets in Resources */,
+				37CE885D239ACA23009F3185 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		374BFE14239AC4B300F84D8E /* Sources */ = {
+		37CE884E239ACA23009F3185 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				374BFE1E239AC4B300F84D8E /* ViewController.swift in Sources */,
-				374BFE1C239AC4B300F84D8E /* AppDelegate.swift in Sources */,
+				37CE885A239ACA23009F3185 /* ViewController.swift in Sources */,
+				37CE8856239ACA23009F3185 /* AppDelegate.swift in Sources */,
+				37CE8858239ACA23009F3185 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		374BFE21239AC4B500F84D8E /* Main.storyboard */ = {
+		37CE885B239ACA23009F3185 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				374BFE22239AC4B500F84D8E /* Base */,
+				37CE885C239ACA23009F3185 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37CE8860239ACA24009F3185 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37CE8861239ACA24009F3185 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		374BFE26239AC4B500F84D8E /* Debug */ = {
+		37CE8864239ACA24009F3185 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -202,17 +216,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		374BFE27239AC4B500F84D8E /* Release */ = {
+		37CE8865239ACA24009F3185 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -256,73 +270,72 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		374BFE29239AC4B500F84D8E /* Debug */ = {
+		37CE8867239ACA24009F3185 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FirebaseChat/FirebaseChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FirebaseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BobbyKeffury.FirebaseChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		374BFE2A239AC4B500F84D8E /* Release */ = {
+		37CE8868239ACA24009F3185 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = FirebaseChat/FirebaseChat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = FirebaseChat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/../Frameworks",
+					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.BobbyKeffury.FirebaseChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		374BFE13239AC4B300F84D8E /* Build configuration list for PBXProject "FirebaseChat" */ = {
+		37CE884D239ACA23009F3185 /* Build configuration list for PBXProject "FirebaseChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				374BFE26239AC4B500F84D8E /* Debug */,
-				374BFE27239AC4B500F84D8E /* Release */,
+				37CE8864239ACA24009F3185 /* Debug */,
+				37CE8865239ACA24009F3185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		374BFE28239AC4B500F84D8E /* Build configuration list for PBXNativeTarget "FirebaseChat" */ = {
+		37CE8866239ACA24009F3185 /* Build configuration list for PBXNativeTarget "FirebaseChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				374BFE29239AC4B500F84D8E /* Debug */,
-				374BFE2A239AC4B500F84D8E /* Release */,
+				37CE8867239ACA24009F3185 /* Debug */,
+				37CE8868239ACA24009F3185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 374BFE10239AC4B300F84D8E /* Project object */;
+	rootObject = 37CE884A239ACA23009F3185 /* Project object */;
 }
