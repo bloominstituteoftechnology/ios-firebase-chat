@@ -23,6 +23,9 @@
                                     <rect key="frame" x="20" y="5" width="374" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="creatChatRoom:" destination="ZbK-KQ-Qhy" eventType="editingDidEnd" id="c17-3F-Noj"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

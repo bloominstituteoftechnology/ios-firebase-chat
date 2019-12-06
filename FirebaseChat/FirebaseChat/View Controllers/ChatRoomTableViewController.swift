@@ -19,9 +19,15 @@ class ChatRoomTableViewController: UITableViewController {
     @IBOutlet weak var chatRoomTitleTextField: UITextField!
     
     // MARK: - Views
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        chatRoomController.fetchChatRooms()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        chatRoomController.fetchChatRooms {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
 
     // MARK: - Table view data source
@@ -39,6 +45,23 @@ class ChatRoomTableViewController: UITableViewController {
         return cell
     }
 
+    //MARK: - Actions
+    
+    @IBAction func creatChatRoom(_ sender: Any) {
+        chatRoomTitleTextField.resignFirstResponder()
+        
+        guard let chatRoomTitle = chatRoomTitleTextField.text else { return }
+        
+        chatRoomTitleTextField.text = ""
+        
+        chatRoomController.createChatRoom(with: chatRoomTitle) {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
