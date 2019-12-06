@@ -14,7 +14,7 @@ class ChatRoom: Codable {
     var messages: [ChatRoom.Message]
     let identifier: String
     
-    init(title: String, messages: [ChatRoom.Message], identifier: String = UUID().uuidString) {
+    init(title: String, messages: [ChatRoom.Message] = [], identifier: String = UUID().uuidString) {
         self.title = title
         self.messages = messages
         self.identifier = identifier
