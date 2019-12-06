@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DaO-3Q-QmH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vXW-cp-XoI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -8,22 +8,38 @@
     </dependencies>
     <scenes>
         <!--Chat Room View Controller-->
-        <scene sceneID="bP9-VG-Mye">
+        <scene sceneID="Btd-xI-MIp">
             <objects>
-                <tableViewController id="foL-xe-Mfk" customClass="ChatRoomViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OEe-Tc-PM7">
+                <viewController id="0UU-im-EIY" customClass="ChatRoomViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="59t-zF-9lc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UrI-OA-5bU"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NdB-4n-Exk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCO-qA-WsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4214" y="-121"/>
+        </scene>
+        <!--Chats Table View Controller-->
+        <scene sceneID="ehS-oZ-RFN">
+            <objects>
+                <tableViewController id="H6d-Gy-Cg9" customClass="ChatsTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="byQ-SJ-ruT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Yk9-K0-wiV" style="IBUITableViewCellStyleDefault" id="35p-II-mfQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="43U-3K-ctg" style="IBUITableViewCellStyleDefault" id="trj-Pf-0fr">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="35p-II-mfQ" id="juC-Ua-gs7">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="trj-Pf-0fr" id="zaJ-29-Uzg">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Yk9-K0-wiV">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="43U-3K-ctg">
                                             <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -33,54 +49,47 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="chx-Ce-C24" kind="show" identifier="DetailSegue" id="Oxz-uz-2FR"/>
+                                    <segue destination="0UU-im-EIY" kind="show" identifier="DetailSegue" id="hPP-zv-6wM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="foL-xe-Mfk" id="n2U-27-0Ke"/>
-                            <outlet property="delegate" destination="foL-xe-Mfk" id="gYg-z9-YuE"/>
+                            <outlet property="dataSource" destination="H6d-Gy-Cg9" id="Hiz-6r-afl"/>
+                            <outlet property="delegate" destination="H6d-Gy-Cg9" id="faN-HL-cjZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3Kd-Ge-HWo"/>
+                    <navigationItem key="navigationItem" id="r6F-xb-2P0">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="3g7-2O-dP4">
+                            <connections>
+                                <segue destination="0UU-im-EIY" kind="show" identifier="AddSegue" id="klm-ar-qBc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J3T-7m-GAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="syh-4d-FW1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010.144927536232" y="-97.098214285714278"/>
-        </scene>
-        <!--Message View Controller-->
-        <scene sceneID="0sJ-VA-Gyu">
-            <objects>
-                <viewController id="chx-Ce-C24" customClass="MessageViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ncx-vo-ihg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="Spm-2T-FFw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="SAa-C2-EVw"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BM7-1O-z5J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1828" y="-97"/>
+            <point key="canvasLocation" x="3330.434782608696" y="-120.53571428571428"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="A7o-r6-GiO">
+        <scene sceneID="Pwm-0B-d9K">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DaO-3Q-QmH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vXW-cp-XoI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FHJ-xA-a4W">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="17A-xQ-Rdj">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="foL-xe-Mfk" kind="relationship" relationship="rootViewController" id="VQ0-w8-ldY"/>
+                        <segue destination="H6d-Gy-Cg9" kind="relationship" relationship="rootViewController" id="75A-41-tdb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eAP-QI-Xbm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YVa-fO-4jP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100.00000000000001" y="-97.098214285714278"/>
+            <point key="canvasLocation" x="2420.289855072464" y="-120.53571428571428"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="klm-ar-qBc"/>
+    </inferredMetricsTieBreakers>
 </document>

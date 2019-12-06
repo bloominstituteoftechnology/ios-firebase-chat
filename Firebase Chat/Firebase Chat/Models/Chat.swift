@@ -10,6 +10,8 @@ import Foundation
 
 struct Chat: Codable, Equatable {
     let identifier: String
-    let sender: String
-    let receiver: String
+    
+    init(identifier: String = UUID().uuidString) {
+        self.identifier = identifier
+    }
 }
