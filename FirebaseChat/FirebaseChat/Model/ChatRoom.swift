@@ -19,7 +19,7 @@ struct ChatRoom {
 struct Message {
     var senderID: String
     var text: String
-    var timestamp: Date
+//    var timestamp: Date
     var author: String
 }
 
@@ -34,7 +34,7 @@ extension Message: MessageType {
     }
     
     var sentDate: Date {
-        return timestamp
+        return Date()
     }
     
     var kind: MessageKind {

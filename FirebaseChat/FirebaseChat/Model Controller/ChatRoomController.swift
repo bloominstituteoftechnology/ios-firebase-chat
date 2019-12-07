@@ -15,8 +15,8 @@ class ChatRoomController {
     var dbRef: DatabaseReference = Database.database().reference()
     
     func createChatRoom(with title: String) {
-        let chatRoomData: [String: Any] = ["title": title, "messages": ["",""], "uid": UUID().uuidString]
-        dbRef.child("chats").childByAutoId().setValue(chatRoomData, withCompletionBlock: { error, ref in
+        let chatRoomData: [String: Any] = ["title": title, "messages": [UUID().uuidString], "uid": UUID().uuidString]
+        dbRef.child("chats").child(chatRoomData["uid"] as! String).setValue(chatRoomData, withCompletionBlock: { error, ref in
             if error == nil {
                 print("Sucess")
             } else {
@@ -36,8 +36,9 @@ class ChatRoomController {
                 let uid = snap.key
                 let title = chatRoomDictionary["title"] as! String
 //                let messages = chatRoomDictionary["messages"] as! [Message]
+//                let messages = chatRoomDictionary["messages"]
                 
-                let chatRoom = ChatRoom(uid: uid, title: title, messages: [Message(senderID: "", text: "Welcome to your chat room!", timestamp: Date(), author: "ChatBot")])
+                let chatRoom = ChatRoom(uid: uid, title: title, messages: [Message(senderID: UUID().uuidString, text: "Welcome to your chat room!", author: "ChatBot")])
                 self.chatRooms.append(chatRoom)
             }
             
@@ -45,9 +46,9 @@ class ChatRoomController {
         }
     }
     
-    func createMessage() {
-        let message = Message(senderID: "", text: "", timestamp: Date(), author: "")
-        dbRef.child("chats").child("messages").childByAutoId().setValue(message)
+    func createMessage(in chatRoom: ChatRoom) {
+        let message = Message(senderID: "", text: "", author: "")
+        dbRef.child("chats").child(chatRoom.uid).child("messages").child("senderID").childByAutoId().setValue(message)
     }
     
 }
