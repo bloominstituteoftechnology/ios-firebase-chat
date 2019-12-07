@@ -24,7 +24,7 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                     <connections>
-                                        <action selector="createChatRoom:" destination="TcS-AB-J7V" eventType="editingDidEnd" id="MBI-j1-sx3"/>
+                                        <action selector="createChatRoom:" destination="TcS-AB-J7V" eventType="editingDidEndOnExit" id="bbx-fv-Qbo"/>
                                     </connections>
                                 </textField>
                             </subviews>
@@ -37,7 +37,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="b5B-Bo-6qB" style="IBUITableViewCellStyleDefault" id="jPz-U1-vLj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" textLabel="b5B-Bo-6qB" style="IBUITableViewCellStyleDefault" id="jPz-U1-vLj">
                                 <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jPz-U1-vLj" id="E7d-Ga-t6s">
