@@ -8,24 +8,50 @@
 
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 class MessageViewController: MessagesViewController {
+    
+    var chatController: ChatRoomController?
+    var chatRoom: ChatRoom?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = chatRoom?.title
+        
+        messageInputBar.delegate = self
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+extension MessageViewController: MessagesDataSource {
+    func currentSender() -> SenderType {
+        return Sender(senderId: "", displayName: "")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return chatRoom!.messages[indexPath.item]
     }
-    */
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return 1
+    }
+}
 
+extension MessageViewController: MessagesLayoutDelegate {
+    
+}
+
+extension MessageViewController: MessagesDisplayDelegate {
+    
+}
+
+extension MessageViewController: InputBarAccessoryViewDelegate {
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        
+    }
 }

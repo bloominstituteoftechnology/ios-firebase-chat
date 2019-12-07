@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import MessageKit
 
 class ChatRoomController {
     var chatRooms: [ChatRoom] = []
@@ -42,6 +43,10 @@ class ChatRoomController {
             
             completion()
         }
+    }
+    
+    func createMessage() {
+        
     }
     
 }

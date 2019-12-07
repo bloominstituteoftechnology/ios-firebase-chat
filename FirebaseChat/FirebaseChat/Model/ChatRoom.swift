@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import MessageKit
 
 struct ChatRoom {
     var uid: String
@@ -20,4 +21,23 @@ struct Message {
     var text: String
     var timestamp: Date
     var author: String
+}
+
+
+extension Message: MessageType {
+    var sender: SenderType {
+        return Sender(senderId: senderID, displayName: author)
+    }
+    
+    var messageId: String {
+        return UUID().uuidString
+    }
+    
+    var sentDate: Date {
+        return timestamp
+    }
+    
+    var kind: MessageKind {
+        return .text(text)
+    }
 }
