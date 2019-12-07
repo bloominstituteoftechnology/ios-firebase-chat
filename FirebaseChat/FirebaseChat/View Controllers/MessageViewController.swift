@@ -52,6 +52,6 @@ extension MessageViewController: MessagesDisplayDelegate {
 
 extension MessageViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        
+        chatController?.createMessage()
     }
 }

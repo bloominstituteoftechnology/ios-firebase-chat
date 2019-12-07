@@ -15,7 +15,7 @@ class ChatRoomController {
     var dbRef: DatabaseReference = Database.database().reference()
     
     func createChatRoom(with title: String) {
-        let chatRoomData: [String: Any] = ["title": title, "messages": "", "uid": UUID().uuidString]
+        let chatRoomData: [String: Any] = ["title": title, "messages": ["",""], "uid": UUID().uuidString]
         dbRef.child("chats").childByAutoId().setValue(chatRoomData, withCompletionBlock: { error, ref in
             if error == nil {
                 print("Sucess")
@@ -37,7 +37,7 @@ class ChatRoomController {
                 let title = chatRoomDictionary["title"] as! String
 //                let messages = chatRoomDictionary["messages"] as! [Message]
                 
-                let chatRoom = ChatRoom(uid: uid, title: title, messages: [Message(senderID: "", text: "", timestamp: Date(), author: "")])
+                let chatRoom = ChatRoom(uid: uid, title: title, messages: [Message(senderID: "", text: "Welcome to your chat room!", timestamp: Date(), author: "ChatBot")])
                 self.chatRooms.append(chatRoom)
             }
             
@@ -46,7 +46,8 @@ class ChatRoomController {
     }
     
     func createMessage() {
-        
+        let message = Message(senderID: "", text: "", timestamp: Date(), author: "")
+        dbRef.child("chats").child("messages").childByAutoId().setValue(message)
     }
     
 }
