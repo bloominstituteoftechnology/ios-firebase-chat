@@ -37,13 +37,16 @@ extension ChatMessagesViewController: MessagesDataSource {
         return Sender(senderId: "", displayName: "")
     }
     
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        guard let chatRoom = chatRoom else { return 0 }
+        return chatRoom.messages.count
+    }
+    
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
         return chatRoom!.messages[indexPath.item]
     }
         
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return 1
-    }
+
     
 }
 
