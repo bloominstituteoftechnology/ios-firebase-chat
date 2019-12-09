@@ -90,14 +90,21 @@ class ChatsTableViewController: UITableViewController {
     }
     */
 
-    /*
-    // MARK: - Navigation
+
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        guard let detailVC = segue.destination as? ChatRoomViewController else {
+            return
+        }
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            let chat = self.chats[indexPath.row]
+            detailVC.chat = chat
+        }
+        
+        detailVC.chatController = self.chatController
     }
-    */
+
 
 }

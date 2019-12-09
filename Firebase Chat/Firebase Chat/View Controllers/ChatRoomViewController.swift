@@ -11,7 +11,7 @@ import MessageKit
 import FirebaseDatabase
 
 class ChatRoomViewController: MessagesViewController {
-    let chatController = ChatModelController()
+    var chatController: ChatModelController?
     var chat: Chat? {
         didSet {
             self.observeData()
@@ -26,12 +26,32 @@ class ChatRoomViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        self.loadFirstMessages()
+    }
+    
+    private func loadFirstMessages() {
+        guard let chat = self.chat else { return }
+        
+//        self.chatController?.ref.child("messages").child(chat.identifier).observeSingleEvent(of: .value, with: { (snapshot) in
+//            var messages = [Message]()
+//            for child in snapshot.children {
+//                guard let message = child as? DataSnapshot else { return }
+//                guard let messageDic = message.value as? [String: AnyObject] else { return }
+//                let messageModel = Message(dictionary: messageDic)
+//                messages.append(messageModel)
+//            }
+//
+//            self.messages = messages
+//            self.messagesCollectionView.reloadData()
+//            self.messagesCollectionView.scrollToBottom()
+//        })
     }
     
     private func observeData() {
         guard let chat = chat else { return }
         
-        self.refHandler = self.chatController.ref.child("messages").child(chat.identifier).observe(.childAdded) { (snapshot) in
+        self.refHandler = self.chatController?.ref.child("messages").child(chat.identifier).observe(.childAdded) { (snapshot) in
             guard let dictionary = snapshot.value as? [String: AnyObject] else {
                 return
             }
@@ -50,7 +70,7 @@ class ChatRoomViewController: MessagesViewController {
 
 extension ChatRoomViewController: MessagesDataSource {
     func currentSender() -> SenderType {
-        return Sender(id: "any_unique_id", displayName: "Steven")
+        return Sender(id: "", displayName: "")
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -77,7 +97,7 @@ extension ChatRoomViewController: MessageInputBarDelegate {
     
     private func createMessage(chat: Chat, text: String) {
         // create a new message
-        self.chatController.createMessage(in: chat, withText: text) { message in
+        self.chatController?.createMessage(in: chat, withText: text) { message in
             //
             DispatchQueue.main.async {
                 self.messageInputBar.inputTextView.text = nil
@@ -87,7 +107,7 @@ extension ChatRoomViewController: MessageInputBarDelegate {
     
     private func createChat(text: String) {
         // create a new chat room
-        self.chatController.createChat { chat in
+        self.chatController?.createChat { chat in
             if let chat = chat {
                 // start observing the chat
                 self.chat = chat
