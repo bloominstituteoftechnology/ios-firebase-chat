@@ -19,7 +19,6 @@
 		E3D3285D2397172600A69CDA /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3285C2397172600A69CDA /* Chat.swift */; };
 		E3D328642397255500A69CDA /* ChatsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D328632397255500A69CDA /* ChatsTableViewController.swift */; };
 		E3D3286623972B4200A69CDA /* ChatModelContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D3286523972B4200A69CDA /* ChatModelContoller.swift */; };
-		E3D328692397902500A69CDA /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D328682397902500A69CDA /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		E3D3285C2397172600A69CDA /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		E3D328632397255500A69CDA /* ChatsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewController.swift; sourceTree = "<group>"; };
 		E3D3286523972B4200A69CDA /* ChatModelContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModelContoller.swift; sourceTree = "<group>"; };
-		E3D328682397902500A69CDA /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 		E30AC833239498C400228B6C /* Firebase Chat */ = {
 			isa = PBXGroup;
 			children = (
-				E3D328672397901300A69CDA /* Resources */,
 				E3D3285E239719FA00A69CDA /* Model Controller */,
 				E3D328582397097F00A69CDA /* View Controllers */,
 				E3D3285923970B4600A69CDA /* Models */,
@@ -131,14 +128,6 @@
 				E3D3286523972B4200A69CDA /* ChatModelContoller.swift */,
 			);
 			path = "Model Controller";
-			sourceTree = "<group>";
-		};
-		E3D328672397901300A69CDA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				E3D328682397902500A69CDA /* HTTPMethod.swift */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +250,6 @@
 				E3D3285D2397172600A69CDA /* Chat.swift in Sources */,
 				E30AC835239498C400228B6C /* AppDelegate.swift in Sources */,
 				E3D3286623972B4200A69CDA /* ChatModelContoller.swift in Sources */,
-				E3D328692397902500A69CDA /* HTTPMethod.swift in Sources */,
 				E30AC837239498C400228B6C /* SceneDelegate.swift in Sources */,
 				E3D328552397095800A69CDA /* ChatRoomViewController.swift in Sources */,
 				E3D328642397255500A69CDA /* ChatsTableViewController.swift in Sources */,

@@ -24,21 +24,27 @@ class ChatRoomViewController: MessagesViewController {
         super.viewDidLoad()
         self.messageInputBar.delegate = self
         messagesCollectionView.messagesDataSource = self
-//        messagesCollectionView.messagesLayoutDelegate = self
-//        messagesCollectionView.messagesDisplayDelegate = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
     }
     
     private func observeData() {
         guard let chat = chat else { return }
         
-        self.refHandler = self.chatController.ref.child("messages").child(chat.identifier).observe(.value) { (snapshot) in
-            var messages = [Message]()
-            for child in snapshot.children {
-                let message = Message(snapshot: child as! DataSnapshot)
-                messages.append(message)
+        self.refHandler = self.chatController.ref.child("messages").child(chat.identifier).observe(.childAdded) { (snapshot) in
+            guard let dictionary = snapshot.value as? [String: AnyObject] else {
+                return
             }
-            self.messages = messages
+
+            let message = Message(dictionary: dictionary)
+            self.insertMessage(message: message)
         }
+    }
+    
+    private func insertMessage(message: Message) {
+        self.messages.append(message)
+        self.messagesCollectionView.reloadData()
+        self.messagesCollectionView.scrollToBottom()
     }
 }
 
@@ -56,21 +62,39 @@ extension ChatRoomViewController: MessagesDataSource {
     }
 }
 
+extension ChatRoomViewController: MessagesLayoutDelegate {}
+
+extension ChatRoomViewController: MessagesDisplayDelegate {}
+
 extension ChatRoomViewController: MessageInputBarDelegate {
     func inputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
+        if let chat = self.chat {
+            self.createMessage(chat: chat, text: text)
+        } else {
+            self.createChat(text: text)
+        }
+    }
+    
+    private func createMessage(chat: Chat, text: String) {
+        // create a new message
+        self.chatController.createMessage(in: chat, withText: text) { message in
+            //
+            DispatchQueue.main.async {
+                self.messageInputBar.inputTextView.text = nil
+            }
+        }
+    }
+    
+    private func createChat(text: String) {
         // create a new chat room
-        
-        chatController.createChat { chat in
+        self.chatController.createChat { chat in
             if let chat = chat {
                 // start observing the chat
                 self.chat = chat
                 
                 // create a new message
-                self.chatController.createMessage(in: chat, withText: text) { message in
-                    //
-                }
+                self.createMessage(chat: chat, text: text)
             }
         }
-
     }
 }

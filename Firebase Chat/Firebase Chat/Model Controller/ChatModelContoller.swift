@@ -35,7 +35,8 @@ class ChatModelController {
         let encoder = JSONEncoder()
         let data = try! encoder.encode(message)
         let dictionary = try! JSONSerialization.jsonObject(with: data, options: .allowFragments)
-    self.ref.child("messages").child(chat.identifier).child(message.identifier).setValue(dictionary) { (error, ref) in
+        
+        self.ref.child("messages").child(chat.identifier).child(message.identifier).setValue(dictionary) { (error, ref) in
             if let error = error {
                 print("Message couldn't be saved: \(error).")
                 completion(nil)
