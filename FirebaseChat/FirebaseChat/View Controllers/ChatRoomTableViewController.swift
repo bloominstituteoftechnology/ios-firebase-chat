@@ -46,8 +46,7 @@ class ChatRoomTableViewController: UITableViewController {
     }
 
     //MARK: - Actions
-    
-    @IBAction func creatChatRoom(_ sender: Any) {
+    @IBAction func createChatRooms(_ sender: Any) {
         chatRoomTitleTextField.resignFirstResponder()
         
         guard let chatRoomTitle = chatRoomTitleTextField.text else { return }

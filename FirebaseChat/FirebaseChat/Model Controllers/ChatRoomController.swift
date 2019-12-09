@@ -14,6 +14,7 @@ class ChatRoomController {
     var chatRooms: [ChatRoom] = []
     
     func createChatRoom(with title: String, completion: @escaping () -> Void) {
+        
         let chatRoom = ChatRoom(title: title)
 
         let requestURL = ChatRoomController.baseURL.appendingPathComponent(chatRoom.identifier).appendingPathExtension("json")

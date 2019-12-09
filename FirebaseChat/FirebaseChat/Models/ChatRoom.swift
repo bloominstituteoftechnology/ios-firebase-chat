@@ -10,6 +10,7 @@ import Foundation
 import MessageKit
 
 class ChatRoom: Codable {
+    
     let title: String
     var messages: [ChatRoom.Message]
     let identifier: String
