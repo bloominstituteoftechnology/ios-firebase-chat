@@ -11,14 +11,14 @@ import MessageKit
 
 class ChatController {
     
-    let baseURL = URL(string: "https://fir-chatwr.firebaseio.com/")!
+    static let baseURL = URL(string: "https://fir-chatwr.firebaseio.com/")!
     var chatRooms: [ChatRoom] = []
     
     var currentUser: Sender?
     
     func fetchChatRooms(completion: @escaping () -> Void) {
         
-        let requestURL = baseURL.appendingPathExtension("json")
+        let requestURL = ChatController.baseURL.appendingPathExtension("json")
         
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             
@@ -31,7 +31,8 @@ class ChatController {
             guard let data = data else {
                 NSLog("No data returned from data task")
                 completion()
-                return }
+                return
+            }
             
             do {
                 self.chatRooms = try JSONDecoder().decode([String: ChatRoom].self, from: data).map({ $0.value })
@@ -47,8 +48,9 @@ class ChatController {
         
         let chatRoom = ChatRoom(title: title)
         
-        let requestURL = baseURL.appendingPathExtension("json")
+        let requestURL = ChatController.baseURL
             .appendingPathComponent(chatRoom.identifier)
+            .appendingPathExtension("json")
         
         var request = URLRequest(url: requestURL)
         
@@ -68,12 +70,12 @@ class ChatController {
                 return
             }
             
-            guard let data = data else {
-                NSLog("Error decoding chatRoom data: \(error)")
-                completion()
-                return
-            }
-//            self.chatRooms.append(chatRoom)
+//            guard let data = data else {
+//                NSLog("Error decoding chatRoom data: \(error)")
+//                completion()
+//                return
+//            }
+            self.chatRooms.append(chatRoom)
             completion()
             
         }.resume()
@@ -91,7 +93,7 @@ class ChatController {
         
         chatRooms[index].messages.append(message)
         
-        let requestURL = baseURL.appendingPathComponent(chatRoom.identifier)
+        let requestURL = ChatController.baseURL.appendingPathComponent(chatRoom.identifier)
                                 .appendingPathComponent("messages")
                                 .appendingPathExtension("json")
         

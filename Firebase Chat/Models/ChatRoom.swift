@@ -37,6 +37,7 @@ class ChatRoom: Codable, Equatable {
         self.title = title
         self.identifier = identifier
     }
+
     
     // Don't take it out, you need this!
     static func ==(lhs: ChatRoom, rhs: ChatRoom) -> Bool {

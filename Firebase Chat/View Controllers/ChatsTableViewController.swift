@@ -15,35 +15,38 @@ class ChatsTableViewController: UITableViewController {
     
     var chatController = ChatController()
     
-    @IBOutlet weak var threadTitleTextField: UITextField!
+    @IBOutlet weak var newChatRoomTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let currentUserDictionary = UserDefaults.standard.value(forKey: "currentUser") as? [String : String ] {
+            
             let currentUser = Sender(dictionary: currentUserDictionary)
             chatController.currentUser = currentUser
+            
         } else {
-            let alert = UIAlertController(title: "Set user Name", message: nil, preferredStyle: .alert)
+            
+            // An alert that asks the user for a username and saves it to UserDefaults
+            let alert = UIAlertController(title: "What's your username? ", message: nil, preferredStyle: .alert)
             
             var userNameTextField: UITextField!
             
             alert.addTextField { (textField) in
-                textField.placeholder = "Username"
+                textField.placeholder = "Username:"
                 userNameTextField = textField
-                
                 
             }
             
             let submitAction = UIAlertAction(title: "Submit", style: .default) {
                 (_) in
                 
+                // Take the text field's text and save it to UD.
+
                 let displayName = userNameTextField.text ?? "Unknown user"
                 let id = UUID().uuidString
                 
                 let sender = Sender(senderId: id, displayName: displayName)
-                
-                
                 
                 UserDefaults.standard.set(sender.dictionaryRepresentation, forKey: "currentUser")
                 
@@ -68,14 +71,15 @@ class ChatsTableViewController: UITableViewController {
     
     // MARK: - Actions
     
-    @IBAction func createThread(_ sender: Any) {
-        threadTitleTextField.resignFirstResponder()
+    
+    @IBAction func createChatRoom(_ sender: UITextField) {
+        newChatRoomTextField.resignFirstResponder()
         
-        guard let threadTitle = threadTitleTextField.text else { return }
+        guard let chatRoomTitle = newChatRoomTextField.text else { return }
         
-        threadTitleTextField.text = ""
+        newChatRoomTextField.text = ""
         
-        chatController.createChatRoom(with: threadTitle) {
+        chatController.createChatRoom(with: chatRoomTitle) {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -89,7 +93,7 @@ class ChatsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageThreadCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
         
         cell.textLabel?.text = chatController.chatRooms[indexPath.row].title
         

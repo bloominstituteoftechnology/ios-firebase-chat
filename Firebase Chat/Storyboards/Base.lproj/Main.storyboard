@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5bO-lM-d3R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5bO-lM-d3R">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +15,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="41T-uD-aRc">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create New Chat Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHz-b3-8Mg">
+                                    <rect key="frame" x="20" y="10.5" width="374" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="createChatRoom:" destination="cmQ-N4-8sY" eventType="editingDidEndOnExit" id="Hb7-0C-Dec"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="yHz-b3-8Mg" firstAttribute="top" secondItem="41T-uD-aRc" secondAttribute="top" constant="10.5" id="6sx-aF-nSv"/>
+                                <constraint firstAttribute="bottom" secondItem="yHz-b3-8Mg" secondAttribute="bottom" constant="10.5" id="9s5-gS-nXj"/>
+                                <constraint firstItem="yHz-b3-8Mg" firstAttribute="leading" secondItem="41T-uD-aRc" secondAttribute="leading" constant="20" id="Nm7-vp-K1c"/>
+                                <constraint firstAttribute="trailing" secondItem="yHz-b3-8Mg" secondAttribute="trailing" constant="20" id="eCF-NS-7Io"/>
+                                <constraint firstItem="yHz-b3-8Mg" firstAttribute="centerY" secondItem="41T-uD-aRc" secondAttribute="centerY" id="wuq-Ct-qBv"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ALZ-vI-dVY">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" id="ALZ-vI-dVY">
+                                <rect key="frame" x="0.0" y="83" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ALZ-vI-dVY" id="NS7-ps-Chv">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -32,6 +54,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="QHk-AE-pIv"/>
                     <connections>
+                        <outlet property="newChatRoomTextField" destination="yHz-b3-8Mg" id="xaL-bx-gwZ"/>
                         <segue destination="m3w-l7-Ofw" kind="show" identifier="ShowMessagesSegue" id="jUA-Am-VEB"/>
                     </connections>
                 </tableViewController>
