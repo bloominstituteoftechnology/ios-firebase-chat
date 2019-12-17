@@ -52,4 +52,18 @@ class ChatController {
         }
     }
     
+    func observeMessages(
+        for chatroom: ChatRoom,
+        callback: @escaping (Result<[Message], Error>) -> Void)
+    {
+        let roomHandle = databaseReference.child(messagesKey).child(chatroom.id)
+        self.chatroomObserver = roomHandle.observe(.value, with: { snapshot in
+            let messagesByID = snapshot.value as? [String: Message] ?? [:]
+            let messages = Array<Message>(messagesByID.values)
+            
+            callback(.success(messages))
+        }) { error in
+            callback(.failure(error))
+        }
+    }
 }
