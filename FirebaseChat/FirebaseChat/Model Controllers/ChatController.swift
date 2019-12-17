@@ -15,6 +15,7 @@ class ChatController {
     
     private let chatroomsKey = "chatrooms"
     private let messagesKey = "messages"
+    private let currentUserKey = "currentUser"
     
     var chatrooms = [ChatRoom]()
     private(set) var currentUser: Sender?
@@ -23,6 +24,17 @@ class ChatController {
     
     init() {
         databaseReference = Database.database().reference()
+    }
+    
+    func attemptToLogIn(_ didSucced: (Bool) -> Void) {
+        if let currentUserDictionary = UserDefaults.standard
+            .value(forKey: currentUserKey) as? [String: String]
+        {
+            currentUser = Sender(dictionary: currentUserDictionary)
+            didSucced(true)
+        } else {
+            didSucced(false)
+        }
     }
     
     func login(with user: Sender) {
