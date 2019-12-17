@@ -23,7 +23,6 @@ struct Message: Codable, Equatable, MessageType {
             return Sender(senderId: senderId, displayName: displayName)
         }
         
-    
         init(sender: Sender, text: String, sentDate: Date = Date(), messageId: String = UUID().uuidString) {
             self.text = text
             self.displayName = sender.displayName
@@ -70,6 +69,4 @@ struct Message: Codable, Equatable, MessageType {
             case senderId
             case sender = "sender"
         }
-        
-        
     }

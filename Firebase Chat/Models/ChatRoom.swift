@@ -10,8 +10,6 @@ import Foundation
 import MessageKit
 
 class ChatRoom: Codable, Equatable {
-
-    
     
     let title: String
     var messages: [Message]
@@ -38,7 +36,6 @@ class ChatRoom: Codable, Equatable {
         self.identifier = identifier
     }
 
-    
     // Don't take it out, you need this!
     static func ==(lhs: ChatRoom, rhs: ChatRoom) -> Bool {
         return lhs.title == rhs.title &&

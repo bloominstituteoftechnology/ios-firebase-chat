@@ -23,7 +23,6 @@ class MessagesDetailViewController: MessagesViewController, MessageInputBarDeleg
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
     }
-
 }
 
 extension MessagesDetailViewController: MessagesDataSource {
@@ -62,7 +61,6 @@ extension MessagesDetailViewController: MessagesLayoutDelegate {
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 16
     }
-    
 }
 
 extension MessagesDetailViewController: MessagesDisplayDelegate {
@@ -89,7 +87,6 @@ extension MessagesDetailViewController: MessagesDisplayDelegate {
     func inputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         guard let chatRoom = chatRoom,
             let currentSender = currentSender() as? Sender else { return }
-        
         
         self.chatController?.createMessage(in: chatRoom, with: text, sender: currentSender, completion: {
             

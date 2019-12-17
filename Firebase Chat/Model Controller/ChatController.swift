@@ -49,8 +49,8 @@ class ChatController {
         let chatRoom = ChatRoom(title: title)
         
         let requestURL = ChatController.baseURL
-            .appendingPathComponent(chatRoom.identifier)
-            .appendingPathExtension("json")
+                                            .appendingPathComponent(chatRoom.identifier)
+                                            .appendingPathExtension("json")
         
         var request = URLRequest(url: requestURL)
         
@@ -69,12 +69,7 @@ class ChatController {
                 completion()
                 return
             }
-            
-//            guard let data = data else {
-//                NSLog("Error decoding chatRoom data: \(error)")
-//                completion()
-//                return
-//            }
+        
             self.chatRooms.append(chatRoom)
             completion()
             
@@ -83,9 +78,7 @@ class ChatController {
     
     func createMessage(in chatRoom: ChatRoom, with text: String, sender: Sender, completion: @escaping () -> Void) {
         
-//        let message = Message(sender: sender, text: text)
-        
-        guard let index = chatRooms.firstIndex(of: chatRoom) else { // instead of index(depricated, I used  firstIndex
+        guard let index = chatRooms.firstIndex(of: chatRoom) else {
             completion()
             return }
         
@@ -94,8 +87,8 @@ class ChatController {
         chatRooms[index].messages.append(message)
         
         let requestURL = ChatController.baseURL.appendingPathComponent(chatRoom.identifier)
-                                .appendingPathComponent("messages")
-                                .appendingPathExtension("json")
+                                                .appendingPathComponent("messages")
+                                                .appendingPathExtension("json")
         
         var request = URLRequest(url: requestURL)
         
@@ -116,41 +109,6 @@ class ChatController {
             }
             
             completion()
-            
         }.resume()
     }
-    
-    
-//    func createMessage(in messageThread: Message, withText text: String, sender: Sender, completion: @escaping () -> Void) {
-//
-//        guard let index = chatRooms.index(of: ChatRoom) else { completion(); return }
-//
-//        let message = Message(sender: sender, text: text)
-//
-//        chatRooms[index].messages.append(message)
-//
-//        let requestURL = ChatController.baseURL.appendingPathComponent(ChatRoom.id).appendingPathComponent("messages").appendingPathExtension("json")
-//
-//        var request = URLRequest(url: requestURL)
-//
-//        request.httpMethod = HTTPMethod.post.rawValue
-//
-//        do {
-//            request.httpBody = try JSONEncoder().encode(message)
-//        } catch {
-//            NSLog("Error encoding message to JSON: \(error)")
-//        }
-//
-//        URLSession.shared.dataTask(with: request) { (data, _, error) in
-//
-//            if let error = error {
-//                NSLog("Error with message creation data task: \(error)")
-//                completion()
-//                return
-//            }
-//
-//            completion()
-//
-//        }.resume()
-//    }
 }

@@ -58,7 +58,6 @@ class ChatsTableViewController: UITableViewController {
         }
     }
     
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -70,7 +69,6 @@ class ChatsTableViewController: UITableViewController {
     }
     
     // MARK: - Actions
-    
     
     @IBAction func createChatRoom(_ sender: UITextField) {
         newChatRoomTextField.resignFirstResponder()
@@ -112,6 +110,4 @@ class ChatsTableViewController: UITableViewController {
         }
     }
 }
-
-
 
