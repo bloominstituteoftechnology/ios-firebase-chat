@@ -37,4 +37,19 @@ class ChatController {
             .setValue(message)
     }
     
+    func fetchChatrooms(completion: @escaping (Result<[ChatRoom], Error>) -> Void) {
+        let chats = databaseReference.child(chatroomsKey)
+        chats.observeSingleEvent(of: .value, with: { snapshot in
+            guard let chatroomsByID = snapshot.value as? [String: ChatRoom] else {
+                completion(.failure(NetworkError.badData))
+                return
+            }
+            let chatrooms = Array<ChatRoom>(chatroomsByID.values)
+            
+            completion(.success(chatrooms))
+        }) { error in
+            completion(.failure(error))
+        }
+    }
+    
 }
