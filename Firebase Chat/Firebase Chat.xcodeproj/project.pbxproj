@@ -20,6 +20,7 @@
 		FA735A90237B6F6400D59A82 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A8F237B6F6400D59A82 /* ChatController.swift */; };
 		FA735A93237B7BDB00D59A82 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A92237B7BDB00D59A82 /* HTTPMethod.swift */; };
 		FA735A95237C3F4D00D59A82 /* Sender+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA735A94237C3F4D00D59A82 /* Sender+UserDefaults.swift */; };
+		FAFB0E7023A96E5000A8AAF5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB0E6F23A96E5000A8AAF5 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FA735A8F237B6F6400D59A82 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		FA735A92237B7BDB00D59A82 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		FA735A94237C3F4D00D59A82 /* Sender+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sender+UserDefaults.swift"; sourceTree = "<group>"; };
+		FAFB0E6F23A96E5000A8AAF5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			children = (
 				FA735A8C237B6CF100D59A82 /* ChatRoom.swift */,
 				FA735A94237C3F4D00D59A82 /* Sender+UserDefaults.swift */,
+				FAFB0E6F23A96E5000A8AAF5 /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				FA735A8D237B6CF100D59A82 /* ChatRoom.swift in Sources */,
 				FA735A6C237B586200D59A82 /* AppDelegate.swift in Sources */,
 				FA735A90237B6F6400D59A82 /* ChatController.swift in Sources */,
+				FAFB0E7023A96E5000A8AAF5 /* Message.swift in Sources */,
 				FA735A6E237B586200D59A82 /* SceneDelegate.swift in Sources */,
 				FA735A93237B7BDB00D59A82 /* HTTPMethod.swift in Sources */,
 				FA735A95237C3F4D00D59A82 /* Sender+UserDefaults.swift in Sources */,

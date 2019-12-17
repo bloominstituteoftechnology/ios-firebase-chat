@@ -101,11 +101,14 @@ extension MessagesDetailViewController: MessagesDisplayDelegate {
         guard let chatRoom = chatRoom,
             let currentSender = currentSender() as? Sender else { return }
         
-        chatController.createMessage(in: chatRoom, withText: text, sender: currentSender, completion: {
+        
+        self.chatController?.createMessage(in: chatRoom, with: text, sender: currentSender, completion: {
+            
             DispatchQueue.main.async {
                 self.messagesCollectionView.reloadData()
             }
         })
+
     }
     
 }
