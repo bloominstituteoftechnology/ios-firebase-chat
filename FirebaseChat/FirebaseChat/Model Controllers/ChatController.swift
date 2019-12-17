@@ -7,34 +7,46 @@
 //
 
 import Foundation
+import MessageKit
 import FirebaseDatabase
 
 class ChatController {
-    var databaseReference: DatabaseReference
+    private var databaseReference: DatabaseReference
     
-    let chatroomsKey = "chatrooms"
-    let messagesKey = "messages"
+    private let chatroomsKey = "chatrooms"
+    private let messagesKey = "messages"
     
     var chatrooms = [ChatRoom]()
+    private(set) var currentUser: Sender?
     
-    var chatroomObserver: UInt?
+    private var chatroomObserver: UInt?
     
     init() {
         databaseReference = Database.database().reference()
     }
     
-    func create(_ chatroom: ChatRoom) {
-        databaseReference.child(chatroomsKey).child(chatroom.id)
-            .setValue(chatroom)
+    func login(with user: Sender) {
+        currentUser = user
+    }
+    
+    func create(_ chatroom: ChatRoom, completion: @escaping (Error?) -> Void) {
+        let room = databaseReference.child(chatroomsKey).child(chatroom.id)
+        
+        room.setValue(chatroom) { error, _ in
+            completion(error)
+        }
     }
     
     func create(
         _ message: Message,
         in chatroom: ChatRoom,
-        completion: (Error?) -> Void)
+        completion: @escaping (Error?) -> Void)
     {
-        databaseReference.child(messagesKey).child(chatroom.id)
-            .setValue(message)
+        let room = databaseReference.child(messagesKey).child(chatroom.id)
+        
+        room.setValue(message) { (error, database) in
+            completion(error)
+        }
     }
     
     func fetchChatrooms(completion: @escaping (Result<[ChatRoom], Error>) -> Void) {
@@ -45,6 +57,7 @@ class ChatController {
                 return
             }
             let chatrooms = Array<ChatRoom>(chatroomsByID.values)
+            self.chatrooms = chatrooms
             
             completion(.success(chatrooms))
         }) { error in
