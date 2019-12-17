@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ChatRoomDetailViewController.swift
 //  FirebaseChat
 //
 //  Created by Lambda_School_Loaner_204 on 12/17/19.
@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import MessageKit
+import InputBarAccessoryView
 
-class ViewController: UIViewController {
+class ChatRoomDetailViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
