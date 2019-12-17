@@ -10,6 +10,7 @@
 		990E352E23A9777B00264EFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 990E352D23A9777B00264EFE /* GoogleService-Info.plist */; };
 		990E353023A978C400264EFE /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E352F23A978C400264EFE /* ChatController.swift */; };
 		990E353623A97D7E00264EFE /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E353523A97D7E00264EFE /* NetworkError.swift */; };
+		990E353823A99B3100264EFE /* Sender+UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990E353723A99B3100264EFE /* Sender+UserDefaults.swift */; };
 		994AD9F123A968E100C6F012 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994AD9F023A968E100C6F012 /* AppDelegate.swift */; };
 		994AD9F323A968E100C6F012 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994AD9F223A968E100C6F012 /* SceneDelegate.swift */; };
 		994AD9F823A968E100C6F012 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 994AD9F623A968E100C6F012 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		990E352D23A9777B00264EFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		990E352F23A978C400264EFE /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		990E353523A97D7E00264EFE /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		990E353723A99B3100264EFE /* Sender+UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sender+UserDefaults.swift"; sourceTree = "<group>"; };
 		994AD9ED23A968E100C6F012 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		994AD9F023A968E100C6F012 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		994AD9F223A968E100C6F012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				99698C0B23A96D370099B9D2 /* Message.swift */,
 				99698C0D23A96D3D0099B9D2 /* ChatRoom.swift */,
 				990E353523A97D7E00264EFE /* NetworkError.swift */,
+				990E353723A99B3100264EFE /* Sender+UserDefaults.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				990E353023A978C400264EFE /* ChatController.swift in Sources */,
 				99698C0A23A96C8D0099B9D2 /* ChatroomViewController.swift in Sources */,
 				99698C0C23A96D370099B9D2 /* Message.swift in Sources */,
+				990E353823A99B3100264EFE /* Sender+UserDefaults.swift in Sources */,
 				99698C0823A96C7A0099B9D2 /* MessagesTableViewController.swift in Sources */,
 				994AD9F323A968E100C6F012 /* SceneDelegate.swift in Sources */,
 				990E353623A97D7E00264EFE /* NetworkError.swift in Sources */,
