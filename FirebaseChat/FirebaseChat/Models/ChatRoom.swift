@@ -23,7 +23,7 @@ struct ChatRoom {
 // MARK: - Codable
 
 extension ChatRoom: Codable {
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case name
         case id
         case messages
@@ -34,8 +34,14 @@ extension ChatRoom: Codable {
         
         let name = try container.decode(String.self, forKey: .name)
         let id = try container.decode(String.self, forKey: .id)
-        let messages = try container.decode([Message].self, forKey: .messages)
         
-        self.init(name: name, id: id, messages: messages)
+        self.init(name: name, id: id, messages: [])
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        
+        try container.encode(name, forKey: .name)
+        try container.encode(id, forKey: .id)
     }
 }

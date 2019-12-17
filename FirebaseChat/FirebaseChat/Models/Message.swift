@@ -33,7 +33,7 @@ struct Message: MessageType {
 // MARK: - Codable
 
 extension Message: Codable {
-    enum CodingKeys: CodingKey {
+    enum CodingKeys: String, CodingKey {
         case senderName
         case senderID
         case text
