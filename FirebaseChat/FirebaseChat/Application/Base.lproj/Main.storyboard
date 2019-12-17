@@ -42,7 +42,13 @@
                             <outlet property="delegate" destination="PmC-5y-RD3" id="5G4-0G-rS7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="R5D-Wx-JbS"/>
+                    <navigationItem key="navigationItem" id="R5D-Wx-JbS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="6wX-JY-lYJ">
+                            <connections>
+                                <segue destination="8oO-or-dPF" kind="show" identifier="NewChatRoomSegue" id="wsO-k1-42I"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kZD-DL-bNO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,4 +89,7 @@
             <point key="canvasLocation" x="-55.200000000000003" y="168.4729064039409"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wsO-k1-42I"/>
+    </inferredMetricsTieBreakers>
 </document>
