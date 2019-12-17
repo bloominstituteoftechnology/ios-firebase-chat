@@ -22,4 +22,19 @@ class ChatController {
     init() {
         databaseReference = Database.database().reference()
     }
+    
+    func create(_ chatroom: ChatRoom) {
+        databaseReference.child(chatroomsKey).child(chatroom.id)
+            .setValue(chatroom)
+    }
+    
+    func create(
+        _ message: Message,
+        in chatroom: ChatRoom,
+        completion: (Error?) -> Void)
+    {
+        databaseReference.child(messagesKey).child(chatroom.id)
+            .setValue(message)
+    }
+    
 }
