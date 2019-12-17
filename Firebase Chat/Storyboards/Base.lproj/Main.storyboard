@@ -45,6 +45,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="m3w-l7-Ofw" kind="show" identifier="ShowMessagesSegue" id="jJW-1L-ImI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,7 +58,6 @@
                     <navigationItem key="navigationItem" id="QHk-AE-pIv"/>
                     <connections>
                         <outlet property="newChatRoomTextField" destination="yHz-b3-8Mg" id="xaL-bx-gwZ"/>
-                        <segue destination="m3w-l7-Ofw" kind="show" identifier="ShowMessagesSegue" id="jUA-Am-VEB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vt0-1U-lcO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
