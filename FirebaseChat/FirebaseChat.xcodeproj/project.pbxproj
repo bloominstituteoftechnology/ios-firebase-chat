@@ -19,6 +19,7 @@
 		BB93B1B223A97FF2008E91B4 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B123A97FF2008E91B4 /* MessageModel.swift */; };
 		BB93B1B423A98002008E91B4 /* ChatRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B323A98002008E91B4 /* ChatRoomModel.swift */; };
 		BB93B1B723A9887C008E91B4 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B623A9887C008E91B4 /* ChatRoomController.swift */; };
+		BB93B1BA23A9CAE0008E91B4 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B923A9CAE0008E91B4 /* MessageController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		BB93B1B123A97FF2008E91B4 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		BB93B1B323A98002008E91B4 /* ChatRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomModel.swift; sourceTree = "<group>"; };
 		BB93B1B623A9887C008E91B4 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		BB93B1B923A9CAE0008E91B4 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		C0D4A2DCC328E76DD728FF14 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BB93B1B623A9887C008E91B4 /* ChatRoomController.swift */,
+				BB93B1B923A9CAE0008E91B4 /* MessageController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				BB93B1B223A97FF2008E91B4 /* MessageModel.swift in Sources */,
 				BB93B1AF23A97D65008E91B4 /* ChatRoomDetailViewController.swift in Sources */,
 				BB93B1B423A98002008E91B4 /* ChatRoomModel.swift in Sources */,
+				BB93B1BA23A9CAE0008E91B4 /* MessageController.swift in Sources */,
 				BB93B1AD23A97D3C008E91B4 /* ChatRoomTableViewController.swift in Sources */,
 				BB93B19723A97644008E91B4 /* AppDelegate.swift in Sources */,
 				BB93B19923A97644008E91B4 /* SceneDelegate.swift in Sources */,

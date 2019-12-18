@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ssQ-21-vbL" kind="show" identifier="ShowChatRoomDetail" id="7wR-Ce-ZgM"/>
+                                    <segue destination="ssQ-21-vbL" kind="show" identifier="ShowChatRoomDetailSegue" id="7wR-Ce-ZgM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
