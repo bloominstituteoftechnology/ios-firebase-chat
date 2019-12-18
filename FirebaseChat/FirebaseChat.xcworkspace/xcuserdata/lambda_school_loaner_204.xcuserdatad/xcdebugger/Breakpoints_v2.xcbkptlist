@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DD6B98AB-8D04-464E-882E-C13BFE4A0538"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADE18998-D370-4F38-A23C-F68A48B7D968"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseChat/View Controllers/ChatRoomDetailViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9E30F4B-DEDC-4664-83D9-72E8BB088CF1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseChat/Model Controllers/ChatRoomController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "fetchChatRooms(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E9E30F4B-DEDC-4664-83D9-72E8BB088CF1 - ba795d88c8146b09"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FirebaseChat.ChatRoomController.fetchChatRooms(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "FirebaseChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lambda_school_loaner_204/Documents/iOS11/Unit%203%20-%20Architecture%20and%20Testing/Sprint%203%20-%20Modularity/ios-firebase-chat/FirebaseChat/FirebaseChat/Model%20Controllers/ChatRoomController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "E9E30F4B-DEDC-4664-83D9-72E8BB088CF1 - f94eeba2eca75103"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in FirebaseChat.ChatRoomController.fetchChatRooms(completion: () -&gt; ()) -&gt; ()"
+                  moduleName = "FirebaseChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lambda_school_loaner_204/Documents/iOS11/Unit%203%20-%20Architecture%20and%20Testing/Sprint%203%20-%20Modularity/ios-firebase-chat/FirebaseChat/FirebaseChat/Model%20Controllers/ChatRoomController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "210">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D0CCDE34-18B1-47DB-BA0B-9F070B84D061"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseChat/Model Controllers/ChatRoomController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "createFetchedChatRooms(with:from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
