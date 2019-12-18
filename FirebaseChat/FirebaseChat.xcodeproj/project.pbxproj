@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4B169E7A23A9948C0084C24B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B169E7923A9948C0084C24B /* AppDelegate.swift */; };
 		4B169E7C23A9948C0084C24B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B169E7B23A9948C0084C24B /* SceneDelegate.swift */; };
-		4B169E7E23A9948C0084C24B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B169E7D23A9948C0084C24B /* ViewController.swift */; };
 		4B169E8123A9948C0084C24B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B169E7F23A9948C0084C24B /* Main.storyboard */; };
 		4B169E8423A9948C0084C24B /* FirebaseChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4B169E8223A9948C0084C24B /* FirebaseChat.xcdatamodeld */; };
 		4B169E8623A9948D0084C24B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B169E8523A9948D0084C24B /* Assets.xcassets */; };
 		4B169E8923A9948D0084C24B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B169E8723A9948D0084C24B /* LaunchScreen.storyboard */; };
 		4B169E9123A995A20084C24B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B169E9023A995A10084C24B /* GoogleService-Info.plist */; };
+		4B169E9323A9A0AC0084C24B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B169E9223A9A0AC0084C24B /* MessageViewController.swift */; };
+		4B169E9523A9B1620084C24B /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B169E9423A9B1620084C24B /* MessageTableViewController.swift */; };
 		52623E4BCEE616DAE4341DBE /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3860719E221F670B270EA52C /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,13 +25,14 @@
 		4B169E7623A9948C0084C24B /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B169E7923A9948C0084C24B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B169E7B23A9948C0084C24B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4B169E7D23A9948C0084C24B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4B169E8023A9948C0084C24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B169E8323A9948C0084C24B /* FirebaseChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirebaseChat.xcdatamodel; sourceTree = "<group>"; };
 		4B169E8523A9948D0084C24B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B169E8823A9948D0084C24B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B169E8A23A9948D0084C24B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B169E9023A995A10084C24B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4B169E9223A9A0AC0084C24B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		4B169E9423A9B1620084C24B /* MessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		7FB02BA86F2CA85081A163DA /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +62,6 @@
 				074EE5D89EE6015544F8E652 /* Pods-FirebaseChat.debug.xcconfig */,
 				7FB02BA86F2CA85081A163DA /* Pods-FirebaseChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,7 +88,24 @@
 			children = (
 				4B169E7923A9948C0084C24B /* AppDelegate.swift */,
 				4B169E7B23A9948C0084C24B /* SceneDelegate.swift */,
-				4B169E7D23A9948C0084C24B /* ViewController.swift */,
+				4B169E9623A9B1660084C24B /* View Controllers */,
+				4B169E9723A9B1770084C24B /* Resources */,
+			);
+			path = FirebaseChat;
+			sourceTree = "<group>";
+		};
+		4B169E9623A9B1660084C24B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B169E9223A9A0AC0084C24B /* MessageViewController.swift */,
+				4B169E9423A9B1620084C24B /* MessageTableViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4B169E9723A9B1770084C24B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				4B169E7F23A9948C0084C24B /* Main.storyboard */,
 				4B169E8523A9948D0084C24B /* Assets.xcassets */,
 				4B169E8723A9948D0084C24B /* LaunchScreen.storyboard */,
@@ -95,7 +113,7 @@
 				4B169E8223A9948C0084C24B /* FirebaseChat.xcdatamodeld */,
 				4B169E9023A995A10084C24B /* GoogleService-Info.plist */,
 			);
-			path = FirebaseChat;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B169E7E23A9948C0084C24B /* ViewController.swift in Sources */,
 				4B169E7A23A9948C0084C24B /* AppDelegate.swift in Sources */,
 				4B169E8423A9948C0084C24B /* FirebaseChat.xcdatamodeld in Sources */,
+				4B169E9523A9B1620084C24B /* MessageTableViewController.swift in Sources */,
+				4B169E9323A9A0AC0084C24B /* MessageViewController.swift in Sources */,
 				4B169E7C23A9948C0084C24B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
