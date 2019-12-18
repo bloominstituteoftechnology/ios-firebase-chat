@@ -17,10 +17,10 @@ class ChatController {
     private let messagesKey = "messages"
     private let currentUserKey = "currentUser"
     
-    var chatrooms = [ChatRoom]()
+    private(set) var chatrooms = [ChatRoom]()
     private(set) var currentUser: Sender?
     
-    private var chatroomObserver: UInt?
+    private var observers = [String: UInt]()
     
     init() {
         databaseReference = Database.database().reference()
@@ -44,7 +44,7 @@ class ChatController {
     func create(_ chatroom: ChatRoom, completion: @escaping (Error?) -> Void) {
         let room = databaseReference.child(chatroomsKey).child(chatroom.id)
         
-        room.setValue(chatroom) { error, _ in
+        room.setValue(chatroom.dictionaryRepresentation) { error, _ in
             completion(error)
         }
     }
@@ -54,9 +54,24 @@ class ChatController {
         in chatroom: ChatRoom,
         completion: @escaping (Error?) -> Void)
     {
-        let room = databaseReference.child(messagesKey).child(chatroom.id)
+        let messageRef = databaseReference
+            .child(messagesKey)
+            .child(chatroom.id)
+            .child(message.messageId)
         
-        room.setValue(message) { (error, database) in
+        messageRef.setValue(message.dictionaryRepresentation) { error, _ in
+            if let error = error {
+                completion(error)
+                return
+            }
+        }
+        
+        let updateDateAsInterval = message.sentDate.timeIntervalSinceReferenceDate
+        let chatroomUpdatedRef = databaseReference
+            .child(chatroomsKey)
+            .child(chatroom.id)
+            .child(ChatRoom.DictionaryKey.lastUpdated.rawValue)
+        chatroomUpdatedRef.setValue(updateDateAsInterval) { error, database in
             completion(error)
         }
     }
@@ -64,14 +79,23 @@ class ChatController {
     func fetchChatrooms(completion: @escaping (Result<[ChatRoom], Error>) -> Void) {
         let chats = databaseReference.child(chatroomsKey)
         chats.observeSingleEvent(of: .value, with: { snapshot in
-            guard let chatroomsByID = snapshot.value as? [String: ChatRoom] else {
+            guard let chatroomsByID = snapshot.value as? [String: Any] else {
                 completion(.failure(NetworkError.badData))
                 return
             }
-            let chatrooms = Array<ChatRoom>(chatroomsByID.values)
-            self.chatrooms = chatrooms
+            var fetchedChatrooms = [ChatRoom]()
+            for (_, chatroomRep) in chatroomsByID {
+                guard
+                    let chatroomRep = chatroomRep as? [String: Any],
+                    let chatroom = ChatRoom(from: chatroomRep)
+                    else { continue }
+                fetchedChatrooms.append(chatroom)
+            }
+            fetchedChatrooms.sort { $0.lastUpdated > $1.lastUpdated }
             
-            completion(.success(chatrooms))
+            self.chatrooms = fetchedChatrooms
+            
+            completion(.success(fetchedChatrooms))
         }) { error in
             completion(.failure(error))
         }
@@ -81,14 +105,32 @@ class ChatController {
         for chatroom: ChatRoom,
         callback: @escaping (Result<[Message], Error>) -> Void)
     {
-        let roomHandle = databaseReference.child(messagesKey).child(chatroom.id)
-        self.chatroomObserver = roomHandle.observe(.value, with: { snapshot in
-            let messagesByID = snapshot.value as? [String: Message] ?? [:]
-            let messages = Array<Message>(messagesByID.values)
+        if observers[chatroom.id] != nil { return }
+        
+        let roomRef = databaseReference.child(messagesKey).child(chatroom.id)
+        self.observers[chatroom.id] = roomRef.observe(.value, with: { snapshot in
+            let messagesByID = snapshot.value as? [String: Any] ?? [:]
+            
+            var messages = [Message]()
+            for (_, messageRep) in messagesByID {
+                guard
+                    let messageRep = messageRep as? [String: Any],
+                    let message = Message(from: messageRep)
+                    else { continue }
+                messages.append(message)
+            }
             
             callback(.success(messages))
         }) { error in
             callback(.failure(error))
+        }
+    }
+    
+    func stopObserving() {
+        for (id, handle) in observers {
+            databaseReference.child(messagesKey).child(id)
+                .removeObserver(withHandle: handle)
+            observers[id] = nil
         }
     }
 }

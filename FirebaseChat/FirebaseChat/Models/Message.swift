@@ -30,10 +30,10 @@ struct Message: MessageType {
     
 }
 
-// MARK: - Codable
+// MARK: - DictionaryRepresentation
 
-extension Message: Codable {
-    enum CodingKeys: String, CodingKey {
+extension Message {
+    enum DictionaryKey: String {
         case senderName
         case senderID
         case text
@@ -41,14 +41,39 @@ extension Message: Codable {
         case messageId
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
+    var dictionaryRepresentation: [String: Any] {
+        var dictionary = [String: Any]()
         
-        let senderName = try container.decode(String.self, forKey: .senderName)
-        let senderID = try container.decode(String.self, forKey: .senderID)
-        let text = try container.decode(String.self, forKey: .text)
-        let sentDate = try container.decode(Date.self, forKey: .sentDate)
-        let messageID = try container.decode(String.self, forKey: .messageId)
+        // helper
+        func encode<T>(_ value: T, for key: DictionaryKey) {
+            dictionary[key.rawValue] = value
+        }
+        
+        encode(sender.displayName, for: .senderName)
+        encode(sender.senderId, for: .senderID)
+        encode(text, for: .text)
+        encode(sentDate.timeIntervalSinceReferenceDate, for: .sentDate)
+        encode(messageId, for: .messageId)
+        
+        return dictionary
+    }
+    
+    init?(from dictionary: [String: Any]) {
+        // helper
+        func decode<T>(_ type: T.Type, for key: DictionaryKey) -> T? {
+            return dictionary[key.rawValue] as? T
+        }
+        
+        guard
+            let senderName = decode(String.self, for: .senderName),
+            let senderID = decode(String.self, for: .senderID),
+            let text = decode(String.self, for: .text),
+            let sentDateAsIntervalFromRef = decode(
+                Double.self,
+                for: .sentDate),
+            let messageID = decode(String.self, for: .messageId)
+            else { return nil }
+        let sentDate = Date(timeIntervalSinceNow: sentDateAsIntervalFromRef)
         
         self.init(
             sender: Sender(
@@ -57,15 +82,5 @@ extension Message: Codable {
             text: text,
             sentDate: sentDate,
             messageId: messageID)
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        
-        try container.encode(sender.displayName, forKey: .senderName)
-        try container.encode(sender.senderId, forKey: .senderID)
-        try container.encode(text, forKey: .text)
-        try container.encode(sentDate, forKey: .sentDate)
-        try container.encode(messageId, forKey: .messageId)
     }
 }

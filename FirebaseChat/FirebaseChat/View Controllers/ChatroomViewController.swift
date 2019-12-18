@@ -14,11 +14,9 @@ class ChatroomViewController: MessagesViewController {
     // MARK: - Properties
     
     var chatController: ChatController!
-    var chatroom: ChatRoom? {
-        didSet {
-            DispatchQueue.main.async { self.title = self.chatroom?.name }
-        }
-    }
+    var chatroom: ChatRoom?
+    
+    let newChatTitle = "Create new chatroom"
     
     // MARK: - View Lifecycle
     
@@ -29,6 +27,20 @@ class ChatroomViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        if let chatroom = chatroom {
+            chatController.observeMessages(
+                for: chatroom,
+                callback: messagesDidUpdate(withResult:))
+            self.title = chatroom.name
+        } else {
+            self.title = newChatTitle
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        chatController.stopObserving()
     }
     
     // MARK: - Helper Methods
@@ -60,12 +72,42 @@ class ChatroomViewController: MessagesViewController {
     {
         guard !text.isEmpty else { return }
         
+        self.title = text
+        
         chatroom = ChatRoom(name: text)
         chatController?.create(ChatRoom(name: text)) { error in
             if let error = error {
                 self.chatroom = nil
+                self.title = self.newChatTitle
                 didCompleteWithErrorMessage("Error creating new chatroom: \(error)")
-            } else { didCompleteWithErrorMessage(nil) }
+            } else {
+                self.chatController.observeMessages(
+                    for: self.chatroom!,
+                    callback: self.messagesDidUpdate(withResult:))
+                didCompleteWithErrorMessage(nil)
+            }
+        }
+    }
+    
+    private func messagesDidUpdate(withResult result: Result<[Message], Error>) {
+        do {
+            chatroom?.setMessages(try result.get())
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        } catch {
+            NSLog("Error updating messages from server: \(error)")
+        }
+    }
+    
+    private func updateObservers() {
+        if let chatroom = chatroom {
+            chatController.observeMessages(
+                for: chatroom,
+                callback: messagesDidUpdate(withResult:))
+        } else {
+            chatController.stopObserving()
         }
     }
 }
@@ -134,7 +176,6 @@ extension ChatroomViewController: MessagesDisplayDelegate {
                 DispatchQueue.main.async {
                     inputBar.inputTextView.text = text
                 }
-                return
             }
             DispatchQueue.main.async {
                 self.messagesCollectionView.reloadData()

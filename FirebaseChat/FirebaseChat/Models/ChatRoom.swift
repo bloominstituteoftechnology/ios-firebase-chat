@@ -11,37 +11,85 @@ import Foundation
 struct ChatRoom {
     var name: String
     let id: String
-    var messages: [Message]
+    private(set) var messages: [Message]
     
-    init(name: String, id: String = UUID().uuidString, messages: [Message] = []) {
+    var creationDate: Date
+    var lastUpdated: Date
+    
+    init(
+        name: String,
+        id: String = UUID().uuidString,
+        messages: [Message] = [],
+        creationDate: Date = Date(),
+        lastUpdated: Date = Date())
+    {
         self.name = name
         self.id = id
         self.messages = messages
+        self.creationDate = creationDate
+        self.lastUpdated = lastUpdated
+    }
+    
+    mutating func setMessages(_ newMessages: [Message]) {
+        var sortedMessages = newMessages
+        var max: Date = lastUpdated
+        sortedMessages.sort {
+            let lessThan = $0.sentDate < $1.sentDate
+            max = lessThan ? $1.sentDate : $0.sentDate
+            return lessThan
+        }
+        lastUpdated = max
+        messages = sortedMessages
     }
 }
 
-// MARK: - Codable
+// MARK: - DictionaryRepresentation
 
-extension ChatRoom: Codable {
-    enum CodingKeys: String, CodingKey {
+extension ChatRoom {
+    enum DictionaryKey: String {
         case name
         case id
         case messages
+        case creationDate
+        case lastUpdated
     }
     
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
+    var dictionaryRepresentation: [String: Any] {
+        var dictionary = [String: Any]()
         
-        let name = try container.decode(String.self, forKey: .name)
-        let id = try container.decode(String.self, forKey: .id)
+        // helper
+        func encode<T>(_ value: T, for key: DictionaryKey) {
+            dictionary[key.rawValue] = value
+        }
         
-        self.init(name: name, id: id, messages: [])
+        encode(name, for: .name)
+        encode(id, for: .id)
+        encode(creationDate.timeIntervalSinceReferenceDate, for: .creationDate)
+        encode(lastUpdated.timeIntervalSinceReferenceDate, for: .lastUpdated)
+        
+        return dictionary
     }
     
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
+    init?(from dictionary: [String: Any]) {
+        // helper
+        func decode<T>(_ type: T.Type, for key: DictionaryKey) -> T? {
+            return dictionary[key.rawValue] as? T
+        }
         
-        try container.encode(name, forKey: .name)
-        try container.encode(id, forKey: .id)
+        guard
+            let name = decode(String.self, for: .name),
+            let id = decode(String.self, for: .id)
+            else { return nil }
+        
+        let creationInterval = decode(Double.self, for: .creationDate)
+        let updatedInterval = decode(Double.self, for: .lastUpdated)
+        
+        self.init(
+            name: name,
+            id: id,
+            creationDate: Date(timeIntervalSinceReferenceDate:
+                creationInterval ?? Date().timeIntervalSinceReferenceDate),
+            lastUpdated: Date(timeIntervalSinceReferenceDate:
+                updatedInterval ?? Date().timeIntervalSinceReferenceDate))
     }
 }
