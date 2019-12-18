@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat Room Table View Controller-->
+        <!--Chat Rooms-->
         <scene sceneID="0ln-wv-W6t">
             <objects>
                 <tableViewController id="TbT-8O-PhR" customClass="ChatRoomTableViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,8 +42,12 @@
                             <outlet property="delegate" destination="TbT-8O-PhR" id="NV3-6Y-q8E"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="R0A-Wy-dTv">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N0U-sd-0yW"/>
+                    <navigationItem key="navigationItem" title="Chat Rooms" id="R0A-Wy-dTv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N0U-sd-0yW">
+                            <connections>
+                                <action selector="createChatRoom:" destination="TbT-8O-PhR" id="fMg-s3-Mrt"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYo-8J-EUc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,8 +75,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ly5-5g-Zcs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ntH-bE-O12">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ntH-bE-O12">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

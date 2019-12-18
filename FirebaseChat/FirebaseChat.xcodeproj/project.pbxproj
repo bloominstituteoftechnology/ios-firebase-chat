@@ -16,6 +16,9 @@
 		BB93B1AB23A9788B008E91B4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB93B1AA23A9788B008E91B4 /* GoogleService-Info.plist */; };
 		BB93B1AD23A97D3C008E91B4 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1AC23A97D3C008E91B4 /* ChatRoomTableViewController.swift */; };
 		BB93B1AF23A97D65008E91B4 /* ChatRoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1AE23A97D65008E91B4 /* ChatRoomDetailViewController.swift */; };
+		BB93B1B223A97FF2008E91B4 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B123A97FF2008E91B4 /* MessageModel.swift */; };
+		BB93B1B423A98002008E91B4 /* ChatRoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B323A98002008E91B4 /* ChatRoomModel.swift */; };
+		BB93B1B723A9887C008E91B4 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB93B1B623A9887C008E91B4 /* ChatRoomController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		BB93B1AA23A9788B008E91B4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BB93B1AC23A97D3C008E91B4 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
 		BB93B1AE23A97D65008E91B4 /* ChatRoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDetailViewController.swift; sourceTree = "<group>"; };
+		BB93B1B123A97FF2008E91B4 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		BB93B1B323A98002008E91B4 /* ChatRoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomModel.swift; sourceTree = "<group>"; };
+		BB93B1B623A9887C008E91B4 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		C0D4A2DCC328E76DD728FF14 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +90,8 @@
 		BB93B19523A97644008E91B4 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
+				BB93B1B523A98008008E91B4 /* Models */,
+				BB93B1B823A98B34008E91B4 /* Model Controllers */,
 				BB93B1B023A97D73008E91B4 /* View Controllers */,
 				BB93B19623A97644008E91B4 /* AppDelegate.swift */,
 				BB93B19823A97644008E91B4 /* SceneDelegate.swift */,
@@ -103,6 +111,23 @@
 				BB93B1AE23A97D65008E91B4 /* ChatRoomDetailViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BB93B1B523A98008008E91B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB93B1B123A97FF2008E91B4 /* MessageModel.swift */,
+				BB93B1B323A98002008E91B4 /* ChatRoomModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BB93B1B823A98B34008E91B4 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB93B1B623A9887C008E91B4 /* ChatRoomController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,10 +246,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB93B1B223A97FF2008E91B4 /* MessageModel.swift in Sources */,
 				BB93B1AF23A97D65008E91B4 /* ChatRoomDetailViewController.swift in Sources */,
+				BB93B1B423A98002008E91B4 /* ChatRoomModel.swift in Sources */,
 				BB93B1AD23A97D3C008E91B4 /* ChatRoomTableViewController.swift in Sources */,
 				BB93B19723A97644008E91B4 /* AppDelegate.swift in Sources */,
 				BB93B19923A97644008E91B4 /* SceneDelegate.swift in Sources */,
+				BB93B1B723A9887C008E91B4 /* ChatRoomController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
