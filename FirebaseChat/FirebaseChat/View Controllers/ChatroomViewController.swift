@@ -55,9 +55,7 @@ class ChatroomViewController: MessagesViewController {
             else { return }
         
         chatController?.create(
-            Message(
-                sender: sender,
-                text: text),
+            Message(sender: sender, text: text),
             in: chatroom! // nil just checked
         ) { error in
             if let error = error {
@@ -98,16 +96,6 @@ class ChatroomViewController: MessagesViewController {
             }
         } catch {
             NSLog("Error updating messages from server: \(error)")
-        }
-    }
-    
-    private func updateObservers() {
-        if let chatroom = chatroom {
-            chatController.observeMessages(
-                for: chatroom,
-                callback: messagesDidUpdate(withResult:))
-        } else {
-            chatController.stopObserving()
         }
     }
 }
