@@ -28,11 +28,14 @@ class ChatRoomDetailViewController: MessagesViewController, InputBarAccessoryVie
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let chatRoom = chatRoom else { return }
+        
+        guard let chatRoom = chatRoom,
+            let index = chatRoomController?.chatRooms.firstIndex(of: chatRoom) else { return }
         messageController.fetchMessages(in: chatRoom) {
             DispatchQueue.main.async {
                 self.messagesCollectionView.reloadData()
             }
+            self.chatRoomController?.chatRooms[index] = chatRoom
         }
     }
 }

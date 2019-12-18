@@ -50,11 +50,17 @@ class ChatRoomController {
     
     private func createFetchedChatRooms(with identifier: String, from dictionary: [String: Any]) {
             
+        for chatroom in chatRooms {
+            if chatroom.identifier == identifier {
+                return
+            }
+        }
         let title = dictionary["Title"] as! String
         let chatRoom = ChatRoom(title: title, identifier: identifier)
-        if !self.chatRooms.contains(chatRoom) {
-            self.chatRooms.append(chatRoom)
-            print("title:\(chatRoom.title) id:\(chatRoom.identifier)")
-        }
+        self.chatRooms.append(chatRoom)
+//        if !self.chatRooms.contains(chatRoom) {
+//            self.chatRooms.append(chatRoom)
+//            print("title:\(chatRoom.title) id:\(chatRoom.identifier)")
+//        }
     }
 }

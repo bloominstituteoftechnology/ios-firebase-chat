@@ -28,6 +28,8 @@ class ChatRoom: Equatable {
     
     func fetchedMessage(from dictionary: [String: Any]) {
         let message = Message(from: dictionary)
-        messages.append(message)
+        if !messages.contains(message) {
+            messages.append(message)
+        }
     }
 }
