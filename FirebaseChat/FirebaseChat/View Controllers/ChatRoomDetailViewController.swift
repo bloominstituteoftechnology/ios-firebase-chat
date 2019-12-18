@@ -24,6 +24,17 @@ class ChatRoomDetailViewController: MessagesViewController, InputBarAccessoryVie
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let chatRoom = chatRoom else { return }
+        messageController.fetchMessages(in: chatRoom) {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+            }
+        }
+    }
 }
 
 extension ChatRoomDetailViewController: MessagesDataSource {

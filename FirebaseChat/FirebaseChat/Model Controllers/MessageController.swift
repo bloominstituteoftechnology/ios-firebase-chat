@@ -14,7 +14,19 @@ class MessageController {
     
     var ref: DatabaseReference!
     
-    func fetchMessages() {
+    func fetchMessages(in chatRoom: ChatRoom, completion: @escaping () -> Void) {
+        ref = Database.database().reference()
+        
+        ref.child("messages").child(chatRoom.identifier).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            
+            let _ = value.values.map { messageDictionary in
+                chatRoom.fetchedMessage(from: messageDictionary)
+            }
+            completion()
+            
+        }) { (error) in print(error.localizedDescription)}
         
     }
     

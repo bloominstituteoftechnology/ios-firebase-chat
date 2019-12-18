@@ -25,4 +25,9 @@ class ChatRoom: Equatable {
             lhs.identifier == rhs.identifier &&
             lhs.messages == rhs.messages
     }
+    
+    func fetchedMessage(from dictionary: [String: Any]) {
+        let message = Message(from: dictionary)
+        messages.append(message)
+    }
 }

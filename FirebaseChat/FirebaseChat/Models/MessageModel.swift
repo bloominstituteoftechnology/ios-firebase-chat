@@ -35,32 +35,19 @@ struct Message: Equatable, MessageType {
         self.messageId = messageId
     }
     
+    init(from dictionary: [String: Any]) {
+        self.displayName = dictionary["username"] as! String
+        self.senderId = dictionary["senderId"] as! String
+        self.messageId = dictionary["messageId"] as! String
+        self.sentDate = Date(timeIntervalSince1970: dictionary["sentDate"]  as! Double)
+        self.text = dictionary["text"] as! String
+    }
+    
     func toDictionary() -> [String: Any] {
         return [ "username" : displayName,
+                 "senderId" : senderId,
                  "messageId" : messageId,
-                 "sentDate" : sentDate.description,
+                 "sentDate" : sentDate.timeIntervalSince1970,
                  "text" : text ]
     }
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        let text = try container.decode(String.self, forKey: .text)
-//        let displayName = try container.decode(String.self, forKey: .displayName)
-//        let sentDate = try container.decode(Date.self, forKey: .sentDate)
-//        var senderId: String = UUID().uuidString
-//        if let decodedSenderId = try? container.decode(String.self, forKey: .senderID) {
-//            senderId = decodedSenderId
-//        }
-//        let sender = Sender(senderId: senderId, displayName: displayName)
-//        self.init(text: text, sender: sender, sentDate: sentDate)
-//    }
-//
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: CodingKeys.self)
-//        try container.encode(displayName, forKey: .displayName)
-//        try container.encode(senderId, forKey: .senderID)
-//        try container.encode(sentDate, forKey: .sentDate)
-//        try container.encode(text, forKey: .text)
-//    }
-    
-
 }

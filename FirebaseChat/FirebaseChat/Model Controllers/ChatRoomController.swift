@@ -12,7 +12,6 @@ class ChatRoomController {
     
     var ref: DatabaseReference = Database.database().reference()
     var chatRooms: [ChatRoom] = []
-
     
     func fetchChatRooms(completion: @escaping () -> Void) {
         //ref = Database.database().reference()
