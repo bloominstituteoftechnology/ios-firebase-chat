@@ -36,6 +36,18 @@ class ChatRoomsTableViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowMessagesSegue":
+            guard let destinationVC = segue.destination as? ChatRoomDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            let room = chatRoomController.rooms[indexPath.row]
+            destinationVC.chatRoomController = chatRoomController
+            destinationVC.room = room
+        default:
+            break
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

@@ -48,10 +48,10 @@
             </objects>
             <point key="canvasLocation" x="697" y="161"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat Room Detail View Controller-->
         <scene sceneID="voi-FN-4dg">
             <objects>
-                <viewController id="DhS-x1-tr6" sceneMemberID="viewController">
+                <viewController id="DhS-x1-tr6" customClass="ChatRoomDetailViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sJe-Y2-q0s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

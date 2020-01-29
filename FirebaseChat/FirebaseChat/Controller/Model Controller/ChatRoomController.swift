@@ -41,10 +41,20 @@ class ChatRoomController {
         completion()
     }
     
-    func addMessageToRoom(_ room: ChatRoom, text: String, displayName: String, messageId: String = UUID().uuidString, sentDate: Date = Date(), completion: @escaping () -> ()) {
+    func addMessageToRoom(_ room: ChatRoom, message: Message, completion: @escaping () -> ()) {
         guard let index = rooms.firstIndex(of: room) else { return }
-        let message = Message(text: text, displayName: "User", messageId: messageId, sentDate: sentDate)
-        rooms[index].messages?.append(message)
+        
+        var messageArray = [Message]()
+        
+        if let messages = self.rooms[index].messages {
+            messageArray = messages
+            messageArray.append(message)
+        } else {
+            messageArray = [message]
+        }
+        
+        rooms[index].messages = messageArray
+        
         updateDatabase()
         completion()
     }
