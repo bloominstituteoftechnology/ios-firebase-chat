@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F2D95FC23FA579200368F70 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D95FB23FA579200368F70 /* Message.swift */; };
-		1FA2984A23F8A37A00908C12 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2984923F8A37A00908C12 /* ChatTableViewController.swift */; };
+		1F2D95FE23FA5EF200368F70 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D95FD23FA5EF200368F70 /* ChatViewController.swift */; };
+		1F2D960023FA5F0C00368F70 /* MessagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2D95FF23FA5F0C00368F70 /* MessagesTableViewController.swift */; };
 		1FA2984C23F8A3E500908C12 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1FA2984B23F8A3E500908C12 /* README.md */; };
-		1FA2984E23F8A44100908C12 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2984D23F8A44100908C12 /* MessageViewController.swift */; };
 		1FA2985023F8A51A00908C12 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2984F23F8A51A00908C12 /* Chat.swift */; };
 		1FA2985323F8A58400908C12 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA2985223F8A58400908C12 /* ModelController.swift */; };
 		E3EC607423F87D37008E4CED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EC607323F87D37008E4CED /* AppDelegate.swift */; };
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		1F2D95FB23FA579200368F70 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		1FA2984923F8A37A00908C12 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		1F2D95FD23FA5EF200368F70 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1F2D95FF23FA5F0C00368F70 /* MessagesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesTableViewController.swift; sourceTree = "<group>"; };
 		1FA2984B23F8A3E500908C12 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		1FA2984D23F8A44100908C12 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		1FA2984F23F8A51A00908C12 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		1FA2985223F8A58400908C12 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		245FECDDF6C7475E834D3861 /* Pods_Firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				E3EC607723F87D37008E4CED /* ViewController.swift */,
-				1FA2984923F8A37A00908C12 /* ChatTableViewController.swift */,
-				1FA2984D23F8A44100908C12 /* MessageViewController.swift */,
+				1F2D95FD23FA5EF200368F70 /* ChatViewController.swift */,
+				1F2D95FF23FA5F0C00368F70 /* MessagesTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -246,13 +246,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3EC607823F87D37008E4CED /* ViewController.swift in Sources */,
+				1F2D960023FA5F0C00368F70 /* MessagesTableViewController.swift in Sources */,
 				E3EC607423F87D37008E4CED /* AppDelegate.swift in Sources */,
 				E3EC607623F87D37008E4CED /* SceneDelegate.swift in Sources */,
+				1F2D95FE23FA5EF200368F70 /* ChatViewController.swift in Sources */,
 				1FA2985023F8A51A00908C12 /* Chat.swift in Sources */,
-				1FA2984A23F8A37A00908C12 /* ChatTableViewController.swift in Sources */,
 				1F2D95FC23FA579200368F70 /* Message.swift in Sources */,
 				1FA2985323F8A58400908C12 /* ModelController.swift in Sources */,
-				1FA2984E23F8A44100908C12 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
