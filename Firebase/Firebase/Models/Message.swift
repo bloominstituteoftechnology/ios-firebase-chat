@@ -9,7 +9,11 @@
 import Foundation
 import MessageKit
 
-struct Message: Codable, Equatable {
+struct Message: Codable, Equatable, Comparable {
+    static func < (lhs: Message, rhs: Message) -> Bool {
+        return true
+    }
+    
     let identifier: String
     let message: String
     

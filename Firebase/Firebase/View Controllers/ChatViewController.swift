@@ -26,9 +26,31 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
+        let testMessage = Message(identifier: "1", message: "I really love pizza :)")
+        insertNewMessages(testMessage)
         self.loadFirstMessages()
 
+    }
+    
+   
+    
+    private func insertNewMessages(_ message: Message) {
+        guard !messages.contains(message) else {
+            return
+        }
+        
+        messages.append(message)
+        messages.sort()
+        
+        let isLatestMessage = messages.firstIndex(of: message) == (messages.count - 1)
+        let shouldScrollToBottom = messagesCollectionView.isHidden && isLatestMessage
+        messagesCollectionView.reloadData()
+        
+        if shouldScrollToBottom {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.scrollToBottom(animated: true)
+            }
+        }
     }
     
     private func loadFirstMessages() {
