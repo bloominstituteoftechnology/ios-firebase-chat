@@ -1,14 +1,14 @@
 //
-//  MessageViewController.swift
+//  ChatViewController.swift
 //  Firebase
 //
-//  Created by Alex Thompson on 2/15/20.
+//  Created by Alex Thompson on 2/16/20.
 //  Copyright © 2020 Lambda_School_Loaner_213. All rights reserved.
 //
 
 import UIKit
 
-class MessageViewController: UIViewController {
+class ChatViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
