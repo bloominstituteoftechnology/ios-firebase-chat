@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import MessageKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("hi")
+        print("MessageKit imported")
     }
 
 
