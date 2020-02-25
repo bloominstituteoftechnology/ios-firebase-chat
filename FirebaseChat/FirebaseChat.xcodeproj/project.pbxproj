@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		1B6E1ACF2405D19D00A33BB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E1ACD2405D19D00A33BB7 /* Main.storyboard */; };
 		1B6E1AD12405D1A200A33BB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E1AD02405D1A200A33BB7 /* Assets.xcassets */; };
 		1B6E1AD42405D1A200A33BB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E1AD22405D1A200A33BB7 /* LaunchScreen.storyboard */; };
+		1B6E1ADC2405D7BD00A33BB7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B6E1ADB2405D7BD00A33BB7 /* GoogleService-Info.plist */; };
 		2FE485519F04347F62674168 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80466FB5A4C06251E23E878D /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		1B6E1AD02405D1A200A33BB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B6E1AD32405D1A200A33BB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B6E1AD52405D1A200A33BB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B6E1ADB2405D7BD00A33BB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80466FB5A4C06251E23E878D /* Pods_FirebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B409C3A26294CDDC5DCC2D /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				1B6E1ACD2405D19D00A33BB7 /* Main.storyboard */,
 				1B6E1AD02405D1A200A33BB7 /* Assets.xcassets */,
 				1B6E1AD22405D1A200A33BB7 /* LaunchScreen.storyboard */,
+				1B6E1ADB2405D7BD00A33BB7 /* GoogleService-Info.plist */,
 				1B6E1AD52405D1A200A33BB7 /* Info.plist */,
 			);
 			path = FirebaseChat;
@@ -88,7 +91,6 @@
 				1B1574D37A056017DFB07883 /* Pods-FirebaseChat.debug.xcconfig */,
 				D2B409C3A26294CDDC5DCC2D /* Pods-FirebaseChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -153,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B6E1AD42405D1A200A33BB7 /* LaunchScreen.storyboard in Resources */,
+				1B6E1ADC2405D7BD00A33BB7 /* GoogleService-Info.plist in Resources */,
 				1B6E1AD12405D1A200A33BB7 /* Assets.xcassets in Resources */,
 				1B6E1ACF2405D19D00A33BB7 /* Main.storyboard in Resources */,
 			);

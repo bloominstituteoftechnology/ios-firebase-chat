@@ -8,12 +8,13 @@
 
 import UIKit
 import MessageKit
+import Firebase
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("MessageKit imported")
+        print("MessageKit and Firebase imported")
     }
 
 
