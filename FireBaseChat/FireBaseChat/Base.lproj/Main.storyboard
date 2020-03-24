@@ -3,13 +3,14 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Chat Rooms Table View Controller-->
         <scene sceneID="o2H-d2-mzA">
             <objects>
-                <tableViewController id="mxx-2a-GS0" sceneMemberID="viewController">
+                <tableViewController id="mxx-2a-GS0" customClass="ChatRoomsTableViewController" customModule="FireBaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="glU-za-AoS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="bHv-Gv-1gx" kind="show" identifier="ShowMessageSegue" id="1a4-fq-cq2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -33,7 +37,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5g-9Z-MB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.768115942029" y="182.8125"/>
+            <point key="canvasLocation" x="943" y="183"/>
+        </scene>
+        <!--Chat Room Detail View Controller-->
+        <scene sceneID="vzr-yW-p1B">
+            <objects>
+                <viewController id="bHv-Gv-1gx" customClass="ChatRoomDetailViewController" customModule="FireBaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HhU-LK-qMg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="diY-DI-kdr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dKT-AT-iUp"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLk-iY-9fz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1720" y="183"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6js-r4-5cX">
