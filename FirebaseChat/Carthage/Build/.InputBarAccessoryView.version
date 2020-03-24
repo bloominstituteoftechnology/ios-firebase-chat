@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "4.3.2",
+  "iOS" : [
+    {
+      "name" : "InputBarAccessoryView",
+      "hash" : "82358769b4cac6ada03e38a92864444da1db6b0b67d4ce6f11e71be67560093a",
+      "swiftToolchainVersion" : "5.1.3 (swiftlang-1100.0.282.1 clang-1100.0.33.15)"
+    }
+  ]
+}
