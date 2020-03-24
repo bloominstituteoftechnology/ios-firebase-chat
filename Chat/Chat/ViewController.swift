@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import MessageKit
+
+import Firebase
 
 class ViewController: UIViewController {
 
