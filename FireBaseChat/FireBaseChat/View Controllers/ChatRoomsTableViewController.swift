@@ -10,8 +10,10 @@ import UIKit
 
 class ChatRoomsTableViewController: UITableViewController {
     
+    // MARK: - Variables
     let chatRoomController = ChatRoomController()
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRoom))
@@ -21,7 +23,7 @@ class ChatRoomsTableViewController: UITableViewController {
     }
     
     @objc private func addRoom() {
-        let alert = UIAlertController(title: "Add A Room", message: "Please enter the name for the room to be added.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Start a new chat room", message: "Please enter the name for the room to be added.", preferredStyle: .alert)
         alert.addTextField()
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
             guard let textField = alert.textFields?.first, let name = textField.text, !name.isEmpty else { return }
@@ -36,18 +38,8 @@ class ChatRoomsTableViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "ShowMessageSegue":
-            guard let destinationVC = segue.destination as? ChatRoomDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
-            let room = chatRoomController.rooms[indexPath.row]
-            destinationVC.chatRoomController = chatRoomController
-            destinationVC.room = room
-        default:
-            break
-        }
-    }
     
+    // MARK: - TableView DataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -70,6 +62,19 @@ class ChatRoomsTableViewController: UITableViewController {
             chatRoomController.deleteRoom(room) {
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             }
+        default:
+            break
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowMessageSegue":
+            guard let destinationVC = segue.destination as? ChatRoomDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            let room = chatRoomController.rooms[indexPath.row]
+            destinationVC.chatRoomController = chatRoomController
+            destinationVC.room = room
         default:
             break
         }

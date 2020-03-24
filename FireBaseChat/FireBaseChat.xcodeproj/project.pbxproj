@@ -12,7 +12,7 @@
 		5C545977242A9FAA008D2FC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C545975242A9FAA008D2FC7 /* Main.storyboard */; };
 		5C545979242A9FAB008D2FC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C545978242A9FAB008D2FC7 /* Assets.xcassets */; };
 		5C54597C242A9FAB008D2FC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C54597A242A9FAB008D2FC7 /* LaunchScreen.storyboard */; };
-		5C545984242AA007008D2FC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C545983242AA007008D2FC7 /* GoogleService-Info.plist */; };
+		5C7A1F50242ABDAC003C17CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5C7A1F4F242ABDAC003C17CE /* GoogleService-Info.plist */; };
 		5C7C136B242AB9130014AC19 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C7C136A242AB9130014AC19 /* ChatRoomController.swift */; };
 		5CEBA58F242AAD760043A7EA /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA58E242AAD760043A7EA /* ChatRoomsTableViewController.swift */; };
 		5CEBA594242AAE110043A7EA /* ChatRoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA593242AAE110043A7EA /* ChatRoomDetailViewController.swift */; };
@@ -29,7 +29,7 @@
 		5C545978242A9FAB008D2FC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C54597B242A9FAB008D2FC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C54597D242A9FAB008D2FC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C545983242AA007008D2FC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5C7A1F4F242ABDAC003C17CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		5C7C136A242AB9130014AC19 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		5CEBA58E242AAD760043A7EA /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		5CEBA593242AAE110043A7EA /* ChatRoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDetailViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +88,7 @@
 				5C545978242A9FAB008D2FC7 /* Assets.xcassets */,
 				5C54597A242A9FAB008D2FC7 /* LaunchScreen.storyboard */,
 				5C54597D242A9FAB008D2FC7 /* Info.plist */,
-				5C545983242AA007008D2FC7 /* GoogleService-Info.plist */,
+				5C7A1F4F242ABDAC003C17CE /* GoogleService-Info.plist */,
 				5CEBA592242AADC20043A7EA /* View Controllers */,
 				5CEBA597242AAF530043A7EA /* Model */,
 				5C7C136C242AB9180014AC19 /* Model Controller */,
@@ -191,7 +191,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C54597C242A9FAB008D2FC7 /* LaunchScreen.storyboard in Resources */,
-				5C545984242AA007008D2FC7 /* GoogleService-Info.plist in Resources */,
+				5C7A1F50242ABDAC003C17CE /* GoogleService-Info.plist in Resources */,
 				5C545979242A9FAB008D2FC7 /* Assets.xcassets in Resources */,
 				5C545977242A9FAA008D2FC7 /* Main.storyboard in Resources */,
 			);

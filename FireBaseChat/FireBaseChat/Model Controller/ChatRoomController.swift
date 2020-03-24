@@ -12,12 +12,12 @@ import Foundation
 import MessageKit
 
 class ChatRoomController {
-    
-    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
-    // MARK: - Properties
+
+    // MARK: - Variables
     var rooms = [ChatRoom]()
     let chatRoomRef = Database.database().reference().child("chatRooms")
     
+    // MARK: - Functions
     func fetchRooms(completion: @escaping () -> ()) {
         chatRoomRef.observe(.value) { snapshot in
             let decoder = FirebaseDecoder()

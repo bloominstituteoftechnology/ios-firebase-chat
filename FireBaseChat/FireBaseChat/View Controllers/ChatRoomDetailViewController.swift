@@ -12,11 +12,12 @@ import InputBarAccessoryView
 
 class ChatRoomDetailViewController: MessagesViewController {
     
+    // MARK: - Variables
     var room: ChatRoom?
     var chatRoomController: ChatRoomController?
-    
     var messages = [Message]()
     
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         messagesCollectionView.messagesDataSource = self
@@ -31,6 +32,7 @@ class ChatRoomDetailViewController: MessagesViewController {
     }
 }
 
+// MARK: - Extension
 extension ChatRoomDetailViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         guard let chatRoomController = chatRoomController, let room = room else { return }
