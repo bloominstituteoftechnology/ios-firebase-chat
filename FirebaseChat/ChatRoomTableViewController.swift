@@ -33,6 +33,7 @@ class ChatRoomTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
         }
     }
     
@@ -98,6 +99,7 @@ class ChatRoomTableViewController: UITableViewController {
                 let destinationVC = segue.destination as? ChatRoomDetailViewController else { return }
             destinationVC.roomController = roomController
             destinationVC.room = roomController.chatRooms[indexPath.row]
+            destinationVC.messageController = self.messageController
         }
     }
     

@@ -46,7 +46,7 @@ class ChatRoomDetailViewController: MessagesViewController, InputBarAccessoryVie
             DispatchQueue.main.async {
                 self.messagesCollectionView.reloadData()
             }
-            self.roomController?.chatRooms[index] = room
+            self.roomController!.chatRooms[index] = room
         }
     }
 }
@@ -58,8 +58,8 @@ extension ChatRoomDetailViewController: MessagesDataSource {
     }
         
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        guard let message = self.room?.messages[indexPath.item] else { fatalError("No message found in thread") }
-            return message
+        let message = self.room!.messages[indexPath.item]
+        return message
         }
         
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -67,7 +67,7 @@ extension ChatRoomDetailViewController: MessagesDataSource {
     }
         
     func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
-            return self.room?.messages.count ?? 0
+            return self.room!.messages.count
         }
     }
 
