@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firebase
+import FirebaseDatabase
 
 enum HTTPMethod : String  {
     case get = "GET"
@@ -17,15 +17,9 @@ enum HTTPMethod : String  {
 }
 
 class ChatroomController {
-//    var ref: DatabaseReference!
-//    
-//    var ref = Database.database().reference()
-//    
-    init() {
-        fetchChatroomsFromSever {
-            print("")
-        }
-    }
+   
+
+    private let roomsRef = Database.database().reference().child("rooms")
     
     let baseURL = URL(string: "https://chat-e1efa.firebaseio.com/")!
     
@@ -35,12 +29,13 @@ class ChatroomController {
     
     func createChatroom(with name: String, roomPurpose: String, completion: @escaping () -> Void  ) {
         let newChatRoom = Chatroom(name: name, roomPurpose: roomPurpose)
-        
+      
         chatrooms.append(newChatRoom)
         
-        let createChatroomURL = baseURL.appendingPathComponent(newChatRoom.id)
-            .appendingPathComponent("chatrooms")
-            .appendingPathExtension("json")
+        let createChatroomURL = baseURL.appendingPathComponent("chatrooms")
+                 .appendingPathExtension("json")
+        
+         
         
         var request = URLRequest(url: createChatroomURL)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -79,12 +74,20 @@ class ChatroomController {
             guard let data = data else { NSLog("No data returned from data task"); completion(); return }
             
             do {
-                self.chatrooms = try JSONDecoder().decode([String: Chatroom].self, from: data).map({ $0.value })
+                let dataFromSever =  try JSONDecoder().decode([String:[String:Chatroom]].self, from: data)
+                let  chatroomDict = dataFromSever["chatrooms"]!
+                let chatroomArray = Array(chatroomDict.values)
+                self.chatrooms = chatroomArray
+              
+                self.chatrooms.forEach { (room) in
+                    print(room.name)
+                }
+                
             } catch {
                 self.chatrooms = []
                 NSLog("Error decoding chatrooms from JSON data: \(error)")
             }
-            
+                
             completion()
         }.resume()
     }

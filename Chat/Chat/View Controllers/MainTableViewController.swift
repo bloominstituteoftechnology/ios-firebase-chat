@@ -19,7 +19,13 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        chatroomController.fetchChatroomsFromSever {
+            //
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+        }
       
     }
 
