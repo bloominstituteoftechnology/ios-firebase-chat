@@ -16,15 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="1xO-uC-1wf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" textLabel="OJF-st-JbS" style="IBUITableViewCellStyleDefault" id="1xO-uC-1wf">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1xO-uC-1wf" id="Ikn-cf-VK0">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OJF-st-JbS">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="VR2-ZA-D9h" kind="showDetail" id="cpf-EP-y8N"/>
+                                    <segue destination="VR2-ZA-D9h" kind="showDetail" identifier="oneSegue" id="cpf-EP-y8N"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -33,16 +42,22 @@
                             <outlet property="delegate" destination="KWa-fe-4Rg" id="HuF-xh-CcS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qNJ-Jt-5Qi"/>
+                    <navigationItem key="navigationItem" id="qNJ-Jt-5Qi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="akm-VC-7pW">
+                            <connections>
+                                <action selector="newRoom:" destination="KWa-fe-4Rg" id="qhW-j4-Z4o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="upg-fS-F0j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028.985507246377" y="49.553571428571423"/>
         </scene>
-        <!--Messages View Controller-->
+        <!--Chat Room Detail View Controller-->
         <scene sceneID="jfN-gu-1JI">
             <objects>
-                <viewController id="VR2-ZA-D9h" customClass="MessagesViewController" sceneMemberID="viewController">
+                <viewController id="VR2-ZA-D9h" customClass="ChatRoomDetailViewController" customModule="FirebaseChat" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QYU-GU-iFO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

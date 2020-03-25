@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 
 public  var ref: DatabaseReference! = Database.database().reference().child("ChatRooms")
+
 class RoomController {
     
     enum HTTPMethod: String {
@@ -67,26 +68,41 @@ class RoomController {
                 return
             }
         }
-        let room = ChatRoom(roomName: dict["roomName"] as! String, messages: (dict["messages"] as! [Message]), identifier: dict["identifier"] as! String)
+        let room = ChatRoom(roomName: dict["roomName"] as! String, identifier: dict["identifier"] as! String)
         self.chatRooms.append(room)
         }
 }
 
-class MessageController() {
+class MessageController {
    
     func fetchMessages(in room: ChatRoom, completion: @escaping() -> Void) {
         ref.child(room.identifier).observeSingleEvent(of: .value, with: { (snapshot) in
             guard let value = snapshot.value as? [String: [String: Any]] else { return }
-            let _ = value.values.map { messageDictionary in
-                    chatRoom.fetchedMessage(from: messageDictionary)
+            let _ = value.values.map { dict in
+                    room.fetchMessage(from: dict)
             }
-                completion()
-
-            }) { (error) in print(error.localizedDescription)}
-
-        }
+            completion()
+        })
     }
     
-    
+    func createMessage(in room: ChatRoom, with text: String, sender: Sender, completion: @escaping () -> Void) {
+        let message = Message(text: text, sender: sender, sentDate: Date(), timestamp: Date().description, messageId: UUID().uuidString)
+        
+        ref.child(room.identifier).childByAutoId().setValue(message.toDict()) {
+                (error: Error?, ref: DatabaseReference) in
+                if let error = error {
+                    print("Data Could not be saved \(error).")
+                } else {
+                    print("Data saved succesfully!")
+                    room.messages.append(message)
+                    completion()
+            }
+        }
+    }
 }
+
+    
+    
+
+
 
