@@ -14,6 +14,7 @@
 		2CE27CBF244F90A6004B1DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CE27CBE244F90A6004B1DC5 /* Assets.xcassets */; };
 		2CE27CC2244F90A6004B1DC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CE27CC0244F90A6004B1DC5 /* LaunchScreen.storyboard */; };
 		2CE27CCE244FA4D4004B1DC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE27CCD244FA4D4004B1DC5 /* GoogleService-Info.plist */; };
+		2CE27CCF244FA7B5004B1DC5 /* Firebase Chat.app in Resources */ = {isa = PBXBuildFile; fileRef = 2CE27CB2244F90A5004B1DC5 /* Firebase Chat.app */; };
 		B1B7C8808121F7DD53E990FE /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1247894F2291AB2DD7D68795 /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CE27CCF244FA7B5004B1DC5 /* Firebase Chat.app in Resources */,
 				2CE27CC2244F90A6004B1DC5 /* LaunchScreen.storyboard in Resources */,
 				2CE27CCE244FA4D4004B1DC5 /* GoogleService-Info.plist in Resources */,
 				2CE27CBF244F90A6004B1DC5 /* Assets.xcassets in Resources */,
