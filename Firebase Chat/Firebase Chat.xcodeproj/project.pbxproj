@@ -13,6 +13,8 @@
 		133065BC244F844F00A25D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133065BB244F844F00A25D5C /* Assets.xcassets */; };
 		133065BF244F844F00A25D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133065BD244F844F00A25D5C /* LaunchScreen.storyboard */; };
 		133065C7244F885800A25D5C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 133065C6244F885800A25D5C /* GoogleService-Info.plist */; };
+		133065C9244F8B4200A25D5C /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133065C8244F8B4200A25D5C /* ChatRoomsTableViewController.swift */; };
+		133065CD244F8BA500A25D5C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133065CC244F8BA500A25D5C /* ChatViewController.swift */; };
 		337E6BD4A4746EFF2E039294 /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 958C111478AF4917C0E807BA /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		133065BE244F844F00A25D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		133065C0244F844F00A25D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		133065C6244F885800A25D5C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		133065C8244F8B4200A25D5C /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
+		133065CC244F8BA500A25D5C /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		722EC184EC8F56FE14FFE763 /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		958C111478AF4917C0E807BA /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE91F9233F872FC38196B60C /* Pods-Firebase Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.release.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				133065B2244F844D00A25D5C /* AppDelegate.swift */,
 				133065B4244F844D00A25D5C /* SceneDelegate.swift */,
 				133065B8244F844D00A25D5C /* Main.storyboard */,
+				133065C8244F8B4200A25D5C /* ChatRoomsTableViewController.swift */,
+				133065CC244F8BA500A25D5C /* ChatViewController.swift */,
 				133065BB244F844F00A25D5C /* Assets.xcassets */,
 				133065BD244F844F00A25D5C /* LaunchScreen.storyboard */,
 				133065C0244F844F00A25D5C /* Info.plist */,
@@ -209,6 +215,8 @@
 			files = (
 				133065B3244F844D00A25D5C /* AppDelegate.swift in Sources */,
 				133065B5244F844D00A25D5C /* SceneDelegate.swift in Sources */,
+				133065CD244F8BA500A25D5C /* ChatViewController.swift in Sources */,
+				133065C9244F8B4200A25D5C /* ChatRoomsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
