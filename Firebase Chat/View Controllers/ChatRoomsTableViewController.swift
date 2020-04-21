@@ -7,17 +7,36 @@
 //
 
 import UIKit
+import MessageKit
 
 class ChatRoomsTableViewController: UITableViewController {
 
+    let chatRoomsController = ChatRoomsController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        if let currentUserDictionary = UserDefaults.standard.value(forKey: "currentUser") as? [String : String], let currentUser = Sender(dictionary: currentUserDictionary) {
+            self.chatRoomsController.currentUser = currentUser
+        } else {
+            let alert = UIAlertController(title: "Create A Username", message: nil, preferredStyle: .alert)
+            
+            var usernameTextField: UITextField!
+            alert.addTextField { (textField) in
+                usernameTextField = textField
+            }
+            
+            alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { (_) in
+                let displayName = usernameTextField.text ?? "No name"
+                let id = UUID().uuidString
+                
+                let sender = Sender(senderId: id, displayName: displayName)
+                
+                UserDefaults.standard.set(sender.dictionaryRepresentation, forKey: "currentUser")
+                self.chatRoomsController.currentUser = sender
+            }))
+            present(alert, animated: true, completion: nil)
+        }
     }
 
     // MARK: - Table view data source
