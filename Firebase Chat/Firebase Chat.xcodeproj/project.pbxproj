@@ -16,6 +16,7 @@
 		2CE27CCF244FA7B5004B1DC5 /* Firebase Chat.app in Resources */ = {isa = PBXBuildFile; fileRef = 2CE27CB2244F90A5004B1DC5 /* Firebase Chat.app */; };
 		2CE27CD5244FA997004B1DC5 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE27CD4244FA997004B1DC5 /* ChatRoomsTableViewController.swift */; };
 		2CE27CD7244FA9B3004B1DC5 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE27CD6244FA9B3004B1DC5 /* MessageViewController.swift */; };
+		2CE27CDA244FAE0A004B1DC5 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE27CD9244FAE0A004B1DC5 /* Message.swift */; };
 		B1B7C8808121F7DD53E990FE /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1247894F2291AB2DD7D68795 /* Pods_Firebase_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		2CE27CCD244FA4D4004B1DC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CE27CD4244FA997004B1DC5 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		2CE27CD6244FA9B3004B1DC5 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		2CE27CD9244FAE0A004B1DC5 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2DCE34B98388192A430D4F73 /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		CDBF7C2A2C872FCAC7351105 /* Pods-Firebase Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.release.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 			children = (
 				2CE27CD0244FA85E004B1DC5 /* Application */,
 				2CE27CD1244FA877004B1DC5 /* Storyboards */,
+				2CE27CD8244FAA63004B1DC5 /* Models */,
 				2CE27CD3244FA967004B1DC5 /* View Controllers */,
 				2CE27CD2244FA892004B1DC5 /* Resources */,
 			);
@@ -119,6 +122,14 @@
 				2CE27CD6244FA9B3004B1DC5 /* MessageViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		2CE27CD8244FAA63004B1DC5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2CE27CD9244FAE0A004B1DC5 /* Message.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		C48476BBE7E303090000F5F5 /* Pods */ = {
@@ -249,6 +260,7 @@
 			files = (
 				2CE27CB6244F90A5004B1DC5 /* AppDelegate.swift in Sources */,
 				2CE27CB8244F90A5004B1DC5 /* SceneDelegate.swift in Sources */,
+				2CE27CDA244FAE0A004B1DC5 /* Message.swift in Sources */,
 				2CE27CD7244FA9B3004B1DC5 /* MessageViewController.swift in Sources */,
 				2CE27CD5244FA997004B1DC5 /* ChatRoomsTableViewController.swift in Sources */,
 			);
