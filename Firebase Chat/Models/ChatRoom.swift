@@ -13,12 +13,12 @@ class ChatRoom: Codable {
     
     let title: String
     let identifier: String
-    var message: [ChatRoom.Message]
+    var messages: [ChatRoom.Message]
     
     
     init(title: String, messages: [ChatRoom.Message] = [], identifier: String = UUID().uuidString) {
         self.title = title
-        self.message = messages
+        self.messages = messages
         self.identifier = identifier
     }
     
