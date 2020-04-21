@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTableViewController: UITableViewController {
+    
+    
+    var ref: DatabaseReference! {
+        return Database.database().reference()
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.ref.child("user/\(69420)/username").setValue("luhmao")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
