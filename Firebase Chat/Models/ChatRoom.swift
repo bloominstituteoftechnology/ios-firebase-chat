@@ -9,12 +9,11 @@
 import Foundation
 import MessageKit
 
-class ChatRoom: Codable {
+class ChatRoom: Codable, Equatable {
     
     let title: String
     let identifier: String
     var messages: [ChatRoom.Message]
-    
     
     init(title: String, messages: [ChatRoom.Message] = [], identifier: String = UUID().uuidString) {
         self.title = title
@@ -22,7 +21,7 @@ class ChatRoom: Codable {
         self.identifier = identifier
     }
     
-    struct Message: Codable, MessageType {
+    struct Message: Codable, Equatable, MessageType {
         
         let text: String
         let displayName: String
@@ -48,6 +47,11 @@ class ChatRoom: Codable {
             self.timestamp = timestamp
             self.messageId = messageID
         }
+    }
+    static func ==(lhs: ChatRoom, rhs: ChatRoom) -> Bool {
+        return lhs.title == rhs.title &&
+            lhs.identifier == rhs.identifier &&
+            lhs.messages == rhs.messages
     }
 }
 

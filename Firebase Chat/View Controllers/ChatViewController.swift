@@ -134,13 +134,11 @@ extension ChatViewController: MessagesDisplayDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         guard let chatRoom = chatRoom,
             let currentSender = currentSender() as? Sender else { return }
-        /*
         chatRoomsConroller?.createMessage(in: chatRoom, withText: text, sender: currentSender) {
             DispatchQueue.main.async {
                 self.messagesCollectionView.reloadData()
             }
         }
-        */
         #warning("REFACTOR THESE METHODS")
 
     }
