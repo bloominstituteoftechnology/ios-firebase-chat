@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>239069997558-k47hlgcl0t0c43lolva94137is0rk912.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.239069997558-k47hlgcl0t0c43lolva94137is0rk912</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA8AXoQSdGlk34zqpe8prj8O-FRG1VPhl8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>239069997558</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.wyattharrell.Firebase-Chat</string>
+	<key>PROJECT_ID</key>
+	<string>fir-chat-b04be</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-chat-b04be.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:239069997558:ios:4c7f637c41c72aebd6bfd7</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-chat-b04be.firebaseio.com</string>
+</dict>
+</plist>
