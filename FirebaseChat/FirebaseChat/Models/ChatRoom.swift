@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct ChatRoom {
+    let name: String
+    let messages: [Message]
+    let id: String
+}

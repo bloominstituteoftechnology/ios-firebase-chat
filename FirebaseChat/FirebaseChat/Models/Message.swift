@@ -16,12 +16,19 @@ struct Message: MessageType {
     let sentDate: Date
     
     var kind: MessageKind {
-        .text(text)
+        return .text(text)
     }
     
+//    var dictionaryRepresentation: [String: Any] {
+//        
+//    }
 }
 
-struct Sender: SenderType {
-    let senderId: String
+struct User: SenderType {
+    let id: String
     let displayName: String
+    
+    var senderId: String {
+        return id
+    }
 }
