@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="SQD-Aj-s0b" kind="show" identifier="ViewMessageShowSegue" id="oq5-2D-fk8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,6 +56,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfd-1I-N2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="373.91304347826087" y="148.66071428571428"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="Bhn-kY-MPJ">
+            <objects>
+                <viewController id="SQD-Aj-s0b" customClass="MessageViewController" customModule="firebaseSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7mP-gd-5bV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9Ba-9j-DJr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9K3-FQ-Rlf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E77-Gg-Ydh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2135" y="149"/>
         </scene>
     </scenes>
 </document>
