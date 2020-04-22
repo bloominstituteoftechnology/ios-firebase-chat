@@ -42,7 +42,7 @@ class ChatRoomTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMessagesSegue",
-            let messageVC = segue.destination as? MessageViewController,
+            let messageVC = segue.destination as? ChatRoomViewController,
             let indexPath = tableView.indexPathForSelectedRow {
             messageVC.chatRoom = chatRoomController.chatRooms[indexPath.row]
         }

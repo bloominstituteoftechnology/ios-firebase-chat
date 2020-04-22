@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageKit
 
-class MessageViewController: UIViewController {
+class ChatRoomViewController: MessagesViewController {
 
     // MARK: - Properties
     

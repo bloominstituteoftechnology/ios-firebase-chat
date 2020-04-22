@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="412" y="238"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Chat Room View Controller-->
         <scene sceneID="SuY-f8-pmo">
             <objects>
-                <viewController id="89Q-TJ-dtD" customClass="MessageViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="89Q-TJ-dtD" customClass="ChatRoomViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jde-eN-PbQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

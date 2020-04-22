@@ -14,7 +14,7 @@
 		044E958E244F783E00ED6C74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E958C244F783E00ED6C74 /* LaunchScreen.storyboard */; };
 		044E9596244F861F00ED6C74 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 044E9595244F861F00ED6C74 /* GoogleService-Info.plist */; };
 		044E9598244F893500ED6C74 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9597244F893500ED6C74 /* ChatRoomTableViewController.swift */; };
-		044E959A244F894800ED6C74 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9599244F894800ED6C74 /* MessageViewController.swift */; };
+		044E959A244F894800ED6C74 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9599244F894800ED6C74 /* ChatRoomViewController.swift */; };
 		044E959C244F8B8500ED6C74 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E959B244F8B8500ED6C74 /* Message.swift */; };
 		044E959E244F8B8E00ED6C74 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E959D244F8B8E00ED6C74 /* ChatRoom.swift */; };
 		044E95A1244F8F3100ED6C74 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */; };
@@ -33,7 +33,7 @@
 		044E958F244F783E00ED6C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044E9595244F861F00ED6C74 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044E9597244F893500ED6C74 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
-		044E9599244F894800ED6C74 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		044E9599244F894800ED6C74 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		044E959B244F8B8500ED6C74 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		044E959D244F8B8E00ED6C74 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				044E9597244F893500ED6C74 /* ChatRoomTableViewController.swift */,
-				044E9599244F894800ED6C74 /* MessageViewController.swift */,
+				044E9599244F894800ED6C74 /* ChatRoomViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 				044E959E244F8B8E00ED6C74 /* ChatRoom.swift in Sources */,
 				044E95A5244FEEA400ED6C74 /* MessageController.swift in Sources */,
 				044E9584244F783C00ED6C74 /* SceneDelegate.swift in Sources */,
-				044E959A244F894800ED6C74 /* MessageViewController.swift in Sources */,
+				044E959A244F894800ED6C74 /* ChatRoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
