@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+class ChatRoomController {
+    
+    let baseURL = URL(string: "https://fir-chat-8133b.firebaseio.com/")!
+    let chatRooms: [ChatRoom] = []
+    
+    
+}
