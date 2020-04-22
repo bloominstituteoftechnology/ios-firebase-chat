@@ -30,6 +30,7 @@ class MessageController {
     init(chatRoom: ChatRoom) {
         messagesRef = databaseRef.child("messages").ref.child(chatRoom.id)
         setUpObservers()
+        // TODO: Remove observers
     }
     
     // MARK: - Private Methods

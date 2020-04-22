@@ -6,19 +6,25 @@
 //  Copyright © 2020 Swift Student. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import FirebaseDatabase
 import MessageKit
 
-class ChatController {
+class ChatRoomController {
+    
     // MARK: - CRUD
     
-    private(set) var chatRooms: [ChatRoom] = []
+    private(set) var chatRooms: [ChatRoom] = [] { didSet {
+        chatRoomUpdate?()
+    }}
 
+    var chatRoomUpdate: (() -> Void)?
+    
+    @discardableResult
     func createChatRoom(name: String) -> ChatRoom {
         let chatRoomID = UUID().uuidString
-        chatRoomsRef.child(chatRoomID).setValue(name, forKey: "name")
-        chatRoomsRef.child(chatRoomID).setValue(chatRoomID, forKey: "id")
+        databaseRef.child("chatRooms").child(chatRoomID).child("name").setValue(name)
+        databaseRef.child("chatRooms").child(chatRoomID).child("id").setValue(chatRoomID)
         
         return ChatRoom(name: name, id: chatRoomID)
     }
@@ -32,6 +38,7 @@ class ChatController {
     
     init() {
         setUpObservers()
+        // TODO: Remove observers
     }
     
     // MARK: - Private Methods
