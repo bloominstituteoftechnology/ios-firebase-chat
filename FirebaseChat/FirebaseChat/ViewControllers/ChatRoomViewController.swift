@@ -16,6 +16,8 @@ class ChatRoomViewController: MessagesViewController {
     
     var messageController: MessageController?
     
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,13 +28,19 @@ class ChatRoomViewController: MessagesViewController {
     }
 }
 
+// MARK: - Layout Delegate
+
 extension ChatRoomViewController: MessagesLayoutDelegate {
     
 }
 
+// MARK: - Display Delegate
+
 extension ChatRoomViewController: MessagesDisplayDelegate {
     
 }
+
+// MARK: - Input Bar Delegate
 
 extension ChatRoomViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
