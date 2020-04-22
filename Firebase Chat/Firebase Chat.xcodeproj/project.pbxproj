@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1626DD4404EF6A842CA8E43D /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F671338CFA4023EDA59CDB9E /* Pods_Firebase_Chat.framework */; };
+		92931AF82450985E00B687A4 /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92931AF72450985E00B687A4 /* ChatRoomsTableViewController.swift */; };
 		92B05738244FCAB5005A40D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B05737244FCAB5005A40D9 /* AppDelegate.swift */; };
 		92B0573A244FCAB5005A40D9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B05739244FCAB5005A40D9 /* SceneDelegate.swift */; };
-		92B0573C244FCAB5005A40D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B0573B244FCAB5005A40D9 /* ViewController.swift */; };
 		92B0573F244FCAB5005A40D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B0573D244FCAB5005A40D9 /* Main.storyboard */; };
 		92B05741244FCABA005A40D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B05740244FCABA005A40D9 /* Assets.xcassets */; };
 		92B05744244FCABA005A40D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B05742244FCABA005A40D9 /* LaunchScreen.storyboard */; };
@@ -19,10 +19,10 @@
 
 /* Begin PBXFileReference section */
 		66D04E5A3DE35390E5AC89CE /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
+		92931AF72450985E00B687A4 /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		92B05734244FCAB5005A40D9 /* Firebase Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B05737244FCAB5005A40D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92B05739244FCAB5005A40D9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		92B0573B244FCAB5005A40D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		92B0573E244FCAB5005A40D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92B05740244FCABA005A40D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92B05743244FCABA005A40D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,7 +50,6 @@
 				66D04E5A3DE35390E5AC89CE /* Pods-Firebase Chat.debug.xcconfig */,
 				E4D8212C84B7551F8BBFD0B9 /* Pods-Firebase Chat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -78,7 +77,7 @@
 				92B0574D244FDEB9005A40D9 /* GoogleService-Info.plist */,
 				92B0574B244FCAEE005A40D9 /* Resources */,
 				92B0574C244FCAFB005A40D9 /* Storyboards */,
-				92B0573B244FCAB5005A40D9 /* ViewController.swift */,
+				92931AF72450985E00B687A4 /* ChatRoomsTableViewController.swift */,
 			);
 			path = "Firebase Chat";
 			sourceTree = "<group>";
@@ -227,7 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92B0573C244FCAB5005A40D9 /* ViewController.swift in Sources */,
+				92931AF82450985E00B687A4 /* ChatRoomsTableViewController.swift in Sources */,
 				92B05738244FCAB5005A40D9 /* AppDelegate.swift in Sources */,
 				92B0573A244FCAB5005A40D9 /* SceneDelegate.swift in Sources */,
 			);
