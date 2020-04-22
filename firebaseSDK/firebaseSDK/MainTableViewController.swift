@@ -25,6 +25,11 @@ class MainTableViewController: UITableViewController {
         self.ref.child("user/helloWorld/username").setValue("sample test")
         self.ref.child("user/helloWorld/date").setValue(String(today.timeIntervalSince1970))
         self.ref.child("user/helloWorld/dob").setValue("4/20/1969")
+        
+        let refHandle = ref.observe(.value) { (snapshot) in
+            let postDict = snapshot.value as? [String: AnyObject] ?? [:]
+            print(postDict)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
