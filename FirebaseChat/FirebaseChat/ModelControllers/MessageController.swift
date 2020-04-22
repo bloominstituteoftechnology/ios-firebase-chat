@@ -17,9 +17,11 @@ class MessageController {
     
     weak var messagesCollectionView: MessagesCollectionView?
     
-    func createMessage(with text: String, from sender: User) {
+    @discardableResult
+    func createMessage(with text: String, from sender: User) -> Message {
         let message = Message(messageText: text, messageId: UUID().uuidString, sentDate: Date(), sender: sender)
         messagesRef.childByAutoId().setValue(message.dictionaryRepresentation)
+        return message
     }
     
     // MARK: - Private Properties
