@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,6 +23,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="sh7-ID-ETj" kind="show" identifier="ShowMessages" id="HsF-kv-aC0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,6 +54,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5M-cV-aWq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1211" y="-37"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="OJK-FY-Ilp">
+            <objects>
+                <viewController id="sh7-ID-ETj" customClass="MessageViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pbH-VR-a3F">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0tZ-M5-6wa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sLt-Gs-Cm7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mum-MX-q5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="442" y="-38"/>
         </scene>
     </scenes>
 </document>
