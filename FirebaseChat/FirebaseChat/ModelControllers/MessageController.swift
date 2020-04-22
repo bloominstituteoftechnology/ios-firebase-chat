@@ -13,9 +13,9 @@ import MessageKit
 class MessageController {
     // MARK: - CRUD
     
-    private(set) var messages: [Message] = [] { didSet { messagesDidSet?() }}
+    private(set) var messages: [Message] = [] { didSet { messagesCollectionView?.reloadData() }}
     
-    var messagesDidSet: (() -> Void)?
+    weak var messagesCollectionView: MessagesCollectionView?
     
     func createMessage(with text: String, from sender: User) {
         let message = Message(messageText: text, messageId: UUID().uuidString, sentDate: Date(), sender: sender)
@@ -67,6 +67,7 @@ extension MessageController: MessagesDataSource {
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        self.messagesCollectionView = messagesCollectionView
         return 1
     }
     
