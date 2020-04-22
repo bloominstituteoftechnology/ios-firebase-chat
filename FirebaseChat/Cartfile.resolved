@@ -1,0 +1,5 @@
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAnalyticsBinary.json" "6.23.0"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseAuthBinary.json" "6.23.0"
+binary "https://dl.google.com/dl/firebase/ios/carthage/FirebaseDatabaseBinary.json" "6.23.0"
+github "MessageKit/MessageKit" "3.1.0"
+github "nathantannar4/InputBarAccessoryView" "4.3.2"
