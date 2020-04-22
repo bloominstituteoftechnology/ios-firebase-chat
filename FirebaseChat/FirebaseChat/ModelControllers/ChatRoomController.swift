@@ -11,6 +11,9 @@ import FirebaseDatabase
 import MessageKit
 
 class ChatRoomController: NSObject {
+    // MARK: - Public Properties
+    
+    var currentUser: User?
     
     // MARK: - CRUD
     

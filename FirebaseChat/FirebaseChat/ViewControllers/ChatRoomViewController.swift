@@ -63,6 +63,6 @@ extension ChatRoomViewController: MessagesDisplayDelegate {
 
 extension ChatRoomViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        messageController?.createMessage(with: text, from: User(id: "123", displayName: "Shawn"))
+        messageController?.createMessage(with: text, from: messageController.currentUser ?? User(id: "Foo", displayName: "Bar"))
     }
 }

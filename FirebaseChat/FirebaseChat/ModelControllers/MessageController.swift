@@ -11,6 +11,10 @@ import FirebaseDatabase
 import MessageKit
 
 class MessageController {
+    // MARK: - Public Properties
+    
+    var currentUser: User?
+    
     // MARK: - CRUD
     
     private(set) var messages: [Message] = [] { didSet { messagesCollectionView?.reloadData() }}
@@ -60,7 +64,7 @@ class MessageController {
 
 extension MessageController: MessagesDataSource {
     func currentSender() -> SenderType {
-        return User(id: "321", displayName: "Jon")
+        return currentUser ?? User(id: "Foo", displayName: "Bar")
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
