@@ -1,27 +1,31 @@
-/*
- MIT License
+//
+//  InputTextView.swift
+//  InputBarAccessoryView
+//
+//  Copyright © 2017-2019 Nathan Tannar.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+//  Created by Nathan Tannar on 8/18/17.
+//
 
- Copyright (c) 2017-2018 MessageKit
-
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
-
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
-
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
- */
-
+import Foundation
 import UIKit
 
 /**
@@ -29,9 +33,9 @@ import UIKit
  
  ## Important Notes ##
  1. Changing the font, textAlignment or textContainerInset automatically performs the same modifications to the placeholderLabel
- 2. Intended to be used in an `MessageInputBar`
- 3. Default placeholder text is "New Message"
- 4. Will pass a pasted image it's `MessageInputBar`'s `InputManager`s
+ 2. Intended to be used in an `InputBarAccessoryView`
+ 3. Default placeholder text is "Aa"
+ 4. Will pass a pasted image it's `InputBarAccessoryView`'s `InputPlugin`s
  */
 open class InputTextView: UITextView {
     
@@ -40,14 +44,12 @@ open class InputTextView: UITextView {
     open override var text: String! {
         didSet {
             postTextViewDidChangeNotification()
-            placeholderLabel.isHidden = !text.isEmpty
         }
     }
     
     open override var attributedText: NSAttributedString! {
         didSet {
             postTextViewDidChangeNotification()
-            placeholderLabel.isHidden = !text.isEmpty
         }
     }
     
@@ -61,20 +63,20 @@ open class InputTextView: UITextView {
     }
     
     open var isImagePasteEnabled: Bool = true
-    
+
     /// A UILabel that holds the InputTextView's placeholder text
-    open let placeholderLabel: UILabel = {
+    public let placeholderLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = .lightGray
-        label.text = "New Message"
+        label.text = "Aa"
         label.backgroundColor = .clear
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    /// The placeholder text that appears when there is no text. The default value is "New Message"
-    open var placeholder: String? = "New Message" {
+    /// The placeholder text that appears when there is no text
+    open var placeholder: String? = "Aa" {
         didSet {
             placeholderLabel.text = placeholder
         }
@@ -88,7 +90,7 @@ open class InputTextView: UITextView {
     }
     
     /// The UIEdgeInsets the placeholderLabel has within the InputTextView
-    open var placeholderLabelInsets: UIEdgeInsets = UIEdgeInsets(top: 4, left: 7, bottom: 4, right: 7) {
+    open var placeholderLabelInsets: UIEdgeInsets = UIEdgeInsets(top: 8, left: 4, bottom: 8, right: 4) {
         didSet {
             updateConstraintsForPlaceholderLabel()
         }
@@ -108,6 +110,13 @@ open class InputTextView: UITextView {
         }
     }
     
+    /// The textContainerInset of the InputTextView. When set the placeholderLabelInsets is also updated
+    open override var textContainerInset: UIEdgeInsets {
+        didSet {
+            placeholderLabelInsets = textContainerInset
+        }
+    }
+    
     open override var scrollIndicatorInsets: UIEdgeInsets {
         didSet {
             // When .zero a rendering issue can occur
@@ -120,12 +129,12 @@ open class InputTextView: UITextView {
         }
     }
     
-    /// A weak reference to the MessageInputBar that the InputTextView is contained within
-    open weak var messageInputBar: MessageInputBar?
+    /// A weak reference to the InputBarAccessoryView that the InputTextView is contained within
+    open weak var inputBarAccessoryView: InputBarAccessoryView?
     
     /// The constraints of the placeholderLabel
     private var placeholderLabelConstraintSet: NSLayoutConstraintSet?
-    
+ 
     // MARK: - Initializers
     
     public convenience init() {
@@ -151,25 +160,20 @@ open class InputTextView: UITextView {
     /// Sets up the default properties
     open func setup() {
         
+        backgroundColor = .clear
         font = UIFont.preferredFont(forTextStyle: .body)
-        textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
+        isScrollEnabled = false
         scrollIndicatorInsets = UIEdgeInsets(top: .leastNonzeroMagnitude,
                                              left: .leastNonzeroMagnitude,
                                              bottom: .leastNonzeroMagnitude,
                                              right: .leastNonzeroMagnitude)
-        isScrollEnabled = false
-        layer.cornerRadius = 5.0
-        layer.borderWidth = 1.25
-        layer.borderColor = UIColor.lightGray.cgColor
-        allowsEditingTextAttributes = false
         setupPlaceholderLabel()
         setupObservers()
     }
     
-    // swiftlint:disable colon
     /// Adds the placeholderLabel to the view and sets up its initial constraints
     private func setupPlaceholderLabel() {
-        
+
         addSubview(placeholderLabel)
         placeholderLabelConstraintSet = NSLayoutConstraintSet(
             top:     placeholderLabel.topAnchor.constraint(equalTo: topAnchor, constant: placeholderLabelInsets.top),
@@ -178,34 +182,49 @@ open class InputTextView: UITextView {
             right:   placeholderLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -placeholderLabelInsets.right),
             centerX: placeholderLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             centerY: placeholderLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
-            )
+        )
         placeholderLabelConstraintSet?.centerX?.priority = .defaultLow
         placeholderLabelConstraintSet?.centerY?.priority = .defaultLow
         placeholderLabelConstraintSet?.activate()
     }
-    // swiftlint:enable colon
     
-    /// Adds the required notification observers
+    /// Adds a notification for .UITextViewTextDidChange to detect when the placeholderLabel
+    /// should be hidden or shown
     private func setupObservers() {
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(InputTextView.redrawTextAttachments),
-                                               name: .UIDeviceOrientationDidChange, object: nil)
+                                               name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(InputTextView.textViewTextDidChange),
+                                               name: UITextView.textDidChangeNotification, object: nil)
     }
-    
+
     /// Updates the placeholderLabels constraint constants to match the placeholderLabelInsets
     private func updateConstraintsForPlaceholderLabel() {
-        
+
         placeholderLabelConstraintSet?.top?.constant = placeholderLabelInsets.top
         placeholderLabelConstraintSet?.bottom?.constant = -placeholderLabelInsets.bottom
         placeholderLabelConstraintSet?.left?.constant = placeholderLabelInsets.left
         placeholderLabelConstraintSet?.right?.constant = -placeholderLabelInsets.right
     }
     
-    // MARK: - Notification
+    // MARK: - Notifications
     
     private func postTextViewDidChangeNotification() {
-        NotificationCenter.default.post(name: .UITextViewTextDidChange, object: self)
+        NotificationCenter.default.post(name: UITextView.textDidChangeNotification, object: self)
+    }
+    
+    @objc
+    private func textViewTextDidChange() {
+        let isPlaceholderHidden = !text.isEmpty
+        placeholderLabel.isHidden = isPlaceholderHidden
+        // Adjust constraints to prevent unambiguous content size
+        if isPlaceholderHidden {
+            placeholderLabelConstraintSet?.deactivate()
+        } else {
+            placeholderLabelConstraintSet?.activate()
+        }
     }
     
     // MARK: - Image Paste Support
@@ -223,14 +242,22 @@ open class InputTextView: UITextView {
         guard let image = UIPasteboard.general.image else {
             return super.paste(sender)
         }
-        pasteImageInTextContainer(with: image)
+        if isImagePasteEnabled {
+            pasteImageInTextContainer(with: image)
+        } else {
+            for plugin in inputBarAccessoryView?.inputPlugins ?? [] {
+                if plugin.handleInput(of: image) {
+                    return
+                }
+            }
+        }
     }
     
     /// Addes a new UIImage to the NSTextContainer as an NSTextAttachment
     ///
     /// - Parameter image: The image to add
     private func pasteImageInTextContainer(with image: UIImage) {
-
+        
         // Add the new image as an NSTextAttachment
         let attributedImageString = NSAttributedString(attachment: textAttachment(using: image))
         
@@ -244,10 +271,10 @@ open class InputTextView: UITextView {
         newAttributedStingComponent.append(NSAttributedString(string: "\n"))
         
         // The attributes that should be applied to the new NSAttributedString to match the current attributes
-        let attributes: [NSAttributedStringKey: Any] = [
-            NSAttributedStringKey.font: font ?? UIFont.preferredFont(forTextStyle: .body),
-            NSAttributedStringKey.foregroundColor: textColor ?? .black
-            ]
+        let attributes: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: font ?? UIFont.preferredFont(forTextStyle: .body),
+            NSAttributedString.Key.foregroundColor: textColor ?? .black
+        ]
         newAttributedStingComponent.addAttributes(attributes, range: NSRange(location: 0, length: newAttributedStingComponent.length))
         
         textStorage.beginEditing()
@@ -258,9 +285,9 @@ open class InputTextView: UITextView {
         // Advance the range to the selected range plus the number of characters added
         let location = selectedRange.location + (isEmpty ? 2 : 3)
         selectedRange = NSRange(location: location, length: 0)
-    
+        
         // Broadcast a notification to recievers such as the MessageInputBar which will handle resizing
-        NotificationCenter.default.post(name: .UITextViewTextDidChange, object: self)
+        postTextViewDidChangeNotification()
     }
     
     /// Returns an NSTextAttachment the provided image that will fit inside the NSTextContainer
@@ -272,7 +299,7 @@ open class InputTextView: UITextView {
         guard let cgImage = image.cgImage else { return NSTextAttachment() }
         let scale = image.size.width / (frame.width - 2 * (textContainerInset.left + textContainerInset.right))
         let textAttachment = NSTextAttachment()
-        textAttachment.image = UIImage(cgImage: cgImage, scale: scale, orientation: .up)
+        textAttachment.image = UIImage(cgImage: cgImage, scale: scale, orientation: image.imageOrientation)
         return textAttachment
     }
     
@@ -331,7 +358,7 @@ open class InputTextView: UITextView {
             attachments.forEach { (attachment) in
                 let (range, image) = attachment
                 if curLocation < range.location {
-                    let textRange = NSMakeRange(curLocation, range.location)
+                    let textRange = NSMakeRange(curLocation, range.location - curLocation)
                     let text = attributedText.attributedSubstring(from: textRange).string.trimmingCharacters(in: .whitespacesAndNewlines)
                     if !text.isEmpty {
                         components.append(text)
@@ -348,7 +375,7 @@ open class InputTextView: UITextView {
                 }
             }
         }
-
+        
         return components
     }
     
@@ -371,3 +398,4 @@ open class InputTextView: UITextView {
     }
     
 }
+

@@ -1,26 +1,29 @@
-/*
- MIT License
- 
- Copyright (c) 2017-2018 MessageKit
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in all
- copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
- */
+//
+//  InputBarButtonItem.swift
+//  InputBarAccessoryView
+//
+//  Copyright © 2017-2019 Nathan Tannar.
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in all
+//  copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//  SOFTWARE.
+//
+//  Created by Nathan Tannar on 8/18/17.
+//
 
 import UIKit
 
@@ -30,7 +33,7 @@ import UIKit
  ## Important Notes ##
  1. Intended to be used in an `InputStackView`
  */
-open class InputBarButtonItem: UIButton {
+open class InputBarButtonItem: UIButton, InputItem {
     
     /// The spacing properties of the InputBarButtonItem
     ///
@@ -47,8 +50,8 @@ open class InputBarButtonItem: UIButton {
     
     // MARK: - Properties
     
-    /// A weak reference to the MessageInputBar that the InputBarButtonItem used in
-    open weak var messageInputBar: MessageInputBar?
+    /// A weak reference to the InputBarAccessoryView that the InputBarButtonItem used in
+    open weak var inputBarAccessoryView: InputBarAccessoryView?
     
     /// The spacing property of the InputBarButtonItem that determines the contentHuggingPriority and any
     /// additional space to the intrinsicContentSize
@@ -108,15 +111,21 @@ open class InputBarButtonItem: UIButton {
     
     /// Calls the onSelectedAction or onDeselectedAction when set
     open override var isHighlighted: Bool {
-        didSet {
-            if isHighlighted {
+        get {
+            return super.isHighlighted
+        }
+        set {
+            guard newValue != isHighlighted else { return }
+            super.isHighlighted = newValue
+            if newValue {
                 onSelectedAction?(self)
             } else {
                 onDeselectedAction?(self)
             }
+
         }
     }
-    
+
     /// Calls the onEnabledAction or onDisabledAction when set
     open override var isEnabled: Bool {
         didSet {
@@ -133,6 +142,7 @@ open class InputBarButtonItem: UIButton {
     private var onTouchUpInsideAction: InputBarButtonItemAction?
     private var onKeyboardEditingBeginsAction: InputBarButtonItemAction?
     private var onKeyboardEditingEndsAction: InputBarButtonItemAction?
+    private var onKeyboardSwipeGestureAction: ((InputBarButtonItem, UISwipeGestureRecognizer) -> Void)?
     private var onTextViewDidChangeAction: ((InputBarButtonItem, InputTextView) -> Void)?
     private var onSelectedAction: InputBarButtonItemAction?
     private var onDeselectedAction: InputBarButtonItemAction?
@@ -183,8 +193,8 @@ open class InputBarButtonItem: UIButton {
     open func setSize(_ newValue: CGSize?, animated: Bool) {
         size = newValue
         if animated, let position = parentStackViewPosition {
-            messageInputBar?.performLayout(animated) { [weak self] in
-                self?.messageInputBar?.layoutStackViews([position])
+            inputBarAccessoryView?.performLayout(animated) { [weak self] in
+                self?.inputBarAccessoryView?.layoutStackViews([position])
             }
         }
     }
@@ -218,6 +228,17 @@ open class InputBarButtonItem: UIButton {
     @discardableResult
     open func onKeyboardEditingEnds(_ action: @escaping InputBarButtonItemAction) -> Self {
         onKeyboardEditingEndsAction = action
+        return self
+    }
+    
+    
+    /// Sets the onKeyboardSwipeGestureAction
+    ///
+    /// - Parameter action: The new onKeyboardSwipeGestureAction
+    /// - Returns: Self
+    @discardableResult
+    open func onKeyboardSwipeGesture(_ action: @escaping (_ item: InputBarButtonItem, _ gesture: UISwipeGestureRecognizer) -> Void) -> Self {
+        onKeyboardSwipeGestureAction = action
         return self
     }
     
@@ -290,6 +311,13 @@ open class InputBarButtonItem: UIButton {
         onTextViewDidChangeAction?(self, textView)
     }
     
+    /// Executes the onKeyboardSwipeGestureAction with the given gesture
+    ///
+    /// - Parameter gesture: A reference to the gesture that was recognized
+    open func keyboardSwipeGestureAction(with gesture: UISwipeGestureRecognizer) {
+        onKeyboardSwipeGestureAction?(self, gesture)
+    }
+    
     /// Executes the onKeyboardEditingEndsAction
     open func keyboardEditingEndsAction() {
         onKeyboardEditingEndsAction?(self)
@@ -309,7 +337,7 @@ open class InputBarButtonItem: UIButton {
     // MARK: - Static Spacers
     
     /// An InputBarButtonItem that's spacing property is set to be .flexible
-    open static var flexibleSpace: InputBarButtonItem {
+    public static var flexibleSpace: InputBarButtonItem {
         let item = InputBarButtonItem()
         item.setSize(.zero, animated: false)
         item.spacing = .flexible
@@ -317,7 +345,7 @@ open class InputBarButtonItem: UIButton {
     }
     
     /// An InputBarButtonItem that's spacing property is set to be .fixed with the width arguement
-    open class func fixedSpace(_ width: CGFloat) -> InputBarButtonItem {
+    public static func fixedSpace(_ width: CGFloat) -> InputBarButtonItem {
         let item = InputBarButtonItem()
         item.setSize(.zero, animated: false)
         item.spacing = .fixed(width)

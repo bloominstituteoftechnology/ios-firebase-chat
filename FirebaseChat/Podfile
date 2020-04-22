@@ -8,8 +8,7 @@ target 'FirebaseChat' do
   # Pods for FirebaseChat
 
 pod 'Firebase/Database'
-pod 'MessageKit'
-
+pod 'MessageKit', '~>3.1.0'
 
   target 'FirebaseChatTests' do
     inherit! :search_paths

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B5E116463FFE2F494266D785F2E7A506"
+               BlueprintIdentifier = "64632D6781F068180B59829AF872A1DC"
                BuildableName = "Pods_FirebaseChat.framework"
                BlueprintName = "Pods-FirebaseChat"
                ReferencedContainer = "container:Pods.xcodeproj">

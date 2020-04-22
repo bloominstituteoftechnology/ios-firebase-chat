@@ -1,7 +1,7 @@
 /*
  MIT License
  
- Copyright (c) 2017-2018 MessageKit
+ Copyright (c) 2017-2019 MessageKit
  
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
@@ -24,49 +24,43 @@
 
 import UIKit
 
-/**
- A UIStackView that's intended for holding `InputBarButtonItem`s
- 
- ## Important Notes ##
- 1. Default alignment is .fill
- 2. Default distribution is .fill
- 3. The distribution property needs to be based on its arranged subviews intrinsicContentSize so it is not recommended to change it
- */
-open class InputStackView: UIStackView {
+/// A subclass of `MessageCollectionViewCell` used to display the typing indicator.
+open class TypingIndicatorCell: MessageCollectionViewCell {
     
-    /// The stack view position in the MessageInputBar
-    ///
-    /// - left: Left Stack View
-    /// - right: Bottom Stack View
-    /// - bottom: Left Stack View
-    /// - top: Top Stack View
-    public enum Position {
-        case left, right, bottom, top
-    }
+    // MARK: - Subviews
+
+    public var insets = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
     
-    // MARK: Initialization
+    public let typingBubble = TypingBubble()
     
-    public convenience init(axis: UILayoutConstraintAxis, spacing: CGFloat) {
-        self.init(frame: .zero)
-        self.axis = axis
-        self.spacing = spacing
-    }
+    // MARK: - Initialization
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        setup()
+        setupSubviews()
     }
     
-    required public init(coder: NSCoder) {
-        super.init(coder: coder)
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupSubviews()
     }
     
-    // MARK: - Setup
-    
-    /// Sets up the default properties
-    open func setup() {
-        translatesAutoresizingMaskIntoConstraints = false
-        distribution = .fill
-        alignment = .bottom
+    open func setupSubviews() {
+        addSubview(typingBubble)
     }
+    
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        if typingBubble.isAnimating {
+            typingBubble.stopAnimating()
+        }
+    }
+    
+    // MARK: - Layout
+    
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        typingBubble.frame = bounds.inset(by: insets)
+    }
+    
 }
