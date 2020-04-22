@@ -21,8 +21,8 @@ class ChatRoomController {
     @discardableResult
     func createChatRoom(name: String) -> ChatRoom {
         let chatRoomID = UUID().uuidString
-        chatRoomsRef.child(chatRoomID).child("name").setValue(name)
-        chatRoomsRef.child(chatRoomID).child("id").setValue(chatRoomID)
+        chatRoomsRef.child(chatRoomID).child(ChatRoom.Keys.name).setValue(name)
+        chatRoomsRef.child(chatRoomID).child(ChatRoom.Keys.id).setValue(chatRoomID)
         
         return ChatRoom(name: name, id: chatRoomID)
     }
@@ -42,7 +42,7 @@ class ChatRoomController {
     // MARK: - Private Methods
     
     private func setUpObservers() {
-        let chatRoomsQuery = chatRoomsRef.queryOrdered(byChild: "name")
+        let chatRoomsQuery = chatRoomsRef.queryOrdered(byChild: ChatRoom.Keys.name)
         
         chatRoomsQuery.observe(.value) { (snapshot) in
             var chatRooms = [ChatRoom]()
