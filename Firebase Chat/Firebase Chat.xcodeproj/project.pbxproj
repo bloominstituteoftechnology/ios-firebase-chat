@@ -13,6 +13,7 @@
 		92B0573F244FCAB5005A40D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B0573D244FCAB5005A40D9 /* Main.storyboard */; };
 		92B05741244FCABA005A40D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B05740244FCABA005A40D9 /* Assets.xcassets */; };
 		92B05744244FCABA005A40D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92B05742244FCABA005A40D9 /* LaunchScreen.storyboard */; };
+		92B0574E244FDEB9005A40D9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92B0574D244FDEB9005A40D9 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		92B05740244FCABA005A40D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92B05743244FCABA005A40D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92B05745244FCABA005A40D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92B0574D244FDEB9005A40D9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		92B05736244FCAB5005A40D9 /* Firebase Chat */ = {
 			isa = PBXGroup;
 			children = (
+				92B0574D244FDEB9005A40D9 /* GoogleService-Info.plist */,
 				92B0574B244FCAEE005A40D9 /* Resources */,
 				92B0574C244FCAFB005A40D9 /* Storyboards */,
 				92B0573B244FCAB5005A40D9 /* ViewController.swift */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B05744244FCABA005A40D9 /* LaunchScreen.storyboard in Resources */,
+				92B0574E244FDEB9005A40D9 /* GoogleService-Info.plist in Resources */,
 				92B05741244FCABA005A40D9 /* Assets.xcassets in Resources */,
 				92B0573F244FCAB5005A40D9 /* Main.storyboard in Resources */,
 			);

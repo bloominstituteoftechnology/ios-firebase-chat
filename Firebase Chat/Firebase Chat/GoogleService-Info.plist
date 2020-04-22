@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>197685065902-remao2angpadkqg2jgoojq2342pglfpf.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.197685065902-remao2angpadkqg2jgoojq2342pglfpf</string>
+	<key>API_KEY</key>
+	<string>AIzaSyArqh3BQ7rMDYmHICtUtI1oyGMf-nU5UCE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>197685065902</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gerrior.Firebase-Chat</string>
+	<key>PROJECT_ID</key>
+	<string>chat-lambda-gerrior</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chat-lambda-gerrior.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:197685065902:ios:7ac2fafa4a2a7f97be553f</string>
+	<key>DATABASE_URL</key>
+	<string>https://chat-lambda-gerrior.firebaseio.com</string>
+</dict>
+</plist>
