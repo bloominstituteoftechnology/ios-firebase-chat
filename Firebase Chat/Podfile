@@ -10,4 +10,7 @@ target 'Firebase Chat' do
   # For example, to use Firebase Authentication and Cloud Firestore
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+
+  # Pods for MessageKit
+  pod 'MessageKit'
 end
