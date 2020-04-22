@@ -30,6 +30,18 @@ class MainTableViewController: UITableViewController {
             let postDict = snapshot.value as? [String: AnyObject] ?? [:]
             print(postDict)
         }
+        
+        guard let key = ref.child("user").childByAutoId().key else { return }
+        let data = [
+            "helloWorld" : [
+                "date"  :   "199999.200",
+                "dob"   :   "4/4/4444",
+                "username" : "dample changed"
+            ]]
+        
+        let childUpdates = [ "user" : data]
+        ref.updateChildValues(childUpdates)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
