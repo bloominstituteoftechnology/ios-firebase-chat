@@ -17,10 +17,15 @@ struct User: SenderType {
         return id
     }
     
+    enum Keys {
+        static let senderId = "senderId"
+        static let displayName = "displayName"
+    }
+    
     init?(with dictionary: [String: String]) {
         guard
-            let id = dictionary["senderId"],
-            let displayName = dictionary["displayName"] else { return nil }
+            let id = dictionary[Keys.senderId],
+            let displayName = dictionary[Keys.displayName] else { return nil }
         
         self.id = id
         self.displayName = displayName
@@ -29,6 +34,6 @@ struct User: SenderType {
 
 extension SenderType {
     var dictionaryRepresentation: [String: String] {
-        return ["senderId": senderId, "displayName": displayName]
+        return [User.Keys.senderId: senderId, User.Keys.displayName: displayName]
     }
 }
