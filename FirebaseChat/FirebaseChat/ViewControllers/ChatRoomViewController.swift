@@ -8,17 +8,38 @@
 
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 class ChatRoomViewController: MessagesViewController {
 
     // MARK: - Properties
     
-    var chatRoom: ChatRoom?
-    var messageController: MessageController?
+    var messageController: MessageController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let chatRoom = chatRoom else { return }
-        messageController = MessageController(chatRoom: chatRoom)
+        
+        messageController.messagesDidSet = { [weak self] in
+            self?.messagesCollectionView.reloadData()
+        }
+        
+        messageInputBar.delegate = self
+        messagesCollectionView.messagesDataSource = messageController
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+    }
+}
+
+extension ChatRoomViewController: MessagesLayoutDelegate {
+    
+}
+
+extension ChatRoomViewController: MessagesDisplayDelegate {
+    
+}
+
+extension ChatRoomViewController: InputBarAccessoryViewDelegate {
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        messageController.createMessage(with: text, from: User(id: "123", displayName: "Shawn"))
     }
 }

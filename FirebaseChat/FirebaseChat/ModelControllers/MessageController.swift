@@ -13,11 +13,13 @@ import MessageKit
 class MessageController {
     // MARK: - CRUD
     
-    private(set) var messages: [Message] = []
+    private(set) var messages: [Message] = [] { didSet { messagesDidSet?() }}
+    
+    var messagesDidSet: (() -> Void)?
     
     func createMessage(with text: String, from sender: User) {
         let message = Message(messageText: text, messageId: UUID().uuidString, sentDate: Date(), sender: sender)
-        messagesRef.childByAutoId().setValue(message)
+        messagesRef.childByAutoId().setValue(message.dictionaryRepresentation)
     }
     
     // MARK: - Private Properties
@@ -41,5 +43,25 @@ class MessageController {
             guard let messageDicts = snapshot.value as? [String: [String: Any]] else { return }
             self.messages = messageDicts.values.compactMap { Message(with: $0) }
         }
+    }
+}
+
+// MARK: - Messages Data Source
+
+extension MessageController: MessagesDataSource {
+    func currentSender() -> SenderType {
+        return User(id: "123", displayName: "Shawn")
+    }
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return messages[indexPath.row]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return 1
+    }
+    
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messages.count
     }
 }

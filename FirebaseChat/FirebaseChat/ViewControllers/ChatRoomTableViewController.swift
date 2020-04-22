@@ -14,7 +14,7 @@ class ChatRoomTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        chatRoomController.chatRoomUpdate = { [weak self] in
+        chatRoomController.chatRoomsDidSet = { [weak self] in
             self?.tableView.reloadData()
         }
     }
@@ -42,9 +42,10 @@ class ChatRoomTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMessagesSegue",
-            let messageVC = segue.destination as? ChatRoomViewController,
+            let chatRoomVC = segue.destination as? ChatRoomViewController,
             let indexPath = tableView.indexPathForSelectedRow {
-            messageVC.chatRoom = chatRoomController.chatRooms[indexPath.row]
+            let chatRoom = chatRoomController.chatRooms[indexPath.row]
+            chatRoomVC.messageController = MessageController(chatRoom: chatRoom)
         }
     }
 

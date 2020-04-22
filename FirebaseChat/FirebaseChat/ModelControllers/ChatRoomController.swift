@@ -14,17 +14,15 @@ class ChatRoomController {
     
     // MARK: - CRUD
     
-    private(set) var chatRooms: [ChatRoom] = [] { didSet {
-        chatRoomUpdate?()
-    }}
+    private(set) var chatRooms: [ChatRoom] = [] { didSet { chatRoomsDidSet?() }}
 
-    var chatRoomUpdate: (() -> Void)?
+    var chatRoomsDidSet: (() -> Void)?
     
     @discardableResult
     func createChatRoom(name: String) -> ChatRoom {
         let chatRoomID = UUID().uuidString
-        databaseRef.child("chatRooms").child(chatRoomID).child("name").setValue(name)
-        databaseRef.child("chatRooms").child(chatRoomID).child("id").setValue(chatRoomID)
+        chatRoomsRef.child(chatRoomID).child("name").setValue(name)
+        chatRoomsRef.child(chatRoomID).child("id").setValue(chatRoomID)
         
         return ChatRoom(name: name, id: chatRoomID)
     }
