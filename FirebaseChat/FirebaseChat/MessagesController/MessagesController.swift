@@ -32,7 +32,7 @@ class MessagesController {
         }
     }
     
-    func loadChats() {
+    func loadChats(completion: () -> ()) {
         ref.child("chats").observeSingleEvent(of: .value, with: { (snapshot) in
           
             guard let snaps = snapshot.value as? [String:String] else {
@@ -43,6 +43,7 @@ class MessagesController {
             let chatList = snaps.compactMap({ $0.value }) ?? []
             
             for chat in chatList {
+                print(chat)
                 let item = Chats(title: chat)
                 self.chats.append(item)
             }
@@ -54,6 +55,7 @@ class MessagesController {
           }) { (error) in
             print(error.localizedDescription)
         }
+        completion()
     }
     
 }
