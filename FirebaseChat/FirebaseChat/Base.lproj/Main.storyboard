@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="89Q-TJ-dtD" kind="show" identifier="ShowMessageSegue" id="GUf-SZ-52k"/>
+                                    <segue destination="89Q-TJ-dtD" kind="show" identifier="ShowMessagesSegue" id="GUf-SZ-52k"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
