@@ -15,8 +15,6 @@ class ChatRoomController: NSObject {
     // MARK: - CRUD
     
     private(set) var chatRooms: [ChatRoom] = [] { didSet { tableView?.reloadData() }}
-
-    weak var tableView: UITableView?
     
     @discardableResult
     func createChatRoom(name: String) -> ChatRoom {
@@ -31,6 +29,7 @@ class ChatRoomController: NSObject {
     
     private var databaseRef: DatabaseReference = Database.database().reference()
     private lazy var chatRoomsRef = databaseRef.child("chatRooms").ref
+    private weak var tableView: UITableView?
     
     // MARK: - Init
     

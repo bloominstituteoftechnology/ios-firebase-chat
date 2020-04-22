@@ -15,8 +15,6 @@ class MessageController {
     
     private(set) var messages: [Message] = [] { didSet { messagesCollectionView?.reloadData() }}
     
-    weak var messagesCollectionView: MessagesCollectionView?
-    
     @discardableResult
     func createMessage(with text: String, from sender: User) -> Message {
         let message = Message(messageText: text, messageId: UUID().uuidString, sentDate: Date(), sender: sender)
@@ -28,6 +26,7 @@ class MessageController {
     
     private let databaseRef: DatabaseReference = Database.database().reference()
     private let messagesRef: DatabaseReference
+    private weak var messagesCollectionView: MessagesCollectionView?
     
     // MARK: - Init
     
