@@ -17,7 +17,7 @@ class ChatRoomTableViewController: UITableViewController {
     // MARK: - IBActions
     
     @IBAction func addButtonTapped(_ sender: Any) {
-        chatRoomController.createChatRoom(name: "B Testing")
+        chatRoomController.createChatRoom(name: "Jon Testing")
     }
     
     // MARK: - View Lifecycle
