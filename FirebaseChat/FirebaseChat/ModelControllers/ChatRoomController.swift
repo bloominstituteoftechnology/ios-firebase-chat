@@ -43,9 +43,18 @@ class ChatRoomController {
     
     private func setUpObservers() {
         let chatRoomsQuery = chatRoomsRef.queryOrdered(byChild: "name")
+        
         chatRoomsQuery.observe(.value) { (snapshot) in
-            guard let chatRoomsDicts = snapshot.value as? [String: [String: String]] else { return }
-            self.chatRooms = chatRoomsDicts.values.compactMap { ChatRoom(with: $0) }
+            var chatRooms = [ChatRoom]()
+            for child in snapshot.children {
+                guard
+                    let childSnapshot = child as? DataSnapshot,
+                    let chatRoomDict = childSnapshot.value as? [String: String],
+                    let chatRoom = ChatRoom(with: chatRoomDict) else { continue }
+                
+                chatRooms.append(chatRoom)
+            }
+            self.chatRooms = chatRooms
         }
     }
 }
