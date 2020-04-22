@@ -139,7 +139,6 @@ extension ChatViewController: MessagesDisplayDelegate {
                 self.messagesCollectionView.reloadData()
             }
         }
-        #warning("REFACTOR THESE METHODS")
 
     }
 }

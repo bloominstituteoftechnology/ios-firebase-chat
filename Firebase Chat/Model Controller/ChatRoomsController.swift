@@ -29,22 +29,32 @@ class ChatRoomsController {
          dataDictionary["Last name"] =  "Appleseed"
          ref.setValue(dataDictionary)
      */
+    func fetchAllChatRooms(completion: @escaping () -> Void) {
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let value = snapshot.value as? [String:[String:[String:String]]] else { return }
+            print("⚠️ Value: \(value)")
+            
+            for (id,value) in value {
+                print(value)
+            }
+            
+            
+            
+            
+        })
+    }
 
     func createChatRoom(with title: String, completion: @escaping () -> Void) {
 
         let chatRoom = ChatRoom(title: title)
         
+        let info = ["title": chatRoom.title,
+                    "identifier": chatRoom.identifier]
         
-        ref.child(chatRoom.identifier).setValue(chatRoom.title)
+        ref.child(chatRoom.identifier).setValue(info)
         
         self.chatRooms.append(chatRoom)
         completion()
-        
-    }
-    
-    func fetchAllChatRooms() {
-
-        
         
     }
     
@@ -55,40 +65,14 @@ class ChatRoomsController {
         let newMessage = ChatRoom.Message(text: text, sender: sender)
         chatRooms[index].messages.append(newMessage)
 
-        
-        
-        
-//        guard let key = ref.child("Chat Rooms").childByAutoId().key else { return }
         let message = ["text": text,
                        "displayName": newMessage.displayName,
                        "senderID": newMessage.senderID,
                        "timestamp": "\(newMessage.timestamp)",
                        "messageID": newMessage.messageId] as [String : String]
-//        let childUpdates = ["/posts/\(key)": post,
-//                            "/user-posts/\(userID)/\(key)/": post]
         ref.child(chatRoom.identifier).child(newMessage.messageId).setValue(message)
         completion()
-        
-
-//
-//        var messageId: String
-//
-//        var sentDate: Date {
-//            return timestamp
-//        }
-//        var kind: MessageKind {
-//            return .text(text)
-//        }
-//        var sender: SenderType {
-//            return Sender(senderId: senderID, displayName: displayName)
-//        }
+        #warning("add completion closure to all methods")
         
     }
-    
-    func fetchAllMessages() {
-
-        
-    }
-    
-    
 }

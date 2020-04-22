@@ -15,6 +15,16 @@ class ChatRoomsTableViewController: UITableViewController {
     
     let chatRoomsController = ChatRoomsController()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        chatRoomsController.fetchAllChatRooms {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
