@@ -39,9 +39,18 @@ class MessageController {
     
     func setUpObservers() {
         let messageQuery = messagesRef.queryOrderedByKey()
+        
         messageQuery.observe(.value) { (snapshot) in
-            guard let messageDicts = snapshot.value as? [String: [String: Any]] else { return }
-            self.messages = messageDicts.values.compactMap { Message(with: $0) }
+            var messages = [Message]()
+            for child in snapshot.children {
+                guard
+                    let childSnapshot = child as? DataSnapshot,
+                    let messageDict = childSnapshot.value as? [String: Any],
+                    let message = Message(with: messageDict) else { continue }
+                
+                messages.append(message)
+            }
+            self.messages = messages
         }
     }
 }
