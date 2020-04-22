@@ -61,7 +61,7 @@ class MessageController {
 
 extension MessageController: MessagesDataSource {
     func currentSender() -> SenderType {
-        return User(id: "123", displayName: "Shawn")
+        return User(id: "321", displayName: "Jon")
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
