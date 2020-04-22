@@ -10,13 +10,13 @@ import UIKit
 import FirebaseDatabase
 import MessageKit
 
-class ChatRoomController {
+class ChatRoomController: NSObject {
     
     // MARK: - CRUD
     
-    private(set) var chatRooms: [ChatRoom] = [] { didSet { chatRoomsDidSet?() }}
+    private(set) var chatRooms: [ChatRoom] = [] { didSet { tableView?.reloadData() }}
 
-    var chatRoomsDidSet: (() -> Void)?
+    weak var tableView: UITableView?
     
     @discardableResult
     func createChatRoom(name: String) -> ChatRoom {
@@ -34,7 +34,8 @@ class ChatRoomController {
     
     // MARK: - Init
     
-    init() {
+    override init() {
+        super.init()
         setUpObservers()
         // TODO: Remove observers
     }
@@ -59,6 +60,26 @@ class ChatRoomController {
     }
 }
 
+// MARK: - Table View Data Source
+
+extension ChatRoomController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        self.tableView = tableView
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatRooms.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
+
+        cell.textLabel?.text = chatRooms[indexPath.row].name
+
+        return cell
+    }
+}
 
 
 

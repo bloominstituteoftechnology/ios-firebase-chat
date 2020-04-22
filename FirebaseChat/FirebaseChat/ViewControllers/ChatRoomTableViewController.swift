@@ -14,28 +14,11 @@ class ChatRoomTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        chatRoomController.chatRoomsDidSet = { [weak self] in
-            self?.tableView.reloadData()
-        }
+        tableView.dataSource = chatRoomController
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
         chatRoomController.createChatRoom(name: "B Testing")
-    }
-
-    // MARK: - Table View Data Source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        chatRoomController.chatRooms.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
-
-        cell.textLabel?.text = chatRoomController.chatRooms[indexPath.row].name
-
-        return cell
     }
 
     // MARK: - Navigation
