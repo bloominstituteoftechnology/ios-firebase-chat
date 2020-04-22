@@ -10,25 +10,42 @@ import Foundation
 import MessageKit
 
 struct Message: MessageType {
-    let text: String
-    let sender: SenderType
+    let messageText: String
     let messageId: String
     let sentDate: Date
+    let sender: SenderType
     
     var kind: MessageKind {
-        return .text(text)
+        return .text(messageText)
     }
     
-//    var dictionaryRepresentation: [String: Any] {
-//        
-//    }
-}
-
-struct User: SenderType {
-    let id: String
-    let displayName: String
+    enum Keys {
+        static let messageText = "messageText"
+        static let messageId = "messageId"
+        static let sentDate = "sentDate"
+        static let sender = "sender"
+    }
     
-    var senderId: String {
-        return id
+    init?(with dictionary: [String: Any]) {
+        guard
+            let messageText = dictionary[Keys.messageText] as? String,
+            let messageId = dictionary[Keys.messageId] as? String,
+            let sentDate = dictionary[Keys.sentDate] as? TimeInterval,
+            let senderDict = dictionary[Keys.sender] as? [String: String],
+            let sender = User(with: senderDict) else { return nil }
+        
+        self.messageText = messageText
+        self.messageId = messageId
+        self.sentDate = Date(timeIntervalSinceReferenceDate: sentDate)
+        self.sender = sender
+    }
+    
+    var dictionaryRepresentation: [String: Any] {
+        return [
+            Keys.messageText: messageText,
+            Keys.messageId: messageId,
+            Keys.sentDate: sentDate.timeIntervalSinceReferenceDate,
+            Keys.sender: sender.dictionaryRepresentation
+        ]
     }
 }
