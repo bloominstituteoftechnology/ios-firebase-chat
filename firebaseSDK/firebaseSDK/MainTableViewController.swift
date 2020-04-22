@@ -33,6 +33,7 @@ class MainTableViewController: UITableViewController {
         
         
         self.ref.child("user/helloWorld/dob").setValue("potatoTomato")
+        self.ref.child("user/\(69420)").removeValue()
         
 //        guard let key = ref.child("user").childByAutoId().key else { return }
 //        let data = [
