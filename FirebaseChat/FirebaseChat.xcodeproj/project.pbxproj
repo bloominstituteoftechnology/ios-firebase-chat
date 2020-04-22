@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		044E9582244F783C00ED6C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9581244F783C00ED6C74 /* AppDelegate.swift */; };
 		044E9584244F783C00ED6C74 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9583244F783C00ED6C74 /* SceneDelegate.swift */; };
-		044E9586244F783C00ED6C74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9585244F783C00ED6C74 /* ViewController.swift */; };
 		044E9589244F783C00ED6C74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E9587244F783C00ED6C74 /* Main.storyboard */; };
 		044E958B244F783E00ED6C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044E958A244F783E00ED6C74 /* Assets.xcassets */; };
 		044E958E244F783E00ED6C74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 044E958C244F783E00ED6C74 /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		044E957E244F783C00ED6C74 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044E9581244F783C00ED6C74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044E9583244F783C00ED6C74 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		044E9585244F783C00ED6C74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		044E9588244F783C00ED6C74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		044E958A244F783E00ED6C74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044E958D244F783E00ED6C74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,17 +77,11 @@
 		044E9580244F783C00ED6C74 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
-				044E9581244F783C00ED6C74 /* AppDelegate.swift */,
-				044E9583244F783C00ED6C74 /* SceneDelegate.swift */,
-				044E9585244F783C00ED6C74 /* ViewController.swift */,
 				044E9587244F783C00ED6C74 /* Main.storyboard */,
 				044E959F244F8E8000ED6C74 /* Models */,
-				044E9597244F893500ED6C74 /* ChatRoomTableViewController.swift */,
-				044E9599244F894800ED6C74 /* MessageViewController.swift */,
-				044E958A244F783E00ED6C74 /* Assets.xcassets */,
-				044E958C244F783E00ED6C74 /* LaunchScreen.storyboard */,
-				044E958F244F783E00ED6C74 /* Info.plist */,
-				044E9595244F861F00ED6C74 /* GoogleService-Info.plist */,
+				044E95A8244FFEC300ED6C74 /* ModelControllers */,
+				044E95A7244FFEB300ED6C74 /* ViewControllers */,
+				044E95A6244FFE9100ED6C74 /* Resources */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -98,12 +90,41 @@
 			isa = PBXGroup;
 			children = (
 				044E959B244F8B8500ED6C74 /* Message.swift */,
-				044E95A4244FEEA400ED6C74 /* MessageController.swift */,
 				044E95A2244FD15300ED6C74 /* User.swift */,
 				044E959D244F8B8E00ED6C74 /* ChatRoom.swift */,
-				044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		044E95A6244FFE9100ED6C74 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				044E9581244F783C00ED6C74 /* AppDelegate.swift */,
+				044E9583244F783C00ED6C74 /* SceneDelegate.swift */,
+				044E958A244F783E00ED6C74 /* Assets.xcassets */,
+				044E958C244F783E00ED6C74 /* LaunchScreen.storyboard */,
+				044E958F244F783E00ED6C74 /* Info.plist */,
+				044E9595244F861F00ED6C74 /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		044E95A7244FFEB300ED6C74 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				044E9597244F893500ED6C74 /* ChatRoomTableViewController.swift */,
+				044E9599244F894800ED6C74 /* MessageViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		044E95A8244FFEC300ED6C74 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				044E95A4244FEEA400ED6C74 /* MessageController.swift */,
+				044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */,
+			);
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 		2E90D9E46CC5537EE346AB9A /* Pods */ = {
@@ -240,7 +261,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				044E9598244F893500ED6C74 /* ChatRoomTableViewController.swift in Sources */,
-				044E9586244F783C00ED6C74 /* ViewController.swift in Sources */,
 				044E9582244F783C00ED6C74 /* AppDelegate.swift in Sources */,
 				044E95A1244F8F3100ED6C74 /* ChatRoomController.swift in Sources */,
 				044E959C244F8B8500ED6C74 /* Message.swift in Sources */,
@@ -395,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
-				INFOPLIST_FILE = FirebaseChat/Info.plist;
+				INFOPLIST_FILE = FirebaseChat/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -414,7 +434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 94ZMA2MYR4;
-				INFOPLIST_FILE = FirebaseChat/Info.plist;
+				INFOPLIST_FILE = FirebaseChat/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
