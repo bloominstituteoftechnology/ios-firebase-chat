@@ -7,24 +7,36 @@
 //
 
 import UIKit
+import MessageKit
 
-class MessageViewController: UIViewController {
+let sender = Sender(senderId: "AnyID", displayName: "EL ROVERTOOO")
+let messages: [MessageType] = []
+
+class MessageViewController: MessagesViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
         // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MessageViewController: MessagesDataSource, MessagesDisplayDelegate, MessagesLayoutDelegate {
+    func currentSender() -> SenderType {
+        return Sender(senderId: "anyID", displayName: "EL ROVERTOOO")
     }
-    */
-
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return messages[indexPath.section]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messages.count
+    }
+    
+    
 }

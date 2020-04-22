@@ -16,6 +16,7 @@
 		9CAFFF57244FB0AB00D1CA42 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CAFFF56244FB0AB00D1CA42 /* GoogleService-Info.plist */; };
 		9CAFFF59244FB42C00D1CA42 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFFF58244FB42C00D1CA42 /* MainTableViewController.swift */; };
 		9CAFFF5B244FB51300D1CA42 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFFF5A244FB51300D1CA42 /* MessageViewController.swift */; };
+		9CAFFF5D244FCB2C00D1CA42 /* MessageKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAFFF5C244FCB2C00D1CA42 /* MessageKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9CAFFF56244FB0AB00D1CA42 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9CAFFF58244FB42C00D1CA42 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		9CAFFF5A244FB51300D1CA42 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		9CAFFF5C244FCB2C00D1CA42 /* MessageKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKit.swift; sourceTree = "<group>"; };
 		FFC28F762990340BEA680EDE /* Pods_firebaseSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_firebaseSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 				9CAFFF56244FB0AB00D1CA42 /* GoogleService-Info.plist */,
 				9CAFFF58244FB42C00D1CA42 /* MainTableViewController.swift */,
 				9CAFFF5A244FB51300D1CA42 /* MessageViewController.swift */,
+				9CAFFF5C244FCB2C00D1CA42 /* MessageKit.swift */,
 			);
 			path = firebaseSDK;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			files = (
 				9CAFFF23244FA42400D1CA42 /* AppDelegate.swift in Sources */,
 				9CAFFF59244FB42C00D1CA42 /* MainTableViewController.swift in Sources */,
+				9CAFFF5D244FCB2C00D1CA42 /* MessageKit.swift in Sources */,
 				9CAFFF5B244FB51300D1CA42 /* MessageViewController.swift in Sources */,
 				9CAFFF25244FA42400D1CA42 /* SceneDelegate.swift in Sources */,
 			);
