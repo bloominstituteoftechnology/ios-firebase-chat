@@ -56,15 +56,31 @@
 		92B05736244FCAB5005A40D9 /* Firebase Chat */ = {
 			isa = PBXGroup;
 			children = (
-				92B05737244FCAB5005A40D9 /* AppDelegate.swift */,
-				92B05739244FCAB5005A40D9 /* SceneDelegate.swift */,
+				92B0574B244FCAEE005A40D9 /* Resources */,
+				92B0574C244FCAFB005A40D9 /* Storyboards */,
 				92B0573B244FCAB5005A40D9 /* ViewController.swift */,
-				92B0573D244FCAB5005A40D9 /* Main.storyboard */,
-				92B05740244FCABA005A40D9 /* Assets.xcassets */,
-				92B05742244FCABA005A40D9 /* LaunchScreen.storyboard */,
-				92B05745244FCABA005A40D9 /* Info.plist */,
 			);
 			path = "Firebase Chat";
+			sourceTree = "<group>";
+		};
+		92B0574B244FCAEE005A40D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92B05737244FCAB5005A40D9 /* AppDelegate.swift */,
+				92B05740244FCABA005A40D9 /* Assets.xcassets */,
+				92B05745244FCABA005A40D9 /* Info.plist */,
+				92B05739244FCAB5005A40D9 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		92B0574C244FCAFB005A40D9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				92B05742244FCABA005A40D9 /* LaunchScreen.storyboard */,
+				92B0573D244FCAB5005A40D9 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +302,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZDYKHFRDV;
-				INFOPLIST_FILE = "Firebase Chat/Info.plist";
+				INFOPLIST_FILE = "Firebase Chat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +320,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4ZDYKHFRDV;
-				INFOPLIST_FILE = "Firebase Chat/Info.plist";
+				INFOPLIST_FILE = "Firebase Chat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
