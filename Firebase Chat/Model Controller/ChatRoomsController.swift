@@ -33,13 +33,15 @@ class ChatRoomsController {
 
     
     func fetchAllChatRooms(completion: @escaping () -> Void) {
+        
+        #warning("WARNING JON: This method is very messy")
+        
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
             guard let value = snapshot.value as? [String:[String:Any]] else { return }
             print("⚠️ Value: \(value)")
             
-            
-            
             var messagesArray: [ChatRoom.Message] = []
+            var messageID = ""
             
             for item in value {
                 print("\n\n\n--------\nITEM.VALUE: \(item.value)\n")
@@ -48,16 +50,36 @@ class ChatRoomsController {
                 let values = item.value
                 let title = values["title"] as! String
                 
+                for i in values {
+                    //print(i)
+                    print(i.value)
+                    if i.key != "identifier" && i.key != "title" {
+                        messageID = i.key
+                    }
+                    
+                    if let a = i.value as? [String: String] {
+                        print(a["displayName"]!)
+                        
+                        let sender = Sender(senderId: a["senderID"]!, displayName: a["displayName"]!)
+                        
+
+                        let newMessage = ChatRoom.Message(text: a["text"]!, sender: sender, timestamp: Date(), messageID: messageID)
+                        messagesArray.append(newMessage)
+                    }
+                }
                 
-                //let newMessage = ChatRoom.Message(text: "", sender: "", timestamp: "", messageID: "")
-                //messagesArray.append(newMessage)
-                //let newChatRoom = ChatRoom(title: title, messages: messagesArray, identifier: item.key)
-                //chatRooms.append(newChatRoom)
+                let newChatRoom = ChatRoom(title: title, messages: messagesArray, identifier: item.key)
+
+                var count = 0
+                for item in self.chatRooms {
+                    if item.identifier == newChatRoom.identifier {
+                        count += 1
+                    }
+                }
+                if count == 0 {
+                    self.chatRooms.append(newChatRoom)
+                }
             }
-            
-            
-            
-            
             completion()
         })
     }
