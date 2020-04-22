@@ -1,0 +1,47 @@
+PODS:
+  - Firebase/CoreOnly (5.6.0):
+    - FirebaseCore (= 5.1.1)
+  - Firebase/Database (5.6.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.0.2)
+  - FirebaseCore (5.1.1):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseDatabase (5.0.2):
+    - FirebaseCore (~> 5.0)
+    - leveldb-library (~> 1.18)
+  - GoogleUtilities/Environment (5.2.2)
+  - GoogleUtilities/Logger (5.2.2):
+    - GoogleUtilities/Environment
+  - InputBarAccessoryView (4.3.2):
+    - InputBarAccessoryView/Core (= 4.3.2)
+  - InputBarAccessoryView/Core (4.3.2)
+  - leveldb-library (1.20)
+  - MessageKit (3.1.0):
+    - InputBarAccessoryView (~> 4.3.0)
+
+DEPENDENCIES:
+  - Firebase/Database
+  - MessageKit (~> 3.1.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Firebase
+    - FirebaseCore
+    - FirebaseDatabase
+    - GoogleUtilities
+    - InputBarAccessoryView
+    - leveldb-library
+    - MessageKit
+
+SPEC CHECKSUMS:
+  Firebase: 75ea9e232eefa158c1049028030b8f661a2ccb62
+  FirebaseCore: cb9ee75e0894def766167c95a4d5a14b1c138269
+  FirebaseDatabase: 27be5ac5bc75e0b17537b2bbfada8258addcc8cd
+  GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
+  InputBarAccessoryView: 7985d418040a05fe894bd4b8328dd43ab35517c3
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
+
+PODFILE CHECKSUM: e7557cd48b2e8e38cef4549fc7ab76ea0059dc0c
+
+COCOAPODS: 1.5.0
