@@ -16,6 +16,11 @@ struct User: SenderType {
     var senderId: String {
         return id
     }
+}
+
+// MARK: - Dictionary Coding
+
+extension User {
     
     enum Keys {
         static let senderId = "senderId"

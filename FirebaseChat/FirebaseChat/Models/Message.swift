@@ -18,6 +18,11 @@ struct Message: MessageType {
     var kind: MessageKind {
         return .text(messageText)
     }
+}
+
+// MARK: - Dictionary Coding
+
+extension Message {
     
     enum Keys {
         static let messageText = "messageText"

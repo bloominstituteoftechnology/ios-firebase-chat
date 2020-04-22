@@ -18,8 +18,9 @@
 		044E959A244F894800ED6C74 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E9599244F894800ED6C74 /* MessageViewController.swift */; };
 		044E959C244F8B8500ED6C74 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E959B244F8B8500ED6C74 /* Message.swift */; };
 		044E959E244F8B8E00ED6C74 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E959D244F8B8E00ED6C74 /* ChatRoom.swift */; };
-		044E95A1244F8F3100ED6C74 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E95A0244F8F3100ED6C74 /* ChatController.swift */; };
+		044E95A1244F8F3100ED6C74 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */; };
 		044E95A3244FD15300ED6C74 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E95A2244FD15300ED6C74 /* User.swift */; };
+		044E95A5244FEEA400ED6C74 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044E95A4244FEEA400ED6C74 /* MessageController.swift */; };
 		6F4298B8CE5EC2A60EBBBA16 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917EDE5B4DA357BF288EFF1 /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,8 +38,9 @@
 		044E9599244F894800ED6C74 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		044E959B244F8B8500ED6C74 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		044E959D244F8B8E00ED6C74 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
-		044E95A0244F8F3100ED6C74 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		044E95A2244FD15300ED6C74 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		044E95A4244FEEA400ED6C74 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		8670E51B97C4FE34B8D3651A /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 		E917EDE5B4DA357BF288EFF1 /* Pods_FirebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC2938453401C5B5412F4CAB /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -96,9 +98,10 @@
 			isa = PBXGroup;
 			children = (
 				044E959B244F8B8500ED6C74 /* Message.swift */,
+				044E95A4244FEEA400ED6C74 /* MessageController.swift */,
 				044E95A2244FD15300ED6C74 /* User.swift */,
 				044E959D244F8B8E00ED6C74 /* ChatRoom.swift */,
-				044E95A0244F8F3100ED6C74 /* ChatController.swift */,
+				044E95A0244F8F3100ED6C74 /* ChatRoomController.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -239,10 +242,11 @@
 				044E9598244F893500ED6C74 /* ChatRoomTableViewController.swift in Sources */,
 				044E9586244F783C00ED6C74 /* ViewController.swift in Sources */,
 				044E9582244F783C00ED6C74 /* AppDelegate.swift in Sources */,
-				044E95A1244F8F3100ED6C74 /* ChatController.swift in Sources */,
+				044E95A1244F8F3100ED6C74 /* ChatRoomController.swift in Sources */,
 				044E959C244F8B8500ED6C74 /* Message.swift in Sources */,
 				044E95A3244FD15300ED6C74 /* User.swift in Sources */,
 				044E959E244F8B8E00ED6C74 /* ChatRoom.swift in Sources */,
+				044E95A5244FEEA400ED6C74 /* MessageController.swift in Sources */,
 				044E9584244F783C00ED6C74 /* SceneDelegate.swift in Sources */,
 				044E959A244F894800ED6C74 /* MessageViewController.swift in Sources */,
 			);
