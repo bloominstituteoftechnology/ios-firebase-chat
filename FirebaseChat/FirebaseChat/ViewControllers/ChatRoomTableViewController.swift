@@ -9,20 +9,26 @@
 import UIKit
 
 class ChatRoomTableViewController: UITableViewController {
-
+    
+    // MARK: - Private Properties
+    
     private var chatRoomController = ChatRoomController()
-
+    
+    // MARK: - IBActions
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        chatRoomController.createChatRoom(name: "B Testing")
+    }
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = chatRoomController
     }
     
-    @IBAction func addButtonTapped(_ sender: Any) {
-        chatRoomController.createChatRoom(name: "B Testing")
-    }
-
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMessagesSegue",
             let chatRoomVC = segue.destination as? ChatRoomViewController,
@@ -31,5 +37,5 @@ class ChatRoomTableViewController: UITableViewController {
             chatRoomVC.messageController = MessageController(chatRoom: chatRoom)
         }
     }
-
+    
 }
