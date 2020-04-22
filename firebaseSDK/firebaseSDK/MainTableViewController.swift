@@ -20,7 +20,11 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let today = Date()
         self.ref.child("user/\(69420)/username").setValue("luhmao")
+        self.ref.child("user/helloWorld/username").setValue("sample test")
+        self.ref.child("user/helloWorld/date").setValue(String(today.timeIntervalSince1970))
+        self.ref.child("user/helloWorld/dob").setValue("4/20/1969")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
