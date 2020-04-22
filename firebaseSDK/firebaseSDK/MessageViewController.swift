@@ -9,9 +9,11 @@
 import UIKit
 import MessageKit
 
-let sender = User(senderId: "AnyID", displayName: "EL ROVERTOOO")
-let message = UserPost(sender: sender, messageId: "123", sentDate: Date(), kind: MessageKind.text("ESKETIIIT"))
-let messages: [MessageType] = [message]
+let roverto = User(senderId: "AnyID", displayName: "EL ROVERTOOO")
+let you = User(senderId: "AnyNoID", displayName: "Soulja Boy")
+let messageFromRoverto = UserPost(sender: roverto, messageId: "123", sentDate: Date(), kind: MessageKind.text("ESKETIIIT"))
+let messageFromYou = UserPost(sender: you, messageId: "121212", sentDate: Date(), kind: MessageKind.text("YOUUUUUUUUUUUUUUUUU"))
+let messages: [MessageType] = [messageFromRoverto, messageFromYou]
 
 class MessageViewController: MessagesViewController {
 
@@ -28,7 +30,7 @@ class MessageViewController: MessagesViewController {
 
 extension MessageViewController: MessagesDataSource, MessagesDisplayDelegate, MessagesLayoutDelegate {
     func currentSender() -> SenderType {
-        return sender
+        return roverto
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
