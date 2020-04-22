@@ -14,12 +14,12 @@ class ChatRoomViewController: MessagesViewController {
 
     // MARK: - Properties
     
-    var messageController: MessageController!
+    var messageController: MessageController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        messageController.messagesDidSet = { [weak self] in
+        messageController?.messagesDidSet = { [weak self] in
             self?.messagesCollectionView.reloadData()
         }
         
@@ -40,6 +40,6 @@ extension ChatRoomViewController: MessagesDisplayDelegate {
 
 extension ChatRoomViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        messageController.createMessage(with: text, from: User(id: "123", displayName: "Shawn"))
+        messageController?.createMessage(with: text, from: User(id: "123", displayName: "Shawn"))
     }
 }
