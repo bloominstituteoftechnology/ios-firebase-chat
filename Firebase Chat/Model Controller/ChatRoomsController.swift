@@ -29,18 +29,36 @@ class ChatRoomsController {
          dataDictionary["Last name"] =  "Appleseed"
          ref.setValue(dataDictionary)
      */
+    #warning("Add completion closure to all methods")
+
+    
     func fetchAllChatRooms(completion: @escaping () -> Void) {
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let value = snapshot.value as? [String:[String:[String:String]]] else { return }
+            guard let value = snapshot.value as? [String:[String:Any]] else { return }
             print("⚠️ Value: \(value)")
             
-            for (id,value) in value {
-                print(value)
+            
+            
+            var messagesArray: [ChatRoom.Message] = []
+            
+            for item in value {
+                print("\n\n\n--------\nITEM.VALUE: \(item.value)\n")
+                print("ITEM.KEY: \(item.key)\n--------")
+                
+                let values = item.value
+                let title = values["title"] as! String
+                
+                
+                //let newMessage = ChatRoom.Message(text: "", sender: "", timestamp: "", messageID: "")
+                //messagesArray.append(newMessage)
+                //let newChatRoom = ChatRoom(title: title, messages: messagesArray, identifier: item.key)
+                //chatRooms.append(newChatRoom)
             }
             
             
             
             
+            completion()
         })
     }
 
@@ -72,7 +90,5 @@ class ChatRoomsController {
                        "messageID": newMessage.messageId] as [String : String]
         ref.child(chatRoom.identifier).child(newMessage.messageId).setValue(message)
         completion()
-        #warning("add completion closure to all methods")
-        
     }
 }
