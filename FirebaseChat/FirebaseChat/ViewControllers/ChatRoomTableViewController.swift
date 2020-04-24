@@ -24,9 +24,12 @@ class ChatRoomTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = chatRoomController
-        
         getUser()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView(_:)), name: .chatRoomsUpdated, object: nil)
+    }
+    
+    @objc func updateTableView(_ notification: NSNotification) {
+        tableView.reloadData()
     }
     
     func getUser() {
@@ -51,6 +54,25 @@ class ChatRoomTableViewController: UITableViewController {
             
             present(alert, animated: true)
         }
+    }
+    
+    // MARK: - Table View Data Source
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        self.tableView = tableView
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return chatRoomController.chatRooms.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
+        
+        cell.textLabel?.text = chatRoomController.chatRooms[indexPath.row].name
+        
+        return cell
     }
     
     // MARK: - Navigation

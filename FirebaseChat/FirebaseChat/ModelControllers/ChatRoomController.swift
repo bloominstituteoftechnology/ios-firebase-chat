@@ -10,6 +10,10 @@ import UIKit
 import FirebaseDatabase
 import MessageKit
 
+extension NSNotification.Name {
+    static let chatRoomsUpdated = NSNotification.Name("ChatRoomsUpdated")
+}
+
 class ChatRoomController: NSObject {
     // MARK: - Public Properties
     
@@ -17,7 +21,11 @@ class ChatRoomController: NSObject {
     
     // MARK: - CRUD
     
-    private(set) var chatRooms: [ChatRoom] = [] { didSet { tableView?.reloadData() }}
+    private(set) var chatRooms: [ChatRoom] = [] {
+        didSet {
+            NotificationCenter.default.post(name: .chatRoomsUpdated, object: self)
+        }
+    }
     
     @discardableResult
     func createChatRoom(name: String) -> ChatRoom {
@@ -32,7 +40,6 @@ class ChatRoomController: NSObject {
     
     private var databaseRef: DatabaseReference = Database.database().reference()
     private lazy var chatRoomsRef = databaseRef.child("chatRooms").ref
-    private weak var tableView: UITableView?
     
     // MARK: - Init
     
@@ -61,27 +68,5 @@ class ChatRoomController: NSObject {
         }
     }
 }
-
-// MARK: - Table View Data Source
-
-extension ChatRoomController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        self.tableView = tableView
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatRooms.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
-
-        cell.textLabel?.text = chatRooms[indexPath.row].name
-
-        return cell
-    }
-}
-
 
 

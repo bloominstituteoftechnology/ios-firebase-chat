@@ -22,9 +22,36 @@ class ChatRoomViewController: MessagesViewController {
         super.viewDidLoad()
         
         messageInputBar.delegate = self
-        messagesCollectionView.messagesDataSource = messageController
+        messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateMessages(_:)), name: .messagesUpdated, object: nil)
+    }
+    
+    @objc func updateMessages(_ notification: NSNotification) {
+        messagesCollectionView.reloadData()
+    }
+}
+
+// MARK: - Messages Data Source
+
+extension ChatRoomViewController: MessagesDataSource {
+    func currentSender() -> SenderType {
+        return messageController.currentUser ?? User(id: "Foo", displayName: "Bar")
+    }
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        return messageController.messages[indexPath.row]
+    }
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        self.messagesCollectionView = messagesCollectionView
+        return 1
+    }
+    
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        return messageController.messages.count
     }
 }
 
@@ -54,7 +81,7 @@ extension ChatRoomViewController: MessagesDisplayDelegate {
             }
         }
         // Otherwise put the appropriate tail on the bubble
-        let tailCorner: MessageStyle.TailCorner = messageController.isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+        let tailCorner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(tailCorner, .curved)
     }
 }

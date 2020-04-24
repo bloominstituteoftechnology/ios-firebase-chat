@@ -10,6 +10,10 @@ import Foundation
 import FirebaseDatabase
 import MessageKit
 
+extension NSNotification.Name {
+    static let messagesUpdated = NSNotification.Name("MessagesUpdated")
+}
+
 class MessageController {
     // MARK: - Public Properties
     
@@ -17,7 +21,11 @@ class MessageController {
     
     // MARK: - CRUD
     
-    private(set) var messages: [Message] = [] { didSet { messagesCollectionView?.reloadData() }}
+    private(set) var messages: [Message] = [] {
+        didSet {
+            NotificationCenter.default.post(name: .messagesUpdated, object: self)
+        }
+    }
     
     @discardableResult
     func createMessage(with text: String, from sender: User) -> Message {
@@ -30,7 +38,6 @@ class MessageController {
     
     private let databaseRef: DatabaseReference = Database.database().reference()
     private let messagesRef: DatabaseReference
-    private weak var messagesCollectionView: MessagesCollectionView?
     
     // MARK: - Init
     
@@ -60,23 +67,4 @@ class MessageController {
     }
 }
 
-// MARK: - Messages Data Source
 
-extension MessageController: MessagesDataSource {
-    func currentSender() -> SenderType {
-        return currentUser ?? User(id: "Foo", displayName: "Bar")
-    }
-    
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return messages[indexPath.row]
-    }
-    
-    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        self.messagesCollectionView = messagesCollectionView
-        return 1
-    }
-    
-    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
-        return messages.count
-    }
-}
