@@ -84,6 +84,13 @@ extension ChatRoomViewController: MessagesDisplayDelegate {
         let tailCorner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
         return .bubbleTail(tailCorner, .curved)
     }
+    
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        let nameComponents = message.sender.displayName.components(separatedBy: " ")
+        let initials = nameComponents.map { $0.prefix(1) }.joined()
+        
+        avatarView.initials = initials
+    }
 }
 
 // MARK: - Input Bar Delegate
