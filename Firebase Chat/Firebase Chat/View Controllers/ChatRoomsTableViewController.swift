@@ -10,6 +10,12 @@ import UIKit
 
 class ChatRoomsTableViewController: UITableViewController {
     
+    // MARK: - Properties
+
+    let chatRoomController = ChatRoomController()
+    
+    // MARK: - View Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +40,7 @@ class ChatRoomsTableViewController: UITableViewController {
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatRoomCell", for: indexPath)
 
         // Configure the cell...
 
@@ -84,8 +90,8 @@ class ChatRoomsTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let chatVC = segue.destination as? ChatViewController else { return }
             
-            chatVC.messageThreadController = messageThreadController
-            chatVC.messageThread = messageThreadController.messageThreads[indexPath.row]
+            //chatVC.messageThreadController = messageThreadController
+            //chatVC.messageThread = messageThreadController.messageThreads[indexPath.row]
         }
     }
 

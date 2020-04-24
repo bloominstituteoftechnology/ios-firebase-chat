@@ -8,14 +8,13 @@
 
 import UIKit
 import MessageKit
-import Firebase
 
 class ChatViewController: MessagesViewController {
 
     // MARK: - Properties
-
+    
+    let chatRoom: ChatRoom!
     var messages: [MessageType] = []
-    var ref: DatabaseReference!
     
     // MARK: - View Lifecycle
 
@@ -25,8 +24,6 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
-        ref = Database.database().reference()
     }
     
 
@@ -42,11 +39,6 @@ class ChatViewController: MessagesViewController {
 
 }
 
-struct Sender: SenderType {
-    let senderId: String
-    let displayName: String
-}
-
 // MARK: - ChatViewControllerDataSource
 
 extension ChatViewController: MessagesDataSource {
@@ -56,11 +48,11 @@ extension ChatViewController: MessagesDataSource {
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return messages.count
+        return chatRoom.messages.count
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return messages[indexPath.section]
+        return chatRoom.messages[indexPath.section] as! MessageType
     }
 }
 
