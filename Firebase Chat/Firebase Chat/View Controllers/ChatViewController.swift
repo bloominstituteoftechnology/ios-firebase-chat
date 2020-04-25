@@ -52,6 +52,8 @@ extension ChatViewController: MessagesDataSource {
     }
 }
 
+// MARK: - Messages Display and Layout Delegates
+
 extension ChatViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
     
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
@@ -62,7 +64,7 @@ extension ChatViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
     }
 }
 
-// MARK: - ChatViewControllerDataSource
+// MARK: - InputBarAccessoryViewDelegate
 
 extension ChatViewController: InputBarAccessoryViewDelegate {
     
