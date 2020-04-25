@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7F498ABB2454095B006F0FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F498ABA2454095B006F0FEC /* AppDelegate.swift */; };
 		7F498ABD2454095B006F0FEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F498ABC2454095B006F0FEC /* SceneDelegate.swift */; };
-		7F498ABF2454095B006F0FEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F498ABE2454095B006F0FEC /* ViewController.swift */; };
 		7F498AC22454095B006F0FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F498AC02454095B006F0FEC /* Main.storyboard */; };
 		7F498AC42454095C006F0FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F498AC32454095C006F0FEC /* Assets.xcassets */; };
 		7F498AC72454095C006F0FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F498AC52454095C006F0FEC /* LaunchScreen.storyboard */; };
@@ -18,6 +17,8 @@
 		7F9D2C31245422C10042DD63 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C30245422C10042DD63 /* Groups.swift */; };
 		7F9D2C34245423C00042DD63 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C33245423C00042DD63 /* GeneralExtensions.swift */; };
 		7F9D2C372454BCA70042DD63 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C362454BCA70042DD63 /* ChatController.swift */; };
+		7F9D2C3D2454BDA90042DD63 /* GroupsVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C3C2454BDA90042DD63 /* GroupsVCTableViewController.swift */; };
+		7F9D2C3F2454C04C0042DD63 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C3E2454C04C0042DD63 /* MessagesVC.swift */; };
 		9E8ECA264453A90BDA3BA85A /* Pods_FireChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9570F5CA41E3673FEB2AB8 /* Pods_FireChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +28,6 @@
 		7F498AB72454095B006F0FEC /* FireChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F498ABA2454095B006F0FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F498ABC2454095B006F0FEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F498ABE2454095B006F0FEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F498AC12454095B006F0FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F498AC32454095C006F0FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F498AC62454095C006F0FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		7F9D2C30245422C10042DD63 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		7F9D2C33245423C00042DD63 /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		7F9D2C362454BCA70042DD63 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		7F9D2C3C2454BDA90042DD63 /* GroupsVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsVCTableViewController.swift; sourceTree = "<group>"; };
+		7F9D2C3E2454C04C0042DD63 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		AD9B6CD924F18903B430049E /* Pods-FireChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.debug.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,12 +83,12 @@
 		7F498AB92454095B006F0FEC /* FireChat */ = {
 			isa = PBXGroup;
 			children = (
+				7F9D2C382454BD200042DD63 /* View Controllers */,
 				7F9D2C352454BC930042DD63 /* Controllers */,
 				7F9D2C32245423AA0042DD63 /* Helpers */,
 				7F9D2C2D24541D0A0042DD63 /* Models */,
 				7F498ABA2454095B006F0FEC /* AppDelegate.swift */,
 				7F498ABC2454095B006F0FEC /* SceneDelegate.swift */,
-				7F498ABE2454095B006F0FEC /* ViewController.swift */,
 				7F498AC02454095B006F0FEC /* Main.storyboard */,
 				7F498AC32454095C006F0FEC /* Assets.xcassets */,
 				7F498AC52454095C006F0FEC /* LaunchScreen.storyboard */,
@@ -119,6 +121,15 @@
 				7F9D2C362454BCA70042DD63 /* ChatController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7F9D2C382454BD200042DD63 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7F9D2C3C2454BDA90042DD63 /* GroupsVCTableViewController.swift */,
+				7F9D2C3E2454C04C0042DD63 /* MessagesVC.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		B2D0F5BAB82AF6DC6E0ACCA7 /* Pods */ = {
@@ -246,10 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F498ABF2454095B006F0FEC /* ViewController.swift in Sources */,
 				7F9D2C2F2454227E0042DD63 /* Message.swift in Sources */,
 				7F9D2C372454BCA70042DD63 /* ChatController.swift in Sources */,
 				7F498ABB2454095B006F0FEC /* AppDelegate.swift in Sources */,
+				7F9D2C3D2454BDA90042DD63 /* GroupsVCTableViewController.swift in Sources */,
+				7F9D2C3F2454C04C0042DD63 /* MessagesVC.swift in Sources */,
 				7F9D2C31245422C10042DD63 /* Groups.swift in Sources */,
 				7F9D2C34245423C00042DD63 /* GeneralExtensions.swift in Sources */,
 				7F498ABD2454095B006F0FEC /* SceneDelegate.swift in Sources */,
