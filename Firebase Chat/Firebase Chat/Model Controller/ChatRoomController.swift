@@ -15,6 +15,8 @@ class ChatRoomController {
     // MARK: Properties
 
     var chatRooms: [ChatRoom] = []
+    var currentUser: Sender?
+    
     var ref: DatabaseReference!
     
     // MARK: Methods
@@ -31,7 +33,7 @@ class ChatRoomController {
         // TODO: Implement createChatRoom()
     }
     
-    func createMessage(in chatRoom: ChatRoom) {
+    func createMessage(in chatRoom: ChatRoom, withText text: String, from sender: Sender, completion: @escaping () -> Void) {
         // TODO: Implement createMessage()
     }
     

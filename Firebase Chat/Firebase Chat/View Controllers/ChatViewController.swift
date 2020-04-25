@@ -13,8 +13,8 @@ class ChatViewController: MessagesViewController {
 
     // MARK: - Properties
     
-    let chatRoom: ChatRoom!
-    var messages: [MessageType] = []
+    var chatRoomController: ChatRoomController?
+    var chatRoom: ChatRoom?
     
     // MARK: - View Lifecycle
 
@@ -25,18 +25,6 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // MARK: - ChatViewControllerDataSource
@@ -44,15 +32,21 @@ class ChatViewController: MessagesViewController {
 extension ChatViewController: MessagesDataSource {
 
     func currentSender() -> SenderType {
-        return Sender(senderId: UUID().uuidString, displayName: "Steven")
+        guard let user = chatRoomController?.currentUser else { fatalError("Current user not set") }
+        return user
     }
 
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        return chatRoom.messages.count
+        return 1 //chatRoom?.messages.count ?? 0
+    }
+    
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        return chatRoom?.messages.count ?? 0
     }
 
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        return chatRoom.messages[indexPath.section] as! MessageType
+        guard let message = chatRoom?.messages[indexPath.item] else { fatalError("Missing chat room") }
+        return message
     }
 }
 

@@ -35,8 +35,8 @@
 		637B062C2452A40200791BDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		637B062E2452A40200791BDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		637B06342452A55900791BDA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		637B06372452B13900791BDA /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = SOURCE_ROOT; };
-		637B06382452B13900791BDA /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = SOURCE_ROOT; };
+		637B06372452B13900791BDA /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InputBarAccessoryView.framework; sourceTree = SOURCE_ROOT; };
+		637B06382452B13900791BDA /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MessageKit.framework; sourceTree = SOURCE_ROOT; };
 		637B063D2452BC8A00791BDA /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		637B06412452BF9200791BDA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		637B06442452C6BD00791BDA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -88,28 +88,13 @@
 		637B061F2452A40000791BDA /* Firebase Chat */ = {
 			isa = PBXGroup;
 			children = (
-				637B06482452C7D600791BDA /* Model Controller */,
 				637B06432452C4C700791BDA /* Models */,
+				637B06482452C7D600791BDA /* Model Controller */,
 				637B063C2452BC1C00791BDA /* View Controllers */,
-				637B06362452B0F600791BDA /* Dependencies */,
-				637B06202452A40000791BDA /* AppDelegate.swift */,
-				637B06222452A40000791BDA /* SceneDelegate.swift */,
-				637B06262452A40000791BDA /* Main.storyboard */,
-				637B06292452A40200791BDA /* Assets.xcassets */,
-				637B062B2452A40200791BDA /* LaunchScreen.storyboard */,
-				637B062E2452A40200791BDA /* Info.plist */,
-				637B06342452A55900791BDA /* GoogleService-Info.plist */,
+				637B064B2454004600791BDA /* Storyboards */,
+				637B064C2454006000791BDA /* Resources */,
 			);
 			path = "Firebase Chat";
-			sourceTree = "<group>";
-		};
-		637B06362452B0F600791BDA /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				637B06372452B13900791BDA /* InputBarAccessoryView.framework */,
-				637B06382452B13900791BDA /* MessageKit.framework */,
-			);
-			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		637B063C2452BC1C00791BDA /* View Controllers */ = {
@@ -124,8 +109,8 @@
 		637B06432452C4C700791BDA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				637B06442452C6BD00791BDA /* Message.swift */,
 				637B06462452C6C400791BDA /* ChatRoom.swift */,
+				637B06442452C6BD00791BDA /* Message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -138,9 +123,32 @@
 			path = "Model Controller";
 			sourceTree = "<group>";
 		};
+		637B064B2454004600791BDA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				637B06262452A40000791BDA /* Main.storyboard */,
+				637B062B2452A40200791BDA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		637B064C2454006000791BDA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				637B06202452A40000791BDA /* AppDelegate.swift */,
+				637B06222452A40000791BDA /* SceneDelegate.swift */,
+				637B06292452A40200791BDA /* Assets.xcassets */,
+				637B062E2452A40200791BDA /* Info.plist */,
+				637B06342452A55900791BDA /* GoogleService-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7C5A8813AC16A7FBB2260773 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				637B06382452B13900791BDA /* MessageKit.framework */,
+				637B06372452B13900791BDA /* InputBarAccessoryView.framework */,
 				2B2C0FC8FC874500AA7DF3DC /* Pods_Firebase_Chat.framework */,
 			);
 			name = Frameworks;
@@ -441,7 +449,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Firebase Chat/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Firebase Chat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +472,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "Firebase Chat/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Firebase Chat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
