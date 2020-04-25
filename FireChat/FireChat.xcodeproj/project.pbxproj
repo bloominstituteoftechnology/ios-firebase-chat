@@ -16,6 +16,7 @@
 		7F498ACF24540ABB006F0FEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F498ACE24540ABB006F0FEC /* GoogleService-Info.plist */; };
 		7F9D2C2F2454227E0042DD63 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C2E2454227E0042DD63 /* Message.swift */; };
 		7F9D2C31245422C10042DD63 /* MessageBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C30245422C10042DD63 /* MessageBoard.swift */; };
+		7F9D2C34245423C00042DD63 /* GeneralExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9D2C33245423C00042DD63 /* GeneralExtensions.swift */; };
 		9E8ECA264453A90BDA3BA85A /* Pods_FireChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9570F5CA41E3673FEB2AB8 /* Pods_FireChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		7F498ACE24540ABB006F0FEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7F9D2C2E2454227E0042DD63 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7F9D2C30245422C10042DD63 /* MessageBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBoard.swift; sourceTree = "<group>"; };
+		7F9D2C33245423C00042DD63 /* GeneralExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralExtensions.swift; sourceTree = "<group>"; };
 		AD9B6CD924F18903B430049E /* Pods-FireChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireChat.debug.xcconfig"; path = "Target Support Files/Pods-FireChat/Pods-FireChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		7F498AB92454095B006F0FEC /* FireChat */ = {
 			isa = PBXGroup;
 			children = (
+				7F9D2C32245423AA0042DD63 /* Helpers */,
 				7F9D2C2D24541D0A0042DD63 /* Models */,
 				7F498ABA2454095B006F0FEC /* AppDelegate.swift */,
 				7F498ABC2454095B006F0FEC /* SceneDelegate.swift */,
@@ -97,6 +100,14 @@
 				7F9D2C30245422C10042DD63 /* MessageBoard.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7F9D2C32245423AA0042DD63 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7F9D2C33245423C00042DD63 /* GeneralExtensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		B2D0F5BAB82AF6DC6E0ACCA7 /* Pods */ = {
@@ -228,6 +239,7 @@
 				7F9D2C2F2454227E0042DD63 /* Message.swift in Sources */,
 				7F498ABB2454095B006F0FEC /* AppDelegate.swift in Sources */,
 				7F9D2C31245422C10042DD63 /* MessageBoard.swift in Sources */,
+				7F9D2C34245423C00042DD63 /* GeneralExtensions.swift in Sources */,
 				7F498ABD2454095B006F0FEC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
