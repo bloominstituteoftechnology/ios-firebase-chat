@@ -24,6 +24,8 @@
 		954D8EE82453E0C800FE2A34 /* GoogleDataTransportCCTSupport.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EE72453E0C800FE2A34 /* GoogleDataTransportCCTSupport.xcframework */; };
 		954D8EEA2453E0D300FE2A34 /* nanopb.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EE92453E0D300FE2A34 /* nanopb.xcframework */; };
 		954D8EEC2453E10400FE2A34 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EEB2453E10400FE2A34 /* PromisesObjC.xcframework */; };
+		954D8EEE2453E42B00FE2A34 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EED2453E42B00FE2A34 /* InputBarAccessoryView.framework */; };
+		954D8EF02453E43200FE2A34 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EEF2453E43200FE2A34 /* MessageKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		954D8EE72453E0C800FE2A34 /* GoogleDataTransportCCTSupport.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GoogleDataTransportCCTSupport.xcframework; sourceTree = "<group>"; };
 		954D8EE92453E0D300FE2A34 /* nanopb.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = nanopb.xcframework; sourceTree = "<group>"; };
 		954D8EEB2453E10400FE2A34 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
+		954D8EED2453E42B00FE2A34 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = SOURCE_ROOT; };
+		954D8EEF2453E43200FE2A34 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				954D8EDF2453DF9100FE2A34 /* FirebaseCoreDiagnostics.xcframework in Frameworks */,
+				954D8EF02453E43200FE2A34 /* MessageKit.framework in Frameworks */,
 				954D8ED92453DBE500FE2A34 /* leveldb-library.xcframework in Frameworks */,
 				954D8EDD2453DF8900FE2A34 /* FirebaseCore.xcframework in Frameworks */,
 				954D8EE82453E0C800FE2A34 /* GoogleDataTransportCCTSupport.xcframework in Frameworks */,
@@ -64,6 +69,7 @@
 				954D8EEA2453E0D300FE2A34 /* nanopb.xcframework in Frameworks */,
 				954D8EE12453DF9800FE2A34 /* gRPC-Core.xcframework in Frameworks */,
 				954D8EE42453E0B800FE2A34 /* GoogleUtilities.xcframework in Frameworks */,
+				954D8EEE2453E42B00FE2A34 /* InputBarAccessoryView.framework in Frameworks */,
 				954D8EEC2453E10400FE2A34 /* PromisesObjC.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,8 +96,6 @@
 		954D8EB32453C66200FE2A34 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
-				954D8EDB2453DEFA00FE2A34 /* module.modulemap */,
-				954D8EE22453DFFD00FE2A34 /* Firebase.h */,
 				954D8EC82453C67D00FE2A34 /* Model */,
 				954D8EC92453C68400FE2A34 /* Model Controller */,
 				954D8ECC2453C6A100FE2A34 /* View Controllers */,
@@ -100,6 +104,8 @@
 				954D8ECE2453C81700FE2A34 /* Utilities */,
 				954D8ECD2453C6AF00FE2A34 /* Resources */,
 				954D8ECF2453CDA800FE2A34 /* GoogleService-Info.plist */,
+				954D8EDB2453DEFA00FE2A34 /* module.modulemap */,
+				954D8EE22453DFFD00FE2A34 /* Firebase.h */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -130,6 +136,8 @@
 		954D8ECB2453C69A00FE2A34 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				954D8EEF2453E43200FE2A34 /* MessageKit.framework */,
+				954D8EED2453E42B00FE2A34 /* InputBarAccessoryView.framework */,
 				954D8ED62453DBDD00FE2A34 /* FirebaseDatabase.xcframework */,
 				954D8ED82453DBE500FE2A34 /* leveldb-library.xcframework */,
 				954D8EDC2453DF8900FE2A34 /* FirebaseCore.xcframework */,
@@ -180,6 +188,7 @@
 				954D8EAD2453C66200FE2A34 /* Sources */,
 				954D8EAE2453C66200FE2A34 /* Frameworks */,
 				954D8EAF2453C66200FE2A34 /* Resources */,
+				954D8EF12453E44A00FE2A34 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -236,6 +245,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		954D8EF12453E44A00FE2A34 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/InputBarAccessoryView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MessageKit.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/InputBarAccessoryView.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MessageKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		954D8EAD2453C66200FE2A34 /* Sources */ = {
@@ -390,6 +423,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV8C8697QD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/FirebaseChat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -412,6 +449,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PV8C8697QD;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/FirebaseChat/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
