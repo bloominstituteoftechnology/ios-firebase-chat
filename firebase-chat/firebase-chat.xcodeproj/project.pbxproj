@@ -88,6 +88,8 @@
 		D760650E24549CFD00E652EE /* firebase-chat */ = {
 			isa = PBXGroup;
 			children = (
+				D76065332454BA1700E652EE /* Helpers */,
+				D76065322454BA1000E652EE /* Model Controllers */,
 				D760652524549E3C00E652EE /* Models */,
 				D760652424549E3700E652EE /* Views */,
 				D760652324549E1E00E652EE /* Controllers */,
@@ -105,7 +107,6 @@
 		D760652324549E1E00E652EE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D760652624549F8300E652EE /* NetworkController.swift */,
 				D760652C2454AF1C00E652EE /* LobbyTableViewController.swift */,
 				D760652E2454AFCB00E652EE /* DetailViewController.swift */,
 			);
@@ -125,6 +126,21 @@
 				D76065302454B11200E652EE /* Message.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D76065322454BA1000E652EE /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D760652624549F8300E652EE /* NetworkController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		D76065332454BA1700E652EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
