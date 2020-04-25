@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 class ChatViewController: MessagesViewController {
 
@@ -24,6 +25,8 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        messageInputBar.delegate = self
     }
 }
 
@@ -50,4 +53,32 @@ extension ChatViewController: MessagesDataSource {
     }
 }
 
-extension ChatViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {}
+extension ChatViewController: MessagesDisplayDelegate, MessagesLayoutDelegate {
+    
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        guard let user = chatRoomController?.currentUser else { fatalError("Current user not set") }
+        guard let message = chatRoom?.messages[indexPath.item] else { fatalError("Missing chat room") }
+        
+        return message.senderID == user.senderId ? .bubbleTail(.bottomRight, .curved) : .bubbleTail(.bottomLeft, .curved)
+    }
+}
+
+// MARK: - ChatViewControllerDataSource
+
+extension ChatViewController: InputBarAccessoryViewDelegate {
+    
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        print("text: \(text)")
+        guard let chatRoomController = chatRoomController else { fatalError("Missing chatRoomController") }
+        guard let user = chatRoomController.currentUser else { fatalError("Current user not set") }
+        guard let chat = chatRoom else { fatalError("Missing chat room") }
+        
+        chatRoomController.createMessage(in: chat, withText: text, from: user) {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+                self.messageInputBar.inputTextView.text = ""
+            }
+        }
+        // TODO: Create message by calling chatRoomController.create(message:)
+    }
+}

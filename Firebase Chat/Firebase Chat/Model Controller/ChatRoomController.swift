@@ -21,15 +21,15 @@ class ChatRoomController {
     
     // MARK: Methods
 
-    func fetchChatRooms() {
+    func fetchChatRooms(completion: @escaping () -> Void) {
         // TODO: Implement fetchChatRooms()
     }
     
-    func fetchMessages(in chatRoom: ChatRoom) {
+    func fetchMessages(in chatRoom: ChatRoom, completion: @escaping () -> Void) {
         // TODO: Implement fetchMessages()
     }
     
-    func createChatRoom() {
+    func createChatRoom(titled title: String, completion: @escaping () -> Void) {
         // TODO: Implement createChatRoom()
     }
     
