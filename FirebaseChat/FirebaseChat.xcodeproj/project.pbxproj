@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		954D8EB52453C66200FE2A34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EB42453C66200FE2A34 /* AppDelegate.swift */; };
 		954D8EB72453C66200FE2A34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EB62453C66200FE2A34 /* SceneDelegate.swift */; };
-		954D8EB92453C66200FE2A34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EB82453C66200FE2A34 /* ViewController.swift */; };
 		954D8EBC2453C66200FE2A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954D8EBA2453C66200FE2A34 /* Main.storyboard */; };
 		954D8EBE2453C66400FE2A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954D8EBD2453C66400FE2A34 /* Assets.xcassets */; };
 		954D8EC12453C66400FE2A34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954D8EBF2453C66400FE2A34 /* LaunchScreen.storyboard */; };
@@ -26,13 +25,14 @@
 		954D8EEC2453E10400FE2A34 /* PromisesObjC.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EEB2453E10400FE2A34 /* PromisesObjC.xcframework */; };
 		954D8EEE2453E42B00FE2A34 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EED2453E42B00FE2A34 /* InputBarAccessoryView.framework */; };
 		954D8EF02453E43200FE2A34 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EEF2453E43200FE2A34 /* MessageKit.framework */; };
+		954D8EF32453E77700FE2A34 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EF22453E77700FE2A34 /* ChatRoomTableViewController.swift */; };
+		954D8EF52453E7AC00FE2A34 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EF42453E7AC00FE2A34 /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		954D8EB12453C66200FE2A34 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954D8EB42453C66200FE2A34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		954D8EB62453C66200FE2A34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		954D8EB82453C66200FE2A34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		954D8EBB2453C66200FE2A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		954D8EBD2453C66400FE2A34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954D8EC02453C66400FE2A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		954D8EEB2453E10400FE2A34 /* PromisesObjC.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PromisesObjC.xcframework; sourceTree = "<group>"; };
 		954D8EED2453E42B00FE2A34 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InputBarAccessoryView.framework; path = Carthage/Build/iOS/InputBarAccessoryView.framework; sourceTree = SOURCE_ROOT; };
 		954D8EEF2453E43200FE2A34 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = SOURCE_ROOT; };
+		954D8EF22453E77700FE2A34 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
+		954D8EF42453E7AC00FE2A34 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,8 @@
 		954D8ECA2453C69100FE2A34 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				954D8EBF2453C66400FE2A34 /* LaunchScreen.storyboard */,
 				954D8EBA2453C66200FE2A34 /* Main.storyboard */,
+				954D8EBF2453C66400FE2A34 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -155,7 +157,8 @@
 		954D8ECC2453C6A100FE2A34 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				954D8EB82453C66200FE2A34 /* ViewController.swift */,
+				954D8EF22453E77700FE2A34 /* ChatRoomTableViewController.swift */,
+				954D8EF42453E7AC00FE2A34 /* MessageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -275,8 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954D8EB92453C66200FE2A34 /* ViewController.swift in Sources */,
+				954D8EF32453E77700FE2A34 /* ChatRoomTableViewController.swift in Sources */,
 				954D8EB52453C66200FE2A34 /* AppDelegate.swift in Sources */,
+				954D8EF52453E7AC00FE2A34 /* MessageViewController.swift in Sources */,
 				954D8EB72453C66200FE2A34 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
