@@ -1,5 +1,5 @@
 //
-//  NetworkController.swift
+//  Message.swift
 //  firebase-chat
 //
 //  Created by Joe on 4/25/20.
@@ -8,10 +8,9 @@
 
 import Foundation
 
-class NetworkController {
+class Message {
     
-    // let baseURL: URL = URL("https://fir-chat-bbed5.firebaseio.com/")
+    
     
     
 }
-
