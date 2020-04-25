@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -73,6 +73,7 @@
 		7F498AB92454095B006F0FEC /* FireChat */ = {
 			isa = PBXGroup;
 			children = (
+				7F9D2C2D24541D0A0042DD63 /* Models */,
 				7F498ABA2454095B006F0FEC /* AppDelegate.swift */,
 				7F498ABC2454095B006F0FEC /* SceneDelegate.swift */,
 				7F498ABE2454095B006F0FEC /* ViewController.swift */,
@@ -85,13 +86,19 @@
 			path = FireChat;
 			sourceTree = "<group>";
 		};
+		7F9D2C2D24541D0A0042DD63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		B2D0F5BAB82AF6DC6E0ACCA7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				AD9B6CD924F18903B430049E /* Pods-FireChat.debug.xcconfig */,
 				07B927275903CD20E736AE43 /* Pods-FireChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
