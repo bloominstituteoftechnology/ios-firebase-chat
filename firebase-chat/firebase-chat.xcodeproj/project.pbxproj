@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		D760651024549CFD00E652EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760650F24549CFD00E652EE /* AppDelegate.swift */; };
 		D760651224549CFD00E652EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760651124549CFD00E652EE /* SceneDelegate.swift */; };
-		D760651424549CFD00E652EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760651324549CFD00E652EE /* ViewController.swift */; };
 		D760651724549CFD00E652EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D760651524549CFD00E652EE /* Main.storyboard */; };
 		D760651924549D0200E652EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D760651824549D0200E652EE /* Assets.xcassets */; };
 		D760651C24549D0200E652EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D760651A24549D0200E652EE /* LaunchScreen.storyboard */; };
+		D760652724549F8300E652EE /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760652624549F8300E652EE /* NetworkController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D760650C24549CFD00E652EE /* firebase-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "firebase-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D760650F24549CFD00E652EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D760651124549CFD00E652EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D760651324549CFD00E652EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D760651624549CFD00E652EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D760651824549D0200E652EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D760651B24549D0200E652EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D760651D24549D0200E652EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D760652624549F8300E652EE /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,39 @@
 		D760650E24549CFD00E652EE /* firebase-chat */ = {
 			isa = PBXGroup;
 			children = (
+				D760652524549E3C00E652EE /* Models */,
+				D760652424549E3700E652EE /* Views */,
+				D760652324549E1E00E652EE /* Controllers */,
 				D760650F24549CFD00E652EE /* AppDelegate.swift */,
 				D760651124549CFD00E652EE /* SceneDelegate.swift */,
-				D760651324549CFD00E652EE /* ViewController.swift */,
 				D760651524549CFD00E652EE /* Main.storyboard */,
 				D760651824549D0200E652EE /* Assets.xcassets */,
 				D760651A24549D0200E652EE /* LaunchScreen.storyboard */,
 				D760651D24549D0200E652EE /* Info.plist */,
 			);
 			path = "firebase-chat";
+			sourceTree = "<group>";
+		};
+		D760652324549E1E00E652EE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D760652624549F8300E652EE /* NetworkController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D760652424549E3700E652EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D760652524549E3C00E652EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +162,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D760651424549CFD00E652EE /* ViewController.swift in Sources */,
 				D760651024549CFD00E652EE /* AppDelegate.swift in Sources */,
 				D760651224549CFD00E652EE /* SceneDelegate.swift in Sources */,
+				D760652724549F8300E652EE /* NetworkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
