@@ -13,6 +13,7 @@
 		954D8EBC2453C66200FE2A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954D8EBA2453C66200FE2A34 /* Main.storyboard */; };
 		954D8EBE2453C66400FE2A34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954D8EBD2453C66400FE2A34 /* Assets.xcassets */; };
 		954D8EC12453C66400FE2A34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 954D8EBF2453C66400FE2A34 /* LaunchScreen.storyboard */; };
+		954D8ED02453CDA800FE2A34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 954D8ECF2453CDA800FE2A34 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		954D8EBD2453C66400FE2A34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954D8EC02453C66400FE2A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		954D8EC22453C66400FE2A34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		954D8ECF2453CDA800FE2A34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		954D8EB32453C66200FE2A34 /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
+				954D8ECF2453CDA800FE2A34 /* GoogleService-Info.plist */,
 				954D8EC82453C67D00FE2A34 /* Model */,
 				954D8EC92453C68400FE2A34 /* Model Controller */,
 				954D8ECC2453C6A100FE2A34 /* View Controllers */,
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				954D8EC12453C66400FE2A34 /* LaunchScreen.storyboard in Resources */,
+				954D8ED02453CDA800FE2A34 /* GoogleService-Info.plist in Resources */,
 				954D8EBE2453C66400FE2A34 /* Assets.xcassets in Resources */,
 				954D8EBC2453C66200FE2A34 /* Main.storyboard in Resources */,
 			);
