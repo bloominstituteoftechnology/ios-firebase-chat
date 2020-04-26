@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+
+// Create Chatroom
+
+
+// Fetch Chatroom "GET"
+
+// Create Message in chatroom
+
+// Fetch Messages in chatroom
+
+
