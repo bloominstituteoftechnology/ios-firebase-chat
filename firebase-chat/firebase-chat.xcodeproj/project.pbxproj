@@ -15,8 +15,8 @@
 		D760652724549F8300E652EE /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760652624549F8300E652EE /* NetworkController.swift */; };
 		D760652B2454A28E00E652EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D760652A2454A28E00E652EE /* GoogleService-Info.plist */; };
 		D760652D2454AF1C00E652EE /* LobbyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760652C2454AF1C00E652EE /* LobbyTableViewController.swift */; };
-		D760652F2454AFCB00E652EE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760652E2454AFCB00E652EE /* DetailViewController.swift */; };
-		D76065312454B11200E652EE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76065302454B11200E652EE /* Message.swift */; };
+		D760653524562CFA00E652EE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760653424562CFA00E652EE /* ChatViewController.swift */; };
+		D760653724562E0100E652EE /* MessageThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = D760653624562E0100E652EE /* MessageThread.swift */; };
 		E864A56F957678A527FB67E8 /* Pods_firebase_chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0015BA6F2B138B54A280F69E /* Pods_firebase_chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +33,8 @@
 		D760652624549F8300E652EE /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		D760652A2454A28E00E652EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D760652C2454AF1C00E652EE /* LobbyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LobbyTableViewController.swift; sourceTree = "<group>"; };
-		D760652E2454AFCB00E652EE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		D76065302454B11200E652EE /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		D760653424562CFA00E652EE /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		D760653624562E0100E652EE /* MessageThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThread.swift; sourceTree = "<group>"; };
 		FF331B697126E05517E3FAAC /* Pods-firebase-chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-firebase-chat.release.xcconfig"; path = "Target Support Files/Pods-firebase-chat/Pods-firebase-chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,8 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				D76065332454BA1700E652EE /* Helpers */,
-				D76065322454BA1000E652EE /* Model Controllers */,
 				D760652524549E3C00E652EE /* Models */,
+				D76065322454BA1000E652EE /* Model Controllers */,
 				D760652424549E3700E652EE /* Views */,
 				D760652324549E1E00E652EE /* Controllers */,
 				D760650F24549CFD00E652EE /* AppDelegate.swift */,
@@ -108,7 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D760652C2454AF1C00E652EE /* LobbyTableViewController.swift */,
-				D760652E2454AFCB00E652EE /* DetailViewController.swift */,
+				D760653424562CFA00E652EE /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 		D760652524549E3C00E652EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D76065302454B11200E652EE /* Message.swift */,
+				D760653624562E0100E652EE /* MessageThread.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,10 +261,10 @@
 			files = (
 				D760652D2454AF1C00E652EE /* LobbyTableViewController.swift in Sources */,
 				D760651024549CFD00E652EE /* AppDelegate.swift in Sources */,
-				D760652F2454AFCB00E652EE /* DetailViewController.swift in Sources */,
-				D76065312454B11200E652EE /* Message.swift in Sources */,
 				D760651224549CFD00E652EE /* SceneDelegate.swift in Sources */,
+				D760653524562CFA00E652EE /* ChatViewController.swift in Sources */,
 				D760652724549F8300E652EE /* NetworkController.swift in Sources */,
+				D760653724562E0100E652EE /* MessageThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
