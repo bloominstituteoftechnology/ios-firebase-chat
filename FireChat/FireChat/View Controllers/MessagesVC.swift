@@ -17,7 +17,7 @@ class MessagesVC: MessagesViewController {
     //MARK: - Properties
     
     let chatController = ChatController()
-    let sender = Sender(id: "Santana", displayName: "Jeffrey Santana")
+    let sender = Sender(id: "Ezra", displayName: "Black")
     var group: Group!
     
     //MARK: - Life Cycle
