@@ -21,6 +21,18 @@ class ChatThread: Codable {
           self.identifier = identifier
       }
     
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let title = try container.decode(String.self, forKey: .title)
+        let identifier = try container.decode(String.self, forKey: .identifier)
+        if let messages = try container.decodeIfPresent([String : Message].self, forKey: .messages) {
+            self.messages = Array(messages.values)
+        } else {
+            self.messages = []
+        }
+        self.title = title
+        self.identifier = identifier
+    }
 
 
 class Message: Codable {
@@ -35,4 +47,23 @@ class Message: Codable {
            self.displayName = displayName
        }
 }
+}
+
+extension ChatThread.Message : MessageType {
+    var sender: SenderType {
+        return Sender(senderId: "", displayName: "")
+    }
+    var messageId: String {
+        return UUID().uuidString
+    }
+    var sentDate: Date {
+        return timeStamp
+    }
+    var kind: MessageKind {
+        return .text(text)
+    }
+}
+struct Sender : SenderType {
+    var senderId: String
+    var displayName: String
 }
