@@ -21,6 +21,7 @@
 		637B06452452C6BD00791BDA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06442452C6BD00791BDA /* Message.swift */; };
 		637B06472452C6C400791BDA /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06462452C6C400791BDA /* ChatRoom.swift */; };
 		637B064A2452C82700791BDA /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06492452C82700791BDA /* ChatRoomController.swift */; };
+		637B064F245561DF00791BDA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B064E245561DF00791BDA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		637B06442452C6BD00791BDA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		637B06462452C6C400791BDA /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		637B06492452C82700791BDA /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		637B064E245561DF00791BDA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				637B06482452C7D600791BDA /* Model Controller */,
 				637B063C2452BC1C00791BDA /* View Controllers */,
 				637B064B2454004600791BDA /* Storyboards */,
+				637B064D245561C100791BDA /* Constants */,
 				637B064C2454006000791BDA /* Resources */,
 			);
 			path = "Firebase Chat";
@@ -142,6 +145,14 @@
 				637B06342452A55900791BDA /* GoogleService-Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		637B064D245561C100791BDA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				637B064E245561DF00791BDA /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		7C5A8813AC16A7FBB2260773 /* Frameworks */ = {
@@ -299,6 +310,7 @@
 				637B06232452A40000791BDA /* SceneDelegate.swift in Sources */,
 				637B06422452BF9200791BDA /* ChatViewController.swift in Sources */,
 				637B064A2452C82700791BDA /* ChatRoomController.swift in Sources */,
+				637B064F245561DF00791BDA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

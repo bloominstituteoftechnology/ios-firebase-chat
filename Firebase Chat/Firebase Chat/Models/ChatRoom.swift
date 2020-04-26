@@ -9,7 +9,7 @@
 import Foundation
 //import MessageKit
 
-struct ChatRoom: Codable {
+class ChatRoom: Codable {
     
     let title: String
     var messages: [Message]
