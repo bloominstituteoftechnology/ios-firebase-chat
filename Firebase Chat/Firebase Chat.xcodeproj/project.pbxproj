@@ -22,6 +22,7 @@
 		637B06472452C6C400791BDA /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06462452C6C400791BDA /* ChatRoom.swift */; };
 		637B064A2452C82700791BDA /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06492452C82700791BDA /* ChatRoomController.swift */; };
 		637B064F245561DF00791BDA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B064E245561DF00791BDA /* Constants.swift */; };
+		637B0651245575BA00791BDA /* AddChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0650245575BA00791BDA /* AddChatRoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		637B06462452C6C400791BDA /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		637B06492452C82700791BDA /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		637B064E245561DF00791BDA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		637B0650245575BA00791BDA /* AddChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatRoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				637B063D2452BC8A00791BDA /* ChatRoomsTableViewController.swift */,
 				637B06412452BF9200791BDA /* ChatViewController.swift */,
+				637B0650245575BA00791BDA /* AddChatRoomViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				637B06232452A40000791BDA /* SceneDelegate.swift in Sources */,
 				637B06422452BF9200791BDA /* ChatViewController.swift in Sources */,
 				637B064A2452C82700791BDA /* ChatRoomController.swift in Sources */,
+				637B0651245575BA00791BDA /* AddChatRoomViewController.swift in Sources */,
 				637B064F245561DF00791BDA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

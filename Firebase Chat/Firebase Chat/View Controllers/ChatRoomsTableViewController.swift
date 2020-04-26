@@ -25,9 +25,12 @@ class ChatRoomsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        chatRoomController.fetchChatRooms {
-            self.tableView.reloadData()
-        }
+//        chatRoomController.createChatRoom(titled: "Initial Chat Room") {
+//            self.tableView.reloadData()
+//        }
+//        chatRoomController.fetchChatRooms {
+//            self.tableView.reloadData()
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +63,20 @@ class ChatRoomsTableViewController: UITableViewController {
             
             chatVC.chatRoomController = chatRoomController
             chatVC.chatRoom = chatRoomController.chatRooms[indexPath.row]
+            
+        } else if segue.identifier == "ShowAddChatRoomSegue" {
+            guard let addChatVC = segue.destination as? AddChatRoomViewController else { return }
+            
+            addChatVC.delegate = self
         }
     }
 
+}
+
+extension ChatRoomsTableViewController: AddChatRoomVCDelegate {
+    func createdChatRoom(titled title: String) {
+        chatRoomController.createChatRoom(titled: title) {
+            self.tableView.reloadData()
+        }
+    }
 }

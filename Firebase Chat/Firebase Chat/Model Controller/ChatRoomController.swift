@@ -43,7 +43,8 @@ class ChatRoomController {
         // TODO: Test createChatRoom()
         let chatRoom = ChatRoom(title: title)
         chatRooms.append(chatRoom)
-        self.ref.child("chatRooms").setValue([chatRoom.id: chatRoom])
+        self.ref.child("chatRooms").child(chatRoom.id).setValue(["title": chatRoom.title])
+        self.ref.child("chatRooms").child(chatRoom.id).setValue(["id": chatRoom.id])
         completion()
     }
     

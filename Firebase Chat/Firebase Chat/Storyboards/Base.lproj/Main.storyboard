@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Chat Rooms Table View Controller-->
+        <!--Chat Rooms-->
         <scene sceneID="8JC-OE-YCK">
             <objects>
                 <tableViewController id="kA1-GL-NTi" customClass="ChatRoomsTableViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,13 @@
                             <outlet property="delegate" destination="kA1-GL-NTi" id="wEC-qk-zsW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="oI5-Nl-jTE"/>
+                    <navigationItem key="navigationItem" title="Chat Rooms" id="oI5-Nl-jTE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="1as-tv-fnW">
+                            <connections>
+                                <segue destination="K3O-E4-doe" kind="show" identifier="ShowAddChatRoomSegue" id="yf5-yK-lID"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E7K-r1-DEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,15 +68,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zN3-cX-6db" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2612" y="128"/>
+            <point key="canvasLocation" x="2526" y="128"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="s4e-fq-rf8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wip-nP-ghE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kB5-Nm-hbp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kB5-Nm-hbp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -81,6 +87,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwT-NC-bJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860.86956521739137" y="127.90178571428571"/>
+        </scene>
+        <!--New Chat Room-->
+        <scene sceneID="Rke-N7-f76">
+            <objects>
+                <viewController id="K3O-E4-doe" customClass="AddChatRoomViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mED-HC-l07">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-X5-pZj">
+                                <rect key="frame" x="144" y="298.5" width="126" height="30"/>
+                                <state key="normal" title="Create Chat Room"/>
+                                <connections>
+                                    <action selector="createChatRoomButtonTapped:" destination="K3O-E4-doe" eventType="touchUpInside" id="OO8-MJ-PX6"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-HP-4jH">
+                                <rect key="frame" x="16" y="172" width="382" height="62.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="48E-ZI-qso">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="62.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6a-Ys-Isw">
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter chat room name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MtR-Of-ZGq">
+                                                <rect key="frame" x="0.0" y="28.5" width="382" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6PR-HP-4jH" firstAttribute="top" secondItem="4Zl-zA-H7e" secondAttribute="top" constant="32" id="Elm-6r-ui0"/>
+                            <constraint firstItem="4Zl-zA-H7e" firstAttribute="trailing" secondItem="6PR-HP-4jH" secondAttribute="trailing" constant="16" id="FKU-dr-zQO"/>
+                            <constraint firstItem="IrV-X5-pZj" firstAttribute="top" secondItem="48E-ZI-qso" secondAttribute="bottom" constant="64" id="ODc-Tr-qKW"/>
+                            <constraint firstItem="IrV-X5-pZj" firstAttribute="centerX" secondItem="4Zl-zA-H7e" secondAttribute="centerX" id="QV0-vV-8gs"/>
+                            <constraint firstItem="6PR-HP-4jH" firstAttribute="leading" secondItem="4Zl-zA-H7e" secondAttribute="leading" constant="16" id="v0v-CV-ucf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Zl-zA-H7e"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Chat Room" id="B0h-I7-913"/>
+                    <connections>
+                        <outlet property="chatRoomTitleTextField" destination="MtR-Of-ZGq" id="okl-gx-Bfh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzJ-OO-Xq3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769.5652173913045" y="-520.3125"/>
         </scene>
     </scenes>
 </document>
