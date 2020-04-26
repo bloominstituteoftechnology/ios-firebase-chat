@@ -27,6 +27,10 @@
 		954D8EF02453E43200FE2A34 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 954D8EEF2453E43200FE2A34 /* MessageKit.framework */; };
 		954D8EF32453E77700FE2A34 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EF22453E77700FE2A34 /* ChatRoomTableViewController.swift */; };
 		954D8EF52453E7AC00FE2A34 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D8EF42453E7AC00FE2A34 /* MessageViewController.swift */; };
+		9564AEC6245644F20050E399 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AEC5245644F20050E399 /* Message.swift */; };
+		9564AEC82456450C0050E399 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AEC72456450C0050E399 /* ChatRoom.swift */; };
+		9564AECA245647730050E399 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AEC9245647730050E399 /* ChatRoomController.swift */; };
+		9564AECC245648B10050E399 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9564AECB245648B10050E399 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		954D8EEF2453E43200FE2A34 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageKit.framework; path = Carthage/Build/iOS/MessageKit.framework; sourceTree = SOURCE_ROOT; };
 		954D8EF22453E77700FE2A34 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
 		954D8EF42453E7AC00FE2A34 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		9564AEC5245644F20050E399 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = FirebaseChat/Model/Message.swift; sourceTree = SOURCE_ROOT; };
+		9564AEC72456450C0050E399 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		9564AEC9245647730050E399 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		9564AECB245648B10050E399 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,8 @@
 		954D8EC82453C67D00FE2A34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9564AEC5245644F20050E399 /* Message.swift */,
+				9564AEC72456450C0050E399 /* ChatRoom.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +132,7 @@
 		954D8EC92453C68400FE2A34 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9564AEC9245647730050E399 /* ChatRoomController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 		954D8ECE2453C81700FE2A34 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9564AECB245648B10050E399 /* HTTPMethod.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -278,10 +290,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9564AEC82456450C0050E399 /* ChatRoom.swift in Sources */,
 				954D8EF32453E77700FE2A34 /* ChatRoomTableViewController.swift in Sources */,
 				954D8EB52453C66200FE2A34 /* AppDelegate.swift in Sources */,
+				9564AEC6245644F20050E399 /* Message.swift in Sources */,
+				9564AECC245648B10050E399 /* HTTPMethod.swift in Sources */,
 				954D8EF52453E7AC00FE2A34 /* MessageViewController.swift in Sources */,
 				954D8EB72453C66200FE2A34 /* SceneDelegate.swift in Sources */,
+				9564AECA245647730050E399 /* ChatRoomController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
