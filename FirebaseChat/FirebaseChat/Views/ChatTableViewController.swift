@@ -9,6 +9,9 @@
 import UIKit
 
 class ChatTableViewController: UITableViewController {
+    
+    //IBOUTLETS
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
