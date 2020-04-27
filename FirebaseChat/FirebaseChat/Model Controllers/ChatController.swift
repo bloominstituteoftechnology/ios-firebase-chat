@@ -11,7 +11,7 @@ import Firebase
 import MessageKit
 import UIKit
 
-class ChatRoomController {
+class ChatController {
     
     // Resources -   https://firebase.google.com/docs/database/ios/read-and-write
     //              https://firebase.google.com/docs/database/ios/structure-data

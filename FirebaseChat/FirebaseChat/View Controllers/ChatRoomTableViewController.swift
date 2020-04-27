@@ -10,81 +10,65 @@ import UIKit
 
 class ChatRoomTableViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Variables
+    let chatController = ChatController()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
+      
+      // MARK: - View Lifecycle
+      override func viewDidLoad() {
+          super.viewDidLoad()
+        // Adds bar button to add a new chat room
+          navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addRoom))
+          chatController.fetchRooms {
+              self.tableView.reloadData()
+          }
+      }
+      
+    // Creates a new chatroom
+      @objc private func addRoom() {
+          let alert = UIAlertController(title: "Create a new chatroom", message: "Enter the room name and hit OK", preferredStyle: .alert)
+          alert.addTextField()
+          alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            guard let textField = alert.textFields?.first, let name = textField.text, !name.isEmpty else { return }
+              self.chatController.addRoom(with: name) {
+                  self.chatController.fetchRooms {
+                      self.dismiss(animated: true)
+                      self.tableView.reloadData()
+                  }
+              }
+          })
+          alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+          self.present(alert, animated: true)
+      }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return chatController.rooms.count
     }
-
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell", for: indexPath)
+        let room = chatController.rooms[indexPath.row]
+        cell.textLabel?.text = room.name
         return cell
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        switch editingStyle {
+        case .delete:
+            let room = chatController.rooms[indexPath.row]
+            chatController.deleteRoom(room) {
+                self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        default:
+            break
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
