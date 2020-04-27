@@ -15,8 +15,10 @@ import UIKit
 
 class MessageController {
     
-    var rooms = [ChatRoom]()
+    var chatRooms = [ChatRoom]()
     let ref = Database.database().reference().child("ChatRooms")
+    var currentUser: Sender? = Sender(id: UIDevice().name, displayName: UIDevice().name)
+    
     
     //baseURL - Not needed with new method
     static let baseURL = URL(string: "https://fir-chatroom-4b274.firebaseio.com/")!
@@ -24,7 +26,7 @@ class MessageController {
     // Create/Add Chatroom
     func addChatRoom(with name:String, completion: @escaping () -> ()) {
         let room = ChatRoom(id: UUID().uuidString, messages: [], name: name)
-        self.rooms.append(room)
+        self.chatRooms.append(room)
         updateFirebaseDB()
         completion()
     }
@@ -34,23 +36,23 @@ class MessageController {
         ref.observe(.value) { snapshot in
             let decoder = FirebaseDecoder()
             let rooms = try! decoder.decode(Rooms.self, from: snapshot.value as Any)
-            self.rooms = rooms.rooms
+            self.chatRooms = rooms.rooms
             completion()
         }
     }
     
     // Create Message in chatroom
-    func addNewMessageinRoom(_ room: ChatRoom, message: Message, completion: @escaping () -> ()) {
-        guard let index = rooms.firstIndex(of: room) else { return }
+    func addNewMessageinRoom(in chatRoom: ChatRoom, message: Message, from sender: Sender, completion: @escaping () -> ()) {
+        guard let index = chatRooms.firstIndex(of: chatRoom) else { return }
         
         var messagesArray = [Message]()
-        if let messages = self.rooms[index].messages {
+        if let messages = self.chatRooms[index].messages {
             messagesArray = messages
             messagesArray.append(message)
         } else {
             messagesArray = [message]
         }
-        rooms[index].messages = messagesArray
+        chatRooms[index].messages = messagesArray
         updateFirebaseDB()
         completion()
     }
@@ -61,7 +63,7 @@ class MessageController {
     //Update Firebase DB
     
     func updateFirebaseDB() {
-        let rooms = Rooms(rooms: self.rooms)
+        let rooms = Rooms(rooms: self.chatRooms)
         let encoder = FirebaseEncoder()
         let roomsData = try? encoder.encode(rooms)
         ref.setValue(roomsData)

@@ -24,8 +24,8 @@ class ChatsTableViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         messageInputBar.delegate = self
         messageController?.fetchChatRoom {
-            guard let room = self.room, let index = self.messageController?.rooms.firstIndex(of: room) else { return }
-            self.messages = self.messageController?.rooms[index].messages ?? []
+            guard let room = self.room, let index = self.messageController?.chatRooms.firstIndex(of: room) else { return }
+            self.messages = self.messageController?.chatRooms[index].messages ?? []
             self.messagesCollectionView.reloadData()
         }
     }
@@ -84,7 +84,7 @@ class ChatsTableViewController: MessagesViewController {
         if segue.identifier == "EnterChatMessageSegue" {
             guard let destinationVC = segue.destination as? ChatDetailViewController else { return }
             destinationVC.messageController = messageController
-            destinationVC.room = room
+            destinationVC.chatRoom = room
         }
     }
  
@@ -93,11 +93,12 @@ class ChatsTableViewController: MessagesViewController {
 
 extension ChatsTableViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        guard let chatRoomController = messageController, let room = room else { return }
+        guard let user = messageController?.currentUser,
+        let room = room else { return }
         let message = Message(text: text, displayName: "User", messageId: UUID().uuidString, sentDate: Date())
         print(message)
         self.messages.append(message)
-        messageController?.addNewMessageinRoom(room, message: message) {
+        messageController?.addNewMessageinRoom(in: room, message: message, from: user) {
             DispatchQueue.main.async {
                 self.messagesCollectionView.reloadData()
             }

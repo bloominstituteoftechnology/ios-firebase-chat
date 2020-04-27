@@ -51,14 +51,14 @@ class ChatRoomMainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return messageController.rooms.count
+        return messageController.chatRooms.count
     }
 
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath)
-        let room = messageController.rooms[indexPath.row]
+        let room = messageController.chatRooms[indexPath.row]
         cell.textLabel?.text = room.name
         
         return cell
@@ -77,9 +77,9 @@ class ChatRoomMainTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow,
                 let destinationVC = segue.destination as? ChatDetailViewController else { return }
             
-            let room = messageController.rooms[indexPath.row]
+            let room = messageController.chatRooms[indexPath.row]
             destinationVC.messageController = messageController
-            destinationVC.room = room
+            destinationVC.chatRoom = room
         }
     }
 

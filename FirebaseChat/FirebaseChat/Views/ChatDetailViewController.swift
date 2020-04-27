@@ -15,7 +15,7 @@ import InputBarAccessoryView
 class ChatDetailViewController: MessagesViewController {
     
     //  Variables
-    var room: ChatRoom?
+    var chatRoom: ChatRoom?
     var messageController: MessageController?
     var messages = [Message]()
 
@@ -32,18 +32,20 @@ class ChatDetailViewController: MessagesViewController {
     
     
     // IB Action to send message to ChatRoom // Not working
-    @IBAction func sendBtnWasPressed(_ sender: UIButton) {
-        guard let senderName = enterNameTxtField.text,
-            let messageText = textMessageTextView.text,
-            let messageThread = room else { return }
-        
-        messageController?.addNewMessageinRoom(messageThread, message: messageText, completion: {
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
-            }
-        })
-
-        }
+//    @IBAction func sendBtnWasPressed(_ sender: UIButton) {
+//        guard let user = messageController?.currentUser else { return }
+//        
+//        guard let senderName = enterNameTxtField.text,
+//            let messageText = textMessageTextView.text,
+//            let chatRoom = chatRoom else { return }
+//        
+//        messageController?.addNewMessageinRoom(in: chatRoom, message: messageText, from: user, completion: {
+//            DispatchQueue.main.async {
+//                self.navigationController?.popViewController(animated: true)
+//            }
+//        })
+//}
 }
+
 
 
