@@ -15,7 +15,8 @@ class ChatRoomController {
     // MARK: Properties
 
     var chatRooms: [ChatRoom] = []
-    var currentUser: Sender? = K.testUser
+    
+    var currentUser: Sender? = Sender(senderId: UIDevice().name, displayName: UIDevice().name)
     
     var ref: DatabaseReference!
     
@@ -67,7 +68,7 @@ class ChatRoomController {
     
     func updateMessages(in chatRoom: ChatRoom, from messagesDict: [String: [String: String]]) {
         let messages: [Message] = arrayFromNestedDictionary(dictionary: messagesDict)
-        chatRoom.messages = messages.sorted { $0.timestamp > $1.timestamp }
+        chatRoom.messages = messages//.sorted { $0.timestamp > $1.timestamp }
     }
     
     func arrayFromNestedDictionary<T: DictionaryConvertable>(dictionary: [String: [String: String]]) -> [T] {

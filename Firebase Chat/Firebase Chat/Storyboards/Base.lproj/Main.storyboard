@@ -75,8 +75,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wip-nP-ghE" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="kB5-Nm-hbp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kB5-Nm-hbp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="860.86956521739137" y="127.90178571428571"/>
         </scene>
-        <!--New Chat Room-->
+        <!--Add Chat Room-->
         <scene sceneID="Rke-N7-f76">
             <objects>
                 <viewController id="K3O-E4-doe" customClass="AddChatRoomViewController" customModule="Firebase_Chat" customModuleProvider="target" sceneMemberID="viewController">
@@ -97,19 +97,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-X5-pZj">
-                                <rect key="frame" x="144" y="298.5" width="126" height="30"/>
+                                <rect key="frame" x="144" y="246.5" width="126" height="30"/>
                                 <state key="normal" title="Create Chat Room"/>
                                 <connections>
                                     <action selector="createChatRoomButtonTapped:" destination="K3O-E4-doe" eventType="touchUpInside" id="OO8-MJ-PX6"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="6PR-HP-4jH">
-                                <rect key="frame" x="16" y="172" width="382" height="62.5"/>
+                                <rect key="frame" x="16" y="120" width="382" height="62.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="48E-ZI-qso">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="62.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6a-Ys-Isw">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat Room Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6a-Ys-Isw">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
@@ -135,7 +135,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4Zl-zA-H7e"/>
                     </view>
-                    <navigationItem key="navigationItem" title="New Chat Room" id="B0h-I7-913"/>
+                    <navigationItem key="navigationItem" title="Add Chat Room" id="B0h-I7-913"/>
                     <connections>
                         <outlet property="chatRoomTitleTextField" destination="MtR-Of-ZGq" id="okl-gx-Bfh"/>
                     </connections>

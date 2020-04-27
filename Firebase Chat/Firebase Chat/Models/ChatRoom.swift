@@ -16,7 +16,11 @@ protocol DictionaryConvertable {
 class ChatRoom: DictionaryConvertable {
     
     let title: String
-    var messages: [Message]
+    var messages: [Message] {
+        didSet {
+            messages = messages.sorted { $0.timestamp > $1.timestamp }
+        }
+    }
     let id: String
     
     init(title: String, messages: [Message] = [], id: String = UUID().uuidString) {
