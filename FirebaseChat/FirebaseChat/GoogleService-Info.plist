@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>521062994664-hqpoafnsu5th8natvoro5kid4pipbrqt.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.521062994664-hqpoafnsu5th8natvoro5kid4pipbrqt</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCKdikgA46_TW42GbHzNvx1S-z8YQ7qRQk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>521062994664</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.fbcahtroom2.sbamerchat</string>
+	<key>PROJECT_ID</key>
+	<string>fir-chatroom-4b274</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-chatroom-4b274.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:521062994664:ios:dec2392e70bd3238836f5d</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-chatroom-4b274.firebaseio.com</string>
+</dict>
+</plist>
