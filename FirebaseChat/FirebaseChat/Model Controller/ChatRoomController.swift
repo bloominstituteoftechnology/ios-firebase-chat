@@ -8,11 +8,14 @@
 
 import Foundation
 import MessageKit
+import FirebaseDatabase
 
 class ChatRoomController {
     
     static let baseURL = URL(string: "https://fir-chatiospt4.firebaseio.com/")!
     var chatRooms: [ChatRoom] = []
+    var ref: DatabaseReference!
+//    ref = Database.database().reference()
 
     func fetchChatRooms(completion: @escaping () -> Void) {
         
@@ -70,7 +73,7 @@ class ChatRoomController {
     
     func createMessage(in chatRoom: ChatRoom, withText text: String, sender: String, completion: @escaping () -> Void) {
         
-        guard let index = chatRooms.index(of: chatRoom) else { completion(); return }
+        guard let index = chatRooms.firstIndex(of: chatRoom) else { completion(); return }
         
         let message = Message(text: text, displayName: sender)
         

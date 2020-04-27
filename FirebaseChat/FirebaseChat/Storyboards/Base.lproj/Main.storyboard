@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z6C-IX-6nG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jop-0d-W3G">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,42 +7,89 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
-        <scene sceneID="ES1-rp-xWY">
+        <!--Chat Rooms-->
+        <scene sceneID="BxK-Up-Ltr">
             <objects>
-                <tableViewController id="9Uc-8g-qtY" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jqQ-ae-ghP">
+                <tableViewController id="T2Q-HP-NbK" customClass="ChatRoomTableViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rAL-mp-Pvv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" id="s1J-0b-NSU">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s1J-0b-NSU" id="xIy-ws-shf">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="2wT-wo-zpv" kind="show" identifier="ShowMessagesSegue" id="XLD-Gg-mdX"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="ZR9-uc-Csg">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p9U-qe-Fht">
+                                    <rect key="frame" x="0.0" y="8" width="414" height="819"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view key="tableHeaderView" contentMode="scaleToFill" id="jHB-GR-Mz5">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create new chat room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j7H-9A-pKL">
+                                                <rect key="frame" x="8" y="8" width="398" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="createNewChatRoom:" destination="T2Q-HP-NbK" eventType="editingDidEnd" id="adV-NG-oM8"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="7GL-2j-kRg"/>
+                                            <constraint firstAttribute="bottom" secondItem="j7H-9A-pKL" secondAttribute="bottom" constant="8" id="KfC-to-QYt"/>
+                                            <constraint firstItem="j7H-9A-pKL" firstAttribute="top" secondItem="jHB-GR-Mz5" secondAttribute="top" constant="8" id="ScM-Pa-c2E"/>
+                                            <constraint firstItem="j7H-9A-pKL" firstAttribute="leading" secondItem="jHB-GR-Mz5" secondAttribute="leading" constant="8" id="nvy-KX-Mjw"/>
+                                            <constraint firstAttribute="trailing" secondItem="j7H-9A-pKL" secondAttribute="trailing" constant="8" id="voA-qH-8nd"/>
+                                        </constraints>
+                                    </view>
+                                    <prototypes>
+                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatRoomCell" textLabel="ORj-e3-TUD" style="IBUITableViewCellStyleDefault" id="fRt-VL-ojc">
+                                            <rect key="frame" x="0.0" y="74" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fRt-VL-ojc" id="vXm-Tx-p1G">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <subviews>
+                                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ORj-e3-TUD">
+                                                        <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </tableViewCellContentView>
+                                            <connections>
+                                                <segue destination="2wT-wo-zpv" kind="show" identifier="ViewChatRoom" id="fNC-VW-mSQ"/>
+                                            </connections>
+                                        </tableViewCell>
+                                    </prototypes>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <viewLayoutGuide key="safeArea" id="SFf-9a-LIN"/>
+                        </view>
                         <connections>
-                            <outlet property="dataSource" destination="9Uc-8g-qtY" id="2C9-jp-S4O"/>
-                            <outlet property="delegate" destination="9Uc-8g-qtY" id="3b4-oX-jr0"/>
+                            <outlet property="dataSource" destination="T2Q-HP-NbK" id="ilQ-5k-jts"/>
+                            <outlet property="delegate" destination="T2Q-HP-NbK" id="hnY-e5-clZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jS9-Ox-MOQ"/>
+                    <navigationItem key="navigationItem" title="Chat Rooms" id="QcB-fN-cHJ"/>
+                    <connections>
+                        <outlet property="chatRoomTitleTextField" destination="j7H-9A-pKL" id="Cdq-lG-w00"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RNI-B2-Ysh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o1Q-mg-5bb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398.55072463768118" y="118.52678571428571"/>
+            <point key="canvasLocation" x="2131.8840579710145" y="118.52678571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="62u-KS-fLk">
             <objects>
-                <viewController id="2wT-wo-zpv" sceneMemberID="viewController">
+                <viewController id="2wT-wo-zpv" customClass="MessageViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oB9-ac-Nvy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,25 +100,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2Z-XU-A1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="119"/>
+            <point key="canvasLocation" x="2900" y="119"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="oBq-VB-3ca">
+        <scene sceneID="muY-Q2-BXI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z6C-IX-6nG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jop-0d-W3G" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="yOV-WD-dek">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tYa-ZT-jSO">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9Uc-8g-qtY" kind="relationship" relationship="rootViewController" id="8Aa-HC-14i"/>
+                        <segue destination="T2Q-HP-NbK" kind="relationship" relationship="rootViewController" id="opa-wq-ba8"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kbw-g9-MHx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nOk-Tt-xa2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-332" y="119"/>
+            <point key="canvasLocation" x="1348" y="119"/>
         </scene>
     </scenes>
 </document>
