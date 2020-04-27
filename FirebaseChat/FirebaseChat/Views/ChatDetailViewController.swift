@@ -9,7 +9,7 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
-import Firebase
+ 
 
  
 class ChatDetailViewController: MessagesViewController {
@@ -31,7 +31,7 @@ class ChatDetailViewController: MessagesViewController {
     
     
     
-    // IB Action
+    // IB Action to send message to ChatRoom // Not working
     @IBAction func sendBtnWasPressed(_ sender: UIButton) {
         guard let senderName = enterNameTxtField.text,
             let messageText = textMessageTextView.text,
