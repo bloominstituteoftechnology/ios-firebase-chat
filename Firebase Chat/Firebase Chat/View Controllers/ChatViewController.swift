@@ -25,8 +25,11 @@ class ChatViewController: MessagesViewController {
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
         messageInputBar.delegate = self
+        
+        chatRoomController.fetchMessages(in: chatRoom) {
+            self.messagesCollectionView.reloadData()
+        }
     }
 }
 

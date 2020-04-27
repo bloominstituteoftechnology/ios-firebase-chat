@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		357DF0D8E63BA498C48D8FE0 /* Pods_Firebase_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2C0FC8FC874500AA7DF3DC /* Pods_Firebase_Chat.framework */; };
-		634448E22456784900964DE9 /* MessageRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634448E12456784900964DE9 /* MessageRepresentation.swift */; };
 		637B06212452A40000791BDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06202452A40000791BDA /* AppDelegate.swift */; };
 		637B06232452A40000791BDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06222452A40000791BDA /* SceneDelegate.swift */; };
 		637B06282452A40000791BDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 637B06262452A40000791BDA /* Main.storyboard */; };
@@ -24,14 +23,12 @@
 		637B064A2452C82700791BDA /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B06492452C82700791BDA /* ChatRoomController.swift */; };
 		637B064F245561DF00791BDA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B064E245561DF00791BDA /* Constants.swift */; };
 		637B0651245575BA00791BDA /* AddChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B0650245575BA00791BDA /* AddChatRoomViewController.swift */; };
-		637B065324557C4300791BDA /* ChatRoomRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637B065224557C4300791BDA /* ChatRoomRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C012912966ED9FF1743548C /* Pods-Firebase Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.release.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.release.xcconfig"; sourceTree = "<group>"; };
 		2B2C0FC8FC874500AA7DF3DC /* Pods_Firebase_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BCA37ABA96C8B03CD5E68A1 /* Pods-Firebase Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase Chat.debug.xcconfig"; path = "Target Support Files/Pods-Firebase Chat/Pods-Firebase Chat.debug.xcconfig"; sourceTree = "<group>"; };
-		634448E12456784900964DE9 /* MessageRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRepresentation.swift; sourceTree = "<group>"; };
 		637B061D2452A40000791BDA /* Firebase Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		637B06202452A40000791BDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		637B06222452A40000791BDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +46,6 @@
 		637B06492452C82700791BDA /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		637B064E245561DF00791BDA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		637B0650245575BA00791BDA /* AddChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChatRoomViewController.swift; sourceTree = "<group>"; };
-		637B065224557C4300791BDA /* ChatRoomRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,8 +117,6 @@
 			children = (
 				637B06462452C6C400791BDA /* ChatRoom.swift */,
 				637B06442452C6BD00791BDA /* Message.swift */,
-				637B065224557C4300791BDA /* ChatRoomRepresentation.swift */,
-				634448E12456784900964DE9 /* MessageRepresentation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,10 +311,8 @@
 				637B06212452A40000791BDA /* AppDelegate.swift in Sources */,
 				637B06452452C6BD00791BDA /* Message.swift in Sources */,
 				637B06232452A40000791BDA /* SceneDelegate.swift in Sources */,
-				637B065324557C4300791BDA /* ChatRoomRepresentation.swift in Sources */,
 				637B06422452BF9200791BDA /* ChatViewController.swift in Sources */,
 				637B064A2452C82700791BDA /* ChatRoomController.swift in Sources */,
-				634448E22456784900964DE9 /* MessageRepresentation.swift in Sources */,
 				637B0651245575BA00791BDA /* AddChatRoomViewController.swift in Sources */,
 				637B064F245561DF00791BDA /* Constants.swift in Sources */,
 			);

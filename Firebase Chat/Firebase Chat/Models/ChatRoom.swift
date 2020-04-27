@@ -13,7 +13,7 @@ protocol DictionaryConvertable {
     func dictionary() -> [String: String]
 }
 
-class ChatRoom: Codable, DictionaryConvertable {
+class ChatRoom: DictionaryConvertable {
     
     let title: String
     var messages: [Message]

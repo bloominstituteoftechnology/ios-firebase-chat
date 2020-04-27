@@ -15,17 +15,13 @@ class ChatRoomController {
     // MARK: Properties
 
     var chatRooms: [ChatRoom] = []
-    var chatRoomRepresentations: [ChatRoomRepresentation] = []
     var currentUser: Sender? = K.testUser
     
     var ref: DatabaseReference!
-//    var refMessageHandle: DatabaseHandle!
-//    var refChatRoomHandle: DatabaseHandle!
     
     // MARK: Methods
 
     func fetchChatRooms(completion: @escaping () -> Void) {
-        // TODO: Test fetchChatRooms()
         ref.child("chatRooms").observeSingleEvent(of: .value) { snapshot in
             if let chatRoomsDict = snapshot.value as? [String : [String: String]] {
                 self.updateChatRooms(from: chatRoomsDict)
@@ -35,7 +31,6 @@ class ChatRoomController {
     }
     
     func fetchMessages(in chatRoom: ChatRoom, completion: @escaping () -> Void) {
-        // TODO: Test fetchMessages()
         ref.child("messages/chatRooms").child(chatRoom.id).child("messages").observeSingleEvent(of: .value) { snapshot in
             if let messagesDict = snapshot.value as? [String : [String: String]] {
                 self.updateMessages(in: chatRoom, from: messagesDict)
@@ -51,10 +46,9 @@ class ChatRoomController {
     }
     
     func createMessage(in chatRoom: ChatRoom, withText text: String, from sender: Sender, completion: @escaping () -> Void) {
-        // TODO: Test createMessage()
         let message = Message(text: text, sender: sender)
         chatRoom.messages.append(message)
-        self.ref.child("messages").child(chatRoom.id).child("messages").setValue([message.messageID: message])
+        self.ref.child("messages/chatRooms").child(chatRoom.id).child("messages").child(message.messageID).setValue(message.dictionary())
         completion()
     }
     
@@ -67,11 +61,13 @@ class ChatRoomController {
     // MARK: - Helpers
 
     func updateChatRooms(from chatRoomsDict: [String: [String: String]]) {
-        chatRooms = arrayFromNestedDictionary(dictionary: chatRoomsDict)
+        let chatRooms: [ChatRoom] = arrayFromNestedDictionary(dictionary: chatRoomsDict)
+        self.chatRooms = chatRooms.sorted { $0.title < $1.title }
     }
     
     func updateMessages(in chatRoom: ChatRoom, from messagesDict: [String: [String: String]]) {
-        chatRoom.messages = arrayFromNestedDictionary(dictionary: messagesDict)
+        let messages: [Message] = arrayFromNestedDictionary(dictionary: messagesDict)
+        chatRoom.messages = messages.sorted { $0.timestamp > $1.timestamp }
     }
     
     func arrayFromNestedDictionary<T: DictionaryConvertable>(dictionary: [String: [String: String]]) -> [T] {

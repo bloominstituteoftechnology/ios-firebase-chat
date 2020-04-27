@@ -9,7 +9,7 @@
 import Foundation
 import MessageKit
 
-struct Message: Codable, Equatable, DictionaryConvertable {
+struct Message: DictionaryConvertable {
     
     let text: String
     let displayName: String
@@ -28,9 +28,17 @@ struct Message: Codable, Equatable, DictionaryConvertable {
     init(dictionary: [String: String]) {
         self.text = dictionary["text"] ?? ""
         self.displayName = dictionary["displayName"] ?? ""
-        self.timestamp = DateFormatter().date(from: dictionary["timestamp"]!)!
         self.senderID = dictionary["senderID"] ?? ""
         self.messageID = dictionary["messageID"] ?? ""
+        
+//        self.timestamp = DateFormatter().date(from: dictionary["timestamp"]!)!
+        if let dateString = dictionary["timestamp"],
+            let date = DateFormatter().date(from: dateString){
+            self.timestamp = date
+        } else {
+            print("dateString: \"\(dictionary["timestamp"] ?? "nil")\"")
+            self.timestamp = Date()
+        }
     }
     
     func dictionary() -> [String: String] {
@@ -42,12 +50,18 @@ struct Message: Codable, Equatable, DictionaryConvertable {
     }
     
     func string(from date: Date) -> String {
-        return DateFormatter().string(from: date)
+        return dateFormatter.string(from: date)
     }
     
     func date(from string: String) -> Date? {
-        return DateFormatter().date(from: string)
+        return dateFormatter.date(from: string)
     }
+    
+    var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        return formatter
+    }()
 }
 
 extension Message: MessageType {
