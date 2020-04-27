@@ -28,9 +28,11 @@ class ChatRoomsTableViewController: UITableViewController {
 //        chatRoomController.createChatRoom(titled: "Initial Chat Room") {
 //            self.tableView.reloadData()
 //        }
-//        chatRoomController.fetchChatRooms {
-//            self.tableView.reloadData()
-//        }
+        chatRoomController.fetchChatRooms {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

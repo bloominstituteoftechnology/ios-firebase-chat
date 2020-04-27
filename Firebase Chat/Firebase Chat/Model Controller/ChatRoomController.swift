@@ -15,36 +15,38 @@ class ChatRoomController {
     // MARK: Properties
 
     var chatRooms: [ChatRoom] = []
-    var currentUser: Sender? = Sender(senderId: UUID().uuidString, displayName: "Default User")
+    var chatRoomRepresentations: [ChatRoomRepresentation] = []
+    var currentUser: Sender? = K.testUser
     
     var ref: DatabaseReference!
+//    var refMessageHandle: DatabaseHandle!
+//    var refChatRoomHandle: DatabaseHandle!
     
     // MARK: Methods
 
     func fetchChatRooms(completion: @escaping () -> Void) {
         // TODO: Test fetchChatRooms()
-        ref.child("chatRooms").observe(DataEventType.value, with: { snapshot in
-            let chatDict = snapshot.value as? [String : ChatRoom] ?? [:]
-            self.chatRooms = Array(chatDict.values)
+        ref.child("chatRooms").observeSingleEvent(of: .value) { snapshot in
+            if let chatRoomsDict = snapshot.value as? [String : [String: String]] {
+                self.updateChatRooms(from: chatRoomsDict)
+            }
             completion()
-        })
+        }
     }
     
     func fetchMessages(in chatRoom: ChatRoom, completion: @escaping () -> Void) {
         // TODO: Test fetchMessages()
-        ref.child("messages").child(chatRoom.id).child("messages").observe(DataEventType.value, with: { snapshot in
-            let messagesDict = snapshot.value as? [String : Message] ?? [:]
-            chatRoom.messages = Array(messagesDict.values)
-            completion()
-        })
+        ref.child("messages/chatRooms").child(chatRoom.id).child("messages").observeSingleEvent(of: .value) { snapshot in
+            if let messagesDict = snapshot.value as? [String : [String: String]] {
+                self.updateMessages(in: chatRoom, from: messagesDict)
+            }
+        }
     }
     
     func createChatRoom(titled title: String, completion: @escaping () -> Void) {
-        // TODO: Test createChatRoom()
         let chatRoom = ChatRoom(title: title)
         chatRooms.append(chatRoom)
-        self.ref.child("chatRooms").child(chatRoom.id).setValue(["title": chatRoom.title])
-        self.ref.child("chatRooms").child(chatRoom.id).setValue(["id": chatRoom.id])
+        self.ref.child("chatRooms").child(chatRoom.id).setValue(chatRoom.dictionary())
         completion()
     }
     
@@ -61,4 +63,24 @@ class ChatRoomController {
     init() {
         self.ref = Database.database().reference()
     }
+    
+    // MARK: - Helpers
+
+    func updateChatRooms(from chatRoomsDict: [String: [String: String]]) {
+        chatRooms = arrayFromNestedDictionary(dictionary: chatRoomsDict)
+    }
+    
+    func updateMessages(in chatRoom: ChatRoom, from messagesDict: [String: [String: String]]) {
+        chatRoom.messages = arrayFromNestedDictionary(dictionary: messagesDict)
+    }
+    
+    func arrayFromNestedDictionary<T: DictionaryConvertable>(dictionary: [String: [String: String]]) -> [T] {
+        var result = [T]()
+        for nestedDict in dictionary.values {
+            let instanceOfT = T(dictionary: nestedDict)
+            result.append(instanceOfT)
+        }
+        return result
+    }
 }
+

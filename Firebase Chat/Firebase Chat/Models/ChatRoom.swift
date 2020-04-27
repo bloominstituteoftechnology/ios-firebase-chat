@@ -7,9 +7,13 @@
 //
 
 import Foundation
-//import MessageKit
 
-class ChatRoom: Codable {
+protocol DictionaryConvertable {
+    init(dictionary: [String: String])
+    func dictionary() -> [String: String]
+}
+
+class ChatRoom: Codable, DictionaryConvertable {
     
     let title: String
     var messages: [Message]
@@ -19,5 +23,16 @@ class ChatRoom: Codable {
         self.title = title
         self.messages = messages
         self.id = id
+    }
+    
+    required init(dictionary: [String: String]) {
+        self.title = dictionary["title"] ?? ""
+        self.id = dictionary["id"] ?? ""
+        self.messages = []
+    }
+    
+    func dictionary() -> [String: String] {
+        return ["title": title,
+                "id": id]
     }
 }
