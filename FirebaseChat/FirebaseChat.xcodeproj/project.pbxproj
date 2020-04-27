@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		422F30D424566CDA00BC4FD1 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F30D324566CDA00BC4FD1 /* Message.swift */; };
 		422F30D62456725600BC4FD1 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F30D52456725600BC4FD1 /* Room.swift */; };
+		422F30D8245672BD00BC4FD1 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F30D7245672BD00BC4FD1 /* ChatController.swift */; };
 		42E911E5245668B20076C8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E911E4245668B20076C8F2 /* AppDelegate.swift */; };
 		42E911E7245668B20076C8F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E911E6245668B20076C8F2 /* SceneDelegate.swift */; };
 		42E911E9245668B20076C8F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E911E8245668B20076C8F2 /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		422F30D324566CDA00BC4FD1 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		422F30D52456725600BC4FD1 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		422F30D7245672BD00BC4FD1 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		42E911E1245668B20076C8F2 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E911E4245668B20076C8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42E911E6245668B20076C8F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 		42E911FA24566A460076C8F2 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				422F30D7245672BD00BC4FD1 /* ChatController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				42E911FF24566B830076C8F2 /* ChatRoomTableViewController.swift in Sources */,
 				42E911E9245668B20076C8F2 /* ViewController.swift in Sources */,
 				422F30D62456725600BC4FD1 /* Room.swift in Sources */,
+				422F30D8245672BD00BC4FD1 /* ChatController.swift in Sources */,
 				42E911E5245668B20076C8F2 /* AppDelegate.swift in Sources */,
 				422F30D424566CDA00BC4FD1 /* Message.swift in Sources */,
 				42E911E7245668B20076C8F2 /* SceneDelegate.swift in Sources */,

@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2BBF7206D7FAC92C82A042A99C4A98F8"
-               BuildableName = "PromisesObjC.framework"
-               BlueprintName = "PromisesObjC"
+               BlueprintIdentifier = "E348382FA7E1F8A639AFBFF3F8C4FC04"
+               BuildableName = "CodableFirebase.framework"
+               BlueprintName = "CodableFirebase"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
