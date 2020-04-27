@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>52998909045-al9765bm6emisbcjngscjn2hsu8g8lrq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.52998909045-al9765bm6emisbcjngscjn2hsu8g8lrq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCtwBswSqIznVCbpdpnZ2qRoBq_3-K8-4o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>52998909045</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lambda.davidwright.Firebase-Chat</string>
+	<key>PROJECT_ID</key>
+	<string>fir-chat-dcea3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-chat-dcea3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:52998909045:ios:3ad74e3ee500a502ad5c3c</string>
+	<key>DATABASE_URL</key>
+	<string>https://fir-chat-dcea3.firebaseio.com</string>
+</dict>
+</plist>
