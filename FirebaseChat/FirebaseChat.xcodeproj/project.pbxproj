@@ -18,7 +18,7 @@
 		42E911EE245668B30076C8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E911ED245668B30076C8F2 /* Assets.xcassets */; };
 		42E911F1245668B30076C8F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E911EF245668B30076C8F2 /* LaunchScreen.storyboard */; };
 		42E911FF24566B830076C8F2 /* ChatRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E911FE24566B830076C8F2 /* ChatRoomTableViewController.swift */; };
-		42E9120124566BBB0076C8F2 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9120024566BBB0076C8F2 /* MessageViewController.swift */; };
+		42E9120124566BBB0076C8F2 /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E9120024566BBB0076C8F2 /* MessageDetailViewController.swift */; };
 		CFF4C0485D39B9163459FE91 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88341D0C880754A9A1B181F0 /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +36,7 @@
 		42E911F0245668B30076C8F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42E911F2245668B30076C8F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42E911FE24566B830076C8F2 /* ChatRoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableViewController.swift; sourceTree = "<group>"; };
-		42E9120024566BBB0076C8F2 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		42E9120024566BBB0076C8F2 /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		4C92D8283AA97733B8D135E8 /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 		88341D0C880754A9A1B181F0 /* Pods_FirebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF992BE5F1F78E8B175BE3B6 /* Pods-FirebaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				42E911FE24566B830076C8F2 /* ChatRoomTableViewController.swift */,
-				42E9120024566BBB0076C8F2 /* MessageViewController.swift */,
+				42E9120024566BBB0076C8F2 /* MessageDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 				42E911E5245668B20076C8F2 /* AppDelegate.swift in Sources */,
 				422F30D424566CDA00BC4FD1 /* Message.swift in Sources */,
 				42E911E7245668B20076C8F2 /* SceneDelegate.swift in Sources */,
-				42E9120124566BBB0076C8F2 /* MessageViewController.swift in Sources */,
+				42E9120124566BBB0076C8F2 /* MessageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

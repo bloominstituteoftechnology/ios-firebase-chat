@@ -70,5 +70,16 @@ class ChatRoomTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "ShowMessageSegue":
+            guard let destinationVC = segue.destination as? MessageDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            let room = chatController.rooms[indexPath.row]
+            destinationVC.chatController = chatController
+            destinationVC.room = room
+        default:
+            break
+        }
+    }
 
 }

@@ -39,10 +39,10 @@
             </objects>
             <point key="canvasLocation" x="1528.985507246377" y="114.50892857142857"/>
         </scene>
-        <!--Message View Controller-->
+        <!--Message Detail View Controller-->
         <scene sceneID="3gm-lh-D7n">
             <objects>
-                <viewController id="GpG-Ut-Bce" customClass="MessageViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GpG-Ut-Bce" customClass="MessageDetailViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPn-5N-zxQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
