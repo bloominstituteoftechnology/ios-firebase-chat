@@ -5,64 +5,54 @@
 //  Created by Sal B Amer on 4/26/20.
 //  Copyright © 2020 Sal B Amer. All rights reserved.
 //
+import CodableFirebase
+import Firebase
+import MessageKit
+import UIKit
 
-import Foundation
+// Resources -   https://firebase.google.com/docs/database/ios/read-and-write
+//              https://firebase.google.com/docs/database/ios/structure-data
 
 class MessageController {
     
-    //baseURL
-    static let baseURL = URL(string: "https://fir-dchat2.firebaseio.com/")!
-    var chatThreads: [ChatThread] = []
+    var rooms = [ChatRoom]()
+    let ref = Database.database().reference().child("ChatRooms")
     
-    // Create Chatroom
-    func createChatroom(with title: String, completion: @escaping () -> Void) {
-        
-    let chatroomThread = ChatThread(title: title)
-        let requestURL = MessageController.baseURL.appendingPathComponent(chatroomThread.identifier).appendingPathExtension("json")
-        
-        var request = URLRequest(url: requestURL)
-        request.httpMethod = HTTPMethod.put.rawValue
-        
-        do {
-            request.httpBody = try JSONEncoder().encode(chatroomThread)
-        } catch {
-            print("Error encoding to JSON: \(error)")
+    //baseURL
+    static let baseURL = URL(string: "https://fir-chatroom-4b274.firebaseio.com/")!
+     
+    // Create/Add Chatroom
+    func addChatRoom(with name:String, completion: @escaping () -> ()) {
+        let room = ChatRoom(id: UUID().uuidString, messages: [], name: name)
+        self.rooms.append(room)
+        updateFirebaseDB()
+        completion()
+    }
+    // Fetch Chatroom
+    
+    func fetchChatRoom(completion: @escaping () -> ()) {
+        ref.observe(.value) { (snapshot) in
+            let decoder = FirebaseDecoder()
+//            let rooms = try decoder.decode(Rooms.self, from: snapshot.value as Any)
+//            self.rooms = rooms.rooms
+            completion()
         }
-        URLSession.shared.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                print("Error creating message theread: \(error)")
-                completion()
-                return
-            }
-            self.chatThreads.append(chatroomThread)
-            completion()
-        }.resume()
-        
     }
-    // Fetch Chatroom "GET"
-    func fetchChatrooms(completion: @escaping () -> Void) {
-        let requestURL = MessageController.baseURL.appendingPathExtension("json")
-        URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
-            
-            if let error = error {
-                print("error fetching message Threads: \(error)")
-                completion()
-                return
-            }
-            guard let data = data else {print("No Data returned from data task"); completion(); return }
-            do {
-                self.chatThreads = try JSONDecoder().decode([String: ChatThread].self, from: data).map({ ($0.value) })
-            } catch {
-                self.chatThreads = []
-                print("Error decoding messages threads from JSON data: \(error)")
-            }
-            completion()
-        }.resume()
-    }
-
+    
     // Create Message in chatroom
 
     // Fetch Messages in chatroom
+    
+    
+    //Update Firebase DB
+    
+    func updateFirebaseDB() {
+        let rooms = Rooms(rooms: self.rooms)
+        let encoder = FirebaseEncoder()
+        let roomsData = try? encoder.encode(rooms)
+        ref.setValue(roomsData)
+        
+    }
 
     
 }

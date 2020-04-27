@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>495790006202-rr0patnilqep17homru4abodot0ffje9.apps.googleusercontent.com</string>
+	<string>521062994664-hqpoafnsu5th8natvoro5kid4pipbrqt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.495790006202-rr0patnilqep17homru4abodot0ffje9</string>
+	<string>com.googleusercontent.apps.521062994664-hqpoafnsu5th8natvoro5kid4pipbrqt</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBMeHJzOzXxFlGa76bZDOhrNA1YsvMY0B4</string>
+	<string>AIzaSyCKdikgA46_TW42GbHzNvx1S-z8YQ7qRQk</string>
 	<key>GCM_SENDER_ID</key>
-	<string>495790006202</string>
+	<string>521062994664</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.amersalb.firebasechat</string>
+	<string>com.fbcahtroom2.sbamerchat</string>
 	<key>PROJECT_ID</key>
-	<string>fir-dchat2</string>
+	<string>fir-chatroom-4b274</string>
 	<key>STORAGE_BUCKET</key>
-	<string>fir-dchat2.appspot.com</string>
+	<string>fir-chatroom-4b274.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:495790006202:ios:701b522b464597c1a20783</string>
+	<string>1:521062994664:ios:dec2392e70bd3238836f5d</string>
 	<key>DATABASE_URL</key>
-	<string>https://fir-dchat2.firebaseio.com</string>
+	<string>https://fir-chatroom-4b274.firebaseio.com</string>
 </dict>
 </plist>

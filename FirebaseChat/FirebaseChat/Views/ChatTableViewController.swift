@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ChatTableViewController: UITableViewController {
     
@@ -16,16 +17,30 @@ class ChatTableViewController: UITableViewController {
     @IBOutlet weak var chatRoomTitle: UITextField!
     
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
+        // add bar button to create new chatRoom
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addChatRoom))
+        messageController.fetchChatRoom {
+            self.tableView.reloadData()
+        }
+      }
+    // Creates a new chatroom
+       @objc private func addChatRoom() {
+           let alert = UIAlertController(title: "Create a new Chatroom", message: "Enter the Chatroom name and hit OK", preferredStyle: .alert)
+           alert.addTextField()
+           alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            guard let textField = alert.textFields?.first, let name = textField.text, !name.isEmpty else { return }
+            self.messageController.addChatRoom(with: name) {
+                self.messageController.fetchChatRoom {
+                       self.dismiss(animated: true)
+                       self.tableView.reloadData()
+                   }
+               }
+           })
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+           self.present(alert, animated: true)
+       }
 
     // MARK: - Table view data source
 
@@ -36,15 +51,16 @@ class ChatTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return messageController.rooms.count
     }
 
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath)
+        let room = messageController.rooms[indexPath.row]
+        cell.textLabel?.text = room.name
         
-        cell.textLabel?.text = messageController.chatThreads[indexPath.row].title
         return cell
     }
 
@@ -53,24 +69,29 @@ class ChatTableViewController: UITableViewController {
 
     // IBActions - search bar input to create chat
     
-    @IBAction func pullToRefresh(_ sender: Any) {
-        // once fetch code is setup
-    }
+//    @IBAction func pullToRefresh(_ sender: Any) {
+//        // once fetch code is setup
+//        messageController.fetchChatrooms {
+//            DispatchQueue.main.async {
+//                self.refreshControl?.endRefreshing()
+//            }
+//        }
+//    }
     
-    @IBAction func createANewChatroom(_ sender: Any) {
-                
-        chatRoomTitle.resignFirstResponder()
-
-        guard let chatroomTitle = chatRoomTitle.text else { return }
-        chatRoomTitle.text = ""
-
-        messageController.createChatroom(with:chatroomTitle) {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-
-    }
+//    @IBAction func createANewChatroom(_ sender: Any) {
+//
+//        chatRoomTitle.resignFirstResponder()
+//
+//        guard let chatroomTitle = chatRoomTitle.text else { return }
+//        chatRoomTitle.text = ""
+//        messageController.addChatRoom(with: chatroomTitle) {
+////        messageController.createChatroom(with:chatroomTitle) {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//
+//    }
 
 
     
