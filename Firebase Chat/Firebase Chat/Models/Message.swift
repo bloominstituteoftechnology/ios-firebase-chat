@@ -33,7 +33,7 @@ struct Message: DictionaryConvertable {
         
 //        self.timestamp = DateFormatter().date(from: dictionary["timestamp"]!)!
         if let dateString = dictionary["timestamp"],
-            let date = DateFormatter().date(from: dateString){
+            let date = dateFormatter.date(from: dateString){
             self.timestamp = date
         } else {
             print("dateString: \"\(dictionary["timestamp"] ?? "nil")\"")
