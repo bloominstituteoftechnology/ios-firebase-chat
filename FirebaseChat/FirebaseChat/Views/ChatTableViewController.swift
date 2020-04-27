@@ -65,45 +65,22 @@ class ChatTableViewController: UITableViewController {
     }
 
 
-
-
-    // IBActions - search bar input to create chat
-    
-//    @IBAction func pullToRefresh(_ sender: Any) {
-//        // once fetch code is setup
-//        messageController.fetchChatrooms {
-//            DispatchQueue.main.async {
-//                self.refreshControl?.endRefreshing()
-//            }
-//        }
-//    }
-    
-//    @IBAction func createANewChatroom(_ sender: Any) {
-//
-//        chatRoomTitle.resignFirstResponder()
-//
-//        guard let chatroomTitle = chatRoomTitle.text else { return }
-//        chatRoomTitle.text = ""
-//        messageController.addChatRoom(with: chatroomTitle) {
-////        messageController.createChatroom(with:chatroomTitle) {
-//            DispatchQueue.main.async {
-//                self.tableView.reloadData()
-//            }
-//        }
-//
-//    }
-
-
+ 
     
     
-    /*
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ChatDetailSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                let destinationVC = segue.destination as? ChatDetailViewController else { return }
+            
+            let room = messageController.rooms[indexPath.row]
+            destinationVC.messageController = messageController
+            destinationVC.room = room
+        }
     }
-    */
 
 }

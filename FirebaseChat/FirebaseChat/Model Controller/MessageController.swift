@@ -18,7 +18,7 @@ class MessageController {
     var rooms = [ChatRoom]()
     let ref = Database.database().reference().child("ChatRooms")
     
-    //baseURL
+    //baseURL - Not needed with new method
     static let baseURL = URL(string: "https://fir-chatroom-4b274.firebaseio.com/")!
      
     // Create/Add Chatroom
@@ -31,17 +31,31 @@ class MessageController {
     // Fetch Chatroom
     
     func fetchChatRoom(completion: @escaping () -> ()) {
-        ref.observe(.value) { (snapshot) in
+        ref.observe(.value) { snapshot in
             let decoder = FirebaseDecoder()
-//            let rooms = try decoder.decode(Rooms.self, from: snapshot.value as Any)
-//            self.rooms = rooms.rooms
+            let rooms = try! decoder.decode(Rooms.self, from: snapshot.value as Any)
+            self.rooms = rooms.rooms
             completion()
         }
     }
     
     // Create Message in chatroom
+    func addNewMessageinRoom(_ room: ChatRoom, message: Message, completion: @escaping () -> ()) {
+        guard let index = rooms.firstIndex(of: room) else { return }
+        
+        var messagesArray = [Message]()
+        if let messages = self.rooms[index].messages {
+            messagesArray = messages
+            messagesArray.append(message)
+        } else {
+            messagesArray = [message]
+        }
+        rooms[index].messages = messagesArray
+        updateFirebaseDB()
+        completion()
+    }
 
-    // Fetch Messages in chatroom
+     
     
     
     //Update Firebase DB
