@@ -24,7 +24,7 @@ class ChatRoomController {
         URLSession.shared.dataTask(with: requestURL) { (data, _, error) in
             
             if let error = error {
-                NSLog("Error fetching message threads: \(error)")
+                NSLog("Error fetching chat rooms: \(error)")
                 completion()
                 return
             }
@@ -35,7 +35,7 @@ class ChatRoomController {
                 self.chatRooms = try JSONDecoder().decode([String: ChatRoom].self, from: data).map({ $0.value })
             } catch {
                 self.chatRooms = []
-                NSLog("Error decoding message threads from JSON data: \(error)")
+                NSLog("Error decoding chat rooms from JSON data: \(error)")
             }
             completion()
         }.resume()
@@ -54,13 +54,13 @@ class ChatRoomController {
         do {
             request.httpBody = try JSONEncoder().encode(chatRoom)
         } catch {
-            NSLog("Error encoding thread to JSON: \(error)")
+            NSLog("Error encoding chat room to JSON: \(error)")
         }
         
         URLSession.shared.dataTask(with: request) { (data, _, error) in
             
             if let error = error {
-                NSLog("Error with message thread creation data task: \(error)")
+                NSLog("Error with chat room creation data task: \(error)")
                 completion()
                 return
             }

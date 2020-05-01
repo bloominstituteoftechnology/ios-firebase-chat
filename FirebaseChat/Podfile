@@ -9,9 +9,7 @@ target 'FirebaseChat' do
   use_frameworks!
 
   # Pods for FirebaseChat
-pod 'FirebaseCore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
-pod 'FirebaseFirestore', :git => 'https://github.com/firebase/firebase-ios-sdk.git', :branch => 'master'
-pod 'Firebase/Database'
+pod 'SwiftLint'
 
 
 end
