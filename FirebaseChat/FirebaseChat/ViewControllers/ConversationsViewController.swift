@@ -10,11 +10,16 @@ import UIKit
 
 class ConversationsViewController: UIViewController {
 
+    @IBOutlet weak var newConversationTitleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-// MARK: - Navigation
+    @IBAction func addNewConversationButtonPressed(_ sender: UIButton) {
+    }
+    
+    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //         Get the new view controller using segue.destination.
