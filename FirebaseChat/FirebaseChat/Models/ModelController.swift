@@ -11,10 +11,13 @@ import FirebaseDatabase
 
 class ModelController {
     
+    // MARK: - Properties
+    private let databaseReference = Database.database().reference()
+    
     // MARK: - Methods
 //    Create a chat room in Firebase
-    func addNewConversation() {
-        
+    func addNewConversation(named name: String) {
+        databaseReference.childByAutoId().setValue(["conversation" : name])
     }
     
 //    Fetch chat rooms from Firebase
