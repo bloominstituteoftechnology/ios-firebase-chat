@@ -15,7 +15,6 @@ class MessageViewController: MessagesViewController, InputBarAccessoryViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegates()
-        // Do any additional setup after loading the view.
     }
     
     private func assignDelegates() {
