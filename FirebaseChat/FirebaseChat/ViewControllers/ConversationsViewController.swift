@@ -10,17 +10,19 @@ import UIKit
 
 class ConversationsViewController: UIViewController {
 
+    // MARK: - Outlets & Properties
     @IBOutlet weak var newConversationTitleTextField: UITextField!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    // MARK: - Actions & Methods
     @IBAction func addNewConversationButtonPressed(_ sender: UIButton) {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //         Get the new view controller using segue.destination.
 //         Pass the selected object to the new view controller.

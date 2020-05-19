@@ -12,11 +12,13 @@ import InputBarAccessoryView
 
 class MessageViewController: MessagesViewController, InputBarAccessoryViewDelegate {
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegates()
     }
     
+    // MARK: - Methods
     private func assignDelegates() {
         messageInputBar.delegate = self
 //        messagesCollectionView.messagesDataSource = self

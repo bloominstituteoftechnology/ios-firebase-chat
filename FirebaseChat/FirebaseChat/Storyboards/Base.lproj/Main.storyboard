@@ -29,6 +29,9 @@
                                             <constraint firstAttribute="width" constant="25" id="kDS-fN-T92"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="plus.bubble" catalog="system"/>
+                                        <connections>
+                                            <action selector="addNewConversationButtonPressed:" destination="AyK-NA-kdD" eventType="touchUpInside" id="gUK-5v-zk9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -82,6 +85,9 @@
                         <viewLayoutGuide key="safeArea" id="jK7-tB-Asd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Join a Conversation" id="FBw-Fm-hhP"/>
+                    <connections>
+                        <outlet property="newConversationTitleTextField" destination="hbI-xF-d3v" id="hyl-Ge-GCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD5-mf-eNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
