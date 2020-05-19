@@ -1,5 +1,5 @@
 //
-//  Conversation.swift
+//  Message.swift
 //  FirebaseChat
 //
 //  Created by Shawn James on 5/19/20.
@@ -8,6 +8,5 @@
 
 import Foundation
 
-struct Conversation {
-    var messages: [Message]
+struct Message {
 }
