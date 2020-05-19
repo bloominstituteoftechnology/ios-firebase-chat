@@ -101,14 +101,10 @@
 		1DA266D3247464A7000BCCAD /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
-				1DA266D4247464A7000BCCAD /* AppDelegate.swift */,
-				1DA266D6247464A7000BCCAD /* SceneDelegate.swift */,
-				1DA266D8247464A7000BCCAD /* ViewController.swift */,
-				1DA266DA247464A7000BCCAD /* Main.storyboard */,
-				1DA266E0247464AA000BCCAD /* Assets.xcassets */,
-				1DA266E2247464AA000BCCAD /* LaunchScreen.storyboard */,
-				1DA266E5247464AA000BCCAD /* Info.plist */,
-				1DA266DD247464A7000BCCAD /* FirebaseChat.xcdatamodeld */,
+				1DA26707247464FB000BCCAD /* Application */,
+				1DA267092474651C000BCCAD /* ViewControllers */,
+				1DA2670A24746534000BCCAD /* Storyboards */,
+				1DA2670B24746543000BCCAD /* CoreData */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -129,6 +125,42 @@
 				1DA266FB247464AA000BCCAD /* Info.plist */,
 			);
 			path = FirebaseChatUITests;
+			sourceTree = "<group>";
+		};
+		1DA26707247464FB000BCCAD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1DA266D4247464A7000BCCAD /* AppDelegate.swift */,
+				1DA266D6247464A7000BCCAD /* SceneDelegate.swift */,
+				1DA266E0247464AA000BCCAD /* Assets.xcassets */,
+				1DA266E5247464AA000BCCAD /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		1DA267092474651C000BCCAD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1DA266D8247464A7000BCCAD /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1DA2670A24746534000BCCAD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1DA266DA247464A7000BCCAD /* Main.storyboard */,
+				1DA266E2247464AA000BCCAD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		1DA2670B24746543000BCCAD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1DA266DD247464A7000BCCAD /* FirebaseChat.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
