@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="2128.985507246377" y="-264.50892857142856"/>
         </scene>
-        <!--Messages View Controller-->
+        <!--Message View Controller-->
         <scene sceneID="7xc-jS-pSJ">
             <objects>
-                <viewController id="VUc-7u-9Lo" customClass="MessagesViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VUc-7u-9Lo" customClass="MessageViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eqY-e1-PiV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
