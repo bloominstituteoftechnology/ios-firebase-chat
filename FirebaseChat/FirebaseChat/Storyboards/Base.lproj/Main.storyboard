@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CJP-C4-fnx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Join a Conversation-->
+        <scene sceneID="Phb-6e-rYc">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="AyK-NA-kdD" customClass="ConversationsViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hYP-yh-cQh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f85-4n-oHJ">
+                                <rect key="frame" x="20" y="140" width="374" height="34"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start a New Conversation..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hbI-xF-d3v">
+                                        <rect key="frame" x="0.0" y="0.0" width="349" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gH-GV-Q8b">
+                                        <rect key="frame" x="349" y="0.0" width="25" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="kDS-fN-T92"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="plus.bubble" catalog="system"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0XR-l1-ZGF">
+                                <rect key="frame" x="20" y="182" width="374" height="680"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ConversationCell" textLabel="iTd-Lq-yJ4" detailTextLabel="hrR-qV-hne" style="IBUITableViewCellStyleSubtitle" id="ZnK-3Q-iI5">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZnK-3Q-iI5" id="sqh-Mi-xuO">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iTd-Lq-yJ4">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hrR-qV-hne">
+                                                    <rect key="frame" x="20" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="VUc-7u-9Lo" kind="show" identifier="ShowMessages" id="1PS-Ru-tmg"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="f85-4n-oHJ" firstAttribute="top" secondItem="jK7-tB-Asd" secondAttribute="top" id="EE0-oP-ecV"/>
+                            <constraint firstItem="jK7-tB-Asd" firstAttribute="trailing" secondItem="0XR-l1-ZGF" secondAttribute="trailing" constant="20" id="GWP-Q6-U3x"/>
+                            <constraint firstItem="jK7-tB-Asd" firstAttribute="trailing" secondItem="f85-4n-oHJ" secondAttribute="trailing" constant="20" id="J5F-2S-uBZ"/>
+                            <constraint firstItem="0XR-l1-ZGF" firstAttribute="bottom" secondItem="jK7-tB-Asd" secondAttribute="bottom" id="JV6-iw-Fu4"/>
+                            <constraint firstItem="f85-4n-oHJ" firstAttribute="leading" secondItem="jK7-tB-Asd" secondAttribute="leading" constant="20" id="JmG-lp-cWP"/>
+                            <constraint firstItem="0XR-l1-ZGF" firstAttribute="top" secondItem="f85-4n-oHJ" secondAttribute="bottom" constant="8" id="NHV-4z-h6n"/>
+                            <constraint firstItem="0XR-l1-ZGF" firstAttribute="leading" secondItem="jK7-tB-Asd" secondAttribute="leading" constant="20" id="ZKW-k7-Ru8"/>
+                            <constraint firstItem="jK7-tB-Asd" firstAttribute="trailing" secondItem="f85-4n-oHJ" secondAttribute="trailing" constant="20" id="feO-aY-7Y0"/>
+                            <constraint firstItem="0XR-l1-ZGF" firstAttribute="top" secondItem="f85-4n-oHJ" secondAttribute="bottom" constant="8" id="pw8-W7-mQq"/>
+                            <constraint firstItem="f85-4n-oHJ" firstAttribute="leading" secondItem="jK7-tB-Asd" secondAttribute="leading" constant="20" id="z9c-c8-goD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jK7-tB-Asd"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Join a Conversation" id="FBw-Fm-hhP"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FD5-mf-eNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2128.985507246377" y="-264.50892857142856"/>
+        </scene>
+        <!--Messages View Controller-->
+        <scene sceneID="7xc-jS-pSJ">
+            <objects>
+                <viewController id="VUc-7u-9Lo" customClass="MessagesViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eqY-e1-PiV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="MKS-gy-CAA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mVZ-OC-d1p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQt-EO-L2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3001" y="-265"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RZb-Fg-SCZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CJP-C4-fnx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="uaE-3D-QGt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AyK-NA-kdD" kind="relationship" relationship="rootViewController" id="CAO-1Q-O1d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFK-mO-koB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218.840579710145" y="-264.50892857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus.bubble" catalog="system" width="128" height="110"/>
+    </resources>
 </document>
