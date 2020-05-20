@@ -20,6 +20,7 @@
 		27C56B0D2475D0B700087777 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C56B0C2475D0B700087777 /* MessageKit.framework */; };
 		27C56B0F2475D36A00087777 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C56B0E2475D36A00087777 /* GoogleService-Info.plist */; };
 		27C56B112475D81000087777 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B102475D81000087777 /* Message.swift */; };
+		27C56B132475D8D300087777 /* MessageThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B122475D8D300087777 /* MessageThread.swift */; };
 		B1ABCB75AB0B8DF03F03C902 /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FF94751F2D94452AB2B1E0 /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		27C56B0C2475D0B700087777 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MessageKit.framework; sourceTree = "<group>"; };
 		27C56B0E2475D36A00087777 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		27C56B102475D81000087777 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		27C56B122475D8D300087777 /* MessageThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThread.swift; sourceTree = "<group>"; };
 		76FF94751F2D94452AB2B1E0 /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EDCB5FCCA5FC99C0AF6034 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		EA5EF9537ED29435432BA620 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				27C56B102475D81000087777 /* Message.swift */,
+				27C56B122475D8D300087777 /* MessageThread.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				27C56B112475D81000087777 /* Message.swift in Sources */,
 				27C56B052475CD7000087777 /* MessageViewController.swift in Sources */,
 				27C56B032475CD3D00087777 /* MessageThreadTableViewController.swift in Sources */,
+				27C56B132475D8D300087777 /* MessageThread.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
