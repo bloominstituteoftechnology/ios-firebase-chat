@@ -16,12 +16,14 @@ class ConversationsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let databaseReference = Database.database().reference()
     var conversations = [String]()
+    var conversationReferences = [DatabaseReference]()
     
     
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        createSenderIdIfNeeded()
         fetchNewConversations()
     }
     
@@ -36,9 +38,29 @@ class ConversationsViewController: UIViewController {
     func fetchNewConversations() {
         databaseReference.child("Conversations").observe(.childAdded) { (dataSnapshot) in
             guard let name = dataSnapshot.childSnapshot(forPath: "name").value as? String else { return }
+            self.conversationReferences.append(dataSnapshot.ref)
             self.conversations.append(name)
             self.tableView.reloadData()
         }
+    }
+    
+    func createSenderIdIfNeeded() {
+        guard UserDefaults.standard.string(forKey: "senderId") == nil else { return }
+        
+        // present alert to input & save username
+        let alert = UIAlertController(title: "Set Your Username", message: nil, preferredStyle: .alert)
+        var usernameTextField: UITextField!
+        alert.addTextField { (textField) in
+            usernameTextField = textField
+            textField.placeholder = "Username:"
+        }
+        alert.addAction(UIAlertAction(title: "Submit", style: .default, handler: { (_) in
+            let displayName = usernameTextField.text ?? "anonymous"
+            let id = UUID().uuidString
+            UserDefaults.standard.set(id, forKey: "senderId")
+            UserDefaults.standard.set(displayName, forKey: "displayName")
+        }))
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Navigation
@@ -46,6 +68,7 @@ class ConversationsViewController: UIViewController {
         guard segue.identifier == "ShowMessages", let indexPath = tableView.indexPathForSelectedRow else { return }
         let messageViewController = segue.destination as! MessageViewController
         messageViewController.conversation = conversations[indexPath.row]
+        messageViewController.conversationReference = conversationReferences[indexPath.row]
     }
     
 }

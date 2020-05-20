@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import MessageKit
 
-struct Conversation {
-    var messages: [Message]
+struct Message: MessageType {
+    var text: String
+    var displayName: String
+    var senderId: String
+    
+    var sender: SenderType { Sender(senderId: senderId, displayName: displayName) }
+    var messageId: String
+    var sentDate: Date
+    var kind: MessageKind { .text(text) }
 }
