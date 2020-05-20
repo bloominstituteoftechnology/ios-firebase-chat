@@ -76,7 +76,14 @@ extension MessagesVC: MessagesLayoutDelegate {
 }
 
 extension MessagesVC: MessagesDisplayDelegate {
-    
+    //FIXME: How to implement two options without a custom cell?
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        if message.sender.displayName != sender.displayName {
+            return MessageStyle.bubbleOutline(.blue)
+        } else {
+            return MessageStyle.bubbleOutline(.orange)
+        }
+    }
 }
 
 extension MessagesVC: InputBarAccessoryViewDelegate {

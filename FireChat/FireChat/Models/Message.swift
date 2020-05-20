@@ -43,7 +43,7 @@ struct Message {
     
     func toDictionary() -> Any {
         return [
-            "senderId": sentBy.id,
+            "senderId": sentBy.senderId,
             "senderName": sentBy.displayName,
             "message": message,
             "timestamp": timestamp.transformIsoToString
@@ -52,12 +52,12 @@ struct Message {
 }
 
 extension Message: MessageType {
-    var messageId: String {
+var messageId: String {
         return id.uuidString
     }
     
     var sender: SenderType {
-        return Sender(senderId: sentBy.id, displayName: sentBy.displayName)
+        return Sender(senderId: sentBy.senderId, displayName: sentBy.displayName)
     }
     
     var sentDate: Date {
