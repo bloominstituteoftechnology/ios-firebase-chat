@@ -15,12 +15,11 @@
 		27C56B012475CCC600087777 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27C56B002475CCC600087777 /* Default-568h@2x.png */; };
 		27C56B032475CD3D00087777 /* MessageThreadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B022475CD3D00087777 /* MessageThreadTableViewController.swift */; };
 		27C56B052475CD7000087777 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B042475CD7000087777 /* MessageViewController.swift */; };
-		27C56B072475CDE100087777 /* MessageThreadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B062475CDE100087777 /* MessageThreadController.swift */; };
+		27C56B072475CDE100087777 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B062475CDE100087777 /* ChatRoomController.swift */; };
 		27C56B0B2475D0AD00087777 /* InputBarAccessoryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C56B0A2475D0AD00087777 /* InputBarAccessoryView.framework */; };
 		27C56B0D2475D0B700087777 /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27C56B0C2475D0B700087777 /* MessageKit.framework */; };
 		27C56B0F2475D36A00087777 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27C56B0E2475D36A00087777 /* GoogleService-Info.plist */; };
-		27C56B112475D81000087777 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B102475D81000087777 /* Message.swift */; };
-		27C56B132475D8D300087777 /* MessageThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B122475D8D300087777 /* MessageThread.swift */; };
+		27C56B132475D8D300087777 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C56B122475D8D300087777 /* ChatRoom.swift */; };
 		B1ABCB75AB0B8DF03F03C902 /* Pods_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76FF94751F2D94452AB2B1E0 /* Pods_Chat.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,12 +35,11 @@
 		27C56B002475CCC600087777 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		27C56B022475CD3D00087777 /* MessageThreadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadTableViewController.swift; sourceTree = "<group>"; };
 		27C56B042475CD7000087777 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		27C56B062475CDE100087777 /* MessageThreadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThreadController.swift; sourceTree = "<group>"; };
+		27C56B062475CDE100087777 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		27C56B0A2475D0AD00087777 /* InputBarAccessoryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = InputBarAccessoryView.framework; sourceTree = "<group>"; };
 		27C56B0C2475D0B700087777 /* MessageKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MessageKit.framework; sourceTree = "<group>"; };
 		27C56B0E2475D36A00087777 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		27C56B102475D81000087777 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		27C56B122475D8D300087777 /* MessageThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageThread.swift; sourceTree = "<group>"; };
+		27C56B122475D8D300087777 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		76FF94751F2D94452AB2B1E0 /* Pods_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2EDCB5FCCA5FC99C0AF6034 /* Pods-Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		EA5EF9537ED29435432BA620 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +83,7 @@
 		27C56AE32475B8BF00087777 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				27C56AFD2475CC7E00087777 /* Models */,
+				27C56AFD2475CC7E00087777 /* Model */,
 				27C56AFE2475CC8F00087777 /* Model Controller */,
 				27C56AFF2475CCA900087777 /* View Controllers */,
 				27C56AFB2475CC2000087777 /* Storyboards */,
@@ -113,19 +111,18 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		27C56AFD2475CC7E00087777 /* Models */ = {
+		27C56AFD2475CC7E00087777 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				27C56B102475D81000087777 /* Message.swift */,
-				27C56B122475D8D300087777 /* MessageThread.swift */,
+				27C56B122475D8D300087777 /* ChatRoom.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		27C56AFE2475CC8F00087777 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				27C56B062475CDE100087777 /* MessageThreadController.swift */,
+				27C56B062475CDE100087777 /* ChatRoomController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -281,11 +278,10 @@
 			files = (
 				27C56AE52475B8BF00087777 /* AppDelegate.swift in Sources */,
 				27C56AE72475B8BF00087777 /* SceneDelegate.swift in Sources */,
-				27C56B072475CDE100087777 /* MessageThreadController.swift in Sources */,
-				27C56B112475D81000087777 /* Message.swift in Sources */,
+				27C56B072475CDE100087777 /* ChatRoomController.swift in Sources */,
 				27C56B052475CD7000087777 /* MessageViewController.swift in Sources */,
 				27C56B032475CD3D00087777 /* MessageThreadTableViewController.swift in Sources */,
-				27C56B132475D8D300087777 /* MessageThread.swift in Sources */,
+				27C56B132475D8D300087777 /* ChatRoom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

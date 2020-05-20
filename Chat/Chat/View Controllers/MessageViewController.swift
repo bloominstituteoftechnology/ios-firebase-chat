@@ -11,6 +11,10 @@ import MessageKit
 import InputBarAccessoryView
 
 class MessageViewController: MessagesViewController, InputBarAccessoryViewDelegate {
+    
+    
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
