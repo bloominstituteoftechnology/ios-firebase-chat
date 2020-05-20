@@ -87,6 +87,7 @@
                     <navigationItem key="navigationItem" title="Join a Conversation" id="FBw-Fm-hhP"/>
                     <connections>
                         <outlet property="newConversationTitleTextField" destination="hbI-xF-d3v" id="hyl-Ge-GCY"/>
+                        <outlet property="tableView" destination="0XR-l1-ZGF" id="Voe-ks-bpc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FD5-mf-eNI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
