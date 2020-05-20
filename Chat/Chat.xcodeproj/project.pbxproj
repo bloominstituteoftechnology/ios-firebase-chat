@@ -24,6 +24,7 @@
 		27C56AED2475B8C400087777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27C56AF02475B8C400087777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27C56AF22475B8C400087777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27C56AF82475B9E200087777 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		27C56AD82475B8BF00087777 = {
 			isa = PBXGroup;
 			children = (
+				27C56AF82475B9E200087777 /* Cartfile */,
 				27C56AE32475B8BF00087777 /* Chat */,
 				27C56AE22475B8BF00087777 /* Products */,
 			);
