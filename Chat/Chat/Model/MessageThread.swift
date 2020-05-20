@@ -10,4 +10,16 @@ import Foundation
 
 class MessageThread {
     
+    
+    var messages: [MessageThread.Message]
+    
+    init(messages: [MessageThread.Message]) {
+        self.messages = messages
+    }
+    
+    
+    struct Message {
+        
+    }
+    
 }
