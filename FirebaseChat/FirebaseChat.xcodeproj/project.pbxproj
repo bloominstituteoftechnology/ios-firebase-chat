@@ -18,11 +18,8 @@
 		1DA266D5247464A7000BCCAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA266D4247464A7000BCCAD /* AppDelegate.swift */; };
 		1DA266D7247464A7000BCCAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA266D6247464A7000BCCAD /* SceneDelegate.swift */; };
 		1DA266DC247464A7000BCCAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA266DA247464A7000BCCAD /* Main.storyboard */; };
-		1DA266DF247464A7000BCCAD /* FirebaseChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1DA266DD247464A7000BCCAD /* FirebaseChat.xcdatamodeld */; };
 		1DA266E1247464AA000BCCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DA266E0247464AA000BCCAD /* Assets.xcassets */; };
 		1DA266E4247464AA000BCCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DA266E2247464AA000BCCAD /* LaunchScreen.storyboard */; };
-		1DA266EF247464AA000BCCAD /* FirebaseChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA266EE247464AA000BCCAD /* FirebaseChatTests.swift */; };
-		1DA266FA247464AA000BCCAD /* FirebaseChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA266F9247464AA000BCCAD /* FirebaseChatUITests.swift */; };
 		289309B4F0E149AF28B9E5A4 /* Pods_FirebaseChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96A26C8BF96060F786F4145 /* Pods_FirebaseChatTests.framework */; };
 		6E9D1153A26AA07277779565 /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638FF432CD3F41279A71B7D0 /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
@@ -55,16 +52,11 @@
 		1DA266D4247464A7000BCCAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DA266D6247464A7000BCCAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1DA266DB247464A7000BCCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1DA266DE247464A7000BCCAD /* FirebaseChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FirebaseChat.xcdatamodel; sourceTree = "<group>"; };
 		1DA266E0247464AA000BCCAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DA266E3247464AA000BCCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1DA266E5247464AA000BCCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DA266EA247464AA000BCCAD /* FirebaseChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DA266EE247464AA000BCCAD /* FirebaseChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatTests.swift; sourceTree = "<group>"; };
-		1DA266F0247464AA000BCCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1DA266F5247464AA000BCCAD /* FirebaseChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DA266F9247464AA000BCCAD /* FirebaseChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatUITests.swift; sourceTree = "<group>"; };
-		1DA266FB247464AA000BCCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3444C1E477601B7C947F157C /* Pods-FirebaseChatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseChatUITests/Pods-FirebaseChatUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E732D273C3C1BFC2B7B18CF /* Pods-FirebaseChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseChatUITests/Pods-FirebaseChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5B40B5BBF06C438307A96717 /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,8 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				1DA266D3247464A7000BCCAD /* FirebaseChat */,
-				1DA266ED247464AA000BCCAD /* FirebaseChatTests */,
-				1DA266F8247464AA000BCCAD /* FirebaseChatUITests */,
 				1DA266D2247464A7000BCCAD /* Products */,
 				5DFC6DB83DC3811BB891B380 /* Pods */,
 				C1CC15832FBC17E8B5E95B02 /* Frameworks */,
@@ -141,27 +131,8 @@
 				1DA267092474651C000BCCAD /* ViewControllers */,
 				1DA2670A24746534000BCCAD /* Storyboards */,
 				1D9CC7462474820700D6C659 /* Models */,
-				1DA2670B24746543000BCCAD /* CoreData */,
 			);
 			path = FirebaseChat;
-			sourceTree = "<group>";
-		};
-		1DA266ED247464AA000BCCAD /* FirebaseChatTests */ = {
-			isa = PBXGroup;
-			children = (
-				1DA266EE247464AA000BCCAD /* FirebaseChatTests.swift */,
-				1DA266F0247464AA000BCCAD /* Info.plist */,
-			);
-			path = FirebaseChatTests;
-			sourceTree = "<group>";
-		};
-		1DA266F8247464AA000BCCAD /* FirebaseChatUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1DA266F9247464AA000BCCAD /* FirebaseChatUITests.swift */,
-				1DA266FB247464AA000BCCAD /* Info.plist */,
-			);
-			path = FirebaseChatUITests;
 			sourceTree = "<group>";
 		};
 		1DA26707247464FB000BCCAD /* Application */ = {
@@ -192,14 +163,6 @@
 				1DA266E2247464AA000BCCAD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		1DA2670B24746543000BCCAD /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				1DA266DD247464A7000BCCAD /* FirebaseChat.xcdatamodeld */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		5DFC6DB83DC3811BB891B380 /* Pods */ = {
@@ -450,7 +413,6 @@
 			files = (
 				1D9CC7452474811000D6C659 /* MessageViewController.swift in Sources */,
 				1DA266D5247464A7000BCCAD /* AppDelegate.swift in Sources */,
-				1DA266DF247464A7000BCCAD /* FirebaseChat.xcdatamodeld in Sources */,
 				1D9CC7492474828300D6C659 /* ModelController.swift in Sources */,
 				1D1D520D2474AE90007BD6A6 /* Conversation.swift in Sources */,
 				1DA266D7247464A7000BCCAD /* SceneDelegate.swift in Sources */,
@@ -462,7 +424,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DA266EF247464AA000BCCAD /* FirebaseChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DA266FA247464AA000BCCAD /* FirebaseChatUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,19 +749,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1DA266DD247464A7000BCCAD /* FirebaseChat.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1DA266DE247464A7000BCCAD /* FirebaseChat.xcdatamodel */,
-			);
-			currentVersion = 1DA266DE247464A7000BCCAD /* FirebaseChat.xcdatamodel */;
-			path = FirebaseChat.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1DA266C9247464A7000BCCAD /* Project object */;
 }
