@@ -2,135 +2,131 @@
 //  MessageViewController.swift
 //  Chat
 //
-//  Created by Chris Dobek on 5/20/20.
+//  Created by Chris Dobek on 5/21/20.
 //  Copyright © 2020 Chris Dobek. All rights reserved.
 //
 
 import UIKit
+
+import UIKit
 import MessageKit
 import InputBarAccessoryView
-import FirebaseDatabase
 
-class MessageViewController: MessagesCollectionView, InputBarAccessoryViewDelegate {
+class MessageViewController: MessagesViewController, InputBarAccessoryViewDelegate {
     
-    //MARK: - Properties
-    let databaseReference = Database.database().reference()
-    var chatRoom: String?
-    var chatRoomReference: DatabaseReference? {
-        didSet {  }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        messageInputBar.delegate = self
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        
     }
-    var messages = [MessageType]()
+    
+    var chatRoom: ChatRoom?
+    var chatRoomController: ChatRoomController?
+    
     private lazy var formatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateStyle = .medium
-        df.timeStyle = .medium
-        return df
+        let result = DateFormatter()
+        result.dateStyle = .medium
+        result.timeStyle = .medium
+        return result
     }()
-    let dateFormatter = ISO8601DateFormatter()    
-
-    private func fetchNewMessages() {
-        guard let chatRoomReference = chatRoomReference else { return }
-        chatRoomReference.child("messages").observe(.childAdded) { (dataSnapshot) in
-            var text: String!
-            var displayName: String!
-            var senderId: String!
-            var messageId: String!
-            var sentDate: String!
-            for child in dataSnapshot.children {
-                let snap = child as! DataSnapshot
-                if snap.key == "text" { text = snap.value as? String }
-                if snap.key == "displayName" { displayName = snap.value as? String }
-                if snap.key == "senderId" { senderId = snap.value as? String }
-                if snap.key == "messageId" { messageId = snap.value as? String }
-                if snap.key == "sentDate" { sentDate = snap.value as? String }
-            }
-            let message = Message(text: text,
-                                  displayName: displayName,
-                                  senderId: senderId,
-                                  messageId: messageId,
-                                  sentDate: self.dateFormatter.date(from: sentDate)!)
-            self.messages.append(message)
-        }
-    }
-
 }
-extension MessageViewController: MessagesDataSource {
 
+extension MessageViewController: MessagesDataSource {
+    
     // ---- Required Delegate Methods ----
     
     // Who is the current user (Sender)?
     // Used to know where to put messages (left or right)
     func currentSender() -> SenderType {
-        Sender(senderId: UserDefaults.standard.string(forKey: "senderId")!,
-               displayName: UserDefaults.standard.string(forKey: "displayName")!)
+        
+        if let currentUser = chatRoomController?.currentUser {
+            return currentUser
+        } else {
+            return Sender(senderId: "foo", displayName: "bar")
+        }
     }
-
-func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int { 1 }
-
-func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
-    return messages.count
-}
-
-func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-    let message = messages[indexPath.item]
-    return message
-}
-
-// -----------------------------------
-func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-    let name = message.sender.displayName
-    let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption1)]
-    return NSAttributedString(string: name, attributes: attrs)
-}
-
-func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-    let dateString = formatter.string(from: message.sentDate)
-    let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption2)]
-    return NSAttributedString(string: dateString, attributes: attrs)
-}
+    
+    func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
+        return 1
+    }
+    
+    func numberOfItems(inSection section: Int, in messagesCollectionView: MessagesCollectionView) -> Int {
+        return chatRoom?.messages.count ?? 0
+    }
+    
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+        
+        guard let message = chatRoom?.messages[indexPath.item] else {
+            fatalError("No message found in thread.")
+        }
+        return message
+    }
+    
+    // -----------------------------------
+    
+    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let name = message.sender.displayName
+        let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption1)]
+        return NSAttributedString(string: name, attributes: attrs)
+    }
+    
+    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let dateString = formatter.string(from: message.sentDate)
+        let attrs = [NSAttributedString.Key.font : UIFont.preferredFont(forTextStyle: .caption2)]
+        return NSAttributedString(string: dateString, attributes: attrs)
+    }
 }
 
 extension MessageViewController: MessagesLayoutDelegate {
-
-    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat { 16 }
-
-    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat { 16 }
-
+    
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 16
+    }
+    
+    
 }
 
 extension MessageViewController: MessagesDisplayDelegate {
-
+    
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ? .white : .black
     }
-
+    
     func backgroundColor(for message: MessageType, at indexPath: IndexPath,
                          in messagesCollectionView: MessagesCollectionView) -> UIColor {
-
+        
         return isFromCurrentSender(message: message) ? .blue : .green
     }
-
+    
     // Adds tails onto the messages
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
+        
         return .bubbleTail(corner, .curved)
     }
-
+    
     // Sets the senders first initial in the avatar circle view
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         let initials = String(message.sender.displayName.first ?? Character(""))
         let avatar = Avatar(image: nil, initials: initials)
         avatarView.set(avatar: avatar)
     }
-
+    
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        guard chatRoomReference != nil, !text.isEmpty else { return }
-        // use text to create message for conversation
-        let newMessage: [String:Any] = ["text" : text,
-                                        "messageId" : UUID().uuidString,
-                                        "senderId" : UserDefaults.standard.string(forKey: "senderId")!,
-                                        "displayName" : UserDefaults.standard.string(forKey: "displayName")!,
-                                        "sentDate" : dateFormatter.string(from: Date())]
-        chatRoomReference!.child("messages").childByAutoId().setValue(newMessage)
+        guard let chatRoom = chatRoom else { return }
+        
+        chatRoomController?.createMessage(in: chatRoom, withText: text) {
+            DispatchQueue.main.async {
+                self.messagesCollectionView.reloadData()
+            }
+        }
     }
 }
