@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>257016908810-ltpqpd3chmaeqi7i6qdemj387uuued31.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.257016908810-ltpqpd3chmaeqi7i6qdemj387uuued31</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAP44pmkrGhNFjmE9cUOQ_1wNv6R3tyCOw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>257016908810</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.chadparker.FirebaseChat</string>
+	<key>PROJECT_ID</key>
+	<string>lambda-97baa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lambda-97baa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:257016908810:ios:0e3dff75ea3e18662d63f3</string>
+	<key>DATABASE_URL</key>
+	<string>https://lambda-97baa.firebaseio.com</string>
+</dict>
+</plist>
