@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08C18857F0DDF5BAE60217DF /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75276584BD9A07D58C20A325 /* Pods_FirebaseChat.framework */; };
+		6324BC1B2490238500766CF6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC1A2490238500766CF6 /* Message.swift */; };
+		6324BC1D2490238D00766CF6 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC1C2490238D00766CF6 /* ChatRoom.swift */; };
 		63669017248B428800E2A439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63669016248B428800E2A439 /* AppDelegate.swift */; };
 		63669019248B428800E2A439 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63669018248B428800E2A439 /* SceneDelegate.swift */; };
 		6366901B248B428800E2A439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366901A248B428800E2A439 /* ViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6324BC1A2490238500766CF6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		6324BC1C2490238D00766CF6 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		63669013248B428800E2A439 /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63669016248B428800E2A439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63669018248B428800E2A439 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+				6324BC1A2490238500766CF6 /* Message.swift */,
+				6324BC1C2490238D00766CF6 /* ChatRoom.swift */,
 		6366900A248B428800E2A439 = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6366901B248B428800E2A439 /* ViewController.swift in Sources */,
+				6324BC1D2490238D00766CF6 /* ChatRoom.swift in Sources */,
+				6324BC1B2490238500766CF6 /* Message.swift in Sources */,
 				63669017248B428800E2A439 /* AppDelegate.swift in Sources */,
 				63669019248B428800E2A439 /* SceneDelegate.swift in Sources */,
 			);
