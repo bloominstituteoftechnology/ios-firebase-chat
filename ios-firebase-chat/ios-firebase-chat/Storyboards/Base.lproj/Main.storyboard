@@ -24,7 +24,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="7zj-QI-AEt" kind="show" id="yuh-zQ-tiS"/>
+                                    <segue destination="7zj-QI-AEt" kind="show" identifier="ChatDetailSegue" id="yuh-zQ-tiS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
