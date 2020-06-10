@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>341028961309-591rq3pkbu9mlke6qcv5u6q4m5t8lj4k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.341028961309-591rq3pkbu9mlke6qcv5u6q4m5t8lj4k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCK5gDSuaXizubYgHZAjwP0X28qwSj1Hmg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>341028961309</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.julltron.FirebaseChat</string>
+	<key>PROJECT_ID</key>
+	<string>lambda-firebase-chat-thomas-dye</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lambda-firebase-chat-thomas-dye.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:341028961309:ios:5fea182aaa91822198daf4</string>
+	<key>DATABASE_URL</key>
+	<string>https://lambda-firebase-chat-thomasdye.firebaseio.com</string>
+</dict>
+</plist>
