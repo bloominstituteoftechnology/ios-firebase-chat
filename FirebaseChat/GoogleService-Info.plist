@@ -15,9 +15,9 @@
 	<key>BUNDLE_ID</key>
 	<string>com.julltron.FirebaseChat</string>
 	<key>PROJECT_ID</key>
-	<string>lambda-firebase-chat-e7520</string>
+	<string>lambda-firebase-chat-thomas-dye</string>
 	<key>STORAGE_BUCKET</key>
-	<string>lambda-firebase-chat-e7520.appspot.com</string>
+	<string>lambda-firebase-chat-thomas-dye.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>GOOGLE_APP_ID</key>
 	<string>1:341028961309:ios:5fea182aaa91822198daf4</string>
 	<key>DATABASE_URL</key>
-	<string>https://lambda-firebase-chat-e7520.firebaseio.com</string>
+	<string>https://lambda-firebase-chat-thomasdye.firebaseio.com</string>
 </dict>
 </plist>
