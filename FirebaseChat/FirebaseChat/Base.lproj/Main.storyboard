@@ -10,7 +10,7 @@
         <!--Chat Rooms-->
         <scene sceneID="kop-ov-QJg">
             <objects>
-                <tableViewController id="Gww-Df-1yk" sceneMemberID="viewController">
+                <tableViewController id="Gww-Df-1yk" customClass="ChatRoomTableVC" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VzB-FK-Zbz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Chat Rooms" id="8TD-M3-Su8">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="Far-1U-Pf3">
                             <connections>
-                                <segue destination="Nh0-jQ-Uvg" kind="presentation" id="IuW-k8-g3R"/>
+                                <segue destination="Nh0-jQ-Uvg" kind="presentation" identifier="CreateChatRoomSegue" id="IuW-k8-g3R"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1911.2" y="-296.40179910044981"/>
         </scene>
-        <!--View Controller-->
+        <!--New Chat RoomVC-->
         <scene sceneID="uRn-7J-FBA">
             <objects>
-                <viewController id="Nh0-jQ-Uvg" sceneMemberID="viewController">
+                <viewController id="Nh0-jQ-Uvg" customClass="NewChatRoomVC" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qnW-Hn-F3T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,7 +63,27 @@
                                 <rect key="frame" x="50" y="151" width="275" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="chatRoomNameTextField:" destination="ikh-lc-4dB" eventType="editingDidEnd" id="g07-XH-qMY"/>
+                                </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg3-2i-jEv">
+                                <rect key="frame" x="49" y="239" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancel:" destination="Nh0-jQ-Uvg" eventType="touchUpInside" id="wUN-3f-sKu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9k-7l-mlO">
+                                <rect key="frame" x="283" y="239" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="done:" destination="Nh0-jQ-Uvg" eventType="touchUpInside" id="xjq-6z-UHG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -76,8 +96,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aVk-6D-btV"/>
                     </view>
+                    <connections>
+                        <outlet property="newChatRoomTextField" destination="bnT-QU-z5P" id="qhw-HW-5pE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IiD-xQ-Gig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ikh-lc-4dB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2872.8000000000002" y="-587.85607196401804"/>
         </scene>
