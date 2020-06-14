@@ -10,6 +10,21 @@ import Foundation
 
 struct ChatRoom {
    
+   let id: String
    let name: String
-   let messages: [Message]
+   var messages: [Message]
+   
+   init(id: String = UUID().uuidString, name: String, messages: [Message] = []) {
+      self.id = id
+      self.name = name
+      self.messages = messages
+   }
+   
+   init?(id: String, dict: [String: Any]) {
+      guard let name = dict["name"] as? String else { return nil }
+
+      self.id = id
+      self.name = name
+      self.messages = [] // still need to parse messages
+   }
 }

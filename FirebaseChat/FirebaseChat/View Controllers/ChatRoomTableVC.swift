@@ -47,8 +47,6 @@ class ChatRoomTableVC: UITableViewController {
 
 extension ChatRoomTableVC: ModelControllerDelegate {
    func chatRoomsWereUpdated() {
-      
+      tableView.reloadData()
    }
-   
-   
 }

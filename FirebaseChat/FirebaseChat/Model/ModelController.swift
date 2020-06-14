@@ -16,7 +16,7 @@ protocol ModelControllerDelegate: AnyObject {
 class ModelController {
    
    weak var delegate: ModelControllerDelegate!
-   var ref: DatabaseReference!
+   let chatRoomsRef = Database.database().reference().child("chatRooms")
    
    var chatRooms: [ChatRoom] = [] {
       didSet {
@@ -24,12 +24,28 @@ class ModelController {
       }
    }
    
+   init() {
+      fetchChatRooms()
+   }
+   
    func createChatRoom(_ name: String) {
-      print("create chat room here")
+      let newChatRoom = ChatRoom(name: name)
+      chatRoomsRef.child(newChatRoom.id).setValue([
+         "name": newChatRoom.name
+      ])
+      fetchChatRooms()
    }
    
    func fetchChatRooms() {
-      
+      chatRoomsRef.observeSingleEvent(of: .value) { snapshot in
+         guard let snapDict = snapshot.value as? [String: [String: Any]] else { return }
+         
+         self.chatRooms.removeAll()
+         for child in snapDict {
+            guard let chatRoom = ChatRoom(id: child.key, dict: child.value) else { continue }
+            self.chatRooms.append(chatRoom)
+         }
+      }
    }
    
    func createMessageInChatRoom(_ chatRoom: ChatRoom) {
