@@ -17,6 +17,7 @@ class ModelController {
    
    weak var delegate: ModelControllerDelegate!
    let chatRoomsRef = Database.database().reference().child("chatRooms")
+   let messagesRef = Database.database().reference().child("messagesByChatRoomId")
    
    var chatRooms: [ChatRoom] = [] {
       didSet {
@@ -48,11 +49,26 @@ class ModelController {
       }
    }
    
-   func createMessageInChatRoom(_ chatRoom: ChatRoom) {
-      
+   func createMessageInChatRoom(message: Message, chatRoom: ChatRoom) {
+      messagesRef.child(chatRoom.id).child(message.id).setValue([
+         "text": message.text,
+         "date": String(describing: message.date),
+      ])
    }
    
-   func fetchMessagesInChatRoom(_ chatRoom: ChatRoom) {
-      
+   func fetchMessagesInChatRoom(_ chatRoom: ChatRoom, completion: @escaping ([Message]) -> Void) {
+      messagesRef.child(chatRoom.id).observeSingleEvent(of: .value) { snapshot in
+         guard let messagesDict = snapshot.value as? [String: [String: Any]] else {
+            completion([])
+            return
+         }
+         
+         var messages: [Message] = []
+         for child in messagesDict {
+            guard let message = Message(id: child.key, dict: child.value) else { continue }
+            messages.append(message)
+         }
+         completion(messages)
+      }
    }
 }
