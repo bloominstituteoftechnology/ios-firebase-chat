@@ -12,12 +12,10 @@ struct ChatRoom {
    
    let id: String
    let name: String
-   var messages: [Message]
    
-   init(id: String = UUID().uuidString, name: String, messages: [Message] = []) {
+   init(id: String = UUID().uuidString, name: String) {
       self.id = id
       self.name = name
-      self.messages = messages
    }
    
    init?(id: String, dict: [String: Any]) {
@@ -25,6 +23,5 @@ struct ChatRoom {
 
       self.id = id
       self.name = name
-      self.messages = [] // still need to parse messages
    }
 }

@@ -26,7 +26,7 @@ struct Message {
       
       self.id = id
       self.text = text
-      #warning("date needs to be parsed")
+      // need to parse date
       self.date = Date()
    }
 }
