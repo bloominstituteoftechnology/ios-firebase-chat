@@ -11,6 +11,7 @@ import UIKit
 class MessagesVC: UIViewController {
    
    var chatRoom: ChatRoom!
+   var modelController: ModelController!
 
     override func viewDidLoad() {
         super.viewDidLoad()

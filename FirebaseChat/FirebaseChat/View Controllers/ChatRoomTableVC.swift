@@ -34,13 +34,14 @@ class ChatRoomTableVC: UITableViewController {
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let messagesVC = segue.destination as? MessagesVC {
-         guard let selectedIndex = tableView.indexPathForSelectedRow?.row else { fatalError() }
-         messagesVC.chatRoom = modelController.chatRooms[selectedIndex]
-      }
       if segue.identifier == "CreateChatRoomSegue" {
          guard let newChatRoomVC = segue.destination as? NewChatRoomVC else { fatalError() }
          newChatRoomVC.modelController = modelController
+      }
+      if let messagesVC = segue.destination as? MessagesVC {
+         guard let selectedIndex = tableView.indexPathForSelectedRow?.row else { fatalError() }
+         messagesVC.chatRoom = modelController.chatRooms[selectedIndex]
+         messagesVC.modelController = modelController
       }
    }
 }
