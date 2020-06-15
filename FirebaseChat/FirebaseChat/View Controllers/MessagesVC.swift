@@ -1,5 +1,5 @@
 //
-//  MessageVC.swift
+//  MessagesVC.swift
 //  FirebaseChat
 //
 //  Created by Chad Parker on 2020-06-09.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageVC: UIViewController {
+class MessagesVC: UIViewController {
    
    var chatRoom: ChatRoom!
 

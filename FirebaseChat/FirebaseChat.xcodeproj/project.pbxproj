@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		08C18857F0DDF5BAE60217DF /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75276584BD9A07D58C20A325 /* Pods_FirebaseChat.framework */; };
 		6324BC15249020F700766CF6 /* ChatRoomTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC14249020F700766CF6 /* ChatRoomTableVC.swift */; };
-		6324BC182490221600766CF6 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC172490221600766CF6 /* MessageVC.swift */; };
+		6324BC182490221600766CF6 /* MessagesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC172490221600766CF6 /* MessagesVC.swift */; };
 		6324BC1B2490238500766CF6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC1A2490238500766CF6 /* Message.swift */; };
 		6324BC1D2490238D00766CF6 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC1C2490238D00766CF6 /* ChatRoom.swift */; };
 		6324BC1F2490256A00766CF6 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6324BC1E2490256A00766CF6 /* ModelController.swift */; };
@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		6324BC14249020F700766CF6 /* ChatRoomTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomTableVC.swift; sourceTree = "<group>"; };
-		6324BC172490221600766CF6 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		6324BC172490221600766CF6 /* MessagesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesVC.swift; sourceTree = "<group>"; };
 		6324BC1A2490238500766CF6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		6324BC1C2490238D00766CF6 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		6324BC1E2490256A00766CF6 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 			children = (
 				6324BC14249020F700766CF6 /* ChatRoomTableVC.swift */,
 				6324BC2024902A2E00766CF6 /* NewChatRoomVC.swift */,
-				6324BC172490221600766CF6 /* MessageVC.swift */,
+				6324BC172490221600766CF6 /* MessagesVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -242,7 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6324BC1D2490238D00766CF6 /* ChatRoom.swift in Sources */,
-				6324BC182490221600766CF6 /* MessageVC.swift in Sources */,
+				6324BC182490221600766CF6 /* MessagesVC.swift in Sources */,
 				6324BC15249020F700766CF6 /* ChatRoomTableVC.swift in Sources */,
 				6324BC1B2490238500766CF6 /* Message.swift in Sources */,
 				63669017248B428800E2A439 /* AppDelegate.swift in Sources */,

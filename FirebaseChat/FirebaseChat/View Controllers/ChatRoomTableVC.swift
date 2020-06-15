@@ -34,9 +34,9 @@ class ChatRoomTableVC: UITableViewController {
    }
    
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      if let messageVC = segue.destination as? MessageVC {
+      if let messagesVC = segue.destination as? MessagesVC {
          guard let selectedIndex = tableView.indexPathForSelectedRow?.row else { fatalError() }
-         messageVC.chatRoom = modelController.chatRooms[selectedIndex]
+         messagesVC.chatRoom = modelController.chatRooms[selectedIndex]
       }
       if segue.identifier == "CreateChatRoomSegue" {
          guard let newChatRoomVC = segue.destination as? NewChatRoomVC else { fatalError() }
