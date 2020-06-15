@@ -12,8 +12,23 @@ class MessagesVC: UIViewController {
    
    var chatRoom: ChatRoom!
    var modelController: ModelController!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+   
+   private var messages: [Message] = [] {
+      didSet {
+         print(messages)
+      }
+   }
+   
+   override func viewDidLoad() {
+      super.viewDidLoad()
+      
+      title = chatRoom.name
+      loadMessages()
+   }
+   
+   private func loadMessages() {
+      modelController.fetchMessagesInChatRoom(chatRoom) { messages in
+         self.messages = messages
+      }
+   }
 }
