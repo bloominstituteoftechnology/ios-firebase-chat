@@ -41,6 +41,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="0s0-sm-YPU" kind="show" id="0e6-eh-R7k"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -48,7 +51,16 @@
                             <outlet property="delegate" destination="jBs-Zx-Iik" id="9LW-IP-nfc"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="X6I-mX-t0E"/>
+                    <navigationItem key="navigationItem" id="X6I-mX-t0E">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="LBU-Bz-rGc">
+                            <connections>
+                                <action selector="createnewroom:" destination="jBs-Zx-Iik" id="uSF-gW-pgy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="chatRoomTitleTextField" destination="vEy-r0-nsf" id="Doz-aO-9Lh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jKD-Ur-bEK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,6 +76,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5nS-xi-nWR"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ZKx-uR-bay"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Vg-aJ-Xmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

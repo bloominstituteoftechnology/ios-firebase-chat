@@ -14,6 +14,10 @@
 		50C4DC1024988BF700FE342E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C4DC0E24988BF700FE342E /* LaunchScreen.storyboard */; };
 		50C4DC1824988C4400FE342E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50C4DC1724988C4300FE342E /* GoogleService-Info.plist */; };
 		50C4DC1A24988FC300FE342E /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4DC1924988FC300FE342E /* ChatRoomsTableViewController.swift */; };
+		50C4DC1C2498929100FE342E /* ChatRoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4DC1B2498929100FE342E /* ChatRoomDetailViewController.swift */; };
+		50C4DC1E2498971E00FE342E /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4DC1D2498971E00FE342E /* ChatRoom.swift */; };
+		50C4DC2024992E1300FE342E /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4DC1F24992E1300FE342E /* ChatRoomController.swift */; };
+		50C4DC2224992EFB00FE342E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C4DC2124992EFB00FE342E /* HTTPMethod.swift */; };
 		7D845C8DC5FA0E1E08BEF3D1 /* Pods_iosFireBaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 698C3C0BD5884BFA5B8A5B23 /* Pods_iosFireBaseChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +32,10 @@
 		50C4DC1124988BF700FE342E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C4DC1724988C4300FE342E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50C4DC1924988FC300FE342E /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
+		50C4DC1B2498929100FE342E /* ChatRoomDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomDetailViewController.swift; sourceTree = "<group>"; };
+		50C4DC1D2498971E00FE342E /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		50C4DC1F24992E1300FE342E /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
+		50C4DC2124992EFB00FE342E /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		698C3C0BD5884BFA5B8A5B23 /* Pods_iosFireBaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosFireBaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB93B4407B928CD2572F4A6 /* Pods-iosFireBaseChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosFireBaseChat.debug.xcconfig"; path = "Target Support Files/Pods-iosFireBaseChat/Pods-iosFireBaseChat.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +81,10 @@
 				50C4DC1124988BF700FE342E /* Info.plist */,
 				50C4DC1724988C4300FE342E /* GoogleService-Info.plist */,
 				50C4DC1924988FC300FE342E /* ChatRoomsTableViewController.swift */,
+				50C4DC1B2498929100FE342E /* ChatRoomDetailViewController.swift */,
+				50C4DC1D2498971E00FE342E /* ChatRoom.swift */,
+				50C4DC1F24992E1300FE342E /* ChatRoomController.swift */,
+				50C4DC2124992EFB00FE342E /* HTTPMethod.swift */,
 			);
 			path = iosFireBaseChat;
 			sourceTree = "<group>";
@@ -210,8 +222,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C4DC1C2498929100FE342E /* ChatRoomDetailViewController.swift in Sources */,
 				50C4DC1A24988FC300FE342E /* ChatRoomsTableViewController.swift in Sources */,
+				50C4DC2224992EFB00FE342E /* HTTPMethod.swift in Sources */,
 				50C4DC0424988BF400FE342E /* AppDelegate.swift in Sources */,
+				50C4DC1E2498971E00FE342E /* ChatRoom.swift in Sources */,
+				50C4DC2024992E1300FE342E /* ChatRoomController.swift in Sources */,
 				50C4DC0624988BF400FE342E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
