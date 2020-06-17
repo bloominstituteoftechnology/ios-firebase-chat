@@ -12,4 +12,9 @@ import MessageKit
 struct Room {
     var title: String
     var messages: [Message]
+    
+    init(title: String, messages: [Message]) {
+        self.title = title
+        self.messages = messages
+    }
 }
