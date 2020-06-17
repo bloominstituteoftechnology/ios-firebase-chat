@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import MessageKit
+
+struct Room {
+    var title: String
+    var messages: [Message]
+}

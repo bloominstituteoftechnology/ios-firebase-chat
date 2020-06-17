@@ -7,3 +7,20 @@
 //
 
 import Foundation
+import MessageKit
+
+struct Message: MessageType {
+    var sender: SenderType
+    var messageId: String
+    var sentDate: Date
+    var kind: MessageKind
+    var contents: String
+    
+    init(sender: User, messageID: String = UUID().uuidString, sentDate: Date = Date(), kind: MessageKind, contents: String) {
+        self.sender = sender
+        self.messageId = messageID
+        self.sentDate = sentDate
+        self.kind = kind
+        self.contents = contents
+    }
+}
