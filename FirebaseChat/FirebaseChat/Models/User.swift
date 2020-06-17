@@ -9,7 +9,8 @@
 import Foundation
 import MessageKit
 
-struct User: SenderType {
+struct User: SenderType, Codable {
+    //MARK: - Types -
     let uniqueID: UUID
     var senderId: String {
         return uniqueID.uuidString

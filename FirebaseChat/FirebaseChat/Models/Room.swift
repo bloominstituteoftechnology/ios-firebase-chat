@@ -10,10 +10,14 @@ import Foundation
 import MessageKit
 
 struct Room {
+    let roomID: UUID
+    let ownerID: UUID
     var title: String
     var messages: [Message]
     
-    init(title: String, messages: [Message]) {
+    init(roomID: UUID = UUID(), ownerID: UUID, title: String, messages: [Message]) {
+        self.roomID = roomID
+        self.ownerID = ownerID
         self.title = title
         self.messages = messages
     }

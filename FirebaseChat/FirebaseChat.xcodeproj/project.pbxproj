@@ -21,6 +21,7 @@
 		5E81F8A02499BE93006B5AC7 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81F89F2499BE93006B5AC7 /* Message.swift */; };
 		5E81F8A22499BECD006B5AC7 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81F8A12499BECD006B5AC7 /* Room.swift */; };
 		5E81F8A42499CA6D006B5AC7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81F8A32499CA6C006B5AC7 /* User.swift */; };
+		5E81F8AA2499D2B7006B5AC7 /* ChatRoomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E81F8A92499D2B7006B5AC7 /* ChatRoomController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		5E81F89F2499BE93006B5AC7 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		5E81F8A12499BECD006B5AC7 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		5E81F8A32499CA6C006B5AC7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5E81F8A92499D2B7006B5AC7 /* ChatRoomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomController.swift; sourceTree = "<group>"; };
 		8FDF94B89E0D17CE0E1DF2EE /* Pods_FirebaseChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,6 +150,7 @@
 		5E81F88E24995C8E006B5AC7 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5E81F8A92499D2B7006B5AC7 /* ChatRoomController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				5E81F87624995BB3006B5AC7 /* AppDelegate.swift in Sources */,
 				5E81F8A22499BECD006B5AC7 /* Room.swift in Sources */,
 				5E81F8982499B059006B5AC7 /* ChatRoomTableViewCell.swift in Sources */,
+				5E81F8AA2499D2B7006B5AC7 /* ChatRoomController.swift in Sources */,
 				5E81F87824995BB3006B5AC7 /* SceneDelegate.swift in Sources */,
 				5E81F8A42499CA6D006B5AC7 /* User.swift in Sources */,
 				5E81F89E2499B7A1006B5AC7 /* ChatViewController.swift in Sources */,
