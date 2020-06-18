@@ -3,17 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D49BF479A0B97385179096D7 /* Pods_FIREBASECHAT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5D23EE8EAFD48E01CB54DA /* Pods_FIREBASECHAT.framework */; };
 		FE3AE470249B01FD00E7B442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AE46F249B01FD00E7B442 /* AppDelegate.swift */; };
 		FE3AE472249B01FD00E7B442 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AE471249B01FD00E7B442 /* SceneDelegate.swift */; };
-		FE3AE474249B01FD00E7B442 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3AE473249B01FD00E7B442 /* ViewController.swift */; };
 		FE3AE477249B01FD00E7B442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3AE475249B01FD00E7B442 /* Main.storyboard */; };
 		FE3AE479249B01FE00E7B442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE3AE478249B01FE00E7B442 /* Assets.xcassets */; };
 		FE3AE47C249B01FE00E7B442 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE3AE47A249B01FE00E7B442 /* LaunchScreen.storyboard */; };
+		FE4228E6249B086B005D746B /* MainMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4228E5249B086B005D746B /* MainMessageTableViewController.swift */; };
+		FE4228E8249B0883005D746B /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4228E7249B0883005D746B /* MessageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +24,12 @@
 		FE3AE46C249B01FD00E7B442 /* FIREBASECHAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FIREBASECHAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE3AE46F249B01FD00E7B442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE3AE471249B01FD00E7B442 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE3AE473249B01FD00E7B442 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE3AE476249B01FD00E7B442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE3AE478249B01FE00E7B442 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE3AE47B249B01FE00E7B442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE3AE47D249B01FE00E7B442 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE4228E5249B086B005D746B /* MainMessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessageTableViewController.swift; sourceTree = "<group>"; };
+		FE4228E7249B0883005D746B /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				FA8ACBDCDDE0C2A58A737378 /* Pods-FIREBASECHAT.debug.xcconfig */,
 				840E02F4E2F1B3CEB3B463F1 /* Pods-FIREBASECHAT.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -83,11 +84,12 @@
 			children = (
 				FE3AE46F249B01FD00E7B442 /* AppDelegate.swift */,
 				FE3AE471249B01FD00E7B442 /* SceneDelegate.swift */,
-				FE3AE473249B01FD00E7B442 /* ViewController.swift */,
 				FE3AE475249B01FD00E7B442 /* Main.storyboard */,
 				FE3AE478249B01FE00E7B442 /* Assets.xcassets */,
 				FE3AE47A249B01FE00E7B442 /* LaunchScreen.storyboard */,
 				FE3AE47D249B01FE00E7B442 /* Info.plist */,
+				FE4228E5249B086B005D746B /* MainMessageTableViewController.swift */,
+				FE4228E7249B0883005D746B /* MessageViewController.swift */,
 			);
 			path = FIREBASECHAT;
 			sourceTree = "<group>";
@@ -207,9 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE3AE474249B01FD00E7B442 /* ViewController.swift in Sources */,
 				FE3AE470249B01FD00E7B442 /* AppDelegate.swift in Sources */,
 				FE3AE472249B01FD00E7B442 /* SceneDelegate.swift in Sources */,
+				FE4228E8249B0883005D746B /* MessageViewController.swift in Sources */,
+				FE4228E6249B086B005D746B /* MainMessageTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
