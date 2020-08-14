@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="r0b-BZ-EL1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThreadCell" id="r0b-BZ-EL1">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r0b-BZ-EL1" id="m8K-5v-emY">
@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Chitty Chat" id="DU9-1u-Irr">
                         <barButtonItem key="rightBarButtonItem" title="New Chat" id="Uso-QZ-d1D">
                             <connections>
-                                <segue destination="onO-3R-iIP" kind="presentation" id="UP4-k0-Pnp"/>
+                                <segue destination="onO-3R-iIP" kind="presentation" identifier="CreateThreadSegue" modalPresentationStyle="fullScreen" id="UP4-k0-Pnp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -50,11 +50,11 @@
             <objects>
                 <viewController id="onO-3R-iIP" customClass="AddThreadViewController" customModule="FirebaseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3LT-1A-8uc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="You-gX-sf5">
-                                <rect key="frame" x="8" y="162" width="398" height="137"/>
+                                <rect key="frame" x="8" y="206" width="398" height="137"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Thread Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-JH-LoX">
                                         <rect key="frame" x="0.0" y="0.0" width="398" height="39.5"/>
@@ -85,7 +85,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a New Thread:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jY6-MR-AlN">
-                                <rect key="frame" x="20" y="55" width="242.5" height="31.5"/>
+                                <rect key="frame" x="20" y="99" width="242.5" height="31.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,6 +102,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bhb-u7-kea"/>
                     </view>
+                    <connections>
+                        <outlet property="threadTitleTextField" destination="f8J-JH-LoX" id="B5z-bf-xO8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XwX-y2-ofS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
