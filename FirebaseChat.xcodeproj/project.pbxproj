@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		610175A4252839CC006BB9FB /* ChatRoomsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175A3252839CC006BB9FB /* ChatRoomsTableViewController.swift */; };
 		610175A725283A2F006BB9FB /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175A625283A2F006BB9FB /* MessageViewController.swift */; };
+		610175AA25283BE1006BB9FB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175A925283BE1006BB9FB /* Message.swift */; };
+		610175AD25283BF2006BB9FB /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175AC25283BF2006BB9FB /* ChatRoom.swift */; };
+		610175B0252841BB006BB9FB /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175AF252841BA006BB9FB /* Sender.swift */; };
+		610175B32528445A006BB9FB /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175B22528445A006BB9FB /* ChatController.swift */; };
+		610175B625284510006BB9FB /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610175B525284510006BB9FB /* HTTPMethod.swift */; };
 		6158B832252822A8005C1E0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158B831252822A8005C1E0B /* AppDelegate.swift */; };
 		6158B834252822A8005C1E0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158B833252822A8005C1E0B /* SceneDelegate.swift */; };
 		6158B839252822A8005C1E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6158B837252822A8005C1E0B /* Main.storyboard */; };
@@ -21,6 +26,11 @@
 /* Begin PBXFileReference section */
 		610175A3252839CC006BB9FB /* ChatRoomsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomsTableViewController.swift; sourceTree = "<group>"; };
 		610175A625283A2F006BB9FB /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		610175A925283BE1006BB9FB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		610175AC25283BF2006BB9FB /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		610175AF252841BA006BB9FB /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		610175B22528445A006BB9FB /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		610175B525284510006BB9FB /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		6158B82E252822A8005C1E0B /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6158B831252822A8005C1E0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6158B833252822A8005C1E0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +86,11 @@
 				61AAFA3F252833B200C32D91 /* GoogleService-Info.plist */,
 				610175A3252839CC006BB9FB /* ChatRoomsTableViewController.swift */,
 				610175A625283A2F006BB9FB /* MessageViewController.swift */,
+				610175A925283BE1006BB9FB /* Message.swift */,
+				610175AC25283BF2006BB9FB /* ChatRoom.swift */,
+				610175AF252841BA006BB9FB /* Sender.swift */,
+				610175B22528445A006BB9FB /* ChatController.swift */,
+				610175B525284510006BB9FB /* HTTPMethod.swift */,
 			);
 			path = FirebaseChat;
 			sourceTree = "<group>";
@@ -212,8 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				610175AD25283BF2006BB9FB /* ChatRoom.swift in Sources */,
+				610175B0252841BB006BB9FB /* Sender.swift in Sources */,
 				6158B832252822A8005C1E0B /* AppDelegate.swift in Sources */,
+				610175B32528445A006BB9FB /* ChatController.swift in Sources */,
 				6158B834252822A8005C1E0B /* SceneDelegate.swift in Sources */,
+				610175B625284510006BB9FB /* HTTPMethod.swift in Sources */,
+				610175AA25283BE1006BB9FB /* Message.swift in Sources */,
 				610175A725283A2F006BB9FB /* MessageViewController.swift in Sources */,
 				610175A4252839CC006BB9FB /* ChatRoomsTableViewController.swift in Sources */,
 			);
