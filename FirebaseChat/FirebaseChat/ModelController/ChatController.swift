@@ -12,6 +12,7 @@ import FirebaseDatabase
 class ChatController {
     
     var chatRooms: [ChatRoom] = []
+    var currentUser: Sender?
     
     let ref = Database.database().reference()
     
@@ -95,10 +96,8 @@ class ChatController {
                 if let value = snap?.value as? NSDictionary {
                     
                     do {
-                        let decoder = JSONDecoder()
-                        decoder.dateDecodingStrategy = .millisecondsSince1970
                         let data = try JSONSerialization.data(withJSONObject: value, options: [])
-                        let message = try decoder.decode(Message.self, from: data)
+                        let message = try JSONDecoder().decode(Message.self, from: data)
                         messages.append(message)
                     } catch {
                         NSLog("Error decoding message: \(error)")
