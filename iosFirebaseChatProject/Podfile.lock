@@ -60,7 +60,12 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
+  - InputBarAccessoryView (5.2.0):
+    - InputBarAccessoryView/Core (= 5.2.0)
+  - InputBarAccessoryView/Core (5.2.0)
   - leveldb-library (1.22)
+  - MessageKit (3.4.1):
+    - InputBarAccessoryView (~> 5.2.0)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -71,6 +76,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
+  - MessageKit
 
 SPEC REPOS:
   trunk:
@@ -83,7 +89,9 @@ SPEC REPOS:
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - InputBarAccessoryView
     - leveldb-library
+    - MessageKit
     - nanopb
     - PromisesObjC
 
@@ -97,10 +105,12 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: 966e88df9d19c15715137bb2ddaf52373f111436
   GoogleDataTransport: b7f406340a291370045a270c599e53c6fa6ec20f
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
+  InputBarAccessoryView: ac1bc2a11508fc2490c2322beb1d4c9f05c8e634
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
+  MessageKit: aa047ad093f022189ed5a0d1cea04fc59f064c93
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
 
-PODFILE CHECKSUM: 37944eb3941d373d3b8a52085ee78c93533698ca
+PODFILE CHECKSUM: fb1724f8aa1dbb8602301d7dab16058d94d73eac
 
 COCOAPODS: 1.9.3

@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import MessageKit
+import InputBarAccessoryView
 
 class ViewController: UIViewController {
 
