@@ -3,12 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7C26A6C8252A2E1E001E2475 /* ChatThreadTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26A6C7252A2E1E001E2475 /* ChatThreadTableViewController.swift */; };
 		7C26A6CC252A2E63001E2475 /* ChatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26A6CB252A2E63001E2475 /* ChatDetailViewController.swift */; };
+		7C26A6D1252A80FC001E2475 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26A6D0252A80FC001E2475 /* Message.swift */; };
+		7C26A6D5252A8114001E2475 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C26A6D4252A8114001E2475 /* ChatRoom.swift */; };
+		7C504208252AE7A000A1F3CC /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7C504207252AE7A000A1F3CC /* MessageKit */; };
 		7C6C298E2529B64600F3DD7E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C6C298D2529B64600F3DD7E /* GoogleService-Info.plist */; };
 		7CD680C42528D38300635FDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD680C32528D38300635FDD /* AppDelegate.swift */; };
 		7CD680C62528D38300635FDD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD680C52528D38300635FDD /* SceneDelegate.swift */; };
@@ -22,6 +25,8 @@
 /* Begin PBXFileReference section */
 		7C26A6C7252A2E1E001E2475 /* ChatThreadTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatThreadTableViewController.swift; sourceTree = "<group>"; };
 		7C26A6CB252A2E63001E2475 /* ChatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDetailViewController.swift; sourceTree = "<group>"; };
+		7C26A6D0252A80FC001E2475 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7C26A6D4252A8114001E2475 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		7C6C298D2529B64600F3DD7E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7CD680C02528D38300635FDD /* iosFirebaseChatProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosFirebaseChatProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD680C32528D38300635FDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BABF99DCA98CAE2592DCCBF8 /* Pods_iosFirebaseChatProject.framework in Frameworks */,
+				7C504208252AE7A000A1F3CC /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +61,22 @@
 				7C26A6CB252A2E63001E2475 /* ChatDetailViewController.swift */,
 			);
 			path = "View Controlllers";
+			sourceTree = "<group>";
+		};
+		7C26A6CF252A80C5001E2475 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C26A6D0252A80FC001E2475 /* Message.swift */,
+				7C26A6D4252A8114001E2475 /* ChatRoom.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C26A6D7252A906B001E2475 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 		7CD680B72528D38300635FDD = {
@@ -78,6 +100,8 @@
 		7CD680C22528D38300635FDD /* iosFirebaseChatProject */ = {
 			isa = PBXGroup;
 			children = (
+				7C26A6D7252A906B001E2475 /* ModelController */,
+				7C26A6CF252A80C5001E2475 /* Models */,
 				7C26A6C6252A2DE3001E2475 /* View Controlllers */,
 				7C6C298D2529B64600F3DD7E /* GoogleService-Info.plist */,
 				7CD680C32528D38300635FDD /* AppDelegate.swift */,
@@ -126,6 +150,9 @@
 			dependencies = (
 			);
 			name = iosFirebaseChatProject;
+			packageProductDependencies = (
+				7C504207252AE7A000A1F3CC /* MessageKit */,
+			);
 			productName = iosFirebaseChatProject;
 			productReference = 7CD680C02528D38300635FDD /* iosFirebaseChatProject.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +180,9 @@
 				Base,
 			);
 			mainGroup = 7CD680B72528D38300635FDD;
+			packageReferences = (
+				7C504206252AE7A000A1F3CC /* XCRemoteSwiftPackageReference "MessageKit" */,
+			);
 			productRefGroup = 7CD680C12528D38300635FDD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,6 +256,8 @@
 				7CD680C82528D38300635FDD /* ViewController.swift in Sources */,
 				7C26A6CC252A2E63001E2475 /* ChatDetailViewController.swift in Sources */,
 				7C26A6C8252A2E1E001E2475 /* ChatThreadTableViewController.swift in Sources */,
+				7C26A6D1252A80FC001E2475 /* Message.swift in Sources */,
+				7C26A6D5252A8114001E2475 /* ChatRoom.swift in Sources */,
 				7CD680C42528D38300635FDD /* AppDelegate.swift in Sources */,
 				7CD680C62528D38300635FDD /* SceneDelegate.swift in Sources */,
 			);
@@ -431,6 +463,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C504206252AE7A000A1F3CC /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C504207252AE7A000A1F3CC /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C504206252AE7A000A1F3CC /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7CD680B82528D38300635FDD /* Project object */;
 }

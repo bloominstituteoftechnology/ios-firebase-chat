@@ -5,13 +5,14 @@
 //  Created by BrysonSaclausa on 10/4/20.
 //
 
+
 import UIKit
 
 class ChatThreadTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.tableView.backgroundColor = .brown
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
