@@ -1,0 +1,78 @@
+
+Showing Recent Messages
+MkDir /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    /bin/mkdir -p /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework
+
+MkDir /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Headers (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    /bin/mkdir -p /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Headers
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView.hmap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView.hmap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/all-product-headers.yaml (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/all-product-headers.yaml
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-project-headers.hmap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-project-headers.hmap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-own-target-headers.hmap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-generated-files.hmap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-generated-files.hmap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-all-target-headers.hmap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-all-non-framework-target-headers.hmap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/InputBarAccessoryView-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/unextended-module.modulemap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/unextended-module.modulemap
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/unextended-module-overlay.yaml (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/unextended-module-overlay.yaml
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/module.modulemap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/module.modulemap
+
+ProcessInfoPlistFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Info.plist /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods/Target\ Support\ Files/InputBarAccessoryView/InputBarAccessoryView-Info.plist (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    builtin-infoPlistUtility /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods/Target\ Support\ Files/InputBarAccessoryView/InputBarAccessoryView-Info.plist -producttype com.apple.product-type.framework -expandbuildsettings -format binary -platform iphonesimulator -o /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Info.plist
+
+CpHeader /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods/Target\ Support\ Files/InputBarAccessoryView/InputBarAccessoryView-umbrella.h /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Headers/InputBarAccessoryView-umbrella.h (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods/Target\ Support\ Files/InputBarAccessoryView/InputBarAccessoryView-umbrella.h /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Headers
+
+Ditto /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/module.modulemap /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Modules/module.modulemap (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/module.modulemap /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Products/Debug-iphonesimulator/InputBarAccessoryView/InputBarAccessoryView.framework/Modules
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/Objects-normal/x86_64/InputBarAccessoryView.SwiftFileList (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/Objects-normal/x86_64/InputBarAccessoryView.SwiftFileList
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/Objects-normal/x86_64/InputBarAccessoryView.LinkFileList (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/Objects-normal/x86_64/InputBarAccessoryView.LinkFileList
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/Objects-normal/x86_64/InputBarAccessoryView-OutputFileMap.json (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/Objects-normal/x86_64/InputBarAccessoryView-OutputFileMap.json
+
+WriteAuxiliaryFile /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/DerivedSources/InputBarAccessoryView_vers.c (in target 'InputBarAccessoryView' from project 'Pods')
+    cd /Users/brysonSaclausa/Desktop/IOSPT7/PROJECTS/ios-firebase-chat/iosFirebaseChatProject/Pods
+    write-file /Users/brysonSaclausa/Library/Developer/Xcode/DerivedData/iosFirebaseChatProject-clghjrprgybdsccssskvpplqpnfq/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/InputBarAccessoryView.build/DerivedSources/InputBarAccessoryView_vers.c
+
