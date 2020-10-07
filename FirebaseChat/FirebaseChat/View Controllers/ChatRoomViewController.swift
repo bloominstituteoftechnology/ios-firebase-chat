@@ -11,7 +11,8 @@ import InputBarAccessoryView
 
 class ChatRoomViewController: MessagesViewController {
     
-    var chatRoom: ChatRoom?
+    var chatRoom: ChatRoom!
+    var modController: ChatRoomController?
     
     private var messages: [Message] = [] {
         didSet {
@@ -22,23 +23,48 @@ class ChatRoomViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        title = chatRoom?.name
+        messagesCollectionView.messagesDataSource = self
+        messagesCollectionView.messagesLayoutDelegate = self
+        messagesCollectionView.messagesDisplayDelegate = self
+        messageInputBar.delegate = self
+        loadMessages()
     }
     
+    private let sender = Sender(senderId: UUID().uuidString, displayName: "Rob")
+    
+    private func loadMessages() {
+        modController?.fetchMessagesInChatRoom(chatRoom) { messages in
+            self.messages = messages
+        }
+    }
 
 }
 extension ChatRoomViewController: MessagesDataSource {
     func currentSender() -> SenderType {
-        <#code#>
+        return sender
     }
     
     func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
-        <#code#>
+        return messages[indexPath.section]
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
-        <#code#>
+        messages.count
     }
+}
+extension ChatRoomViewController: MessagesLayoutDelegate {
     
+}
+
+extension ChatRoomViewController: MessagesDisplayDelegate {
     
+}
+
+extension ChatRoomViewController: InputBarAccessoryViewDelegate {
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        modController?.createMessageInChatRoom(message: Message(text: text), chatRoom: chatRoom)
+        inputBar.inputTextView.text = nil
+        loadMessages()
+    }
 }

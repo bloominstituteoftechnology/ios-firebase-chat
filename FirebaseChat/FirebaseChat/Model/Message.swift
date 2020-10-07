@@ -27,3 +27,28 @@ struct Message {
     }
 }
 
+extension Message: MessageType {
+    var sender: SenderType {
+        Sender(senderId: UUID().uuidString, displayName: "")
+    }
+    
+    var messageId: String {
+        id
+    }
+    
+    var sentDate: Date {
+        date
+    }
+    
+    var kind: MessageKind {
+        .text(text)
+    }
+    
+    
+}
+struct Sender: SenderType {
+    let senderId: String
+    let displayName: String
+}
+
+
